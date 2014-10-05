@@ -57,6 +57,10 @@ public class FallingBlock : AbstractBlock {
 					transform.position = new Vector3(location.x, location.y-fallClock, 0.0f);
 				}
 			}
+			Int2 belowThis = new Int2(location.x, location.y-1);
+			if ((!grid.ContainsKey(belowThis) || (grid[belowThis] as FallingBlock != null && (grid[belowThis] as FallingBlock).fallClock >= 0.0f)) && !belowThis.Equals(blockManager.player.GetRoundedPosition())) {
+				fallClock = 0.0f;
+			}
 		}
 	}
 }
