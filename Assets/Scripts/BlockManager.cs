@@ -7,25 +7,60 @@ public class BlockManager : MonoBehaviour {
 	public Dictionary<Int2, AbstractBlock> grid; // changed to public so I can see and change it in falling blocks.  Also changed the value type to AbstractBlock.
     Player player;
 
+	//direction: 1 for clockwise, -1 for counterclockwise
     private bool isValidRotation(Int2 center, int direction)
     {
         // Check if a rotation zone is valid
 
 		/* Step 0: check if the center is at an edge, return false if it is
 		 * 
-		 * Step 1: get neighbors of center
-		 * Step 2: call invalidatesRotation on neighbors, return false if any return false
-		 * Step 3: for each neighbor w/ isRotatble true, check if their updated position:
-		 * 			a) contains a block w/ isRotatable false
-		 * 			b) contains the player
+		 * Step 1:  get neighbors of center
+		 * Step 2:  call invalidatesRotation on neighbors, return false if any return false
+		 * Step 3:  for each neighbor w/ isRotatble true, check if their updated position 
+		 * 			contains a block w/ isRotatable false
 		 * 			if either return false, return false
-		 * Step 4: return true
+		 * Step 4:  return true
 		 */
 
+
 		//Step 1:
+		//get neighbors
 		Dictionary<Int2,AbstractBlock> neighbors = getNeighbors();
 
-        return false;
+
+		//Step 2:
+		//iterate through neighbors
+		foreach(var position in neighbors.Keys){
+
+			//if neighbor invalidates rotation, return false:
+			if(!neighbors[position].invalidatesRotation()){
+				return false;
+			}
+		}
+		
+		//Step 3:
+		//iterate through neighbors
+		foreach(var position in neighbors.Keys){
+			if(neighbors[position].isRotable()){
+				//get theoretical new position of block after rotation
+				Int2 newPos = neighbors[position].posAfterRotation(center, direction);
+
+				AbstractBlock curNeighbor; //TryGetValue fills this with instance of block if key exists
+
+				//get block at theoretical new position:
+				if(neighbors.TryGetValue(newPos, curNeighbor)){
+					// if block currently located at future position will not rotate,
+					//conflict, return false
+					if(!curNeighbor.isRotable()){
+						return false;
+					}
+
+				}
+			}
+		}
+
+		//Step 4:
+        return true;
     }
 
 	// Awake is called before Start, and triggers even if the object is deactivated
