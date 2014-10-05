@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Block : AbstractBlock {
+public class FixedBlock : AbstractBlock {
 	
 	public override bool invalidatesRotation() {
 		return false;
