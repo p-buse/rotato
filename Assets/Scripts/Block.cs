@@ -8,11 +8,6 @@ public class Block : AbstractBlock {
 
     }
 
-    public override void AnimateRotation(Int2 center, string direction, float time)
-    {
-        throw new System.NotImplementedException();
-    }
-
     public override bool invalidatesRotation()
     {
         return false;
