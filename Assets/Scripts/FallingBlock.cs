@@ -2,14 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 
+[SerializePrivateVariables]
 public class FallingBlock : AbstractBlock {
 
-	float fallClock = -1.0f;
+    float fallClock;
     BlockManager blockManager;
 	bool whichHalf = true;
 	Int2 location;
 
 	void Start() {
+        fallClock = 1f;
         blockManager = GameObject.FindObjectOfType<BlockManager>();
 		location = new Int2(this.transform.position.x, this.transform.position.y);
 	}
