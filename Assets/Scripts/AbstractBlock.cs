@@ -2,18 +2,25 @@
 
 public abstract class AbstractBlock : MonoBehaviour
 {
+    /// <summary>
+    /// Used for "no spin zones."
+    /// </summary>
+    /// <returns>true if this invalidates the rotation, false otherwise</returns>
+    public abstract bool invalidatesRotation();
+    /// <summary>
+    /// Used for blocks that don't move.
+    /// </summary>
+    /// <returns>true if the block moves, false otherwise</returns>
+    public abstract bool isRotable();
 
-    protected GameManager gameManager;
-
-	//blockModel needs to be created, not sure how to start that in prefab world.
-	public Transform blockSprite;
-
+    protected static GameManager gameManager;
+	protected Transform blockSprite;
 	public float orientation; //starts at 0, +1 = 1 90-degree turn ccw ?  we can tweak what this means. 
 	//in analog of position, probably want this to be discrete, while model has continuous EulerAngles instead
 
-    void Start()
+    void Awake()
     {
-        this.gameManager = GameObject.FindObjectOfType<GameManager>();
+        AbstractBlock.gameManager = FindObjectOfType<GameManager>();
         this.blockSprite = transform.Find("blockSprite");
     }
 
@@ -39,15 +46,6 @@ public abstract class AbstractBlock : MonoBehaviour
 		//absolute angle treatment
 		blockSprite.transform.eulerAngles = new Vector3(0,0,90.0f*((1.0f-time)*orientation + time*(orientation + direction)));
 	}
-
-
-    /// <summary>
-    /// Will the block rotate?
-    /// </summary>
-    /// <returns>True if it will. DuH!!!!!!!</returns>
-    public abstract bool isRotable();
-    public abstract bool invalidatesRotation();
-
 
 	//not sure if this should be in AbstractBlock or just individual blocks.  Probably here.
 	/// <summary>
