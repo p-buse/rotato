@@ -7,12 +7,15 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 1f;
     public float jumpForce = 300f;
 
+    GameManager gameManager;
+
     bool jumping = false;
     float horizontalVelocity = 0f;
     Transform groundCheck;
 
     void Awake()
     {
+        this.gameManager = FindObjectOfType<GameManager>();
         this.groundCheck = transform.Find("groundCheck");
     }
 	
@@ -34,11 +37,18 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rigidbody2D.velocity = new Vector2(horizontalVelocity, rigidbody2D.velocity.y);
-        if (jumping == true && isGrounded())
+        if (!gameManager.rotationHappening)
         {
-            rigidbody2D.AddForce(new Vector2(0f, jumpForce));
-            jumping = false;
+            rigidbody2D.velocity = new Vector2(horizontalVelocity, rigidbody2D.velocity.y);
+            if (jumping == true && isGrounded())
+            {
+                rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+                jumping = false;
+            }
+        }
+        else
+        {
+            rigidbody2D.velocity = Vector2.zero;
         }
     }
 

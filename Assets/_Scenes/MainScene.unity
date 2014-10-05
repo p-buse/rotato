@@ -2522,9 +2522,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orientation: 0
-  fallClock: -1
-  blockManager: {fileID: 0}
-  whichHalf: 1
 --- !u!61 &1882039739
 BoxCollider2D:
   m_ObjectHideFlags: 0
