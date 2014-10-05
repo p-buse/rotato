@@ -25,7 +25,7 @@ public class BlockManager : MonoBehaviour {
 
 		//Step 1:
 		//get neighbors
-		Dictionary<Int2,AbstractBlock> neighbors = getNeighbors();
+		Dictionary<Int2,AbstractBlock> neighbors = getNeighbors(center);
 
 
 		//Step 2:
@@ -48,7 +48,7 @@ public class BlockManager : MonoBehaviour {
 				AbstractBlock curNeighbor; //TryGetValue fills this with instance of block if key exists
 
 				//get block at theoretical new position:
-				if(neighbors.TryGetValue(newPos, curNeighbor)){
+				if(neighbors.TryGetValue(newPos, out curNeighbor)){
 					// if block currently located at future position will not rotate,
 					//conflict, return false
 					if(!curNeighbor.isRotable()){
@@ -71,7 +71,7 @@ public class BlockManager : MonoBehaviour {
         // Populate our grid with the blocks in the scene
         // FindObjectsOfType is an expensive operation, so we only run it once per scene
         grid = new Dictionary<Int2, AbstractBlock>();
-        Block[] blocks = GameObject.FindObjectsOfType<AbstractBlock>();
+        AbstractBlock[] blocks = GameObject.FindObjectsOfType<AbstractBlock>();
         foreach (AbstractBlock b in blocks)
         {
             Int2 blockPosition = new Int2(b.transform.position.x, b.transform.position.y);
@@ -115,7 +115,7 @@ public class BlockManager : MonoBehaviour {
 		}
 
 		//make sure we don't return center as a neighbor:
-		if(neighbors.ContainsKey(center)()){
+		if(neighbors.ContainsKey(center)){
 			neighbors.Remove(center);
 		}
 

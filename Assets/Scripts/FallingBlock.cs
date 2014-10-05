@@ -7,10 +7,10 @@ public class FallingBlock : AbstractBlock {
 	float fallClock = -1.0f;
 	BlockManager blockManager = GameObject.FindObjectOfType<BlockManager>();
 	bool whichHalf = true;
-	Int2 location = new Int2(this.transform.position.x, this.transform.position.y);
+	Int2 location;
 
 	void Start() {
-		
+		location = new Int2(this.transform.position.x, this.transform.position.y);
 	}
 	
 	public override bool invalidatesRotation() {
