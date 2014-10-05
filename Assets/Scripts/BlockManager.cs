@@ -5,7 +5,7 @@ using System;
 public class BlockManager : MonoBehaviour {
     
 	public Dictionary<Int2, AbstractBlock> grid; // changed to public so I can see and change it in falling blocks.  Also changed the value type to AbstractBlock.
-    Player player;
+    public Player player;
 
 	//direction: 1 for clockwise, -1 for counterclockwise
     private bool isValidRotation(Int2 center, int direction)
