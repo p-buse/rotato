@@ -51,6 +51,11 @@ public class FallingBlock : AbstractBlock {
 				else if (fallClock >= 0.5f && !whichHalf) {
 					whichHalf = true;
 				}
+				Int2 beneath = new Int2(location.x, location.y-1);
+				if (!whichHalf && (beneath.Equals(blockManager.player.GetRoundedPosition()) || (grid.ContainsKey(beneath) && ((grid[beneath] as FallingBlock == null || (grid[beneath] as FallingBlock).fallClock < 0.0f))))) {
+					fallClock = -1.0f;
+					transform.position = new Vector3(location.x, location.y, 0.0f);
+				}
 				if (fallClock >= 0.0) {
 					transform.position = new Vector3(location.x, location.y-fallClock, 0.0f);
 				}
