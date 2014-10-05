@@ -3,12 +3,28 @@ using System.Collections.Generic;
 using System;
 
 public class BlockManager : MonoBehaviour {
-    public Dictionary<Int2, AbstractBlock> grid; // changed to public so I can see and change it in falling blocks.  Also changed the value type to AbstractBlock.
+    
+	public Dictionary<Int2, AbstractBlock> grid; // changed to public so I can see and change it in falling blocks.  Also changed the value type to AbstractBlock.
     Player player;
 
-    private bool isValidRotation(Vector2 center, int direction)
+    private bool isValidRotation(Int2 center, int direction)
     {
         // Check if a rotation zone is valid
+
+		/* Step 0: check if the center is at an edge, return false if it is
+		 * 
+		 * Step 1: get neighbors of center
+		 * Step 2: call invalidatesRotation on neighbors, return false if any return false
+		 * Step 3: for each neighbor w/ isRotatble true, check if their updated position:
+		 * 			a) contains a block w/ isRotatable false
+		 * 			b) contains the player
+		 * 			if either return false, return false
+		 * Step 4: return true
+		 */
+
+		//Step 1:
+		Dictionary<Int2,AbstractBlock> neighbors = getNeighbors();
+
         return false;
     }
 
@@ -44,5 +60,31 @@ public class BlockManager : MonoBehaviour {
             // Rotate the blocks here
         }
     }
-	
+
+	//returns a dictionary contining the non-empty neighbors of a center, not including the center
+	private Dictionary<Int2, AbstractBlock> getNeighbors(Int2 center){
+
+		Dictionary<Int2, AbstractBlock> neighbors = new Dictionary<Int2, AbstractBlock>();
+		Int2 position;
+
+		//iterate from (center-1,center-1) to (center+1,center+1)
+		for (int i=-1; i<2; i++) {
+			for (int j=-1; j<2; j++){
+
+				position = new Int2(center.x + i, center.y + j);
+
+				if(grid.ContainsKey(position)){
+					neighbors.Add(position, grid[position]);
+				}
+			}
+		}
+
+		//make sure we don't return center as a neighbor:
+		if(neighbors.ContainsKey(center)()){
+			neighbors.Remove(center);
+		}
+
+		return neighbors;
+
+	}
 }
