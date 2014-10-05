@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 
-[SerializePrivateVariables]
 public class FallingBlock : AbstractBlock {
 
     float fallClock;
