@@ -35,9 +35,9 @@ public abstract class AbstractBlock : MonoBehaviour
 		
 		//I'm pretty sure this is right...
 		blockSprite.transform.position = 0.5f*(Mathf.Cos(time * Mathf.PI / 2.0f)*startVec + Mathf.Sin(time*Mathf.PI/2.0f)*endVec) + new Vector3(-dx,-dy,0);
-		
-		//the above is absolute, this is relative... not sure how I could do this (facing) absolutely
-		//model.transform.rotation += (direction*Time.deltaTime*90.0);
+
+		//absolute angle treatment
+		blockSprite.transform.eulerAngles = new Vector3(0,0,90.0f*((1.0f-time)*orientation + time*(orientation + direction)));
 	}
 
 
