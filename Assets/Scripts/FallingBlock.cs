@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 public class FallingBlock : AbstractBlock {
 
-    public float fallClock;
-    public BlockManager blockManager;
-	public bool whichHalf = true;
-	public Int2 location;
+    float fallClock;
+    BlockManager blockManager;
+	bool whichHalf = true;
+	Int2 location;
 
 	void Start() {
         fallClock = 1f;
