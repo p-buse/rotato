@@ -28,8 +28,8 @@ public class PlayerMovement : MonoBehaviour
             this.horizontalVelocity = 0f;
         if (vertInput > 0)
             jumping = true;
-
-
+        else
+            jumping = false;
 	}
 
     void FixedUpdate()
