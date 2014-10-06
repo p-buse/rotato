@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
                         {
                             blockManager.startRotation(currentRotationCenter);
                             rotationClock = secondsToRotate;
-                            currentRotationDirection = 1;
+                            currentRotationDirection = -1;
                             gameState = RotationMode.rotating;
                         }
                         // Rotate left!
@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
                         {
                             blockManager.startRotation(currentRotationCenter);
                             rotationClock = secondsToRotate;
-                            currentRotationDirection = -1;
+                            currentRotationDirection = 1;
                             gameState = RotationMode.rotating;
                         }
                     }
