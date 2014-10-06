@@ -102,6 +102,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb59244c22def94a9636439086a5b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  secondsToRotate: 1
+  rotateRightKey: 101
+  rotateLeftKey: 113
+  blockManager: {fileID: 0}
+  currentRotationDirection: 0
+  rotationClock: 0
+  gameState: 0
 --- !u!4 &49420682
 Transform:
   m_ObjectHideFlags: 0
@@ -179,7 +186,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 217154748}
   - 212: {fileID: 217154747}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,8 +214,8 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
-  m_Color: {r: .986714125, g: 1, b: .0367646813, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 604dd8ccd06624f82a5de8bd53315229, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &217154748
 Transform:
   m_ObjectHideFlags: 0
@@ -230,7 +237,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 321592794}
   - 212: {fileID: 321592795}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +277,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &373657561
 GameObject:
@@ -336,7 +343,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 439254028}
   - 212: {fileID: 439254029}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +383,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &609173470
 Prefab:
@@ -431,7 +438,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 724207916}
   - 212: {fileID: 724207917}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,7 +478,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &726631203
 GameObject:
@@ -625,7 +632,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 742898983}
   - 212: {fileID: 742898982}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -653,7 +660,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &742898983
 Transform:
@@ -903,7 +910,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1130437164}
   - 212: {fileID: 1130437163}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -931,7 +938,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1130437164
 Transform:
@@ -1053,7 +1060,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1241010689}
   - 212: {fileID: 1241010690}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1093,7 +1100,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1243101174
 GameObject:
@@ -1258,7 +1265,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1266434850}
   - 212: {fileID: 1266434851}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1298,7 +1305,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1275651032
 GameObject:
@@ -1309,7 +1316,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1275651034}
   - 212: {fileID: 1275651033}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1337,7 +1344,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1275651034
 Transform:
@@ -1547,7 +1554,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1385174190}
   - 212: {fileID: 1385174191}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1587,7 +1594,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1390341028
 GameObject:
@@ -1598,7 +1605,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1390341029}
   - 212: {fileID: 1390341030}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1638,7 +1645,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1457624604
 GameObject:
@@ -1940,7 +1947,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1556397124}
   - 212: {fileID: 1556397125}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1980,7 +1987,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1598654131
 Prefab:
@@ -2292,7 +2299,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1707314239}
   - 212: {fileID: 1707314238}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2320,7 +2327,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1707314239
 Transform:
@@ -2596,7 +2603,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1876827283}
   - 212: {fileID: 1876827282}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2624,7 +2631,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1876827283
 Transform:
@@ -2746,7 +2753,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1954331447}
   - 212: {fileID: 1954331446}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2774,7 +2781,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1954331447
 Transform:
@@ -2852,7 +2859,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2001266140}
   - 212: {fileID: 2001266139}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2880,7 +2887,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2001266140
 Transform:
@@ -2903,7 +2910,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2077869948}
   - 212: {fileID: 2077869947}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2931,7 +2938,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2077869948
 Transform:
@@ -2954,7 +2961,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2125131935}
   - 212: {fileID: 2125131934}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2982,7 +2989,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2125131935
 Transform:

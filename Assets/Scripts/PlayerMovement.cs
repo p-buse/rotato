@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!gameManager.rotationHappening)
         {
+            rigidbody2D.gravityScale = 1f;
             rigidbody2D.velocity = new Vector2(horizontalVelocity, rigidbody2D.velocity.y);
             if (jumping == true && isGrounded())
             {
@@ -49,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             rigidbody2D.velocity = Vector2.zero;
+            rigidbody2D.gravityScale = 0f;
         }
     }
 

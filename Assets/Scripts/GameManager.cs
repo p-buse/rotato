@@ -1,9 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[SerializePrivateVariables]
 public class GameManager : MonoBehaviour
 {
+    public float secondsToRotate = 1f;
+    public KeyCode rotateRightKey = KeyCode.E;
+    public KeyCode rotateLeftKey = KeyCode.Q;
     BlockManager blockManager;
+    Int2 currentRotationCenter;
+    int currentRotationDirection = 0;
+    float rotationClock = 0f;
     enum RotationMode { playing, frozen, rotating };
     RotationMode gameState = RotationMode.playing;
     public bool rotationHappening
@@ -37,7 +44,8 @@ public class GameManager : MonoBehaviour
 						Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 						int x = Mathf.RoundToInt(worldPos.x);
 						int y = Mathf.RoundToInt(worldPos.y);
-						if(isValidCenter(new Int2(x,y))){
+                        this.currentRotationCenter = new Int2(x, y);
+						if(isValidCenter(currentRotationCenter)){
 							gameState = RotationMode.frozen;
 						}
 						
@@ -47,17 +55,50 @@ public class GameManager : MonoBehaviour
 
             case RotationMode.frozen: //game is frozen, left-click is held, but no rotation is happening
                 {
-					if(Input.GetMouseButtonUp(0))
+					if(!Input.GetMouseButton(0))
 					{
-						gameState = RotationMode.playing;
+                        if (this.rotationClock <= 0f)
+						    gameState = RotationMode.playing;
 					}
-					//detect keyboard input, call blockmanager rotation, set gameState to RotationMode.rotating
+                    // If we're not already rotating
+                    if (rotationClock <= 0f)
+                    {
+                        // Rotate right!
+                        if (Input.GetKey(rotateRightKey))
+                        {
+                            blockManager.startRotation(currentRotationCenter);
+                            rotationClock = secondsToRotate;
+                            currentRotationDirection = 1;
+                            gameState = RotationMode.rotating;
+                        }
+                        // Rotate left!
+                        else if (Input.GetKey(rotateLeftKey))
+                        {
+                            blockManager.startRotation(currentRotationCenter);
+                            rotationClock = secondsToRotate;
+                            currentRotationDirection = -1;
+                            gameState = RotationMode.rotating;
+                        }
+                    }
+
                     break;
                 }
 
             case RotationMode.rotating:
                 {
 					//check BlockManager for rotation clock, if it's done set gameState back to RotationMode.frozen
+                    if (rotationClock > 0)
+                        rotationClock -= Time.deltaTime;
+                    // If we're done rotating, finish the rotation
+                    if (rotationClock <= 0)
+                    {
+                        blockManager.finishRotation(currentRotationCenter, currentRotationDirection);
+                        gameState = RotationMode.frozen;
+                    }
+                    else
+                    {
+                        blockManager.AnimateFrameOfRotation(currentRotationCenter, currentRotationDirection, 1f- rotationClock);
+                    }
                     break;
                 }
         }

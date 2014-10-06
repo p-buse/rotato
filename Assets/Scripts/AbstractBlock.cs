@@ -41,7 +41,7 @@ public abstract class AbstractBlock : MonoBehaviour
 		Vector3 endVec = new Vector3(newdx,newdy,0);
 		
 		//I'm pretty sure this is right...
-		blockSprite.transform.position = 0.5f*(Mathf.Cos(time * Mathf.PI / 2.0f)*startVec + Mathf.Sin(time*Mathf.PI/2.0f)*endVec) + new Vector3(-dx,-dy,0);
+		blockSprite.transform.localPosition = 0.5f*(Mathf.Cos(time * Mathf.PI / 2.0f)*startVec + Mathf.Sin(time*Mathf.PI/2.0f)*endVec) + new Vector3(-dx,-dy,0);
 
 		//absolute angle treatment
 		blockSprite.transform.eulerAngles = new Vector3(0,0,90.0f*((1.0f-time)*orientation + time*(orientation + direction)));
@@ -72,7 +72,8 @@ public abstract class AbstractBlock : MonoBehaviour
 	{
 		Int2 end = posAfterRotation (center, dir);
 		transform.position = new Vector3 (end.x, end.y, 0);
-		blockSprite.transform.position = new Vector3(0,0,0);
+        transform.rotation = Quaternion.identity;
+		blockSprite.transform.localPosition = new Vector3(0,0,0);
 		orientation += dir;
 	}
 
