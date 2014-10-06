@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public float moveSpeed = 1f;
-    public float jumpForce = 300f;
+    public float jumpForce = 600f;
 
     GameManager gameManager;
 
