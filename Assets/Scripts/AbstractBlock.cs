@@ -24,6 +24,11 @@ public abstract class AbstractBlock : MonoBehaviour
         this.blockSprite = transform.Find("blockSprite");
     }
 
+	public Int2 GetCurrentPosition()
+	{
+		return new Int2(transform.position.x, transform.position.y);
+	}
+
 	/// <summary>
 	/// moves the block's model to be where it should at this stage of the rotation.  StaticBlocks override this? Currently this method
 	/// is both here and in the Block script
@@ -74,6 +79,7 @@ public abstract class AbstractBlock : MonoBehaviour
 		transform.position = new Vector3 (end.x, end.y, 0);
         transform.rotation = Quaternion.identity;
 		blockSprite.transform.localPosition = new Vector3(0,0,0);
+		blockSprite.transform.rotation = Quaternion.identity;
 		orientation += dir;
 	}
 

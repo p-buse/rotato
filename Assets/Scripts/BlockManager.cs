@@ -109,10 +109,14 @@ public class BlockManager : MonoBehaviour {
         // Rotate each of the blocks and update our list to match
         foreach (Int2 pos in currentlyRotating.Keys)
         {
-            currentlyRotating[pos].finishRotation(center, direction);
-            grid.Remove(pos);
-            grid.Add(pos, currentlyRotating[pos]);
+			grid.Remove(pos);
+			currentlyRotating[pos].finishRotation(center, direction);
         }
+
+		foreach (Int2 pos in currentlyRotating.Keys)
+		{
+			grid.Add(currentlyRotating[pos].GetCurrentPosition(),currentlyRotating[pos]);
+		}
         currentlyRotating = new Dictionary<Int2, AbstractBlock>();
     }
 
