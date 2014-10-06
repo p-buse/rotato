@@ -128,7 +128,7 @@ GameObject:
   - 4: {fileID: 6363528}
   - 212: {fileID: 6363527}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -267,7 +267,7 @@ GameObject:
   - 4: {fileID: 26522197}
   - 212: {fileID: 26522196}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -318,7 +318,7 @@ GameObject:
   - 4: {fileID: 33511207}
   - 212: {fileID: 33511206}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -369,7 +369,7 @@ GameObject:
   - 4: {fileID: 35300364}
   - 212: {fileID: 35300365}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -420,7 +420,7 @@ GameObject:
   - 4: {fileID: 35616972}
   - 212: {fileID: 35616971}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -471,7 +471,7 @@ GameObject:
   - 4: {fileID: 37777316}
   - 212: {fileID: 37777315}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -522,7 +522,7 @@ GameObject:
   - 4: {fileID: 39417037}
   - 212: {fileID: 39417038}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -771,7 +771,7 @@ GameObject:
   - 4: {fileID: 48537801}
   - 212: {fileID: 48537800}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -822,7 +822,7 @@ GameObject:
   - 4: {fileID: 48907307}
   - 212: {fileID: 48907306}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1027,7 +1027,7 @@ GameObject:
   - 4: {fileID: 80193888}
   - 212: {fileID: 80193889}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1375,7 +1375,7 @@ GameObject:
   - 4: {fileID: 149148111}
   - 212: {fileID: 149148110}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1514,7 +1514,7 @@ GameObject:
   - 4: {fileID: 197004088}
   - 212: {fileID: 197004087}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1983,7 +1983,7 @@ GameObject:
   - 4: {fileID: 239871486}
   - 212: {fileID: 239871485}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2089,7 +2089,7 @@ GameObject:
   - 4: {fileID: 247991555}
   - 212: {fileID: 247991554}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2239,7 +2239,7 @@ GameObject:
   - 4: {fileID: 298021199}
   - 212: {fileID: 298021200}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2499,7 +2499,7 @@ GameObject:
   - 4: {fileID: 343577578}
   - 212: {fileID: 343577577}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2682,7 +2682,7 @@ GameObject:
   - 4: {fileID: 369010944}
   - 212: {fileID: 369010945}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2777,7 +2777,7 @@ GameObject:
   - 4: {fileID: 414440037}
   - 212: {fileID: 414440036}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2872,7 +2872,7 @@ GameObject:
   - 4: {fileID: 432157031}
   - 212: {fileID: 432157032}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2978,7 +2978,7 @@ GameObject:
   - 4: {fileID: 443378719}
   - 212: {fileID: 443378720}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3333,7 +3333,7 @@ GameObject:
   - 4: {fileID: 563934916}
   - 212: {fileID: 563934915}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3384,7 +3384,7 @@ GameObject:
   - 4: {fileID: 564234828}
   - 212: {fileID: 564234829}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3435,7 +3435,7 @@ GameObject:
   - 4: {fileID: 573616153}
   - 212: {fileID: 573616152}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3486,7 +3486,7 @@ GameObject:
   - 4: {fileID: 583249638}
   - 212: {fileID: 583249637}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3746,7 +3746,7 @@ GameObject:
   - 4: {fileID: 678715953}
   - 212: {fileID: 678715952}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3852,7 +3852,7 @@ GameObject:
   - 4: {fileID: 707997331}
   - 212: {fileID: 707997330}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4354,7 +4354,7 @@ GameObject:
   - 4: {fileID: 900843293}
   - 212: {fileID: 900843292}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4504,7 +4504,7 @@ GameObject:
   - 4: {fileID: 917217925}
   - 212: {fileID: 917217924}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4555,7 +4555,7 @@ GameObject:
   - 4: {fileID: 941411604}
   - 212: {fileID: 941411603}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4705,7 +4705,7 @@ GameObject:
   - 4: {fileID: 969029034}
   - 212: {fileID: 969029033}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4800,7 +4800,7 @@ GameObject:
   - 4: {fileID: 995634875}
   - 212: {fileID: 995634876}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4906,7 +4906,7 @@ GameObject:
   - 4: {fileID: 1001103203}
   - 212: {fileID: 1001103204}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5199,7 +5199,7 @@ GameObject:
   - 4: {fileID: 1041298505}
   - 212: {fileID: 1041298504}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5250,7 +5250,7 @@ GameObject:
   - 4: {fileID: 1045586055}
   - 212: {fileID: 1045586054}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5444,7 +5444,7 @@ GameObject:
   - 4: {fileID: 1079750356}
   - 212: {fileID: 1079750355}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5539,7 +5539,7 @@ GameObject:
   - 4: {fileID: 1087223857}
   - 212: {fileID: 1087223856}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5590,7 +5590,7 @@ GameObject:
   - 4: {fileID: 1092343339}
   - 212: {fileID: 1092343338}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5641,7 +5641,7 @@ GameObject:
   - 4: {fileID: 1096465512}
   - 212: {fileID: 1096465511}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5692,7 +5692,7 @@ GameObject:
   - 4: {fileID: 1107880112}
   - 212: {fileID: 1107880113}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5787,7 +5787,7 @@ GameObject:
   - 4: {fileID: 1113189593}
   - 212: {fileID: 1113189594}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5838,7 +5838,7 @@ GameObject:
   - 4: {fileID: 1118197842}
   - 212: {fileID: 1118197841}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5933,7 +5933,7 @@ GameObject:
   - 4: {fileID: 1122237637}
   - 212: {fileID: 1122237636}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6083,7 +6083,7 @@ GameObject:
   - 4: {fileID: 1180295451}
   - 212: {fileID: 1180295452}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6189,7 +6189,7 @@ GameObject:
   - 4: {fileID: 1209724607}
   - 212: {fileID: 1209724608}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6311,7 +6311,7 @@ GameObject:
   - 4: {fileID: 1232817722}
   - 212: {fileID: 1232817723}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6857,7 +6857,7 @@ GameObject:
   - 4: {fileID: 1354905374}
   - 212: {fileID: 1354905373}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6908,7 +6908,7 @@ GameObject:
   - 4: {fileID: 1360070905}
   - 212: {fileID: 1360070904}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7124,7 +7124,7 @@ GameObject:
   - 4: {fileID: 1379114887}
   - 212: {fileID: 1379114888}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7318,7 +7318,7 @@ GameObject:
   - 4: {fileID: 1397309726}
   - 212: {fileID: 1397309725}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7600,7 +7600,7 @@ GameObject:
   - 4: {fileID: 1466168808}
   - 212: {fileID: 1466168807}
   m_Layer: 0
-  m_Name: greenTileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7651,7 +7651,7 @@ GameObject:
   - 4: {fileID: 1475451366}
   - 212: {fileID: 1475451367}
   m_Layer: 0
-  m_Name: greenTileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7867,7 +7867,7 @@ GameObject:
   - 4: {fileID: 1527676414}
   - 212: {fileID: 1527676413}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7973,7 +7973,7 @@ GameObject:
   - 4: {fileID: 1532975956}
   - 212: {fileID: 1532975957}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8079,7 +8079,7 @@ GameObject:
   - 4: {fileID: 1557913840}
   - 212: {fileID: 1557913839}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8328,7 +8328,7 @@ GameObject:
   - 4: {fileID: 1621569381}
   - 212: {fileID: 1621569380}
   m_Layer: 0
-  m_Name: greenTileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8434,7 +8434,7 @@ GameObject:
   - 4: {fileID: 1634280539}
   - 212: {fileID: 1634280540}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8628,7 +8628,7 @@ GameObject:
   - 4: {fileID: 1651115389}
   - 212: {fileID: 1651115388}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8734,7 +8734,7 @@ GameObject:
   - 4: {fileID: 1698376532}
   - 212: {fileID: 1698376531}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8829,7 +8829,7 @@ GameObject:
   - 4: {fileID: 1755802625}
   - 212: {fileID: 1755802624}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9012,7 +9012,7 @@ GameObject:
   - 4: {fileID: 1802047014}
   - 212: {fileID: 1802047015}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9217,7 +9217,7 @@ GameObject:
   - 4: {fileID: 1840000555}
   - 212: {fileID: 1840000556}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9455,7 +9455,7 @@ GameObject:
   - 4: {fileID: 1883799691}
   - 212: {fileID: 1883799692}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9693,7 +9693,7 @@ GameObject:
   - 4: {fileID: 1947324228}
   - 212: {fileID: 1947324227}
   m_Layer: 0
-  m_Name: greenTileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9843,7 +9843,7 @@ GameObject:
   - 4: {fileID: 1956869332}
   - 212: {fileID: 1956869333}
   m_Layer: 0
-  m_Name: greenTileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9894,7 +9894,7 @@ GameObject:
   - 4: {fileID: 1981853257}
   - 212: {fileID: 1981853258}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10033,7 +10033,7 @@ GameObject:
   - 4: {fileID: 2011740925}
   - 212: {fileID: 2011740926}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10084,7 +10084,7 @@ GameObject:
   - 4: {fileID: 2021074317}
   - 212: {fileID: 2021074318}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10429,6 +10429,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb59244c22def94a9636439086a5b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  secondsToRotate: 1
+  rotateRightKey: 101
+  rotateLeftKey: 113
+  blockManager: {fileID: 0}
+  currentRotationDirection: 0
+  rotationClock: 0
+  gameState: 0
 --- !u!4 &2074004409
 Transform:
   m_ObjectHideFlags: 0
@@ -10590,7 +10597,7 @@ GameObject:
   - 4: {fileID: 2082117340}
   - 212: {fileID: 2082117341}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10685,7 +10692,7 @@ GameObject:
   - 4: {fileID: 2093850058}
   - 212: {fileID: 2093850059}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10922,7 +10929,7 @@ GameObject:
   - 4: {fileID: 2134213401}
   - 212: {fileID: 2134213402}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10973,7 +10980,7 @@ GameObject:
   - 4: {fileID: 2134981177}
   - 212: {fileID: 2134981176}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11079,7 +11086,7 @@ GameObject:
   - 4: {fileID: 2139024683}
   - 212: {fileID: 2139024682}
   m_Layer: 0
-  m_Name: tileWall
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
