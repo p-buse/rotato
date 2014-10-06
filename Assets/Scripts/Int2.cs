@@ -51,4 +51,9 @@ public class Int2
     {
         return "x: " + x + "\ny: " + y;
     }
+
+    public Vector2 ToVector2()
+    {
+        return new Vector2(this.x, this.y);
+    }
 }
