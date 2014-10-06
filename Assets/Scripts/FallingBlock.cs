@@ -7,7 +7,7 @@ public class FallingBlock : AbstractBlock {
     float fallClock;
     BlockManager blockManager;
 	bool whichHalf = true;
-	Int2 location;
+	public Int2 location;
 
 	void Start() {
         fallClock = 1f;
