@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-	public static bool isValidCenter(Int2 xy){
+	public bool isValidCenter(Int2 xy){
 		Int2 playerPos = blockManager.player.GetRoundedPosition();
 		int absDx = Mathf.Abs (xy.x - playerPos.x);
 		int absDy = Mathf.Abs (xy.y - playerPos.y);
