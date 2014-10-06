@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb59244c22def94a9636439086a5b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsToRotate: 1
+  secondsToRotate: .300000012
   rotateRightKey: 101
   rotateLeftKey: 113
   blockManager: {fileID: 0}
@@ -1046,6 +1046,7 @@ GameObject:
   - 92: {fileID: 831216977}
   - 124: {fileID: 831216976}
   - 81: {fileID: 831216975}
+  - 114: {fileID: 831216980}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1118,6 +1119,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!114 &831216980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 831216974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4090bcaa0218e474c9cdf76b2064d549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  closeZoom: 2
+  farZoom: 7
+  zoomSpeed: 6
 --- !u!1 &891096532
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public KeyCode rotateRightKey = KeyCode.E;
     public KeyCode rotateLeftKey = KeyCode.Q;
     BlockManager blockManager;
-    Int2 currentRotationCenter;
+    public Int2 currentRotationCenter;
     int currentRotationDirection = 0;
     float rotationClock = 0f;
     enum RotationMode { playing, frozen, rotating };
