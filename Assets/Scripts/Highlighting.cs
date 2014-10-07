@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HighlightMovement : MonoBehaviour {
+public class Highlighting : MonoBehaviour {
 
     Player player;
 

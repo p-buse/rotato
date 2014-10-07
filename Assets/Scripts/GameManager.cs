@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
                     }
                     else
                     {
-                        blockManager.AnimateFrameOfRotation(currentRotationCenter, currentRotationDirection, 1f- rotationClock);
+                        blockManager.AnimateFrameOfRotation(currentRotationCenter, currentRotationDirection, 1f - rotationClock);
                     }
                     break;
                 }
@@ -117,7 +117,20 @@ public class GameManager : MonoBehaviour
 
     public void WinLevel()
     {
-        
+		int loadedLevel = Application.loadedLevel;
+        if (loadedLevel < Application.levelCount - 1)
+        {
+            Application.LoadLevel(loadedLevel + 1);
+        }
+        else
+        {
+            Application.LoadLevel(0);
+        }
+    }
+
+    public void ResetLevel()
+    {
+        Application.LoadLevel(Application.loadedLevel);
     }
 
 
