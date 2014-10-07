@@ -55,6 +55,13 @@ public class FallingBlock : AbstractBlock {
 				if (!whichHalf && (beneath.Equals(blockManager.player.GetRoundedPosition()) || (grid.ContainsKey(beneath) && ((grid[beneath] as FallingBlock == null || (grid[beneath] as FallingBlock).fallClock < 0.0f))))) {
 					fallClock = -1.0f;
 					transform.position = new Vector3(location.x, location.y, 0.0f);
+					if (!grid.ContainsKey(location) || grid[location] != this) {
+						grid.Remove(location);
+						grid.Add(location, this);
+					}
+					if(grid.ContainsKey(beneath) && grid[beneath] == this) {
+						grid.Remove(beneath);
+					}
 				}
 				if (!whichHalf && !grid.ContainsKey(beneath) && !beneath.Equals(blockManager.player.GetRoundedPosition())) {
 					grid.Add(beneath, this);
