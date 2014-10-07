@@ -11,7 +11,7 @@ public abstract class AbstractBlock : MonoBehaviour
     /// Used for blocks that don't move.
     /// </summary>
     /// <returns>true if the block moves, false otherwise</returns>
-    public abstract bool isRotable();
+    public abstract bool isRotatable();
 
     protected static GameManager gameManager;
 	protected Transform blockSprite;

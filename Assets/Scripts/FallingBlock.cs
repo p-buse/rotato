@@ -19,7 +19,7 @@ public class FallingBlock : AbstractBlock {
 		return false;
 	}
 	
-	public override bool isRotable() {
+	public override bool isRotatable() {
 		return fallClock < 0.0f;
 	}
 

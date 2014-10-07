@@ -8,7 +8,7 @@ public class Block : AbstractBlock {
         return false;
     }
 
-    public override bool isRotable()
+    public override bool isRotatable()
     {
         return true;
     }

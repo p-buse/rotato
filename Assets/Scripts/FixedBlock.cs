@@ -7,7 +7,7 @@ public class FixedBlock : AbstractBlock {
 		return false;
 	}
 	
-	public override bool isRotable() {
+	public override bool isRotatable() {
 		return false;
 	}
 

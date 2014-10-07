@@ -42,7 +42,7 @@ public class BlockManager : MonoBehaviour {
 		//Step 3:
 		//iterate through neighbors
 		foreach(var position in neighbors.Keys){
-			if(neighbors[position].isRotable()){
+			if(neighbors[position].isRotatable()){
 				//get theoretical new position of block after rotation
 				Int2 newPos = neighbors[position].posAfterRotation(center, direction);
 
@@ -52,7 +52,7 @@ public class BlockManager : MonoBehaviour {
 				if(neighbors.TryGetValue(newPos, out curNeighbor)){
 					// if block currently located at future position will not rotate,
 					//conflict, return false
-					if(!curNeighbor.isRotable()){
+					if(!curNeighbor.isRotatable()){
 						return false;
 					}
 
@@ -94,6 +94,7 @@ public class BlockManager : MonoBehaviour {
     public void startRotation(Int2 center)
     {
         this.currentlyRotating = getNeighbors(center);
+
         AbstractBlock centerBlock;
         if (grid.TryGetValue(center, out centerBlock))
         {
@@ -105,7 +106,10 @@ public class BlockManager : MonoBehaviour {
     {
         foreach (AbstractBlock b in currentlyRotating.Values)
         {
-            b.AnimateFrameOfRotation(center, direction, time);
+            if (b.isRotatable())
+            {
+                b.AnimateFrameOfRotation(center, direction, time);
+            }
         }
     }
 
@@ -114,13 +118,19 @@ public class BlockManager : MonoBehaviour {
         // Rotate each of the blocks and update our list to match
         foreach (Int2 pos in currentlyRotating.Keys)
         {
-			grid.Remove(pos);
-			currentlyRotating[pos].finishRotation(center, direction);
+            if (currentlyRotating[pos].isRotatable())
+            {
+                grid.Remove(pos);
+                currentlyRotating[pos].finishRotation(center, direction);
+            }
         }
 
 		foreach (Int2 pos in currentlyRotating.Keys)
 		{
-			grid.Add(currentlyRotating[pos].GetCurrentPosition(),currentlyRotating[pos]);
+            if (currentlyRotating[pos].isRotatable())
+            {
+                grid.Add(currentlyRotating[pos].GetCurrentPosition(), currentlyRotating[pos]);
+            }
 		}
         currentlyRotating = new Dictionary<Int2, AbstractBlock>();
     }
