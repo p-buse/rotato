@@ -10,7 +10,7 @@ public class FallingBlock : AbstractBlock {
 	public Int2 location;
 
 	void Start() {
-        fallClock = 1f;
+        fallClock = -1f;
         blockManager = GameObject.FindObjectOfType<BlockManager>();
 		location = new Int2(this.transform.position.x, this.transform.position.y);
 	}
