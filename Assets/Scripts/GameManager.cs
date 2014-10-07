@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour
     public Int2 currentRotationCenter;
     int currentRotationDirection = 0;
     float rotationClock = 0f;
-    enum RotationMode { playing, frozen, rotating };
-    RotationMode gameState = RotationMode.playing;
+    public enum RotationMode { playing, frozen, rotating };
+    public RotationMode gameState = RotationMode.playing;
     public bool gameFrozen
     {
         get

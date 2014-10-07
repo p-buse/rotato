@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -59,6 +60,21 @@ MonoBehaviour:
   currentRotationDirection: 0
   rotationClock: 0
   gameState: 0
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fa4c52eb1b4847459daa04a6a9140cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectionHighlightPrefab: {fileID: 100032, guid: be358ba3253a94349a34bbb1307c47fd,
+    type: 2}
+  rotationHighlightPrefab: {fileID: 100016, guid: ce8c766236b9691489df64677f5b2353,
+    type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
