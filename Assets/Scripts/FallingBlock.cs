@@ -24,7 +24,7 @@ public class FallingBlock : AbstractBlock {
 	}
 
 	void Update() {
-		if (!gameManager.rotationHappening) {
+		if (!gameManager.gameFrozen) {
 			Dictionary<Int2, AbstractBlock> grid = blockManager.grid;
 			if (fallClock >= 0.0f) {
 				fallClock += Time.deltaTime*3;

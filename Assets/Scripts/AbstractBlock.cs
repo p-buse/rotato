@@ -77,10 +77,9 @@ public abstract class AbstractBlock : MonoBehaviour
 	{
 		Int2 end = posAfterRotation (center, dir);
 		transform.position = new Vector3 (end.x, end.y, 0);
-        transform.rotation = Quaternion.identity;
 		blockSprite.transform.localPosition = new Vector3(0,0,0);
-		blockSprite.transform.rotation = Quaternion.identity;
 		orientation += dir;
+        blockSprite.transform.eulerAngles = new Vector3(0f, 0f, orientation * 90f);
 		if (this as FallingBlock != null) {
 			(this as FallingBlock).location = new Int2(this.transform.position.x, this.transform.position.y);
 		}

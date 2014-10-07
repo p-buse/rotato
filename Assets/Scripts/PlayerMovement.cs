@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!gameManager.rotationHappening)
+        if (!gameManager.gameFrozen)
         {
             rigidbody2D.gravityScale = 1f;
             rigidbody2D.velocity = new Vector2(horizontalVelocity, rigidbody2D.velocity.y);

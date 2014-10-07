@@ -16,4 +16,9 @@ public class FixedBlock : AbstractBlock {
 	public override Int2 posAfterRotation(Int2 center, int dir) {
 		return new Int2 (transform.position.x, transform.position.y);
 	}
+
+    public override void finishRotation(Int2 center, int dir)
+    {
+        
+    }
 }

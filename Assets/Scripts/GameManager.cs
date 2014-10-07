@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     float rotationClock = 0f;
     enum RotationMode { playing, frozen, rotating };
     RotationMode gameState = RotationMode.playing;
-    public bool rotationHappening
+    public bool gameFrozen
     {
         get
         {
@@ -64,18 +64,18 @@ public class GameManager : MonoBehaviour
                     if (rotationClock <= 0f)
                     {
                         // Rotate right!
-                        if (Input.GetKey(rotateRightKey))
+                        if (Input.GetKey(rotateRightKey) && blockManager.isValidRotation(currentRotationCenter, -1))
                         {
                             blockManager.startRotation(currentRotationCenter);
-                            rotationClock = secondsToRotate;
+                            rotationClock = 1f;
                             currentRotationDirection = -1;
                             gameState = RotationMode.rotating;
                         }
                         // Rotate left!
-                        else if (Input.GetKey(rotateLeftKey))
+                        else if (Input.GetKey(rotateLeftKey) && blockManager.isValidRotation(currentRotationCenter, 1))
                         {
                             blockManager.startRotation(currentRotationCenter);
-                            rotationClock = secondsToRotate;
+                            rotationClock = 1f;
                             currentRotationDirection = 1;
                             gameState = RotationMode.rotating;
                         }
@@ -86,9 +86,9 @@ public class GameManager : MonoBehaviour
 
             case RotationMode.rotating:
                 {
-					//check BlockManager for rotation clock, if it's done set gameState back to RotationMode.frozen
+					//check rotation clock, if it's done set gameState back to RotationMode.frozen
                     if (rotationClock > 0)
-                        rotationClock -= Time.deltaTime;
+                        rotationClock -= Time.deltaTime / secondsToRotate;
                     // If we're done rotating, finish the rotation
                     if (rotationClock <= 0)
                     {
@@ -114,5 +114,11 @@ public class GameManager : MonoBehaviour
 		}
 		return false;
 	}
+
+    public void WinLevel()
+    {
+        
+    }
+
 
 }

@@ -16,4 +16,17 @@ public class ButterBlock : AbstractBlock {
 	public override Int2 posAfterRotation(Int2 center, int dir) {
 		return new Int2 (transform.position.x, transform.position.y);
 	}
+
+    public override void finishRotation(Int2 center, int dir)
+    {
+        
+    }
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Player")
+        {
+            gameManager.WinLevel();
+        }
+    }
 }

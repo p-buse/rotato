@@ -9,7 +9,7 @@ public class BlockManager : MonoBehaviour {
     public Player player;
 
 	//direction: 1 for clockwise, -1 for counterclockwise
-    private bool isValidRotation(Int2 center, int direction)
+    public bool isValidRotation(Int2 center, int direction)
     {
         // Check if a rotation zone is valid
 
@@ -34,7 +34,7 @@ public class BlockManager : MonoBehaviour {
 		foreach(var position in neighbors.Keys){
 
 			//if neighbor invalidates rotation, return false:
-			if(!neighbors[position].invalidatesRotation()){
+			if(neighbors[position].invalidatesRotation()){
 				return false;
 			}
 		}
@@ -94,6 +94,11 @@ public class BlockManager : MonoBehaviour {
     public void startRotation(Int2 center)
     {
         this.currentlyRotating = getNeighbors(center);
+        AbstractBlock centerBlock;
+        if (grid.TryGetValue(center, out centerBlock))
+        {
+            this.currentlyRotating.Add(center, centerBlock);
+        }
     }
 
     public void AnimateFrameOfRotation(Int2 center, int direction, float time)
