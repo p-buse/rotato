@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[SerializePrivateVariables]
 public class GameManager : MonoBehaviour
 {
     public float secondsToRotate = 1f;
