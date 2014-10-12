@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 public class FallingBlock : AbstractBlock {
 
-    float fallClock;
+    public float fallClock;
     BlockManager blockManager;
-	bool whichHalf = true;
+	public bool whichHalf = true;
 	public Int2 location;
 
 	void Start() {
