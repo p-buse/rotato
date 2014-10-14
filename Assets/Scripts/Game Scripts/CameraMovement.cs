@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CameraMovement : MonoBehaviour {
 
+    // Here's the game manager.
 	GameManager gameManager;
 	Vector3 originalPosition;
     public bool zoomEnabled = false;
