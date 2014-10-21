@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraMovement : MonoBehaviour {
+public class CameraZoom : MonoBehaviour {
 
     // Here's the game manager.
     // more stuff

@@ -6,6 +6,8 @@ public class BlockManager : MonoBehaviour {
     
 	public Dictionary<Int2, AbstractBlock> grid; // changed to public so I can see and change it in falling blocks.  Also changed the value type to AbstractBlock.
     private Dictionary<Int2, AbstractBlock> currentlyRotating;
+    public GameObject spikiness;
+    [HideInInspector]
     public Player player;
 
 	//direction: 1 for clockwise, -1 for counterclockwise

@@ -15,7 +15,7 @@ public abstract class AbstractBlock : MonoBehaviour
 
     protected static GameManager gameManager;
 	protected Transform blockSprite;
-	public float orientation; //starts at 0, +1 = 1 90-degree turn ccw ?  we can tweak what this means. 
+	float orientation; //starts at 0, +1 = 1 90-degree turn ccw ?  we can tweak what this means. 
 	//in analog of position, probably want this to be discrete, while model has continuous EulerAngles instead
 
     void Awake()
@@ -80,6 +80,7 @@ public abstract class AbstractBlock : MonoBehaviour
 		blockSprite.transform.localPosition = new Vector3(0,0,0);
 		orientation += dir;
         blockSprite.transform.eulerAngles = new Vector3(0f, 0f, orientation * 90f);
+        // Round FallingBlocks' positions
 		if (this as FallingBlock != null) {
 			(this as FallingBlock).location = new Int2(this.transform.position.x, this.transform.position.y);
 		}
