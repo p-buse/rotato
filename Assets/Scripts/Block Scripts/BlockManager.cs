@@ -6,7 +6,6 @@ public class BlockManager : MonoBehaviour {
     
 	public Dictionary<Int2, AbstractBlock> grid; // changed to public so I can see and change it in falling blocks.  Also changed the value type to AbstractBlock.
     private Dictionary<Int2, AbstractBlock> currentlyRotating;
-    public GameObject spikiness;
     [HideInInspector]
     public Player player;
 
@@ -85,10 +84,6 @@ public class BlockManager : MonoBehaviour {
             if (!grid.ContainsKey(blockPosition))
             {
                 grid.Add(blockPosition, b);
-                if (b.spiky)
-                {
-                    AddSpikes(b);
-                }
             }
             else
             {
@@ -96,12 +91,6 @@ public class BlockManager : MonoBehaviour {
             }
         }
 	}
-
-    void AddSpikes(AbstractBlock b)
-    {
-        GameObject addedSpikes = Instantiate(spikiness, b.transform.position, Quaternion.identity) as GameObject;
-        addedSpikes.transform.parent = b.blockSprite.transform;
-    }
 
     public void startRotation(Int2 center)
     {

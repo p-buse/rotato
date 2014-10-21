@@ -12,6 +12,8 @@ public class SpikyBlock : MonoBehaviour
         {
             Debug.LogError("couldn't find game manager");
         }
+        // Set our parent to be the block sprite
+        transform.parent.parent = transform.parent.parent.Find("blockSprite");
     }
 
     void OnTriggerEnter2D(Collider2D coll)
