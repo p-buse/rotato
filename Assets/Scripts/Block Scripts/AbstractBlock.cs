@@ -12,9 +12,12 @@ public abstract class AbstractBlock : MonoBehaviour
     /// </summary>
     /// <returns>true if the block moves, false otherwise</returns>
     public abstract bool isRotatable();
-
+    /// <summary>
+    /// Is this block a spiky block?
+    /// </summary>
+    public bool spiky = false;
     protected static GameManager gameManager;
-	protected Transform blockSprite;
+	public Transform blockSprite;
 	float orientation; //starts at 0, +1 = 1 90-degree turn ccw ?  we can tweak what this means. 
 	//in analog of position, probably want this to be discrete, while model has continuous EulerAngles instead
 

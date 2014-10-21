@@ -5,7 +5,7 @@ public class SpikyBlock : MonoBehaviour
 {
     static GameManager gameManager;
 
-    void Awake()
+    void Start()
     {
         SpikyBlock.gameManager = FindObjectOfType<GameManager>();
         if (gameManager == null)
@@ -16,10 +16,13 @@ public class SpikyBlock : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        // If the player touches the spikes, skewer 'em! 
-        if (coll.gameObject.tag == "Player")
+        if (!gameManager.gameFrozen)
         {
-            this.SkewerPlayer();
+            // If the player touches the spikes, skewer 'em! 
+            if (coll.gameObject.tag == "Player")
+            {
+                this.SkewerPlayer();
+            }
         }
     }
 

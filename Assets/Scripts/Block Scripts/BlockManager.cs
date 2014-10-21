@@ -85,6 +85,10 @@ public class BlockManager : MonoBehaviour {
             if (!grid.ContainsKey(blockPosition))
             {
                 grid.Add(blockPosition, b);
+                if (b.spiky)
+                {
+                    AddSpikes(b);
+                }
             }
             else
             {
@@ -92,6 +96,12 @@ public class BlockManager : MonoBehaviour {
             }
         }
 	}
+
+    void AddSpikes(AbstractBlock b)
+    {
+        GameObject addedSpikes = Instantiate(spikiness, b.transform.position, Quaternion.identity) as GameObject;
+        addedSpikes.transform.parent = b.blockSprite.transform;
+    }
 
     public void startRotation(Int2 center)
     {
