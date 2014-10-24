@@ -8,9 +8,14 @@ public class FallingBlock : AbstractBlock {
     BlockManager blockManager;
 	public bool whichHalf = true;
 	public Int2 location;
+	public float initiatePush;
+	public float pushClock;
+	public int pushDirection;
 
 	void Start() {
         fallClock = -1f;
+		initiatePush = 0f;
+		pushClock = -1f;
         blockManager = GameObject.FindObjectOfType<BlockManager>();
 		location = new Int2(this.transform.position.x, this.transform.position.y);
 	}
@@ -20,13 +25,14 @@ public class FallingBlock : AbstractBlock {
 	}
 	
 	public override bool isRotatable() {
-		return fallClock < 0.0f;
+		return fallClock < 0f && pushClock < 0f;
 	}
 
 	void Update() {
 		if (!gameManager.gameFrozen) {
 			Dictionary<Int2, AbstractBlock> grid = blockManager.grid;
 			if (fallClock >= 0.0f) {
+				initiatePush = 0f;
 				fallClock += Time.deltaTime*3;
 				if (fallClock >= 1.0f && whichHalf) {
 					fallClock -= 1.0f;
@@ -73,6 +79,24 @@ public class FallingBlock : AbstractBlock {
 			Int2 belowThis = new Int2(location.x, location.y-1);
 			if (fallClock <= 0.0f && ((!grid.ContainsKey(belowThis) || (grid[belowThis] as FallingBlock != null && (grid[belowThis] as FallingBlock).fallClock >= 0.0f)) && !belowThis.Equals(blockManager.player.GetRoundedPosition()))) {
 				fallClock = 0.0f;
+			}
+			if (initiatePush > 0f && !blockManager.player.GetRoundedPosition().Equals(new Int2 (location.x - pushDirection, location.y))) {
+				initiatePush = 0f;
+			}
+			if (initiatePush >= 0.3f) {
+				initiatePush = 0f;
+				pushClock = 0f;
+				grid.Add (new Int2(location.x + pushDirection, location.y), this);
+			}
+			if (pushClock >= 0f) {
+				pushClock += Time.deltaTime * 3;
+				transform.position = new Vector3(location.x + pushClock * pushDirection, location.y, 0f);
+				if (pushClock >= 1f) {
+					pushClock = -1f;
+					grid.Remove (location);
+					location.x += pushDirection;
+					transform.position = new Vector3(location.x, location.y, 0f);
+				}
 			}
 		}
 	}
