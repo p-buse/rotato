@@ -48,6 +48,10 @@ public abstract class AbstractBlock : MonoBehaviour
     {
         AbstractBlock.gameManager = FindObjectOfType<GameManager>();
         this.blockSprite = transform.Find("blockSprite");
+        if (blockSprite == null)
+        {
+            Debug.LogError("block: " + gameObject + "at position: " + GetCurrentPosition() + " couldn't find its sprite!");
+        }
     }
 
 	public Int2 GetCurrentPosition()
