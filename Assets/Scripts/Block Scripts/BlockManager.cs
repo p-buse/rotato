@@ -113,8 +113,50 @@ public class BlockManager : MonoBehaviour {
         }
     }
 
-    public void finishRotation(Int2 center, int direction)
+	/// <summary>
+	/// Handles the cracked blocks' health and destruction, returns the blocks that didn't get destroyed by this rotation.
+	/// </summary>
+	/// <returns>The cracked.</returns>
+	/// <param name="currentlyRotating">Currently rotating.</param>
+	public Dictionary<Int2, AbstractBlock> handleCracked(Dictionary<Int2, AbstractBlock> currentlyRotating)
+	{
+		Dictionary<Int2, AbstractBlock> stillRotating = new Dictionary<Int2, AbstractBlock> ();		
+
+		foreach (Int2 pos in currentlyRotating.Keys) {
+
+			CrackedBlock cracked = currentlyRotating [pos] as CrackedBlock;
+			if (cracked != null) {
+				//decrement the health of cracked blocks
+				cracked.wasJustRotated ();
+			
+				//destroy them (before they're loaded back into the dictionary) if necessary
+				if (cracked.rotationsLeft < 0) 
+				{
+					//currentlyRotating.Remove(pos);
+					//if this block broke because of the rotation, destroy it and don't keep it in currentlyRotating
+					Destroy (cracked.gameObject);
+					//TODO: add animation here
+				} 
+				else 
+				{
+					//if this cracked block didn't break, keep it in currentlyRotating
+					stillRotating.Add (pos, cracked);
+				}
+			} 
+			else 
+			{
+				//if this wasn't cracked, keep it in currentlyRotating
+				stillRotating.Add (pos, currentlyRotating [pos]);
+			}
+		}
+		return stillRotating;
+	}
+
+
+
+	public void finishRotation(Int2 center, int direction)
     {
+		
         // Rotate each of the blocks and update our list to match
         foreach (Int2 pos in currentlyRotating.Keys)
         {
@@ -123,7 +165,11 @@ public class BlockManager : MonoBehaviour {
                 grid.Remove(pos);
                 currentlyRotating[pos].finishRotation(center, direction);
             }
-        }
+		}
+
+		//decrement cracked blocks' health, remove them if the break
+		currentlyRotating = handleCracked(currentlyRotating);
+
 
 		foreach (Int2 pos in currentlyRotating.Keys)
 		{
