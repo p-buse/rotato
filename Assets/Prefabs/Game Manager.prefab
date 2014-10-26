@@ -41,6 +41,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3260915cc33e7094d935c30d3182e445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spikiness: {fileID: 100000, guid: 2154c8c31402e7042b3fab4077971733, type: 2}
   player: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
@@ -56,9 +57,7 @@ MonoBehaviour:
   secondsToRotate: .300000012
   rotateRightKey: 101
   rotateLeftKey: 113
-  blockManager: {fileID: 0}
-  currentRotationDirection: 0
-  rotationClock: 0
+  resetKey: 114
   gameState: 0
 --- !u!114 &11400004
 MonoBehaviour:

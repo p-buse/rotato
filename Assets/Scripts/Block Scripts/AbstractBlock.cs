@@ -14,7 +14,7 @@ public abstract class AbstractBlock : MonoBehaviour
     public abstract bool isRotatable();
 
     protected static GameManager gameManager;
-	protected Transform blockSprite;
+	public Transform blockSprite;
     private int _orientation;
     /// <summary>
     /// starts at 0 for 12oclock, 1 for 9 oclock, 2 for 6 oclock, 3 for 3 oclock
@@ -106,6 +106,7 @@ public abstract class AbstractBlock : MonoBehaviour
 		blockSprite.transform.localPosition = new Vector3(0,0,0);
 		orientation += dir;
         blockSprite.transform.eulerAngles = new Vector3(0f, 0f, orientation * 90f);
+        // Round FallingBlocks' positions
 		if (this as FallingBlock != null) {
 			(this as FallingBlock).location = new Int2(this.transform.position.x, this.transform.position.y);
 		}
