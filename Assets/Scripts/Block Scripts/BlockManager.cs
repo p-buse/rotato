@@ -5,7 +5,7 @@ using System;
 public class BlockManager : MonoBehaviour {
     
 	public Dictionary<Int2, AbstractBlock> grid; // changed to public so I can see and change it in falling blocks.  Also changed the value type to AbstractBlock.
-    private Dictionary<Int2, AbstractBlock> currentlyRotating;
+    public Dictionary<Int2, AbstractBlock> currentlyRotating;
     public Player player;
 
 	//direction: 1 for clockwise, -1 for counterclockwise
@@ -55,7 +55,6 @@ public class BlockManager : MonoBehaviour {
 					if(!curNeighbor.isRotatable()){
 						return false;
 					}
-
 				}
 			}
 		}
@@ -114,42 +113,27 @@ public class BlockManager : MonoBehaviour {
     }
 
 	/// <summary>
-	/// Handles the cracked blocks' health and destruction, returns the blocks that didn't get destroyed by this rotation.
+	/// Handles the cracked blocks' health and destruction
 	/// </summary>
-	/// <returns>The cracked.</returns>
 	/// <param name="currentlyRotating">Currently rotating.</param>
-	public Dictionary<Int2, AbstractBlock> handleCracked(Dictionary<Int2, AbstractBlock> currentlyRotating)
+	public void handleCracked(Dictionary<Int2, AbstractBlock> currentlyRotating)
 	{
-		Dictionary<Int2, AbstractBlock> stillRotating = new Dictionary<Int2, AbstractBlock> ();		
-
 		foreach (Int2 pos in currentlyRotating.Keys) {
-
 			CrackedBlock cracked = currentlyRotating [pos] as CrackedBlock;
 			if (cracked != null) {
 				//decrement the health of cracked blocks
 				cracked.wasJustRotated ();
-			
 				//destroy them (before they're loaded back into the dictionary) if necessary
-				if (cracked.rotationsLeft < 0) 
+				if (cracked.rotationsLeft < 1) 
 				{
-					//currentlyRotating.Remove(pos);
-					//if this block broke because of the rotation, destroy it and don't keep it in currentlyRotating
+					//if this block broke because of the rotation, destroy it and don't keep it in the grid
+					grid.Remove(pos);
 					Destroy (cracked.gameObject);
 					//TODO: add animation here
 				} 
-				else 
-				{
-					//if this cracked block didn't break, keep it in currentlyRotating
-					stillRotating.Add (pos, cracked);
-				}
+			
 			} 
-			else 
-			{
-				//if this wasn't cracked, keep it in currentlyRotating
-				stillRotating.Add (pos, currentlyRotating [pos]);
-			}
 		}
-		return stillRotating;
 	}
 
 
@@ -167,10 +151,6 @@ public class BlockManager : MonoBehaviour {
             }
 		}
 
-		//decrement cracked blocks' health, remove them if the break
-		currentlyRotating = handleCracked(currentlyRotating);
-
-
 		foreach (Int2 pos in currentlyRotating.Keys)
 		{
             if (currentlyRotating[pos].isRotatable())
@@ -178,9 +158,9 @@ public class BlockManager : MonoBehaviour {
                 grid.Add(currentlyRotating[pos].GetCurrentPosition(), currentlyRotating[pos]);
             }
 		}
-        currentlyRotating = new Dictionary<Int2, AbstractBlock>();
-    }
 
+	}
+	
 	//returns a dictionary contining the non-empty neighbors of a center, not including the center
 	private Dictionary<Int2, AbstractBlock> getNeighbors(Int2 center){
 
@@ -206,5 +186,22 @@ public class BlockManager : MonoBehaviour {
 
 		return neighbors;
 
+	}
+
+	/// <summary>
+	/// Gets the block at position (x,y), x and y floats.
+	/// </summary>
+	/// <returns>The <see cref="AbstractBlock"/>.</returns>
+	/// <param name="x">The x coordinate.</param>
+	/// <param name="y">The y coordinate.</param>
+	public AbstractBlock getBlockAt(float x, float y)
+	{
+		Int2 pos = new Int2 (x, y);
+		AbstractBlock theBlock;
+		if (grid.TryGetValue (pos, out theBlock)) 
+		{
+			return theBlock;
+		}
+		return null;
 	}
 }

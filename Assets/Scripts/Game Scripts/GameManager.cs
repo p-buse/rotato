@@ -10,10 +10,11 @@ public class GameManager : MonoBehaviour
     public Int2 currentRotationCenter;
     int currentRotationDirection = 0;
     float rotationClock = 0f;
+	public int rotationsSinceFreezing;
     public enum RotationMode { playing, frozen, rotating };
     public RotationMode gameState = RotationMode.playing;
     public bool gameFrozen
-    {
+	{
         get
         {
             if (gameState == RotationMode.playing)
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
                         this.currentRotationCenter = new Int2(x, y);
 						if(isValidCenter(currentRotationCenter)){
 							gameState = RotationMode.frozen;
+							rotationsSinceFreezing=0;
 						}
 						
 					}
@@ -57,7 +59,14 @@ public class GameManager : MonoBehaviour
 					if(!Input.GetMouseButton(0))
 					{
                         if (this.rotationClock <= 0f)
+						{
 						    gameState = RotationMode.playing;
+							if(rotationsSinceFreezing%4!=0)
+								blockManager.handleCracked(blockManager.currentlyRotating);
+								
+						}
+					
+							
 					}
                     // If we're not already rotating
                     if (rotationClock <= 0f)
@@ -66,6 +75,7 @@ public class GameManager : MonoBehaviour
                         if (Input.GetKey(rotateRightKey) && blockManager.isValidRotation(currentRotationCenter, -1))
                         {
                             blockManager.startRotation(currentRotationCenter);
+							rotationsSinceFreezing-=1;
                             rotationClock = 1f;
                             currentRotationDirection = -1;
                             gameState = RotationMode.rotating;
@@ -74,6 +84,7 @@ public class GameManager : MonoBehaviour
                         else if (Input.GetKey(rotateLeftKey) && blockManager.isValidRotation(currentRotationCenter, 1))
                         {
                             blockManager.startRotation(currentRotationCenter);
+							rotationsSinceFreezing+=1;
                             rotationClock = 1f;
                             currentRotationDirection = 1;
                             gameState = RotationMode.rotating;
