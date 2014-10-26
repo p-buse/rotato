@@ -44,14 +44,27 @@ public abstract class AbstractBlock : MonoBehaviour
         }
     }
 
+    private int FindRotationAngle(Transform obj)
+    {
+        int rotationAngle = Mathf.RoundToInt(obj.eulerAngles.z);
+        rotationAngle = rotationAngle % 360;
+        if (rotationAngle < 0)
+        {
+            rotationAngle = 360 - rotationAngle;
+        }
+        return rotationAngle / 90;
+    }
+
     void Awake()
     {
-        AbstractBlock.gameManager = FindObjectOfType<GameManager>();
         this.blockSprite = transform.Find("blockSprite");
         if (blockSprite == null)
         {
             Debug.LogError("block: " + gameObject + "at position: " + GetCurrentPosition() + " couldn't find its sprite!");
         }
+        orientation = FindRotationAngle(blockSprite);
+        AbstractBlock.gameManager = FindObjectOfType<GameManager>();
+        
     }
 
 	public Int2 GetCurrentPosition()

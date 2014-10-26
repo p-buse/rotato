@@ -49,7 +49,7 @@ public class Int2
 
     public override string ToString()
     {
-        return "x: " + x + "\ny: " + y;
+        return "x: " + x + " y: " + y;
     }
 
     public Vector2 ToVector2()
