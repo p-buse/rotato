@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     float rotationClock = 0f;
     public enum RotationMode { playing, frozen, rotating };
     public RotationMode gameState = RotationMode.playing;
-    PlayerMovement player;
+    PlayerMovement playerMovement;
 
     public bool gameFrozen
     {
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         this.blockManager = FindObjectOfType<BlockManager>();
-        this.player = FindObjectOfType<PlayerMovement>();
+        this.playerMovement = FindObjectOfType<PlayerMovement>();
     }
 
     public void RegisterClick(float clickx, float clicky)
@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
 						int x = Mathf.RoundToInt(worldPos.x);
 						int y = Mathf.RoundToInt(worldPos.y);
                         this.currentRotationCenter = new Int2(x, y);
-						if(isValidCenter(currentRotationCenter) && player.isGrounded()){
+						if(isValidCenter(currentRotationCenter) && playerMovement.isGrounded() && !playerMovement.beingShot){
 							gameState = RotationMode.frozen;
 						}
 						
