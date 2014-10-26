@@ -15,8 +15,34 @@ public abstract class AbstractBlock : MonoBehaviour
 
     protected static GameManager gameManager;
 	protected Transform blockSprite;
-	public float orientation; //starts at 0, +1 = 1 90-degree turn ccw ?  we can tweak what this means. 
-	//in analog of position, probably want this to be discrete, while model has continuous EulerAngles instead
+    private float _orientation;
+    /// <summary>
+    /// starts at 0 for 12oclock, 1 for 9 oclock, 2 for 6 oclock, 3 for 3 oclock
+    /// orientation will be always constrained between 0 and 3
+    /// negative orientations get converted to their positive equivalent
+    /// </summary>
+    public float orientation
+    {
+        get
+        {
+            return _orientation;
+        }
+        set
+        {
+            if (value < 0)
+            {
+                _orientation = value + 4;
+            }
+            else if (value >= 4)
+            {
+                _orientation = value % 4;
+            }
+            else
+            {
+                _orientation = value;
+            }
+        }
+    }
 
     void Awake()
     {
