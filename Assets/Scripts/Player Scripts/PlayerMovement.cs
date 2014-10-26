@@ -15,10 +15,6 @@ public class PlayerMovement : MonoBehaviour
         }
         set
         {
-            if (value)
-                print("being shot!");
-            else
-                print("no longer being shot.");
             _beingShot = value;
         }
     }
