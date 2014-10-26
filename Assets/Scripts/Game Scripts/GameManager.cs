@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
     BlockManager blockManager;
     public Int2 currentRotationCenter;
     int currentRotationDirection = 0;
+	int rotationsSinceFreezing = 0;
+	public Salt[] salt;
+	public int saltSoFar = 0;
+	bool rotationEmpty;
     float rotationClock = 0f;
     public enum RotationMode { playing, frozen, rotating };
     public RotationMode gameState = RotationMode.playing;
@@ -26,6 +30,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         this.blockManager = FindObjectOfType<BlockManager>();
+		this.salt = GameObject.FindObjectsOfType<Salt>();
     }
 
     public void RegisterClick(float clickx, float clicky)
@@ -56,8 +61,23 @@ public class GameManager : MonoBehaviour
                 {
 					if(!Input.GetMouseButton(0))
 					{
-                        if (this.rotationClock <= 0f)
+                        if (this.rotationClock <= 0f) {
 						    gameState = RotationMode.playing;
+							if (rotationsSinceFreezing != 0 && !rotationEmpty) {
+								for (int i = 0; i < salt.Length; i++) {
+									Salt current = salt[i];
+									if (current != null) {
+										current.rotationsBeforeRemove--;
+										current.field.text = "" + current.rotationsBeforeRemove;
+										if (current.rotationsBeforeRemove == 0) {
+											Destroy(current.gameObject);
+											salt[i] = null;
+										}
+									}
+								}
+								rotationsSinceFreezing = 0;
+							}
+						}
 					}
                     // If we're not already rotating
                     if (rotationClock <= 0f)
@@ -68,6 +88,7 @@ public class GameManager : MonoBehaviour
                             blockManager.startRotation(currentRotationCenter);
                             rotationClock = 1f;
                             currentRotationDirection = -1;
+							rotationEmpty = blockManager.rotationEmpty();
                             gameState = RotationMode.rotating;
                         }
                         // Rotate left!
@@ -76,6 +97,7 @@ public class GameManager : MonoBehaviour
                             blockManager.startRotation(currentRotationCenter);
                             rotationClock = 1f;
                             currentRotationDirection = 1;
+							rotationEmpty = blockManager.rotationEmpty();
                             gameState = RotationMode.rotating;
                         }
                     }
@@ -92,6 +114,10 @@ public class GameManager : MonoBehaviour
                     if (rotationClock <= 0)
                     {
                         blockManager.finishRotation(currentRotationCenter, currentRotationDirection);
+						rotationsSinceFreezing += currentRotationDirection;
+						if (Mathf.Abs(rotationsSinceFreezing) == 4) {
+							rotationsSinceFreezing = 0;
+						}
                         gameState = RotationMode.frozen;
                     }
                     else
@@ -132,5 +158,8 @@ public class GameManager : MonoBehaviour
         Application.LoadLevel(Application.loadedLevel);
     }
 
+	void OnGUI() {
+		GUI.Label(new Rect(0,-5,100,50), "Salt: "+saltSoFar);
+	}
 
 }
