@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
 						int x = Mathf.RoundToInt(worldPos.x);
 						int y = Mathf.RoundToInt(worldPos.y);
                         this.currentRotationCenter = new Int2(x, y);
-						if(isValidCenter(currentRotationCenter) && playerMovement.isGrounded() && !playerMovement.beingShot){
+						if(isValidCenter(currentRotationCenter) && playerMovement.isGrounded() && !playerMovement.beingShot && !playerInNoRoZone()){
 							gameState = RotationMode.frozen;
 						}
 						
@@ -129,6 +129,16 @@ public class GameManager : MonoBehaviour
 			return true;
 		}
 		return false;
+	}
+
+	public bool playerInNoRoZone(){
+
+		Int2 playerPos = blockManager.player.GetRoundedPosition();
+		if (noRotationManager.hasNoRotationZone(playerPos)) {
+			return true;
+		}
+		return false;
+
 	}
 
     public void WinLevel()
