@@ -7,11 +7,10 @@ public class CannonBlock : AbstractBlock
     static PlayerMovement playerMovement;
     public float shootDelayTime = 1f;
     public float shootCooldownTime = 1f;
-    [SerializeField]
     float shootCoolDown = 0f;
     public float shootForce = 300f;
-    [SerializeField]
     float shotClock = 0f;
+    SpriteRenderer cannonSprite;
     bool shootPlayer = false;
     static Dictionary<int, Vector2> orientationToShootVectors = new Dictionary<int, Vector2>()
     {
@@ -24,19 +23,23 @@ public class CannonBlock : AbstractBlock
     void Start()
     {
         playerMovement = FindObjectOfType<PlayerMovement>();
+        cannonSprite = blockSprite.GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
         if (shootCoolDown > 0f)
         {
+            cannonSprite.color = Color.red;
             shootCoolDown -= Time.deltaTime;
+        }
+        else
+        {
+            cannonSprite.color = Color.white;
         }
         // We're waiting to shoot the player
         if (this.shotClock > 0f)
         {
-            //Hold the player in the cannon
-            playerMovement.transform.position = this.transform.position;
             // Count down to our shot
             shotClock -= Time.deltaTime;
             // We've reached shot time!
@@ -50,6 +53,12 @@ public class CannonBlock : AbstractBlock
 
     void FixedUpdate()
     {
+        if (shotClock > 0f)
+        {
+            // Hold the player in the cannon *a little in front of* where they should be so they don't get snagged on the floor
+            playerMovement.transform.position = this.transform.position + ((Vector3)orientationToShootVectors[orientation] / 10f);
+            playerMovement.rigidbody2D.velocity = Vector2.zero;
+        }
         if (shootPlayer)
         {
             ShootPlayer();
