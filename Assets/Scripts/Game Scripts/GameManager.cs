@@ -7,8 +7,11 @@ public class GameManager : MonoBehaviour
     public KeyCode rotateRightKey = KeyCode.E;
     public KeyCode rotateLeftKey = KeyCode.Q;
     public KeyCode resetKey = KeyCode.R;
-    BlockManager blockManager;
-    public Int2 currentRotationCenter;
+    
+	BlockManager blockManager;
+	NoRotationManager noRotationManager;
+
+	public Int2 currentRotationCenter;
     int currentRotationDirection = 0;
     float rotationClock = 0f;
     public enum RotationMode { playing, frozen, rotating };
@@ -30,6 +33,7 @@ public class GameManager : MonoBehaviour
     {
         this.blockManager = FindObjectOfType<BlockManager>();
         this.playerMovement = FindObjectOfType<PlayerMovement>();
+		this.noRotationManager = FindObjectOfType<NoRotationManager>();
     }
 
     public void RegisterClick(float clickx, float clicky)
@@ -112,6 +116,11 @@ public class GameManager : MonoBehaviour
     }
 
 	public bool isValidCenter(Int2 xy){
+
+		if (noRotationManager.hasNoRotationZone(xy)) {
+			return false;
+		}
+
 		Int2 playerPos = blockManager.player.GetRoundedPosition();
 		int absDx = Mathf.Abs (xy.x - playerPos.x);
 		int absDy = Mathf.Abs (xy.y - playerPos.y);
