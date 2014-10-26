@@ -6,12 +6,15 @@ public class GameManager : MonoBehaviour
     public float secondsToRotate = 1f;
     public KeyCode rotateRightKey = KeyCode.E;
     public KeyCode rotateLeftKey = KeyCode.Q;
+    public KeyCode resetKey = KeyCode.R;
     BlockManager blockManager;
     public Int2 currentRotationCenter;
     int currentRotationDirection = 0;
     float rotationClock = 0f;
     public enum RotationMode { playing, frozen, rotating };
     public RotationMode gameState = RotationMode.playing;
+    PlayerMovement player;
+
     public bool gameFrozen
     {
         get
@@ -26,6 +29,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         this.blockManager = FindObjectOfType<BlockManager>();
+        this.player = FindObjectOfType<PlayerMovement>();
     }
 
     public void RegisterClick(float clickx, float clicky)
@@ -34,6 +38,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKey(resetKey))
+        {
+            ResetLevel();
+        }
         switch (gameState)
         {
             case RotationMode.playing:
@@ -44,7 +52,7 @@ public class GameManager : MonoBehaviour
 						int x = Mathf.RoundToInt(worldPos.x);
 						int y = Mathf.RoundToInt(worldPos.y);
                         this.currentRotationCenter = new Int2(x, y);
-						if(isValidCenter(currentRotationCenter)){
+						if(isValidCenter(currentRotationCenter) && player.isGrounded()){
 							gameState = RotationMode.frozen;
 						}
 						

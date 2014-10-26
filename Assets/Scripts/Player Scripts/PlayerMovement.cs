@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    bool isGrounded()
+    public bool isGrounded()
     {
         return Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Solid"));
     }
