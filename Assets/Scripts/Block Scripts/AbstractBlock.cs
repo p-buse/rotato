@@ -15,13 +15,13 @@ public abstract class AbstractBlock : MonoBehaviour
 
     protected static GameManager gameManager;
 	protected Transform blockSprite;
-    private float _orientation;
+    private int _orientation;
     /// <summary>
     /// starts at 0 for 12oclock, 1 for 9 oclock, 2 for 6 oclock, 3 for 3 oclock
     /// orientation will be always constrained between 0 and 3
     /// negative orientations get converted to their positive equivalent
     /// </summary>
-    public float orientation
+    public int orientation
     {
         get
         {
