@@ -5,7 +5,7 @@ using System;
 public class BlockManager : MonoBehaviour {
     
 	public Dictionary<Int2, AbstractBlock> grid; // changed to public so I can see and change it in falling blocks.  Also changed the value type to AbstractBlock.
-    private Dictionary<Int2, AbstractBlock> currentlyRotating;
+    public Dictionary<Int2, AbstractBlock> currentlyRotating;
     [HideInInspector]
     public Player player;
 
@@ -56,7 +56,6 @@ public class BlockManager : MonoBehaviour {
 					if(!curNeighbor.isRotatable()){
 						return false;
 					}
-
 				}
 			}
 		}
@@ -114,8 +113,35 @@ public class BlockManager : MonoBehaviour {
         }
     }
 
-    public void finishRotation(Int2 center, int direction)
+	/// <summary>
+	/// Handles the cracked blocks' health and destruction
+	/// </summary>
+	/// <param name="currentlyRotating">Currently rotating.</param>
+	public void handleCracked(Dictionary<Int2, AbstractBlock> currentlyRotating)
+	{
+		foreach (Int2 pos in currentlyRotating.Keys) {
+			CrackedBlock cracked = currentlyRotating [pos] as CrackedBlock;
+			if (cracked != null) {
+				//decrement the health of cracked blocks
+				cracked.wasJustRotated ();
+				//destroy them (before they're loaded back into the dictionary) if necessary
+				if (cracked.rotationsLeft < 1) 
+				{
+					//if this block broke because of the rotation, destroy it and don't keep it in the grid
+					grid.Remove(pos);
+					Destroy (cracked.gameObject);
+					//TODO: add animation here
+				} 
+			
+			} 
+		}
+	}
+
+
+
+	public void finishRotation(Int2 center, int direction)
     {
+		
         // Rotate each of the blocks and update our list to match
         foreach (Int2 pos in currentlyRotating.Keys)
         {
@@ -124,7 +150,7 @@ public class BlockManager : MonoBehaviour {
                 grid.Remove(pos);
                 currentlyRotating[pos].finishRotation(center, direction);
             }
-        }
+		}
 
 		foreach (Int2 pos in currentlyRotating.Keys)
 		{
@@ -133,9 +159,9 @@ public class BlockManager : MonoBehaviour {
                 grid.Add(currentlyRotating[pos].GetCurrentPosition(), currentlyRotating[pos]);
             }
 		}
-        currentlyRotating = new Dictionary<Int2, AbstractBlock>();
-    }
 
+	}
+	
 	//returns a dictionary contining the non-empty neighbors of a center, not including the center
 	private Dictionary<Int2, AbstractBlock> getNeighbors(Int2 center){
 
@@ -165,5 +191,21 @@ public class BlockManager : MonoBehaviour {
 
 	public bool rotationEmpty() {
 		return currentlyRotating.Count == 0;
+		}
+	/// <summary>
+	/// Gets the block at position (x,y), x and y floats.
+	/// </summary>
+	/// <returns>The <see cref="AbstractBlock"/>.</returns>
+	/// <param name="x">The x coordinate.</param>
+	/// <param name="y">The y coordinate.</param>
+	public AbstractBlock getBlockAt(float x, float y)
+	{
+		Int2 pos = new Int2 (x, y);
+		AbstractBlock theBlock;
+		if (grid.TryGetValue (pos, out theBlock)) 
+		{
+			return theBlock;
+		}
+		return null;
 	}
 }

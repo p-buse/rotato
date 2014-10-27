@@ -73,8 +73,7 @@ public abstract class AbstractBlock : MonoBehaviour
 	}
 
 	/// <summary>
-	/// moves the block's model to be where it should at this stage of the rotation.  StaticBlocks override this? Currently this method
-	/// is both here and in the Block script
+	/// moves the block's model to be where it should at this stage of the rotation.  Non-rotatable blocks override this.
 	/// </summary>
 	/// <param name="center">Center.</param>
 	/// <param name="direction">Direction.</param>
@@ -87,11 +86,9 @@ public abstract class AbstractBlock : MonoBehaviour
 		int newdy = direction * dx;
 		Vector3 startVec = new Vector3(dx,dy,0);
 		Vector3 endVec = new Vector3(newdx,newdy,0);
-		
-		//I'm pretty sure this is right...
-		blockSprite.transform.localPosition = (Mathf.Cos(time * Mathf.PI / 2.0f)*startVec + Mathf.Sin(time*Mathf.PI/2.0f)*endVec) + new Vector3(-dx,-dy,0);
 
-		//absolute angle treatment
+		blockSprite.transform.localPosition = (Mathf.Cos(time * Mathf.PI / 2.0f)*startVec + Mathf.Sin(time*Mathf.PI/2.0f)*endVec) + new Vector3(-dx,-dy,0);
+		
 		blockSprite.transform.eulerAngles = new Vector3(0,0,90.0f*((1.0f-time)*orientation + time*(orientation + direction)));
 	}
 

@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     PlayerMovement playerMovement;
 
     public bool gameFrozen
-    {
+	{
         get
         {
             if (gameState == RotationMode.playing)
@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
                         this.currentRotationCenter = new Int2(x, y);
 						if(isValidCenter(currentRotationCenter) && playerMovement.isGrounded() && !playerMovement.beingShot && !playerInNoRoZone()){
 							gameState = RotationMode.frozen;
+							rotationsSinceFreezing=0;
 						}
 						
 					}
@@ -74,6 +75,7 @@ public class GameManager : MonoBehaviour
 					if(!Input.GetMouseButton(0))
 					{
                         if (this.rotationClock <= 0f) {
+						{
 						    gameState = RotationMode.playing;
 							if (rotationsSinceFreezing != 0 && !rotationEmpty) {
 								for (int i = 0; i < salt.Length; i++) {
@@ -81,6 +83,12 @@ public class GameManager : MonoBehaviour
 									if (current != null) {
 										current.rotationsBeforeRemove--;
 										current.field.text = "" + current.rotationsBeforeRemove;
+							if(rotationsSinceFreezing%4!=0)
+								blockManager.handleCracked(blockManager.currentlyRotating);
+								
+						}
+					
+							
 										if (current.rotationsBeforeRemove == 0) {
 											Destroy(current.gameObject);
 											salt[i] = null;
@@ -98,6 +106,7 @@ public class GameManager : MonoBehaviour
                         if (Input.GetKey(rotateRightKey) && blockManager.isValidRotation(currentRotationCenter, -1))
                         {
                             blockManager.startRotation(currentRotationCenter);
+							rotationsSinceFreezing-=1;
                             rotationClock = 1f;
                             currentRotationDirection = -1;
 							rotationEmpty = blockManager.rotationEmpty();
@@ -107,6 +116,7 @@ public class GameManager : MonoBehaviour
                         else if (Input.GetKey(rotateLeftKey) && blockManager.isValidRotation(currentRotationCenter, 1))
                         {
                             blockManager.startRotation(currentRotationCenter);
+							rotationsSinceFreezing+=1;
                             rotationClock = 1f;
                             currentRotationDirection = 1;
 							rotationEmpty = blockManager.rotationEmpty();

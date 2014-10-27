@@ -1705,6 +1705,8 @@ MonoBehaviour:
   rotateRightKey: 101
   rotateLeftKey: 113
   resetKey: 114
+  salt: []
+  saltSoFar: 0
   gameState: 0
 --- !u!4 &611917227
 Transform:
