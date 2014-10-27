@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Player : MonoBehaviour {
-    Plane[] cameraView;
     GameManager gameManager;
 	BlockManager blockManager;
 
