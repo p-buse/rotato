@@ -162,4 +162,8 @@ public class BlockManager : MonoBehaviour {
 		return neighbors;
 
 	}
+
+	public bool rotationEmpty() {
+		return currentlyRotating.Count == 0;
+	}
 }
