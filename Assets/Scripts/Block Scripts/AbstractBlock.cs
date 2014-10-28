@@ -46,7 +46,8 @@ public abstract class AbstractBlock : MonoBehaviour
         }
     }
 
-	private float heat = 0;
+	[HideInInspector]
+	public float heat = 0;
 
     private int FindRotationAngle(Transform obj)
     {

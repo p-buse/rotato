@@ -12,7 +12,7 @@ GameObject:
   - 61: {fileID: 6100000}
   m_Layer: 8
   m_Name: Cannon Block
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,6 +80,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05710b80778ab8f4188ccad168c18efd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
   shootDelayTime: .300000012
   shootCooldownTime: 1
   shootForce: 1000

@@ -46,7 +46,7 @@ public class LaserShooter : AbstractBlock {
 
 	void Update() {
 		if (!gameManager.gameFrozen) {
-			laser.SetPosition (0, ((Vector2)transform.position)-startPoint);
+			laser.SetPosition (0, startPoint - ((Vector2)transform.position));
 			RaycastHit2D hit = Physics2D.Raycast(startPoint, direction);
 			if (hit.collider != null) {
 				laser.SetPosition(1, new Vector2(Mathf.Abs(direction.x)*(hit.point.x-startPoint.x+direction.x*0.5f), Mathf.Abs(direction.y)*(hit.point.y-startPoint.y+direction.y*0.5f)));
