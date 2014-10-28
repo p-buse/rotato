@@ -193,6 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &39429989
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -993,6 +994,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &307136436
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1188,6 +1190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &351151741
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1383,6 +1386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &392137414
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1541,6 +1545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &458892128
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1641,6 +1646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &476804170
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1981,6 +1987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &628737725
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2037,6 +2044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &629035758
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2182,6 +2190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &701448429
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2251,6 +2260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &733167724
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2351,6 +2361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &813540402
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2394,6 +2405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &824334854
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2450,6 +2462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &827553147
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2563,6 +2576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &836432691
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3108,6 +3122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &1036688209
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3368,6 +3383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &1095567338
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3570,6 +3586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &1144640613
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3626,6 +3643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &1150028116
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3865,6 +3883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &1260833698
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4067,6 +4086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &1296830441
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4136,6 +4156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &1313378527
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4192,6 +4213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &1315878455
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4299,6 +4321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &1361186574
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4596,6 +4619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
   startPoint: {x: 0, y: 0}
   direction: {x: 0, y: 0}
 --- !u!4 &1413231657
@@ -4655,6 +4679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &1471470797
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4711,6 +4736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &1496587728
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4764,7 +4790,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: .29411763, g: .233564004, b: .168685108, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -5135,6 +5161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &1654142447
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5191,6 +5218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &1678275004
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5278,6 +5306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &1700168724
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5313,7 +5342,7 @@ GameObject:
   - 4: {fileID: 1726225422}
   - 212: {fileID: 1726225423}
   m_Layer: 0
-  m_Name: Player Sprite
+  m_Name: playerSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5531,6 +5560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &1793637324
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5695,6 +5725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &1863985545
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5751,6 +5782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &1875300168
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5838,6 +5870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &1914478413
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5951,6 +5984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &1926008990
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6085,6 +6119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &1987288299
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6293,6 +6328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &2005802858
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6460,6 +6496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &2065800020
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6503,6 +6540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  heat: 0
 --- !u!61 &2090082575
 BoxCollider2D:
   m_ObjectHideFlags: 0

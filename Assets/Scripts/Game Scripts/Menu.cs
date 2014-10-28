@@ -17,9 +17,12 @@ public class Menu : MonoBehaviour
         GUI.BeginGroup(new Rect(0, 100, 500, 500));
         for (int i = 0; i < Application.levelCount; i++)
         {
-            if (GUILayout.Button("Load the Level: " + i.ToString()))
+            if (i != 0)
             {
-                Application.LoadLevel(i);
+                if (GUILayout.Button("Load Level: " + i.ToString()))
+                {
+                    Application.LoadLevel(i);
+                }
             }
         }
         GUI.EndGroup();

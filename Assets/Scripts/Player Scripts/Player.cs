@@ -24,6 +24,7 @@ public class Player : MonoBehaviour {
 		Dictionary<Int2, AbstractBlock> grid = blockManager.grid;
         if (this.CrushedByBlock(grid, position))
         {
+            gameManager.PlaySound("Burnt"); // yes i know it doesn't match
             gameManager.LoseLevel("Crushed by falling blocks");
         }
     }
