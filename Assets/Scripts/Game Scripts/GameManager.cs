@@ -189,6 +189,12 @@ public class GameManager : MonoBehaviour
                     if (resetClock <= 0f)
                     {
                         ResetLevel();
+						Color starting = blockManager.player.transform.Find("playerSprite").GetComponent<SpriteRenderer>().color;
+						starting.a = 1f;
+						blockManager.player.transform.Find("playerSprite").GetComponent<SpriteRenderer>().color = starting;
+						starting = blockManager.player.transform.Find("frenchFries").GetComponent<SpriteRenderer>().color;
+						starting.a = 0f;
+						blockManager.player.transform.Find("frenchFries").GetComponent<SpriteRenderer>().color = starting;
                     }
                     break;
                 }
@@ -242,6 +248,12 @@ public class GameManager : MonoBehaviour
         {
             this.reasonForLosing = reasonForLosing;
             playerMovement.enabled = false;
+			Color starting = blockManager.player.transform.Find("playerSprite").GetComponent<SpriteRenderer>().color;
+			starting.a = 0f;
+			blockManager.player.transform.Find("playerSprite").GetComponent<SpriteRenderer>().color = starting;
+			starting = blockManager.player.transform.Find("frenchFries").GetComponent<SpriteRenderer>().color;
+			starting.a = 1f;
+			blockManager.player.transform.Find("frenchFries").GetComponent<SpriteRenderer>().color = starting;
             resetClock = winOrLoseCountdownTime;
             gameState = RotationMode.lost;
         }
