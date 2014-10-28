@@ -50,8 +50,9 @@ public class LaserShooter : AbstractBlock {
 			RaycastHit2D hit = Physics2D.Raycast(startPoint, direction);
 			if (hit.collider != null) {
 				laser.SetPosition(1, new Vector2(Mathf.Abs(direction.x)*(hit.point.x-startPoint.x+direction.x*0.5f), Mathf.Abs(direction.y)*(hit.point.y-startPoint.y+direction.y*0.5f)));
-				if (hit.collider.gameObject.tag == "Player") {
-					gameManager.ResetLevel();
+				if (hit.collider.gameObject.tag == "Player" && gameManager.gameState == GameManager.RotationMode.playing) {
+                    gameManager.PlaySound("Lasered");
+                    gameManager.LoseLevel("Evaporated by a laser");
 				}
 				else if (hit.collider.gameObject.tag == "Block") {
 					AbstractBlock blockHit = hit.collider.gameObject.GetComponent<AbstractBlock>();

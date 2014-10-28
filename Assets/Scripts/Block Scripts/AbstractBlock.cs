@@ -153,8 +153,9 @@ public abstract class AbstractBlock : MonoBehaviour
 	}
 
 	void OnCollisionStay2D(Collision2D coll) {
-		if (coll.collider.gameObject.tag == "Player" && heat >= 6f) {
-			gameManager.ResetLevel();
+		if (coll.collider.gameObject.tag == "Player" && heat >= 6f && gameManager.gameState == GameManager.RotationMode.playing) {
+            gameManager.PlaySound("Burnt");
+            gameManager.LoseLevel("Burnt by a hot block");
 		}
 	}
 }
