@@ -135,11 +135,11 @@ public abstract class AbstractBlock : MonoBehaviour
 
 	// Heat increases 2 per second while being lasered (2 here minus 1 in Update()) and decreases 1 per second without a laser.
 	// The player dies on contact with a block with heat 6 or higher, so a block will take 3 seconds to heat up to deadly levels.
-	// The maximum heat is 11, so a block without a laser on it will cool down to safe heat levels in 5 seconds.
+	// The maximum heat is 9, so a block without a laser on it will cool down to safe heat levels in 3 seconds.
 	public void addHeat() {
 		heat += Time.deltaTime * 3;
-		if (heat > 11f) {
-			heat = 11f;
+		if (heat > 9f) {
+			heat = 9f;
 		}
 	}
 
@@ -149,7 +149,7 @@ public abstract class AbstractBlock : MonoBehaviour
 			if (heat < 0f) {
 				heat = 0f;
 			}
-			blockSpriteRenderer.color = new Color(1f, 1f - heat / 11f, 1f - heat / 11f);
+			blockSpriteRenderer.color = new Color(1f, 1f - heat / 9f, 1f - heat / 9f);
 		}
 	}
 
