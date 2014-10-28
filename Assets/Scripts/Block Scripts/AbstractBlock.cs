@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public abstract class AbstractBlock : MonoBehaviour
 {
@@ -14,9 +15,11 @@ public abstract class AbstractBlock : MonoBehaviour
     public abstract bool isRotatable();
 
     protected static GameManager gameManager;
+
     protected static BlockManager blockManager;
 	public Transform blockSprite;
 	public SpriteRenderer blockSpriteRenderer;
+	public List<CrawlerMovement> crawlers;
     private int _orientation;
     /// <summary>
     /// starts at 0 for 12oclock, 1 for 9 oclock, 2 for 6 oclock, 3 for 3 oclock
@@ -58,7 +61,9 @@ public abstract class AbstractBlock : MonoBehaviour
             rotationAngle = 360 - rotationAngle;
         }
         return rotationAngle / 90;
-    }
+	}
+
+
 
     void Awake()
     {
@@ -97,9 +102,16 @@ public abstract class AbstractBlock : MonoBehaviour
 		blockSprite.transform.localPosition = (Mathf.Cos(time * Mathf.PI / 2.0f)*startVec + Mathf.Sin(time*Mathf.PI/2.0f)*endVec) + new Vector3(-dx,-dy,0);
 		
 		blockSprite.transform.eulerAngles = new Vector3(0,0,90.0f*((1.0f-time)*orientation + time*(orientation + direction)));
+
+
+		for(int i = 0; i<crawlers.Count;i++)
+		{
+			crawlers[i].AnimateFrameOfRotation(center, direction, time);
+			
+		}
+
 	}
 
-	//not sure if this should be in AbstractBlock or just individual blocks.  Probably here.
 	/// <summary>
 	/// computes and returns the destination Int2
 	/// </summary>
@@ -131,7 +143,14 @@ public abstract class AbstractBlock : MonoBehaviour
 		if (this as FallingBlock != null) {
 			(this as FallingBlock).location = new Int2(this.transform.position.x, this.transform.position.y);
 		}
+
+		for(int i = 0; i<crawlers.Count;i++)
+		{
+			crawlers[i].finishRotation(center, dir);
+			
+		}
 	}
+
 
 	// Heat increases 2 per second while being lasered (2 here minus 1 in Update()) and decreases 1 per second without a laser.
 	// The player dies on contact with a block with heat 6 or higher, so a block will take 3 seconds to heat up to deadly levels.
@@ -159,4 +178,9 @@ public abstract class AbstractBlock : MonoBehaviour
             gameManager.LoseLevel("Burnt by a hot block");
 		}
 	}
+
+	
+
+	
+
 }

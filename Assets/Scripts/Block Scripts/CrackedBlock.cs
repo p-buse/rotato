@@ -30,6 +30,11 @@ public class CrackedBlock : AbstractBlock {
 		numberDisplayObject.transform.localPosition = (Mathf.Cos(time * Mathf.PI / 2.0f)*startVec + Mathf.Sin(time*Mathf.PI/2.0f)*endVec) + new Vector3(-dx,-dy,0);
 
 		blockSprite.transform.eulerAngles = new Vector3(0,0,90.0f*((1.0f-time)*orientation + time*(orientation + direction)));
+		for(int i = 0; i<crawlers.Count;i++)
+		{
+			crawlers[i].AnimateFrameOfRotation(center, direction, time);
+			
+		}
 	}
 
 	public override void finishRotation(Int2 center, int dir)
@@ -51,7 +56,6 @@ public class CrackedBlock : AbstractBlock {
 	void Update()
 	{
 		numberDisplay.sprite = numberSprites [rotationsLeft];
-		//number.guiText.text = rotationsLeft.ToString();
 	}
 
 	/// <summary>
@@ -60,20 +64,19 @@ public class CrackedBlock : AbstractBlock {
 	/// Destroying this block is left to the BlockManager
 	/// </summary>
 	public void wasJustRotated(){
-        //if(rotationsLeft ==1)
-        //{
-        //    CrawlerMovement[] myCrawlers = GetComponentsInChildren<CrawlerMovement>();
-        //    for(int i=0;i<myCrawlers.Length;i++ )
-        //    {
-        //        CrawlerMovement c = myCrawlers[i];
-        //        c.myBlock = null;
-        //        c.falling = true;
-        //    }
-        //}
+
+		if(rotationsLeft ==1)
+		{
+
+			for(int i=0;i<crawlers.Count;i++ )
+			{
+				CrawlerMovement c = crawlers[i];
+				c.myBlock = null;
+				c.falling = true;
+			}
+		}
+
 		rotationsLeft--;
-		//number.guiText.text = rotationsLeft.ToString();
-		//how do I do this?
-//		numberDisplay.renderer.material.mainTexture = Resources.Load("Sprites/"+rotationsLeft+".png", Texture2D);	// Set the texture.  Must be in Resources folder.
 
 	}
 }
