@@ -18,7 +18,7 @@ public class Player : MonoBehaviour {
 		Dictionary<Int2, AbstractBlock> grid = blockManager.grid;
         if (this.CrushedByBlock(grid, position))
         {
-            gameManager.ResetLevel();
+            gameManager.LoseLevel("Crushed by falling blocks");
         }
     }
 

@@ -24,9 +24,10 @@ public class DeadlyCamera : MonoBehaviour
         }
         Plane[] cameraView = GeometryUtility.CalculateFrustumPlanes(camera);
         // If the player is outside the frame, reset the level
-        if (!GeometryUtility.TestPlanesAABB(cameraView, playerCollider.bounds))
+        if (gameManager.gameState == GameManager.RotationMode.playing && !GeometryUtility.TestPlanesAABB(cameraView, playerCollider.bounds))
         {
-            gameManager.ResetLevel();
+            gameManager.PlaySound("Fall");
+            gameManager.LoseLevel("Fell out of the world");
         }
     }
 }

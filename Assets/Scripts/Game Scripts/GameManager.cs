@@ -11,20 +11,26 @@ public class GameManager : MonoBehaviour
     BlockManager blockManager;
     NoRotationManager noRotationManager;
     SoundManager soundManager;
+    PlayerMovement playerMovement;
+    [HideInInspector]
+    public Salt[] salt;
+
+    public float winOrLoseCountdownTime = 2f;
+    float resetClock = 0f;
+    string reasonForLosing = "";
 
     public Int2 currentRotationCenter;
     int currentRotationDirection = 0;
     int rotationsSinceFreezing = 0;
-    [HideInInspector]
-    public Salt[] salt;
+    
     [HideInInspector]
     public int saltSoFar = 0;
     bool rotationEmpty;
     float rotationClock = 0f;
-    public enum RotationMode { playing, frozen, rotating };
+    public enum RotationMode { playing, frozen, rotating, won, lost };
     [HideInInspector]
     public RotationMode gameState = RotationMode.playing;
-    PlayerMovement playerMovement;
+    
 
     public bool gameFrozen
     {
@@ -171,6 +177,26 @@ public class GameManager : MonoBehaviour
                     }
                     break;
                 }
+
+            case RotationMode.won:
+                {
+                    resetClock -= Time.deltaTime;
+                    if (resetClock <= 0f)
+                    {
+                        GoToNextLevel();
+                    }
+                    break;
+                }
+            case RotationMode.lost:
+                {
+                    resetClock -= Time.deltaTime;
+                    if (resetClock <= 0f)
+                    {
+                        ResetLevel();
+                    }
+                    break;
+                }
+
         }
     }
 
@@ -206,6 +232,27 @@ public class GameManager : MonoBehaviour
 
     public void WinLevel()
     {
+        if (gameState == RotationMode.playing)
+        {
+            playerMovement.gameObject.SetActive(false);
+            resetClock = winOrLoseCountdownTime;
+            gameState = RotationMode.won;
+        }
+    }
+
+    public void LoseLevel(string reasonForLosing)
+    {
+        if (gameState == RotationMode.playing)
+        {
+            this.reasonForLosing = reasonForLosing;
+            playerMovement.gameObject.SetActive(false);
+            resetClock = winOrLoseCountdownTime;
+            gameState = RotationMode.lost;
+        }
+    }
+
+    void GoToNextLevel()
+    {
         int loadedLevel = Application.loadedLevel;
         if (loadedLevel < Application.levelCount - 1)
         {
@@ -217,14 +264,34 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ResetLevel()
+    void ResetLevel()
     {
         Application.LoadLevel(Application.loadedLevel);
     }
 
     void OnGUI()
     {
-        GUI.Label(new Rect(0, -5, 100, 50), "Salt: " + saltSoFar);
+        GUIStyle style = new GUIStyle();
+        style.richText = true;
+        switch (gameState)
+        {
+            case RotationMode.playing:
+                {
+                    GUI.Label(new Rect(0, -5, 100, 50), "Salt: " + saltSoFar);
+                    break;
+                }
+            case RotationMode.lost:
+                {
+                    GUI.Label(new Rect(Screen.width/2,Screen.height/2 - 200,200,200),"<size=100>YOU LOSE!!!</size>", style);
+                    GUI.Label(new Rect(Screen.width/2, Screen.height/2, 200, 200),"<size=30>" + reasonForLosing + "</size>", style);
+                    break;
+                }
+            case RotationMode.won:
+                {
+                    GUI.Label(new Rect(Screen.width / 2, Screen.height / 2 - 200, 200, 200), "<size=100>You WIN!!</size>", style);
+                    break;
+                }
+        }
     }
 
 }

@@ -24,8 +24,9 @@ public class ButterBlock : AbstractBlock {
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "Player")
+        if (coll.gameObject.tag == "Player" && gameManager.gameState == GameManager.RotationMode.playing)
         {
+            gameManager.PlaySound("Win");
             gameManager.WinLevel();
         }
     }

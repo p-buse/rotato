@@ -70,6 +70,18 @@ public class HighlightManager : MonoBehaviour {
                     rotationHighlight.SetActive(false);
                     break;
                 }
+            case GameManager.RotationMode.won:
+                {
+                    selectionHighlight.SetActive(false);
+                    rotationHighlight.SetActive(false);
+                    break;
+                }
+            case GameManager.RotationMode.lost:
+                {
+                    selectionHighlight.SetActive(false);
+                    rotationHighlight.SetActive(false);
+                    break;
+                }
         }
         
     }

@@ -23,6 +23,7 @@ public class SpikyBlock : MonoBehaviour
             // If the player touches the spikes, skewer 'em! 
             if (coll.gameObject.tag == "Player")
             {
+                gameManager.PlaySound("Skewer");
                 this.SkewerPlayer();
             }
         }
@@ -30,6 +31,6 @@ public class SpikyBlock : MonoBehaviour
 
     public void SkewerPlayer()
     {
-        gameManager.ResetLevel();
+        gameManager.LoseLevel("Skewered by spikes!");
     }
 }
