@@ -44,6 +44,8 @@ public abstract class AbstractBlock : MonoBehaviour
         }
     }
 
+	private float heat = 0;
+
     private int FindRotationAngle(Transform obj)
     {
         int rotationAngle = Mathf.RoundToInt(obj.eulerAngles.z);
@@ -129,4 +131,9 @@ public abstract class AbstractBlock : MonoBehaviour
 		}
 	}
 
+	void Update() {
+		if (!gameManager.gameFrozen && heat > 0f) {
+			heat -= Time.deltaTime;
+		}
+	}
 }
