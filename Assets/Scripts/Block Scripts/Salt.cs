@@ -24,6 +24,7 @@ public class Salt : AbstractBlock {
 					break;
 				}
 			}
+            blockManager.grid.Remove(location);
 			Destroy(this.gameObject);
 			gameManager.saltSoFar++;
 		}

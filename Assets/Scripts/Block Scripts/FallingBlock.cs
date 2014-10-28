@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public class FallingBlock : AbstractBlock {
 
     public float fallClock;
-    BlockManager blockManager;
 	public bool whichHalf = true;
 	public Int2 location;
 	public float initiatePush;

@@ -14,6 +14,7 @@ public abstract class AbstractBlock : MonoBehaviour
     public abstract bool isRotatable();
 
     protected static GameManager gameManager;
+    protected static BlockManager blockManager;
 	public Transform blockSprite;
     private int _orientation;
     /// <summary>
@@ -64,6 +65,7 @@ public abstract class AbstractBlock : MonoBehaviour
         }
         orientation = FindRotationAngle(blockSprite);
         AbstractBlock.gameManager = FindObjectOfType<GameManager>();
+        AbstractBlock.blockManager = FindObjectOfType<BlockManager>();
         
     }
 

@@ -7,23 +7,23 @@ public class GameManager : MonoBehaviour
     public KeyCode rotateRightKey = KeyCode.E;
     public KeyCode rotateLeftKey = KeyCode.Q;
     public KeyCode resetKey = KeyCode.R;
-    
-	BlockManager blockManager;
-	NoRotationManager noRotationManager;
 
-	public Int2 currentRotationCenter;
+    BlockManager blockManager;
+    NoRotationManager noRotationManager;
+
+    public Int2 currentRotationCenter;
     int currentRotationDirection = 0;
-	int rotationsSinceFreezing = 0;
-	public Salt[] salt;
-	public int saltSoFar = 0;
-	bool rotationEmpty;
+    int rotationsSinceFreezing = 0;
+    public Salt[] salt;
+    public int saltSoFar = 0;
+    bool rotationEmpty;
     float rotationClock = 0f;
     public enum RotationMode { playing, frozen, rotating };
     public RotationMode gameState = RotationMode.playing;
     PlayerMovement playerMovement;
 
     public bool gameFrozen
-	{
+    {
         get
         {
             if (gameState == RotationMode.playing)
@@ -37,8 +37,8 @@ public class GameManager : MonoBehaviour
     {
         this.blockManager = FindObjectOfType<BlockManager>();
         this.playerMovement = FindObjectOfType<PlayerMovement>();
-		this.salt = GameObject.FindObjectsOfType<Salt>();
-		this.noRotationManager = FindObjectOfType<NoRotationManager>();
+        this.salt = GameObject.FindObjectsOfType<Salt>();
+        this.noRotationManager = FindObjectOfType<NoRotationManager>();
     }
 
     public void RegisterClick(float clickx, float clicky)
@@ -55,50 +55,57 @@ public class GameManager : MonoBehaviour
         {
             case RotationMode.playing:
                 {
-					if(Input.GetMouseButtonDown(0))
-					{
-						Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-						int x = Mathf.RoundToInt(worldPos.x);
-						int y = Mathf.RoundToInt(worldPos.y);
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                        int x = Mathf.RoundToInt(worldPos.x);
+                        int y = Mathf.RoundToInt(worldPos.y);
                         this.currentRotationCenter = new Int2(x, y);
-						if(isValidCenter(currentRotationCenter) && playerMovement.isGrounded() && !playerMovement.beingShot && !playerInNoRoZone()){
-							gameState = RotationMode.frozen;
-							rotationsSinceFreezing=0;
-						}
-						
-					}
+                        if (isValidCenter(currentRotationCenter) && playerMovement.isGrounded() && !playerMovement.beingShot && !playerInNoRoZone())
+                        {
+                            gameState = RotationMode.frozen;
+                            rotationsSinceFreezing = 0;
+                        }
+
+                    }
                     break;
                 }
 
             case RotationMode.frozen: //game is frozen, left-click is held, but no rotation is happening
                 {
-					if(!Input.GetMouseButton(0))
-					{
-                        if (this.rotationClock <= 0f) {
-						{
-						    gameState = RotationMode.playing;
-							if (rotationsSinceFreezing != 0 && !rotationEmpty) {
-								for (int i = 0; i < salt.Length; i++) {
-									Salt current = salt[i];
-									if (current != null) {
-										current.rotationsBeforeRemove--;
-										current.field.text = "" + current.rotationsBeforeRemove;
-							if(rotationsSinceFreezing%4!=0)
-								blockManager.handleCracked(blockManager.currentlyRotating);
-								
-						}
-					
-							
-										if (current.rotationsBeforeRemove == 0) {
-											Destroy(current.gameObject);
-											salt[i] = null;
-										}
-									}
-								}
-								rotationsSinceFreezing = 0;
-							}
-						}
-					}
+                    if (!Input.GetMouseButton(0))
+                    {
+                        if (this.rotationClock <= 0f)
+                        {
+                            {
+                                gameState = RotationMode.playing;
+                                if (rotationsSinceFreezing % 4 != 0)
+                                {
+                                    blockManager.handleCracked(blockManager.currentlyRotating);
+                                }
+                                if (rotationsSinceFreezing != 0 && !rotationEmpty)
+                                {
+                                    for (int i = 0; i < salt.Length; i++)
+                                    {
+                                        Salt current = salt[i];
+                                        if (current != null)
+                                        {
+                                            current.rotationsBeforeRemove--;
+                                            current.field.text = "" + current.rotationsBeforeRemove;
+                                            if (current.rotationsBeforeRemove == 0)
+                                            {
+                                                blockManager.grid.Remove(current.GetCurrentPosition());
+                                                Destroy(current.gameObject);
+                                                salt[i] = null;
+                                            }
+                                        }
+
+                                    }
+                                }
+                                rotationsSinceFreezing = 0;
+                            }
+                        }
+                    }
                     // If we're not already rotating
                     if (rotationClock <= 0f)
                     {
@@ -106,20 +113,20 @@ public class GameManager : MonoBehaviour
                         if (Input.GetKey(rotateRightKey) && blockManager.isValidRotation(currentRotationCenter, -1))
                         {
                             blockManager.startRotation(currentRotationCenter);
-							rotationsSinceFreezing-=1;
+                            rotationsSinceFreezing -= 1;
                             rotationClock = 1f;
                             currentRotationDirection = -1;
-							rotationEmpty = blockManager.rotationEmpty();
+                            rotationEmpty = blockManager.rotationEmpty();
                             gameState = RotationMode.rotating;
                         }
                         // Rotate left!
                         else if (Input.GetKey(rotateLeftKey) && blockManager.isValidRotation(currentRotationCenter, 1))
                         {
                             blockManager.startRotation(currentRotationCenter);
-							rotationsSinceFreezing+=1;
+                            rotationsSinceFreezing += 1;
                             rotationClock = 1f;
                             currentRotationDirection = 1;
-							rotationEmpty = blockManager.rotationEmpty();
+                            rotationEmpty = blockManager.rotationEmpty();
                             gameState = RotationMode.rotating;
                         }
                     }
@@ -129,17 +136,18 @@ public class GameManager : MonoBehaviour
 
             case RotationMode.rotating:
                 {
-					//check rotation clock, if it's done set gameState back to RotationMode.frozen
+                    //check rotation clock, if it's done set gameState back to RotationMode.frozen
                     if (rotationClock > 0)
                         rotationClock -= Time.deltaTime / secondsToRotate;
                     // If we're done rotating, finish the rotation
                     if (rotationClock <= 0)
                     {
                         blockManager.finishRotation(currentRotationCenter, currentRotationDirection);
-						rotationsSinceFreezing += currentRotationDirection;
-						if (Mathf.Abs(rotationsSinceFreezing) == 4) {
-							rotationsSinceFreezing = 0;
-						}
+                        rotationsSinceFreezing += currentRotationDirection;
+                        if (Mathf.Abs(rotationsSinceFreezing) == 4)
+                        {
+                            rotationsSinceFreezing = 0;
+                        }
                         gameState = RotationMode.frozen;
                     }
                     else
@@ -151,35 +159,39 @@ public class GameManager : MonoBehaviour
         }
     }
 
-	public bool isValidCenter(Int2 xy){
+    public bool isValidCenter(Int2 xy)
+    {
 
-		if (noRotationManager.hasNoRotationZone(xy)) {
-			return false;
-		}
+        if (noRotationManager.hasNoRotationZone(xy))
+        {
+            return false;
+        }
 
-		Int2 playerPos = blockManager.player.GetRoundedPosition();
-		int absDx = Mathf.Abs (xy.x - playerPos.x);
-		int absDy = Mathf.Abs (xy.y - playerPos.y);
-		if ((absDx <= 2 && absDy <= 2) && (absDx == 2 || absDy == 2 || (absDx == 0 && absDy == 0))) 
-		{
-			return true;
-		}
-		return false;
-	}
+        Int2 playerPos = blockManager.player.GetRoundedPosition();
+        int absDx = Mathf.Abs(xy.x - playerPos.x);
+        int absDy = Mathf.Abs(xy.y - playerPos.y);
+        if ((absDx <= 2 && absDy <= 2) && (absDx == 2 || absDy == 2 || (absDx == 0 && absDy == 0)))
+        {
+            return true;
+        }
+        return false;
+    }
 
-	public bool playerInNoRoZone(){
+    public bool playerInNoRoZone()
+    {
 
-		Int2 playerPos = blockManager.player.GetRoundedPosition();
-		if (noRotationManager.hasNoRotationZone(playerPos)) {
-			return true;
-		}
-		return false;
+        Int2 playerPos = blockManager.player.GetRoundedPosition();
+        if (noRotationManager.hasNoRotationZone(playerPos))
+        {
+            return true;
+        }
+        return false;
 
-	}
+    }
 
     public void WinLevel()
     {
-		int loadedLevel = Application.loadedLevel;
+        int loadedLevel = Application.loadedLevel;
         if (loadedLevel < Application.levelCount - 1)
         {
             Application.LoadLevel(loadedLevel + 1);
@@ -195,8 +207,9 @@ public class GameManager : MonoBehaviour
         Application.LoadLevel(Application.loadedLevel);
     }
 
-	void OnGUI() {
-		GUI.Label(new Rect(0,-5,100,50), "Salt: "+saltSoFar);
-	}
+    void OnGUI()
+    {
+        GUI.Label(new Rect(0, -5, 100, 50), "Salt: " + saltSoFar);
+    }
 
 }
