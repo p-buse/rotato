@@ -16,6 +16,7 @@ public abstract class AbstractBlock : MonoBehaviour
     protected static GameManager gameManager;
     protected static BlockManager blockManager;
 	public Transform blockSprite;
+	public SpriteRenderer blockSpriteRenderer;
     private int _orientation;
     /// <summary>
     /// starts at 0 for 12oclock, 1 for 9 oclock, 2 for 6 oclock, 3 for 3 oclock
@@ -45,6 +46,8 @@ public abstract class AbstractBlock : MonoBehaviour
         }
     }
 
+	private float heat = 0;
+
     private int FindRotationAngle(Transform obj)
     {
         int rotationAngle = Mathf.RoundToInt(obj.eulerAngles.z);
@@ -59,6 +62,7 @@ public abstract class AbstractBlock : MonoBehaviour
     void Awake()
     {
         this.blockSprite = transform.Find("blockSprite");
+		this.blockSpriteRenderer = blockSprite.GetComponent<SpriteRenderer> ();
         if (blockSprite == null)
         {
             Debug.LogError("block: " + gameObject + "at position: " + GetCurrentPosition() + " couldn't find its sprite!");
@@ -128,4 +132,29 @@ public abstract class AbstractBlock : MonoBehaviour
 		}
 	}
 
+	// Heat increases 2 per second while being lasered (2 here minus 1 in Update()) and decreases 1 per second without a laser.
+	// The player dies on contact with a block with heat 6 or higher, so a block will take 3 seconds to heat up to deadly levels.
+	// The maximum heat is 11, so a block without a laser on it will cool down to safe heat levels in 5 seconds.
+	public void addHeat() {
+		heat += Time.deltaTime * 3;
+		if (heat > 11f) {
+			heat = 11f;
+		}
+	}
+
+	void Update() {
+		if (!gameManager.gameFrozen && heat > 0f) {
+			heat -= Time.deltaTime;
+			if (heat < 0f) {
+				heat = 0f;
+			}
+			blockSpriteRenderer.color = new Color(1f, 1f - heat / 11f, 1f - heat / 11f);
+		}
+	}
+
+	void OnCollisionStay2D(Collision2D coll) {
+		if (coll.collider.gameObject.tag == "Player" && heat >= 6f) {
+			gameManager.ResetLevel();
+		}
+	}
 }
