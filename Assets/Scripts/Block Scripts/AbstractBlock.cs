@@ -143,7 +143,7 @@ public abstract class AbstractBlock : MonoBehaviour
 		}
 	}
 
-	void Update() {
+	void LateUpdate() {
 		if (!gameManager.gameFrozen && heat > 0f) {
 			heat -= Time.deltaTime;
 			if (heat < 0f) {
