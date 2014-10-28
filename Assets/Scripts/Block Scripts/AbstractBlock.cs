@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public abstract class AbstractBlock : MonoBehaviour
 {
@@ -14,9 +15,11 @@ public abstract class AbstractBlock : MonoBehaviour
     public abstract bool isRotatable();
 
     protected static GameManager gameManager;
-	protected Transform blockSprite;
+	public Transform blockSprite; //public so that crawlers can cling to them
 	public float orientation; //starts at 0, +1 = 1 90-degree turn ccw ?  we can tweak what this means. 
 	//in analog of position, probably want this to be discrete, while model has continuous EulerAngles instead
+
+	public List<CrawlerMovement> crawlers;
 
     void Awake()
     {
@@ -47,9 +50,16 @@ public abstract class AbstractBlock : MonoBehaviour
 		blockSprite.transform.localPosition = (Mathf.Cos(time * Mathf.PI / 2.0f)*startVec + Mathf.Sin(time*Mathf.PI/2.0f)*endVec) + new Vector3(-dx,-dy,0);
 		
 		blockSprite.transform.eulerAngles = new Vector3(0,0,90.0f*((1.0f-time)*orientation + time*(orientation + direction)));
+
+
+		for(int i = 0; i<crawlers.Count;i++)
+		{
+			crawlers[i].AnimateFrameOfRotation(center, direction, time);
+			
+		}
+
 	}
 
-	//not sure if this should be in AbstractBlock or just individual blocks.  Probably here.
 	/// <summary>
 	/// computes and returns the destination Int2
 	/// </summary>
@@ -80,6 +90,18 @@ public abstract class AbstractBlock : MonoBehaviour
 		if (this as FallingBlock != null) {
 			(this as FallingBlock).location = new Int2(this.transform.position.x, this.transform.position.y);
 		}
-	}
 
+//		CrawlerMovement[] myCrawlers = GetComponentsInChildren<CrawlerMovement>();
+//		for(int i=0;i<myCrawlers.Length;i++ )
+//		{
+//			myCrawlers[i].rotate(dir);
+//
+//		}
+		for(int i = 0; i<crawlers.Count;i++)
+		{
+			crawlers[i].finishRotation(center, dir);
+			
+		}
+	}
+	
 }
