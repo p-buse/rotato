@@ -5,7 +5,7 @@ public class CrackedBlock : AbstractBlock {
 	//displayed on the model.  if this is 0 and it's rotated again, after the rotation this block will diappear.
 	//because this is public, it can be set individually from the unity scene, right?
 	public int rotationsLeft;
-	Transform number;
+
 	Transform numberDisplayObject;
 	public SpriteRenderer numberDisplay;
 	public Sprite[] numberSprites;
@@ -60,6 +60,16 @@ public class CrackedBlock : AbstractBlock {
 	/// Destroying this block is left to the BlockManager
 	/// </summary>
 	public void wasJustRotated(){
+		if(rotationsLeft ==1)
+		{
+			CrawlerMovement[] myCrawlers = GetComponentsInChildren<CrawlerMovement>();
+			for(int i=0;i<myCrawlers.Length;i++ )
+			{
+				CrawlerMovement c = myCrawlers[i];
+				c.myBlock = null;
+				c.falling = true;
+			}
+		}
 		rotationsLeft--;
 		//number.guiText.text = rotationsLeft.ToString();
 		//how do I do this?

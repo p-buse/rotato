@@ -99,8 +99,7 @@ public class GameManager : MonoBehaviour
                                 PlaySound("ExitRotation");
                                 gameState = RotationMode.playing;
                                 if (rotationsSinceFreezing % 4 != 0)
-                                {
-                                    blockManager.handleCracked(blockManager.currentlyRotating);
+								blockManager.handleCracked(blockManager.justRotated);
                                 }
                                 if (rotationsSinceFreezing != 0 && !rotationEmpty)
                                 {
