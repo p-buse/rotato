@@ -119,12 +119,10 @@ public class BlockManager : MonoBehaviour {
 	/// <param name="justRotated">blocks just rotated.</param>
 	public void handleCracked(Dictionary<Int2, AbstractBlock> justRotated)
 	{
-		//Dictionary<Int2, AbstractBlock> stillThere = new Dictionary<Int2,AbstractBlock>();
-		foreach (Int2 pos in justRotated.Keys) {
-
+		foreach (Int2 pos in justRotated.Keys) 
+		{
 			CrackedBlock cracked = justRotated [pos] as CrackedBlock;
 			if (cracked != null) {
-				//grid.Remove(pos);
 				//decrement the health of cracked blocks
 				cracked.wasJustRotated ();
 				//destroy them if necessary
@@ -135,13 +133,8 @@ public class BlockManager : MonoBehaviour {
 					Destroy (cracked.gameObject);
 					//TODO: add animation here
 				} 
-//				else
-//				{
-//					stillThere.Add(pos,cracked);
-//				}
 			}
 		}
-		//currentlyRotating = new Dictionary<Int2,AbstractBlock>();
 	}
 
 
