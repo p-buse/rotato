@@ -62,6 +62,7 @@ public class CannonBlock : AbstractBlock
         if (shootPlayer)
         {
             ShootPlayer();
+            gameManager.PlaySound("CannonShot");
             shootPlayer = false;
         }
     }
@@ -93,6 +94,7 @@ public class CannonBlock : AbstractBlock
                 // Player enters the cannon
                 shotClock = shootDelayTime;
                 playerMovement.beingShot = true;
+                gameManager.PlaySound("Charge");
             }
         }
     }

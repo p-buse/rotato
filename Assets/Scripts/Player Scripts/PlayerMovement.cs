@@ -92,6 +92,7 @@ public class PlayerMovement : MonoBehaviour
                 if (jumping == true && isGrounded())
                 {
                     rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+                    gameManager.PlaySound("Jump");
                     jumping = false;
                 }
             }
@@ -112,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (this.beingShot && coll.gameObject.tag == "Block")
         {
+            gameManager.PlaySound("HitWall");
             this.beingShot = false;
         }
     }

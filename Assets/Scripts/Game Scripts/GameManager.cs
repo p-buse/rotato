@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     BlockManager blockManager;
     NoRotationManager noRotationManager;
+    SoundManager soundManager;
 
     public Int2 currentRotationCenter;
     int currentRotationDirection = 0;
@@ -38,11 +39,18 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        this.soundManager = FindObjectOfType<SoundManager>();
         this.blockManager = FindObjectOfType<BlockManager>();
         this.playerMovement = FindObjectOfType<PlayerMovement>();
         this.salt = GameObject.FindObjectsOfType<Salt>();
         this.noRotationManager = FindObjectOfType<NoRotationManager>();
     }
+
+    public void PlaySound(string soundName)
+    {
+        soundManager.PlayClip(soundName);
+    }
+
 
     public void RegisterClick(float clickx, float clicky)
     {
@@ -66,6 +74,7 @@ public class GameManager : MonoBehaviour
                         this.currentRotationCenter = new Int2(x, y);
                         if (isValidCenter(currentRotationCenter) && playerMovement.isGrounded() && !playerMovement.beingShot && !playerInNoRoZone())
                         {
+                            PlaySound("EnterRotation");
                             gameState = RotationMode.frozen;
                             rotationsSinceFreezing = 0;
                         }
@@ -81,6 +90,7 @@ public class GameManager : MonoBehaviour
                         if (this.rotationClock <= 0f)
                         {
                             {
+                                PlaySound("ExitRotation");
                                 gameState = RotationMode.playing;
                                 if (rotationsSinceFreezing % 4 != 0)
                                 {
@@ -115,6 +125,7 @@ public class GameManager : MonoBehaviour
                         // Rotate right!
                         if (Input.GetKey(rotateRightKey) && blockManager.isValidRotation(currentRotationCenter, -1))
                         {
+                            PlaySound("RotateRight");
                             blockManager.startRotation(currentRotationCenter);
                             rotationsSinceFreezing -= 1;
                             rotationClock = 1f;
@@ -125,6 +136,7 @@ public class GameManager : MonoBehaviour
                         // Rotate left!
                         else if (Input.GetKey(rotateLeftKey) && blockManager.isValidRotation(currentRotationCenter, 1))
                         {
+                            PlaySound("RotateLeft");
                             blockManager.startRotation(currentRotationCenter);
                             rotationsSinceFreezing += 1;
                             rotationClock = 1f;

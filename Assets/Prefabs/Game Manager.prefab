@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400006}
+  - 114: {fileID: 11400008}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: -2.35607076, y: 10.1360292, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -58,6 +59,8 @@ MonoBehaviour:
   rotateRightKey: 101
   rotateLeftKey: 113
   resetKey: 114
+  salt: []
+  saltSoFar: 0
   gameState: 0
 --- !u!114 &11400004
 MonoBehaviour:
@@ -86,6 +89,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9cd38fec86ab91459bf239e3f0c8e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d456900436838834eb2a6d3d7ec13ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipList:
+  - name: Jump
+    clips:
+    - {fileID: 8300000, guid: 9d9f97fbbaa2c354aadf8f80e6f5cc7c, type: 3}
+  - name: Select
+    clips:
+    - {fileID: 8300000, guid: 629da75c3a7bb404a8a784e45915ef90, type: 3}
+  - name: Death
+    clips:
+    - {fileID: 8300000, guid: c2563488ab755ca4c8ccf39b10ac27b1, type: 3}
+  - name: Charge
+    clips:
+    - {fileID: 8300000, guid: 55347f109b64fff48b0c698a012b8eb0, type: 3}
+  - name: EnterRotation
+    clips:
+    - {fileID: 8300000, guid: 2a45639d1fc4b184a835c5ebc02699f3, type: 3}
+  - name: ExitRotation
+    clips:
+    - {fileID: 8300000, guid: 1b03bccdcfc6c124aa0b53a3326768fe, type: 3}
+  - name: RotateRight
+    clips:
+    - {fileID: 8300000, guid: ed286973f2bd7304596cda21e0f304ea, type: 3}
+  - name: CannonShot
+    clips:
+    - {fileID: 8300000, guid: b5246f2e8cf40f145903e576f18a9248, type: 3}
+  - name: RotateLeft
+    clips:
+    - {fileID: 8300000, guid: f093ebbf522e9de48a78f5281d73b4c1, type: 3}
+  - name: PushBlock
+    clips:
+    - {fileID: 8300000, guid: a8be7865a0b69694894ac8c1b9a7016f, type: 3}
+  - name: HitWall
+    clips:
+    - {fileID: 8300000, guid: e8a796aa5479e664a81bd432036b2246, type: 3}
+  - name: GetSalt
+    clips:
+    - {fileID: 8300000, guid: 5eaae34dd6676064cbf1a37856a51e2a, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

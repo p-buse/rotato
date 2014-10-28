@@ -83,6 +83,7 @@ public class FallingBlock : AbstractBlock {
 				initiatePush = 0f;
 			}
 			if (initiatePush >= 0.3f) {
+                gameManager.PlaySound("PushBlock");
 				initiatePush = 0f;
 				pushClock = 0f;
 				grid.Add (new Int2(location.x + pushDirection, location.y), this);
