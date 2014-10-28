@@ -60,16 +60,16 @@ public class CrackedBlock : AbstractBlock {
 	/// Destroying this block is left to the BlockManager
 	/// </summary>
 	public void wasJustRotated(){
-		if(rotationsLeft ==1)
-		{
-			CrawlerMovement[] myCrawlers = GetComponentsInChildren<CrawlerMovement>();
-			for(int i=0;i<myCrawlers.Length;i++ )
-			{
-				CrawlerMovement c = myCrawlers[i];
-				c.myBlock = null;
-				c.falling = true;
-			}
-		}
+        //if(rotationsLeft ==1)
+        //{
+        //    CrawlerMovement[] myCrawlers = GetComponentsInChildren<CrawlerMovement>();
+        //    for(int i=0;i<myCrawlers.Length;i++ )
+        //    {
+        //        CrawlerMovement c = myCrawlers[i];
+        //        c.myBlock = null;
+        //        c.falling = true;
+        //    }
+        //}
 		rotationsLeft--;
 		//number.guiText.text = rotationsLeft.ToString();
 		//how do I do this?

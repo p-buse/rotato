@@ -152,7 +152,6 @@ public class GameManager : MonoBehaviour
                     }
 
                     break;
-                }
 
             case RotationMode.rotating:
                 {
