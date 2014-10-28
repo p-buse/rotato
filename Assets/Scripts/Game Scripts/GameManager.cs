@@ -234,7 +234,7 @@ public class GameManager : MonoBehaviour
     {
         if (gameState == RotationMode.playing)
         {
-            playerMovement.gameObject.SetActive(false);
+            playerMovement.enabled = false;
             resetClock = winOrLoseCountdownTime;
             gameState = RotationMode.won;
         }
@@ -245,7 +245,7 @@ public class GameManager : MonoBehaviour
         if (gameState == RotationMode.playing)
         {
             this.reasonForLosing = reasonForLosing;
-            playerMovement.gameObject.SetActive(false);
+            playerMovement.enabled = false;
             resetClock = winOrLoseCountdownTime;
             gameState = RotationMode.lost;
         }

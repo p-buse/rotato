@@ -605,7 +605,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &44103327
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -735,7 +736,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &46586530
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -905,7 +907,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &48950486
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -960,7 +963,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &54411103
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1110,7 +1114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &101985215
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1165,7 +1170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &102552533
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1308,7 +1314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &144054934
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1641,7 +1648,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &203835849
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1696,7 +1704,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &204428089
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1719,7 +1728,7 @@ GameObject:
   - 4: {fileID: 205332422}
   - 212: {fileID: 205332421}
   m_Layer: 0
-  m_Name: butterSprite
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1789,7 +1798,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &215566209
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1844,7 +1854,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &224830192
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1943,7 +1954,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &230820826
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1998,7 +2010,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &238500206
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2104,7 +2117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &242164430
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2223,7 +2237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &256658049
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2404,7 +2419,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &313974070
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2472,7 +2488,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &333390064
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2514,7 +2531,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &337417624
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2828,7 +2846,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9194cfb77a88c4e45a3ed1d3e3f34373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!1001 &384558267
 Prefab:
   m_ObjectHideFlags: 0
@@ -3061,7 +3080,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &432243124
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3211,7 +3231,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &460996942
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3310,7 +3331,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &512804216
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3352,7 +3374,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &560313677
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3624,7 +3647,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &592320211
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3679,7 +3703,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &629478840
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3702,7 +3727,7 @@ GameObject:
   - 4: {fileID: 656170608}
   - 212: {fileID: 656170609}
   m_Layer: 1
-  m_Name: Salt
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3772,7 +3797,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &658631787
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3935,7 +3961,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &702402051
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4041,7 +4068,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &720242767
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4171,7 +4199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &760098178
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4226,7 +4255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &821205084
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4294,7 +4324,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &828211231
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4349,7 +4380,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301b7c62cce1a424fb2e9e62cfd5b974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &831539141
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4543,7 +4575,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &908977663
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4792,7 +4825,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &952533291
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5037,7 +5071,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301b7c62cce1a424fb2e9e62cfd5b974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &997063585
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5143,7 +5178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1009898238
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5273,7 +5309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1024742660
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5619,7 +5656,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1078228319
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5809,7 +5847,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4dc70ef498c422fa28cc1f40de50cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
   rotationsBeforeRemove: 3
   field: {fileID: 0}
 --- !u!58 &1091078516
@@ -6391,7 +6430,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1156822191
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6510,7 +6550,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1199351245
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6817,7 +6858,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1257598004
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6973,7 +7015,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1286006355
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7079,7 +7122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1293510500
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7165,7 +7209,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301b7c62cce1a424fb2e9e62cfd5b974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1315505074
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7233,7 +7278,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1327116623
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7421,7 +7467,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1360298711
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7489,7 +7536,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1366429863
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7531,7 +7579,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1375633371
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7650,7 +7699,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1380098981
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8020,7 +8070,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1459711285
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8177,7 +8228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1482548348
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8232,7 +8284,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1483782767
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8287,7 +8340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1520301887
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8393,7 +8447,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1529959312
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8486,7 +8541,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1555524964
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8592,7 +8648,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1575663173
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8647,7 +8704,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1594984863
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8941,7 +8999,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1625480346
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9104,7 +9163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1640761172
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9241,7 +9301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1653626107
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9605,9 +9666,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 1804655561}
   - 58: {fileID: 1804655560}
+  - 58: {fileID: 1804655563}
   - 50: {fileID: 1804655559}
   - 114: {fileID: 1804655558}
   - 114: {fileID: 1804655557}
+  - 81: {fileID: 1804655562}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -9641,7 +9704,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21710d9d5e9368f4e89c608e901cb4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resetButton: 114
 --- !u!50 &1804655559
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -9684,6 +9746,26 @@ Transform:
   - {fileID: 1253443843}
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!81 &1804655562
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8100000, guid: b3d363273a7a33c4e8e759299619d45e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1017577819}
+  m_GameObject: {fileID: 1804655556}
+  m_Enabled: 1
+--- !u!58 &1804655563
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: b3d363273a7a33c4e8e759299619d45e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1017577819}
+  m_GameObject: {fileID: 1804655556}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: .209999993}
 --- !u!1 &1806525806
 GameObject:
   m_ObjectHideFlags: 0
@@ -9713,7 +9795,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301b7c62cce1a424fb2e9e62cfd5b974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1806525808
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9825,7 +9908,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1829011170
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10006,7 +10090,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1859349007
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10169,7 +10254,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1904213861
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10407,7 +10493,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301b7c62cce1a424fb2e9e62cfd5b974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1954051803
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10785,7 +10872,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &2040025277
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10853,7 +10941,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &2044494045
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10939,7 +11028,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &2050675768
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11007,7 +11097,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &2060466801
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11031,6 +11122,8 @@ GameObject:
   - 114: {fileID: 2074004408}
   - 114: {fileID: 2074004407}
   - 114: {fileID: 2074004410}
+  - 114: {fileID: 2074004412}
+  - 114: {fileID: 2074004411}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -11066,7 +11159,9 @@ MonoBehaviour:
   secondsToRotate: .300000012
   rotateRightKey: 101
   rotateLeftKey: 113
+  resetKey: 114
   salt: []
+  winOrLoseCountdownTime: 2
   saltSoFar: 0
   gameState: 0
 --- !u!4 &2074004409
@@ -11093,10 +11188,84 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa4c52eb1b4847459daa04a6a9140cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highlightColor: {r: .162555203, g: .463235319, b: .122621119, a: .427450985}
   selectionHighlightPrefab: {fileID: 100032, guid: be358ba3253a94349a34bbb1307c47fd,
     type: 2}
   rotationHighlightPrefab: {fileID: 100016, guid: ce8c766236b9691489df64677f5b2353,
     type: 2}
+--- !u!114 &2074004411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 1245326933}
+  m_GameObject: {fileID: 2074004406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d456900436838834eb2a6d3d7ec13ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipList:
+  - name: Jump
+    clips:
+    - {fileID: 8300000, guid: 9d9f97fbbaa2c354aadf8f80e6f5cc7c, type: 3}
+  - name: Select
+    clips:
+    - {fileID: 8300000, guid: 629da75c3a7bb404a8a784e45915ef90, type: 3}
+  - name: Skewer
+    clips:
+    - {fileID: 8300000, guid: c2563488ab755ca4c8ccf39b10ac27b1, type: 3}
+  - name: Charge
+    clips:
+    - {fileID: 8300000, guid: 55347f109b64fff48b0c698a012b8eb0, type: 3}
+  - name: EnterRotation
+    clips:
+    - {fileID: 8300000, guid: 2a45639d1fc4b184a835c5ebc02699f3, type: 3}
+  - name: ExitRotation
+    clips:
+    - {fileID: 8300000, guid: 1b03bccdcfc6c124aa0b53a3326768fe, type: 3}
+  - name: RotateRight
+    clips:
+    - {fileID: 8300000, guid: ed286973f2bd7304596cda21e0f304ea, type: 3}
+  - name: CannonShot
+    clips:
+    - {fileID: 8300000, guid: b5246f2e8cf40f145903e576f18a9248, type: 3}
+  - name: RotateLeft
+    clips:
+    - {fileID: 8300000, guid: f093ebbf522e9de48a78f5281d73b4c1, type: 3}
+  - name: PushBlock
+    clips:
+    - {fileID: 8300000, guid: a8be7865a0b69694894ac8c1b9a7016f, type: 3}
+  - name: HitWall
+    clips:
+    - {fileID: 8300000, guid: e8a796aa5479e664a81bd432036b2246, type: 3}
+  - name: GetSalt
+    clips:
+    - {fileID: 8300000, guid: 5eaae34dd6676064cbf1a37856a51e2a, type: 3}
+  - name: Fall
+    clips:
+    - {fileID: 8300000, guid: 24bd33d0a275a0b4f90a70bb521fb612, type: 3}
+  - name: Win
+    clips:
+    - {fileID: 8300000, guid: ffb60e0ce3936f544b04969765b3ccbf, type: 3}
+  - name: Lasered
+    clips:
+    - {fileID: 8300000, guid: 8dd65767d6e4c5046944ee5780fe1dcd, type: 3}
+  - name: Burnt
+    clips:
+    - {fileID: 8300000, guid: d32ecd85be19a114b9c866fd08e6154b, type: 3}
+--- !u!114 &2074004412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400006, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 1245326933}
+  m_GameObject: {fileID: 2074004406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9cd38fec86ab91459bf239e3f0c8e46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2078741205
 GameObject:
   m_ObjectHideFlags: 0
@@ -11108,7 +11277,6 @@ GameObject:
   - 20: {fileID: 2078741209}
   - 92: {fileID: 2078741208}
   - 124: {fileID: 2078741207}
-  - 81: {fileID: 2078741206}
   - 114: {fileID: 2078741211}
   m_Layer: 0
   m_Name: Main Camera
@@ -11117,13 +11285,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &2078741206
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2078741205}
-  m_Enabled: 1
 --- !u!124 &2078741207
 Behaviour:
   m_ObjectHideFlags: 0
@@ -11194,6 +11355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoomEnabled: 0
+  followPlayer: 0
   closeZoom: 2
   farZoom: 7
   zoomSpeed: 6
@@ -11239,7 +11401,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &2081133029
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11484,7 +11647,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &2118313233
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11628,7 +11792,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &2137464225
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11734,7 +11899,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80e04addf0ba4ae998f41c8ac2b01b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &2140806801
 BoxCollider2D:
   m_ObjectHideFlags: 0
