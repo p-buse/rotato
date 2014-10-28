@@ -177,14 +177,7 @@ public class CrawlerMovement : MonoBehaviour
 	}
 
 	
-	void OnCollisionEnter2D(Collision2D coll) {
-		if (coll.gameObject.tag == "Player") 
-		{
-			//kill player
-			gameManager.ResetLevel();
-			
-		}
-	}
+
 	
 	private Vector2 floatToV2(float direction)
 	{

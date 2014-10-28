@@ -28,14 +28,14 @@ public class CrawlerSegment : MonoBehaviour {
 
 	}
 
-	public Int2 GetRoundedPosition()
+	void OnCollisionEnter2D(Collision2D coll) 
 	{
-		return new Int2(transform.position.x, transform.position.y);
-	}
-
-	private Vector3 floatToV3(float direction)
-	{
-		return new Vector3 (Mathf.Cos (direction * Mathf.PI / 2.0f), Mathf.Sin (direction * Mathf.PI / 2.0f),0);
+		if (coll.gameObject.tag == "Player") 
+		{
+			//kill player
+			gameManager.LoseLevel("Eaten by a Crawler!");
+			
+		}
 	}
 	
 }
