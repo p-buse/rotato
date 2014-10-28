@@ -263,6 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &106014911
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -791,6 +792,7 @@ GameObject:
   - 50: {fileID: 262637810}
   - 114: {fileID: 262637809}
   - 114: {fileID: 262637808}
+  - 81: {fileID: 262637814}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -878,6 +880,14 @@ Transform:
   - {fileID: 893542115}
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!81 &262637814
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8100000, guid: b3d363273a7a33c4e8e759299619d45e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1725579131}
+  m_GameObject: {fileID: 262637807}
+  m_Enabled: 1
 --- !u!1001 &318728859
 Prefab:
   m_ObjectHideFlags: 0
@@ -952,6 +962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &320088493
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1641,6 +1652,7 @@ GameObject:
   - 114: {fileID: 611917225}
   - 114: {fileID: 611917224}
   - 114: {fileID: 611917223}
+  - 114: {fileID: 611917228}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -1707,6 +1719,7 @@ MonoBehaviour:
   rotateLeftKey: 113
   resetKey: 114
   salt: []
+  winOrLoseCountdownTime: 2
   saltSoFar: 0
   gameState: 0
 --- !u!4 &611917227
@@ -1721,6 +1734,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!114 &611917228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 773309404}
+  m_GameObject: {fileID: 611917222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d456900436838834eb2a6d3d7ec13ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipList:
+  - name: Jump
+    clips:
+    - {fileID: 8300000, guid: 9d9f97fbbaa2c354aadf8f80e6f5cc7c, type: 3}
+  - name: Select
+    clips:
+    - {fileID: 8300000, guid: 629da75c3a7bb404a8a784e45915ef90, type: 3}
+  - name: Skewer
+    clips:
+    - {fileID: 8300000, guid: c2563488ab755ca4c8ccf39b10ac27b1, type: 3}
+  - name: Charge
+    clips:
+    - {fileID: 8300000, guid: 55347f109b64fff48b0c698a012b8eb0, type: 3}
+  - name: EnterRotation
+    clips:
+    - {fileID: 8300000, guid: 2a45639d1fc4b184a835c5ebc02699f3, type: 3}
+  - name: ExitRotation
+    clips:
+    - {fileID: 8300000, guid: 1b03bccdcfc6c124aa0b53a3326768fe, type: 3}
+  - name: RotateRight
+    clips:
+    - {fileID: 8300000, guid: ed286973f2bd7304596cda21e0f304ea, type: 3}
+  - name: CannonShot
+    clips:
+    - {fileID: 8300000, guid: b5246f2e8cf40f145903e576f18a9248, type: 3}
+  - name: RotateLeft
+    clips:
+    - {fileID: 8300000, guid: f093ebbf522e9de48a78f5281d73b4c1, type: 3}
+  - name: PushBlock
+    clips:
+    - {fileID: 8300000, guid: a8be7865a0b69694894ac8c1b9a7016f, type: 3}
+  - name: HitWall
+    clips:
+    - {fileID: 8300000, guid: e8a796aa5479e664a81bd432036b2246, type: 3}
+  - name: GetSalt
+    clips:
+    - {fileID: 8300000, guid: 5eaae34dd6676064cbf1a37856a51e2a, type: 3}
+  - name: Fall
+    clips:
+    - {fileID: 8300000, guid: 24bd33d0a275a0b4f90a70bb521fb612, type: 3}
+  - name: Win
+    clips:
+    - {fileID: 8300000, guid: ffb60e0ce3936f544b04969765b3ccbf, type: 3}
+  - name: Lasered
+    clips:
+    - {fileID: 8300000, guid: 8dd65767d6e4c5046944ee5780fe1dcd, type: 3}
+  - name: Burnt
+    clips:
+    - {fileID: 8300000, guid: d32ecd85be19a114b9c866fd08e6154b, type: 3}
 --- !u!1 &631990390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,6 +1850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
   shootDelayTime: .300000012
   shootCooldownTime: 1
   shootForce: 1000
@@ -2019,6 +2094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &682516309
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2356,6 +2432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &788942721
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2455,6 +2532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
   fallClock: 0
   whichHalf: 1
   initiatePush: 0
@@ -2604,6 +2682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
   rotationsBeforeRemove: 1
   field: {fileID: 0}
 --- !u!58 &879344523
@@ -2878,6 +2957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &947268434
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3419,6 +3499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!4 &1210209339
 Transform:
   m_ObjectHideFlags: 0
@@ -4822,6 +4903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1701168691
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5433,7 +5515,6 @@ GameObject:
   - 20: {fileID: 1918235377}
   - 92: {fileID: 1918235376}
   - 124: {fileID: 1918235375}
-  - 81: {fileID: 1918235374}
   - 114: {fileID: 1918235379}
   m_Layer: 0
   m_Name: Main Camera
@@ -5442,13 +5523,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1918235374
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1918235373}
-  m_Enabled: 1
 --- !u!124 &1918235375
 Behaviour:
   m_ObjectHideFlags: 0
@@ -5685,6 +5759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
   rotationsLeft: 5
   numberDisplay: {fileID: 0}
   numberSprites:

@@ -527,6 +527,7 @@ GameObject:
   - 4: {fileID: 470833419}
   - 114: {fileID: 470833421}
   - 120: {fileID: 470833420}
+  - 82: {fileID: 470833422}
   m_Layer: 8
   m_Name: LaserShooter
   m_TagString: Block
@@ -597,6 +598,65 @@ MonoBehaviour:
   blockSpriteRenderer: {fileID: 0}
   startPoint: {x: 0, y: 0}
   direction: {x: 0, y: 0}
+--- !u!82 &470833422
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: 4cef1404cae914aaab5334b18f33e010,
+    type: 2}
+  m_PrefabInternal: {fileID: 321312428}
+  m_GameObject: {fileID: 470833418}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: c7df843873569aa47809a95e38fd8fc1, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1.16999996
+  MinDistance: 1
+  MaxDistance: 10
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: -1.00200403
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: -1.00200403
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &529583740
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,6 +765,7 @@ GameObject:
   - 50: {fileID: 696671439}
   - 114: {fileID: 696671438}
   - 114: {fileID: 696671437}
+  - 81: {fileID: 696671443}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -792,6 +853,14 @@ Transform:
   - {fileID: 1785153332}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!81 &696671443
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8100000, guid: b3d363273a7a33c4e8e759299619d45e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1145856149}
+  m_GameObject: {fileID: 696671436}
+  m_Enabled: 1
 --- !u!1001 &889127025
 Prefab:
   m_ObjectHideFlags: 0
@@ -903,7 +972,6 @@ GameObject:
   - 20: {fileID: 1122493853}
   - 92: {fileID: 1122493852}
   - 124: {fileID: 1122493851}
-  - 81: {fileID: 1122493850}
   - 114: {fileID: 1122493855}
   m_Layer: 0
   m_Name: Main Camera
@@ -912,13 +980,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1122493850
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1122493849}
-  m_Enabled: 1
 --- !u!124 &1122493851
 Behaviour:
   m_ObjectHideFlags: 0
@@ -1103,7 +1164,7 @@ PolygonCollider2D:
   m_PrefabInternal: {fileID: 321312428}
   m_GameObject: {fileID: 1354762712}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b965fec59e1e6464293761f6313d7319, type: 2}
   m_IsTrigger: 0
   m_Poly:
     m_Paths:

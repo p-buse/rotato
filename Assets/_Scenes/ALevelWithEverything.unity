@@ -256,6 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &28978017
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -413,6 +414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &68446396
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -760,6 +762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &90752687
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1045,6 +1048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &131785514
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1151,6 +1155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &154918593
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1597,6 +1602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &193921763
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1816,6 +1822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
   shootDelayTime: .300000012
   shootCooldownTime: 1
   shootForce: 1000
@@ -1862,6 +1869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &217180848
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1904,6 +1912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
   fallClock: 0
   whichHalf: 1
   initiatePush: 0
@@ -1964,6 +1973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
   fallClock: 0
   whichHalf: 1
   initiatePush: 0
@@ -2183,6 +2193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &252994950
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2384,6 +2395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &276400218
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2541,6 +2553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &295649661
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2650,6 +2663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &307875120
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2756,6 +2770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &325369984
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2811,6 +2826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &333364230
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3097,6 +3113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &349650317
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3329,6 +3346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &369242670
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3397,6 +3415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
   fallClock: 0
   whichHalf: 1
   initiatePush: 0
@@ -3678,6 +3697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
   fallClock: 0
   whichHalf: 1
   initiatePush: 0
@@ -3780,6 +3800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &410116180
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3835,6 +3856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &421994326
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3992,6 +4014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &431093020
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4153,6 +4176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &445624012
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4259,6 +4283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &450674601
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4460,6 +4485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &475566771
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4708,6 +4734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &507857567
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5079,6 +5106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
   fallClock: 0
   whichHalf: 1
   initiatePush: 0
@@ -5238,6 +5266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &558471587
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5293,6 +5322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &561447825
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5399,6 +5429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &573734003
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5505,6 +5536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &597451160
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5656,6 +5688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &614815547
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6037,7 +6070,6 @@ GameObject:
   - 20: {fileID: 652255943}
   - 92: {fileID: 652255942}
   - 124: {fileID: 652255941}
-  - 81: {fileID: 652255940}
   - 114: {fileID: 652255945}
   - 114: {fileID: 652255946}
   m_Layer: 0
@@ -6047,13 +6079,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &652255940
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 652255939}
-  m_Enabled: 1
 --- !u!124 &652255941
 Behaviour:
   m_ObjectHideFlags: 0
@@ -6272,6 +6297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &664216437
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7134,6 +7160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &788473675
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7241,6 +7268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &791427521
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7347,6 +7375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &799800142
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7402,6 +7431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &804383324
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7591,6 +7621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &813327840
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7826,6 +7857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
   fallClock: 0
   whichHalf: 1
   initiatePush: 0
@@ -8076,6 +8108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
   fallClock: 0
   whichHalf: 1
   initiatePush: 0
@@ -8502,6 +8535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &915080151
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8886,6 +8920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &980934769
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9376,6 +9411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1031401732
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9482,6 +9518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1049334713
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9632,6 +9669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1056201200
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9739,6 +9777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1071602303
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9795,6 +9834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1076644310
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9850,6 +9890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1077006275
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10229,6 +10270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1133728684
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10328,6 +10370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
   fallClock: 0
   whichHalf: 1
   initiatePush: 0
@@ -10440,6 +10483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1162224556
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10612,6 +10656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
   fallClock: 0
   whichHalf: 1
   initiatePush: 0
@@ -10672,6 +10717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1181066772
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10897,6 +10943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!4 &1204106137
 Transform:
   m_ObjectHideFlags: 0
@@ -11004,6 +11051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1218227363
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11314,6 +11362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1245382388
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11560,6 +11609,15 @@ MonoBehaviour:
   - name: Fall
     clips:
     - {fileID: 8300000, guid: 24bd33d0a275a0b4f90a70bb521fb612, type: 3}
+  - name: Win
+    clips:
+    - {fileID: 8300000, guid: ffb60e0ce3936f544b04969765b3ccbf, type: 3}
+  - name: Lasered
+    clips:
+    - {fileID: 8300000, guid: 8dd65767d6e4c5046944ee5780fe1dcd, type: 3}
+  - name: Burnt
+    clips:
+    - {fileID: 8300000, guid: d32ecd85be19a114b9c866fd08e6154b, type: 3}
 --- !u!1 &1259251097
 GameObject:
   m_ObjectHideFlags: 0
@@ -12264,6 +12322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1376667210
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12330,6 +12389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1387841430
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12467,6 +12527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1391714436
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12712,6 +12773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
   fallClock: 0
   whichHalf: 1
   initiatePush: 0
@@ -12927,6 +12989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1439775082
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13033,6 +13096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1455345988
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13088,6 +13152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1487430758
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13299,6 +13364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1498478858
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13354,6 +13420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1498823614
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13409,6 +13476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1515336192
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13615,6 +13683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
   shootDelayTime: .300000012
   shootCooldownTime: 1
   shootForce: 1000
@@ -13882,6 +13951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
   fallClock: 0
   whichHalf: 1
   initiatePush: 0
@@ -14054,6 +14124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
   fallClock: 0
   whichHalf: 1
   initiatePush: 0
@@ -14271,6 +14342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1654558181
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14457,6 +14529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1662850671
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14810,6 +14883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1679798932
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14917,6 +14991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1699970010
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15061,6 +15136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1731301511
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15158,6 +15234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1761918986
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15352,6 +15429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1785913862
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15863,6 +15941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1864165683
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16013,6 +16092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
   fallClock: 0
   whichHalf: 1
   initiatePush: 0
@@ -16198,6 +16278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1895188203
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16254,6 +16335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1904019185
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16360,6 +16442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1927164432
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16385,6 +16468,7 @@ GameObject:
   - 50: {fileID: 1934523829}
   - 114: {fileID: 1934523828}
   - 114: {fileID: 1934523827}
+  - 81: {fileID: 1934523833}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -16472,6 +16556,14 @@ Transform:
   - {fileID: 177224996}
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!81 &1934523833
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8100000, guid: b3d363273a7a33c4e8e759299619d45e,
+    type: 2}
+  m_PrefabInternal: {fileID: 752854707}
+  m_GameObject: {fileID: 1934523826}
+  m_Enabled: 1
 --- !u!1 &1936341468
 GameObject:
   m_ObjectHideFlags: 0
@@ -16515,6 +16607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1936341471
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16570,6 +16663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1939700274
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16669,6 +16763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
   fallClock: 0
   whichHalf: 1
   initiatePush: 0
@@ -16729,6 +16824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1962305330
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16835,6 +16931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &2030318704
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17216,6 +17313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &2057903579
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17366,6 +17464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &2068769483
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17650,6 +17749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
   rotationsBeforeRemove: 1
   field: {fileID: 0}
 --- !u!58 &2093331007
@@ -17720,6 +17820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &2093736002
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17820,6 +17921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &2098963955
 BoxCollider2D:
   m_ObjectHideFlags: 0

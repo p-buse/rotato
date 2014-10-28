@@ -5,9 +5,15 @@ using System.Collections.Generic;
 public class Player : MonoBehaviour {
     GameManager gameManager;
 	BlockManager blockManager;
+    SpriteRenderer playerSprite;
 
     void Start()
     {
+        this.playerSprite = transform.Find("playerSprite").GetComponent<SpriteRenderer>();
+        if (playerSprite == null)
+        {
+            Debug.LogError("couldn't find player's sprite!");
+        }
         this.gameManager = FindObjectOfType<GameManager>();
 		this.blockManager = FindObjectOfType<BlockManager>();
     }

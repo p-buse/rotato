@@ -161,6 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &60843047
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -537,6 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &158249124
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -643,6 +645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &163286055
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -665,7 +668,7 @@ GameObject:
   - 4: {fileID: 197716636}
   - 212: {fileID: 197716635}
   m_Layer: 0
-  m_Name: butterSprite
+  m_Name: blockSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -870,6 +873,8 @@ GameObject:
   - 114: {fileID: 232367134}
   - 114: {fileID: 232367133}
   - 114: {fileID: 232367132}
+  - 114: {fileID: 232367137}
+  - 114: {fileID: 232367136}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -889,6 +894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa4c52eb1b4847459daa04a6a9140cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highlightColor: {r: .162555203, g: .463235319, b: .122621119, a: .427450985}
   selectionHighlightPrefab: {fileID: 100032, guid: be358ba3253a94349a34bbb1307c47fd,
     type: 2}
   rotationHighlightPrefab: {fileID: 100016, guid: ce8c766236b9691489df64677f5b2353,
@@ -922,6 +928,9 @@ MonoBehaviour:
   rotateRightKey: 101
   rotateLeftKey: 113
   resetKey: 114
+  salt: []
+  winOrLoseCountdownTime: 2
+  saltSoFar: 0
   gameState: 0
 --- !u!4 &232367135
 Transform:
@@ -935,6 +944,79 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &232367136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 1828920214}
+  m_GameObject: {fileID: 232367131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d456900436838834eb2a6d3d7ec13ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipList:
+  - name: Jump
+    clips:
+    - {fileID: 8300000, guid: 9d9f97fbbaa2c354aadf8f80e6f5cc7c, type: 3}
+  - name: Select
+    clips:
+    - {fileID: 8300000, guid: 629da75c3a7bb404a8a784e45915ef90, type: 3}
+  - name: Skewer
+    clips:
+    - {fileID: 8300000, guid: c2563488ab755ca4c8ccf39b10ac27b1, type: 3}
+  - name: Charge
+    clips:
+    - {fileID: 8300000, guid: 55347f109b64fff48b0c698a012b8eb0, type: 3}
+  - name: EnterRotation
+    clips:
+    - {fileID: 8300000, guid: 2a45639d1fc4b184a835c5ebc02699f3, type: 3}
+  - name: ExitRotation
+    clips:
+    - {fileID: 8300000, guid: 1b03bccdcfc6c124aa0b53a3326768fe, type: 3}
+  - name: RotateRight
+    clips:
+    - {fileID: 8300000, guid: ed286973f2bd7304596cda21e0f304ea, type: 3}
+  - name: CannonShot
+    clips:
+    - {fileID: 8300000, guid: b5246f2e8cf40f145903e576f18a9248, type: 3}
+  - name: RotateLeft
+    clips:
+    - {fileID: 8300000, guid: f093ebbf522e9de48a78f5281d73b4c1, type: 3}
+  - name: PushBlock
+    clips:
+    - {fileID: 8300000, guid: a8be7865a0b69694894ac8c1b9a7016f, type: 3}
+  - name: HitWall
+    clips:
+    - {fileID: 8300000, guid: e8a796aa5479e664a81bd432036b2246, type: 3}
+  - name: GetSalt
+    clips:
+    - {fileID: 8300000, guid: 5eaae34dd6676064cbf1a37856a51e2a, type: 3}
+  - name: Fall
+    clips:
+    - {fileID: 8300000, guid: 24bd33d0a275a0b4f90a70bb521fb612, type: 3}
+  - name: Win
+    clips:
+    - {fileID: 8300000, guid: ffb60e0ce3936f544b04969765b3ccbf, type: 3}
+  - name: Lasered
+    clips:
+    - {fileID: 8300000, guid: 8dd65767d6e4c5046944ee5780fe1dcd, type: 3}
+  - name: Burnt
+    clips:
+    - {fileID: 8300000, guid: d32ecd85be19a114b9c866fd08e6154b, type: 3}
+--- !u!114 &232367137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400006, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 1828920214}
+  m_GameObject: {fileID: 232367131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9cd38fec86ab91459bf239e3f0c8e46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &248254064
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,7 +1029,7 @@ GameObject:
   - 68: {fileID: 248254066}
   m_Layer: 0
   m_Name: Spike Logic
-  m_TagString: Untagged
+  m_TagString: Deadly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1514,6 +1596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &571630529
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1537,7 +1620,6 @@ GameObject:
   - 20: {fileID: 578920767}
   - 92: {fileID: 578920766}
   - 124: {fileID: 578920765}
-  - 81: {fileID: 578920764}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1545,13 +1627,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &578920764
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 578920763}
-  m_Enabled: 1
 --- !u!124 &578920765
 Behaviour:
   m_ObjectHideFlags: 0
@@ -1653,6 +1728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &601715116
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1721,7 +1797,7 @@ GameObject:
   - 68: {fileID: 626730445}
   m_Layer: 0
   m_Name: Spike Logic
-  m_TagString: Untagged
+  m_TagString: Deadly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1804,7 +1880,7 @@ GameObject:
   - 68: {fileID: 639932156}
   m_Layer: 0
   m_Name: Spike Logic
-  m_TagString: Untagged
+  m_TagString: Deadly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2012,6 +2088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &775118997
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2067,6 +2144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &780382349
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2091,7 +2169,7 @@ GameObject:
   - 68: {fileID: 781750416}
   m_Layer: 0
   m_Name: Spike Logic
-  m_TagString: Untagged
+  m_TagString: Deadly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2145,7 +2223,7 @@ GameObject:
   - 68: {fileID: 785900217}
   m_Layer: 0
   m_Name: Spike Logic
-  m_TagString: Untagged
+  m_TagString: Deadly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2274,6 +2352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &856915062
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2298,7 +2377,7 @@ GameObject:
   - 68: {fileID: 901139265}
   m_Layer: 0
   m_Name: Spike Logic
-  m_TagString: Untagged
+  m_TagString: Deadly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2844,6 +2923,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1085442766
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2899,6 +2979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1087534120
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2955,6 +3036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1123896394
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3061,6 +3143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1164880631
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3168,6 +3251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1227292297
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3223,6 +3307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1230892962
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3417,6 +3502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1288004865
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3473,6 +3559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1288859219
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3913,6 +4000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!1 &1547972290
 GameObject:
   m_ObjectHideFlags: 0
@@ -3957,6 +4045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1547972293
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4013,6 +4102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1560195229
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4397,6 +4487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1650028561
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4817,6 +4908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1789214866
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4974,6 +5066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1818358560
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5083,9 +5176,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 1859579741}
   - 58: {fileID: 1859579745}
+  - 58: {fileID: 1859579747}
   - 50: {fileID: 1859579744}
   - 114: {fileID: 1859579743}
   - 114: {fileID: 1859579742}
+  - 81: {fileID: 1859579746}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5161,6 +5256,26 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: .354833126
   m_Center: {x: 0, y: -.140000001}
+--- !u!81 &1859579746
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8100000, guid: b3d363273a7a33c4e8e759299619d45e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1427319996}
+  m_GameObject: {fileID: 1859579740}
+  m_Enabled: 1
+--- !u!58 &1859579747
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: b3d363273a7a33c4e8e759299619d45e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1427319996}
+  m_GameObject: {fileID: 1859579740}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: .209999993}
 --- !u!1 &1861120522
 GameObject:
   m_ObjectHideFlags: 0
@@ -5205,6 +5320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1861120525
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5229,7 +5345,7 @@ GameObject:
   - 68: {fileID: 1880981550}
   m_Layer: 0
   m_Name: Spike Logic
-  m_TagString: Untagged
+  m_TagString: Deadly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5358,6 +5474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1886126801
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5493,6 +5610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1935007186
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5549,6 +5667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &1948368243
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5702,6 +5821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &2006623240
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5828,7 +5948,7 @@ GameObject:
   - 68: {fileID: 2050790589}
   m_Layer: 0
   m_Name: Spike Logic
-  m_TagString: Untagged
+  m_TagString: Deadly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6110,6 +6230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
 --- !u!61 &2094173409
 BoxCollider2D:
   m_ObjectHideFlags: 0

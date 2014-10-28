@@ -5,7 +5,8 @@ using System;
 public class BlockManager : MonoBehaviour {
     
 	public Dictionary<Int2, AbstractBlock> grid; // changed to public so I can see and change it in falling blocks.  Also changed the value type to AbstractBlock.
-    public Dictionary<Int2, AbstractBlock> currentlyRotating;
+    private Dictionary<Int2, AbstractBlock> currentlyRotating;
+	public Dictionary<Int2, AbstractBlock> justRotated;
     [HideInInspector]
     public Player player;
 
@@ -114,26 +115,26 @@ public class BlockManager : MonoBehaviour {
     }
 
 	/// <summary>
-	/// Handles the cracked blocks' health and destruction
+	/// Called by gameManager when release click: Handles the cracked blocks' health and destruction
 	/// </summary>
-	/// <param name="currentlyRotating">Currently rotating.</param>
-	public void handleCracked(Dictionary<Int2, AbstractBlock> currentlyRotating)
+	/// <param name="justRotated">blocks just rotated.</param>
+	public void handleCracked(Dictionary<Int2, AbstractBlock> justRotated)
 	{
-		foreach (Int2 pos in currentlyRotating.Keys) {
-			CrackedBlock cracked = currentlyRotating [pos] as CrackedBlock;
+		foreach (Int2 pos in justRotated.Keys) 
+		{
+			CrackedBlock cracked = justRotated [pos] as CrackedBlock;
 			if (cracked != null) {
 				//decrement the health of cracked blocks
 				cracked.wasJustRotated ();
-				//destroy them (before they're loaded back into the dictionary) if necessary
+				//destroy them if necessary
 				if (cracked.rotationsLeft < 1) 
 				{
+					grid.Remove (pos);
 					//if this block broke because of the rotation, destroy it and don't keep it in the grid
-					grid.Remove(pos);
 					Destroy (cracked.gameObject);
 					//TODO: add animation here
 				} 
-			
-			} 
+			}
 		}
 	}
 
@@ -159,6 +160,8 @@ public class BlockManager : MonoBehaviour {
                 grid.Add(currentlyRotating[pos].GetCurrentPosition(), currentlyRotating[pos]);
             }
 		}
+		currentlyRotating = new Dictionary<Int2, AbstractBlock> ();
+		justRotated = getNeighbors (center);
 
 	}
 	
@@ -194,6 +197,7 @@ public class BlockManager : MonoBehaviour {
 		}
 	/// <summary>
 	/// Gets the block at position (x,y), x and y floats.
+	/// for falling blocks, only returns it if inside its sprite
 	/// </summary>
 	/// <returns>The <see cref="AbstractBlock"/>.</returns>
 	/// <param name="x">The x coordinate.</param>
@@ -204,8 +208,15 @@ public class BlockManager : MonoBehaviour {
 		AbstractBlock theBlock;
 		if (grid.TryGetValue (pos, out theBlock)) 
 		{
-			return theBlock;
+			if(theBlock as FallingBlock==null)
+				return theBlock;
+			else if(Mathf.Abs(y - theBlock.transform.position.y)<0.5)
+			{
+				return theBlock;
+			}
 		}
 		return null;
 	}
+
+
 }
