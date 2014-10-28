@@ -24,7 +24,7 @@ public class CrawlerMovement : MonoBehaviour
 	public float fallSpeed = 1.5f;
 	public AbstractBlock myBlock; //which block am I on?
 	public Transform crawlerSprite;
-	float turnTimer = 0;
+
 
 	
 	void Awake()
@@ -62,7 +62,7 @@ public class CrawlerMovement : MonoBehaviour
 			{
 				updateMyBlock(getMyBlock());
 				transform.Translate(floatToV3(moving)*Time.deltaTime);
-				//when the crawler bumps a block, cling to it and turn to move up it
+				//when the crawler bumps a block, cling to it and move up it
 				if(bumpedBlockForward())
 				{
 					updateMyBlock(forwardBlock());
@@ -70,20 +70,22 @@ public class CrawlerMovement : MonoBehaviour
 					moving = (moving + change + 4)%4;
 					clinging = (clinging + change + 4)%4;
 				}
-				else if(myBlock!=null);
+				else 
 				{
-					float relx = transform.position.x - myBlock.transform.position.x;
-					float rely = transform.position.y - myBlock.transform.position.y;
-					if(!isGrounded() &&(Mathf.Abs(relx)>=0.5f && Mathf.Abs (rely)>=0.5f))
+					if(myBlock!=null)
 					{
-						//turn down for what
-						turnTimer+=Time.deltaTime;
-						transform.Translate(0.12f*floatToV3 (moving));
-						transform.Translate(-0.12f*floatToV3 (clinging));
-						int change = moving - clinging ;
-						moving =(moving +4 + change)%4;
-						clinging =(clinging + 4 + change)%4;
-						
+						float relx = transform.position.x - myBlock.transform.position.x;
+						float rely = transform.position.y - myBlock.transform.position.y;
+						if(!isGrounded() &&(Mathf.Abs(relx)>=0.5f && Mathf.Abs (rely)>=0.5f))
+						{
+							//turn down for what
+							transform.Translate(0.12f*floatToV3 (moving));
+							transform.Translate(-0.12f*floatToV3 (clinging));
+							int change = moving - clinging ;
+							moving =(moving +4 + change)%4;
+							clinging =(clinging + 4 + change)%4;
+							
+						}
 					}
 				}
 			}
