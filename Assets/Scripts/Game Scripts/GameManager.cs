@@ -132,7 +132,6 @@ public class GameManager : MonoBehaviour
                         {
                             PlaySound("RotateRight");
                             blockManager.startRotation(currentRotationCenter);
-                            rotationsSinceFreezing -= 1;
                             rotationClock = 1f;
                             currentRotationDirection = -1;
                             rotationEmpty = blockManager.rotationEmpty();
@@ -143,7 +142,6 @@ public class GameManager : MonoBehaviour
                         {
                             PlaySound("RotateLeft");
                             blockManager.startRotation(currentRotationCenter);
-                            rotationsSinceFreezing += 1;
                             rotationClock = 1f;
                             currentRotationDirection = 1;
                             rotationEmpty = blockManager.rotationEmpty();
