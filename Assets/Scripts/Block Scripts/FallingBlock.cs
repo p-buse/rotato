@@ -46,10 +46,10 @@ public class FallingBlock : AbstractBlock {
 						grid.Add(location, this);
 					}
 					Int2 below = new Int2(location.x, location.y-1);
-					if (!grid.ContainsKey(below) && !below.Equals(blockManager.player.GetRoundedPosition())) {
+					if (!grid.ContainsKey(below)) {
 						grid.Add(below, this);
 					}
-					else if (below.Equals(blockManager.player.GetRoundedPosition()) || (grid.ContainsKey(below) && ((grid[below] as FallingBlock == null || (grid[below] as FallingBlock).fallClock < 0.0f)))) {
+					else if (grid.ContainsKey(below) && ((grid[below] as FallingBlock == null || (grid[below] as FallingBlock).fallClock < 0.0f))) {
 						fallClock = -1.0f;
 						transform.position = new Vector3(location.x, location.y, 0.0f);
 					}
@@ -58,7 +58,7 @@ public class FallingBlock : AbstractBlock {
 					whichHalf = true;
 				}
 				Int2 beneath = new Int2(location.x, location.y-1);
-				if (!whichHalf && (beneath.Equals(blockManager.player.GetRoundedPosition()) || (grid.ContainsKey(beneath) && ((grid[beneath] as FallingBlock == null || (grid[beneath] as FallingBlock).fallClock < 0.0f))))) {
+				if (!whichHalf && (grid.ContainsKey(beneath) && ((grid[beneath] as FallingBlock == null || (grid[beneath] as FallingBlock).fallClock < 0.0f)))) {
 					fallClock = -1.0f;
 					transform.position = new Vector3(location.x, location.y, 0.0f);
 					if (!grid.ContainsKey(location) || grid[location] != this) {
@@ -69,7 +69,7 @@ public class FallingBlock : AbstractBlock {
 						grid.Remove(beneath);
 					}
 				}
-				if (!whichHalf && !grid.ContainsKey(beneath) && !beneath.Equals(blockManager.player.GetRoundedPosition())) {
+				if (!whichHalf && !grid.ContainsKey(beneath)) {
 					grid.Add(beneath, this);
 				}
 				if (fallClock >= 0.0) {
@@ -77,7 +77,7 @@ public class FallingBlock : AbstractBlock {
 				}
 			}
 			Int2 belowThis = new Int2(location.x, location.y-1);
-			if (fallClock <= 0.0f && ((!grid.ContainsKey(belowThis) || (grid[belowThis] as FallingBlock != null && (grid[belowThis] as FallingBlock).fallClock >= 0.0f)) && !belowThis.Equals(blockManager.player.GetRoundedPosition()))) {
+			if (fallClock <= 0.0f && ((!grid.ContainsKey(belowThis) || (grid[belowThis] as FallingBlock != null && (grid[belowThis] as FallingBlock).fallClock >= 0.0f)))) {
 				fallClock = 0.0f;
 			}
 			if (initiatePush > 0f && !blockManager.player.GetRoundedPosition().Equals(new Int2 (location.x - pushDirection, location.y))) {
