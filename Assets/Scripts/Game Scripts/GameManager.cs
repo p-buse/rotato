@@ -62,11 +62,9 @@ public class GameManager : MonoBehaviour
 						{
 						    gameState = RotationMode.playing;
 							if(rotationsSinceFreezing%4!=0)
-								blockManager.handleCracked(blockManager.currentlyRotating);
+								blockManager.handleCracked(blockManager.justRotated);
 								
 						}
-					
-							
 					}
                     // If we're not already rotating
                     if (rotationClock <= 0f)
