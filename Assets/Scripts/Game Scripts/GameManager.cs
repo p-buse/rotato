@@ -14,11 +14,14 @@ public class GameManager : MonoBehaviour
     public Int2 currentRotationCenter;
     int currentRotationDirection = 0;
     int rotationsSinceFreezing = 0;
+    [HideInInspector]
     public Salt[] salt;
+    [HideInInspector]
     public int saltSoFar = 0;
     bool rotationEmpty;
     float rotationClock = 0f;
     public enum RotationMode { playing, frozen, rotating };
+    [HideInInspector]
     public RotationMode gameState = RotationMode.playing;
     PlayerMovement playerMovement;
 
