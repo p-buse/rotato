@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
 				(leftNeighbor as FallingBlock).initiatePush = 0f;
 			}
 		}
-        if (vertInput > 0 && isGrounded())
+        if (vertInput > 0 && isGrounded() && !beingShot)
             jumping = true;
         else
             jumping = false;
