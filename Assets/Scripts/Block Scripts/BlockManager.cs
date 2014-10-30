@@ -68,14 +68,13 @@ public class BlockManager : MonoBehaviour {
 	// Awake is called before Start, and triggers even if the object is deactivated
 	void Awake ()
     {
+        // Find the player
+        player = FindObjectOfType<Player>();
         // we start currently rotating nothing
         currentlyRotating = new Dictionary<Int2, AbstractBlock>();
-        // Get the player
-        player = FindObjectOfType<Player>();
         // Populate our grid with the blocks in the scene
-        // FindObjectsOfType is an expensive operation, so we only run it once per scene
         grid = new Dictionary<Int2, AbstractBlock>();
-        
+        // FindObjectsOfType is an expensive operation, so we only run it once per scene
         AbstractBlock[] blocks = GameObject.FindObjectsOfType<AbstractBlock>();
         foreach (AbstractBlock b in blocks)
         {
@@ -94,8 +93,10 @@ public class BlockManager : MonoBehaviour {
 
     public void startRotation(Int2 center)
     {
+        // Add the neighbors of the center to our currently rotating blocks
         this.currentlyRotating = getNeighbors(center);
 
+        // And if we're centered on a block, add that one too
         AbstractBlock centerBlock;
         if (grid.TryGetValue(center, out centerBlock))
         {
@@ -118,7 +119,7 @@ public class BlockManager : MonoBehaviour {
 	/// Called by gameManager when release click: Handles the cracked blocks' health and destruction
 	/// </summary>
 	/// <param name="justRotated">blocks just rotated.</param>
-	public void handleCracked(Dictionary<Int2, AbstractBlock> justRotated)
+	public void DecrementCracked(Dictionary<Int2, AbstractBlock> justRotated)
 	{
 		foreach (Int2 pos in justRotated.Keys) 
 		{
@@ -195,6 +196,7 @@ public class BlockManager : MonoBehaviour {
 	public bool rotationEmpty() {
 		return currentlyRotating.Count == 0;
 		}
+
 	/// <summary>
 	/// Gets the block at position (x,y), x and y floats.
 	/// for falling blocks, only returns it if inside its sprite

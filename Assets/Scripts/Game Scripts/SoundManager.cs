@@ -6,7 +6,6 @@ public class SoundManager : MonoBehaviour {
 
     [System.Serializable]
     public class Clip
-
     {
         public string name;
         public List<AudioClip> clips;

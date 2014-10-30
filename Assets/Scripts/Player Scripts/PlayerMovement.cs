@@ -40,46 +40,67 @@ public class PlayerMovement : MonoBehaviour
         if (horizInput > 0) {
 			this.horizontalVelocity = moveSpeed;
 
-			AbstractBlock rightNeighbor;
-			if (blockManager.grid.TryGetValue(new Int2(transform.position.x+1, transform.position.y), out rightNeighbor) && rightNeighbor as  FallingBlock != null
-			    && !blockManager.grid.ContainsKey(new Int2 (transform.position.x+2, transform.position.y))) {
-				FallingBlock rightNeighborFalling = (rightNeighbor as FallingBlock);
-				if (rightNeighborFalling.isRotatable()) {
-					rightNeighborFalling.initiatePush += Time.deltaTime;
-					rightNeighborFalling.pushDirection = 1;
-				}
-			}
+            AddPushRight();
 		}
         else if (horizInput < 0) {
             this.horizontalVelocity = -moveSpeed;
 
-			AbstractBlock leftNeighbor;
-			if (blockManager.grid.TryGetValue(new Int2(transform.position.x-1, transform.position.y), out leftNeighbor) && leftNeighbor as  FallingBlock != null
-			    && !blockManager.grid.ContainsKey(new Int2 (transform.position.x-2, transform.position.y))) {
-				FallingBlock leftNeighborFalling = (leftNeighbor as FallingBlock);
-				if (leftNeighborFalling.isRotatable()) {
-					leftNeighborFalling.initiatePush += Time.deltaTime;
-					leftNeighborFalling.pushDirection = -1;
-				}
-			}
+            AddPushLeft();
 		}
         else {
             this.horizontalVelocity = 0f;
 
-			AbstractBlock rightNeighbor;
-			AbstractBlock leftNeighbor;
-			if (blockManager.grid.TryGetValue (new Int2(transform.position.x + 1, transform.position.y), out rightNeighbor) && rightNeighbor as FallingBlock != null) {
-				(rightNeighbor as FallingBlock).initiatePush = 0f;
-			}
-			if (blockManager.grid.TryGetValue (new Int2(transform.position.x - 1, transform.position.y), out leftNeighbor) && leftNeighbor as FallingBlock != null) {
-				(leftNeighbor as FallingBlock).initiatePush = 0f;
-			}
+            ResetPush();
 		}
         if (vertInput > 0 && isGrounded() && !beingShot)
             jumping = true;
         else
             jumping = false;
 	}
+
+    private void ResetPush()
+    {
+        AbstractBlock rightNeighbor;
+        AbstractBlock leftNeighbor;
+        if (blockManager.grid.TryGetValue(new Int2(transform.position.x + 1, transform.position.y), out rightNeighbor) && rightNeighbor as FallingBlock != null)
+        {
+            (rightNeighbor as FallingBlock).initiatePush = 0f;
+        }
+        if (blockManager.grid.TryGetValue(new Int2(transform.position.x - 1, transform.position.y), out leftNeighbor) && leftNeighbor as FallingBlock != null)
+        {
+            (leftNeighbor as FallingBlock).initiatePush = 0f;
+        }
+    }
+
+    private void AddPushLeft()
+    {
+        AbstractBlock leftNeighbor;
+        if (blockManager.grid.TryGetValue(new Int2(transform.position.x - 1, transform.position.y), out leftNeighbor) && leftNeighbor as FallingBlock != null
+            && !blockManager.grid.ContainsKey(new Int2(transform.position.x - 2, transform.position.y)))
+        {
+            FallingBlock leftNeighborFalling = (leftNeighbor as FallingBlock);
+            if (leftNeighborFalling.isRotatable())
+            {
+                leftNeighborFalling.initiatePush += Time.deltaTime;
+                leftNeighborFalling.pushDirection = -1;
+            }
+        }
+    }
+
+    private void AddPushRight()
+    {
+        AbstractBlock rightNeighbor;
+        if (blockManager.grid.TryGetValue(new Int2(transform.position.x + 1, transform.position.y), out rightNeighbor) && rightNeighbor as FallingBlock != null
+            && !blockManager.grid.ContainsKey(new Int2(transform.position.x + 2, transform.position.y)))
+        {
+            FallingBlock rightNeighborFalling = (rightNeighbor as FallingBlock);
+            if (rightNeighborFalling.isRotatable())
+            {
+                rightNeighborFalling.initiatePush += Time.deltaTime;
+                rightNeighborFalling.pushDirection = 1;
+            }
+        }
+    }
 
     void FixedUpdate()
     {

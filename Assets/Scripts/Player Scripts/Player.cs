@@ -2,11 +2,23 @@
 using System.Collections;
 using System.Collections.Generic;
 
+[RequireComponent(typeof(AudioListener))]
 public class Player : MonoBehaviour {
     GameManager gameManager;
 	BlockManager blockManager;
     SpriteRenderer playerSprite;
 
+    void Awake()
+    {
+        // Get rid of all other audio listeners in the scene
+        AudioListener[] listeners = FindObjectsOfType<AudioListener>();
+        foreach (AudioListener al in listeners)
+        {
+            if (!al.gameObject.Equals(this.gameObject))
+                Destroy(al);
+        }
+    }
+    
     void Start()
     {
         this.playerSprite = transform.Find("playerSprite").GetComponent<SpriteRenderer>();
@@ -27,6 +39,16 @@ public class Player : MonoBehaviour {
             gameManager.PlaySound("Burnt"); // yes i know it doesn't match
             gameManager.LoseLevel("Crushed by falling blocks");
         }
+    }
+
+    public void FrenchFryify()
+    {
+        Color starting = playerSprite.color;
+        starting.a = 0f;
+        playerSprite.color = starting;
+        starting = transform.Find("frenchFries").GetComponent<SpriteRenderer>().color;
+        starting.a = 1f;
+        transform.Find("frenchFries").GetComponent<SpriteRenderer>().color = starting;
     }
 
     bool CrushedByBlock(Dictionary<Int2, AbstractBlock> grid, Int2 position)

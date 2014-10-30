@@ -30,7 +30,7 @@ public class HighlightManager : MonoBehaviour {
     {
         switch (gameManager.gameState)
         {
-            case GameManager.RotationMode.playing:
+            case GameManager.GameMode.playing:
                 {
                     if (gameManager.playerInNoRoZone() || playerMovement.beingShot || !playerMovement.isGrounded())
                     {
@@ -57,26 +57,26 @@ public class HighlightManager : MonoBehaviour {
                     }
                     break;
                 }
-            case GameManager.RotationMode.frozen:
+            case GameManager.GameMode.frozen:
                 {
                     selectionHighlight.SetActive(false);
                     rotationHighlight.SetActive(true);
                     rotationHighlight.transform.position = gameManager.currentRotationCenter.ToVector2();
                     break;
                 }
-            case GameManager.RotationMode.rotating:
+            case GameManager.GameMode.rotating:
                 {
                     selectionHighlight.SetActive(false);
                     rotationHighlight.SetActive(false);
                     break;
                 }
-            case GameManager.RotationMode.won:
+            case GameManager.GameMode.won:
                 {
                     selectionHighlight.SetActive(false);
                     rotationHighlight.SetActive(false);
                     break;
                 }
-            case GameManager.RotationMode.lost:
+            case GameManager.GameMode.lost:
                 {
                     selectionHighlight.SetActive(false);
                     rotationHighlight.SetActive(false);

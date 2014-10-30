@@ -8,18 +8,20 @@ public abstract class AbstractBlock : MonoBehaviour
     /// </summary>
     /// <returns>true if this invalidates the rotation, false otherwise</returns>
     public abstract bool invalidatesRotation();
+
     /// <summary>
     /// Used for blocks that don't move.
     /// </summary>
     /// <returns>true if the block moves, false otherwise</returns>
     public abstract bool isRotatable();
 
+    // References to important stuff
     protected static GameManager gameManager;
-
     protected static BlockManager blockManager;
 	public Transform blockSprite;
 	public SpriteRenderer blockSpriteRenderer;
 	public List<CrawlerMovement> crawlers;
+
     private int _orientation;
     /// <summary>
     /// starts at 0 for 12oclock, 1 for 9 oclock, 2 for 6 oclock, 3 for 3 oclock
@@ -49,21 +51,22 @@ public abstract class AbstractBlock : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// How hot the block is.
+    /// Heat increases 2 per second while being lasered (2 here minus 1 in Update()) and decreases 1 per second without a laser.
+    /// The player dies on contact with a block with heat 6 or higher, so a block will take 3 seconds to heat up to deadly levels.
+    /// The maximum heat is 9, so a block without a laser on it will cool down to safe heat levels in 3 seconds.
+    /// </summary>
 	[HideInInspector]
 	public float heat = 0;
 
-    private int FindRotationAngle(Transform obj)
-    {
-        int rotationAngle = Mathf.RoundToInt(obj.eulerAngles.z);
-        rotationAngle = rotationAngle % 360;
-        if (rotationAngle < 0)
-        {
-            rotationAngle = 360 - rotationAngle;
-        }
-        return rotationAngle / 90;
-	}
-
-
+    /// <summary>
+    /// Get a particular object's "orientation" given its current rotation in the 2D plane.
+    /// </summary>
+    /// <param name="obj">The object for which to find the orientation</param>
+    /// <returns></returns>
+ 
+    
 
     void Awake()
     {
@@ -79,6 +82,20 @@ public abstract class AbstractBlock : MonoBehaviour
         
     }
 
+    // Using LateUpdate instead of Update to avoid conflicts with blocks' own Update functions
+    void LateUpdate()
+    {
+        if (gameManager.gameFrozen && heat > 0f)
+        {
+            heat -= Time.deltaTime;
+            if (heat < 0f)
+            {
+                heat = 0f;
+            }
+            blockSpriteRenderer.color = new Color(1f, 1f - heat / 9f, 1f - heat / 9f);
+        }
+    }
+
 	public Int2 GetCurrentPosition()
 	{
 		return new Int2(transform.position.x, transform.position.y);
@@ -89,7 +106,7 @@ public abstract class AbstractBlock : MonoBehaviour
 	/// </summary>
 	/// <param name="center">Center.</param>
 	/// <param name="direction">Direction.</param>
-	/// <param name="time">Time.</param>
+	/// <param name="time">Time (between 0 and 1)</param>
 	public virtual void AnimateFrameOfRotation (Int2 center, int direction, float time)
 	{
 		int dx = Mathf.RoundToInt(transform.position.x) - center.x;
@@ -100,10 +117,9 @@ public abstract class AbstractBlock : MonoBehaviour
 		Vector3 endVec = new Vector3(newdx,newdy,0);
 
 		blockSprite.transform.localPosition = (Mathf.Cos(time * Mathf.PI / 2.0f)*startVec + Mathf.Sin(time*Mathf.PI/2.0f)*endVec) + new Vector3(-dx,-dy,0);
-		
 		blockSprite.transform.eulerAngles = new Vector3(0,0,90.0f*((1.0f-time)*orientation + time*(orientation + direction)));
 
-
+        // Update crawlers
 		for(int i = 0; i<crawlers.Count;i++)
 		{
 			crawlers[i].AnimateFrameOfRotation(center, direction, time);
@@ -151,7 +167,6 @@ public abstract class AbstractBlock : MonoBehaviour
 		}
 	}
 
-
 	// Heat increases 2 per second while being lasered (2 here minus 1 in Update()) and decreases 1 per second without a laser.
 	// The player dies on contact with a block with heat 6 or higher, so a block will take 3 seconds to heat up to deadly levels.
 	// The maximum heat is 9, so a block without a laser on it will cool down to safe heat levels in 3 seconds.
@@ -162,22 +177,23 @@ public abstract class AbstractBlock : MonoBehaviour
 		}
 	}
 
-	void LateUpdate() {
-		if (!gameManager.gameFrozen && heat > 0f) {
-			heat -= Time.deltaTime;
-			if (heat < 0f) {
-				heat = 0f;
-			}
-			blockSpriteRenderer.color = new Color(1f, 1f - heat / 9f, 1f - heat / 9f);
-		}
-	}
-
 	void OnCollisionStay2D(Collision2D coll) {
-		if (coll.collider.gameObject.tag == "Player" && heat >= 6f && gameManager.gameState == GameManager.RotationMode.playing) {
+		if (coll.collider.gameObject.tag == "Player" && heat >= 6f && gameManager.gameState == GameManager.GameMode.playing) {
             gameManager.PlaySound("Burnt");
             gameManager.LoseLevel("Burnt by a hot block");
 		}
 	}
+
+    private int FindRotationAngle(Transform obj)
+    {
+        int rotationAngle = Mathf.RoundToInt(obj.eulerAngles.z);
+        rotationAngle = rotationAngle % 360;
+        if (rotationAngle < 0)
+        {
+            rotationAngle = 360 - rotationAngle;
+        }
+        return rotationAngle / 90;
+    }
 
 	
 
