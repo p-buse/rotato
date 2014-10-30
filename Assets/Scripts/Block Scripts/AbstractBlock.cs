@@ -85,7 +85,7 @@ public abstract class AbstractBlock : MonoBehaviour
     // Using LateUpdate instead of Update to avoid conflicts with blocks' own Update functions
     void LateUpdate()
     {
-        if (gameManager.gameFrozen && heat > 0f)
+        if (!gameManager.gameFrozen && heat > 0f)
         {
             heat -= Time.deltaTime;
             if (heat < 0f)

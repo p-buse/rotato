@@ -36,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
 	void Update ()
     {
         float horizInput = Input.GetAxis("Horizontal");
-        float vertInput = Input.GetAxis("Vertical");
         if (horizInput > 0) {
 			this.horizontalVelocity = moveSpeed;
 
@@ -52,10 +51,8 @@ public class PlayerMovement : MonoBehaviour
 
             ResetPush();
 		}
-        if (vertInput > 0 && isGrounded() && !beingShot)
-            jumping = true;
-        else
-            jumping = false;
+
+        jumping = Input.GetButtonDown("Vertical");
 	}
 
     private void ResetPush()

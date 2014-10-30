@@ -236,7 +236,6 @@ public class GameManager : MonoBehaviour
     {
         if (gameState == GameMode.playing)
         {
-            playerMovement.enabled = false;
             resetClock = winOrLoseCountdownTime;
             gameState = GameMode.won;
         }
@@ -247,7 +246,6 @@ public class GameManager : MonoBehaviour
         if (gameState == GameMode.playing)
         {
             this.reasonForLosing = reasonForLosing;
-            playerMovement.enabled = false;
             resetClock = winOrLoseCountdownTime;
             gameState = GameMode.lost;
             player.FrenchFryify();
