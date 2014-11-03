@@ -56,7 +56,11 @@ public class LaserShooter : AbstractBlock {
 				}
 				else if (hit.collider.gameObject.tag == "Block") {
 					AbstractBlock blockHit = hit.collider.gameObject.GetComponent<AbstractBlock>();
-					blockHit.addHeat();
+					blockHit.addHeat(orientation);
+				}
+				else if (hit.collider.gameObject.tag == "Sprite") {
+					AbstractBlock blockHit = hit.collider.gameObject.transform.parent.gameObject.GetComponent<AbstractBlock>();
+					blockHit.addHeat(orientation);
 				}
 			}
 			else {
