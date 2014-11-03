@@ -145,6 +145,7 @@ public class BlockManager : MonoBehaviour {
     {
 		
         // Rotate each of the blocks and update our list to match
+        // Take each of these blocks out of the grid in turn
         foreach (Int2 pos in currentlyRotating.Keys)
         {
             if (currentlyRotating[pos].isRotatable())
@@ -154,6 +155,7 @@ public class BlockManager : MonoBehaviour {
             }
 		}
 
+        // Put these rotated blocks back into the grid
 		foreach (Int2 pos in currentlyRotating.Keys)
 		{
             if (currentlyRotating[pos].isRotatable())

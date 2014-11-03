@@ -3,35 +3,42 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-    public float secondsToRotate = 1f;
+    // Keys U can press!!!
     public KeyCode rotateRightKey = KeyCode.E;
     public KeyCode rotateLeftKey = KeyCode.Q;
     public KeyCode resetKey = KeyCode.R;
 
+    // References to other stuff
     BlockManager blockManager;
     NoRotationManager noRotationManager;
     SoundManager soundManager;
     PlayerMovement playerMovement;
     Player player;
+
+    // Salt stuff
     [HideInInspector]
     public Salt[] salt;
+    [HideInInspector]
+    public int saltSoFar = 0;
 
+    // Winning and losing
     public float winOrLoseCountdownTime = 2f;
     float resetClock = 0f;
     string reasonForLosing = "";
 
+    // Rotation stuff
+    public float secondsToRotate = 1f;
+    [HideInInspector]
     public Int2 currentRotationCenter;
     int currentRotationDirection = 0;
     int rotationsSinceFreezing = 0;
-
-    [HideInInspector]
-    public int saltSoFar = 0;
     bool rotationEmpty;
     float rotationClock = 0f;
+
+    // Gamemode stuff
     public enum GameMode { playing, frozen, rotating, won, lost };
     [HideInInspector]
     public GameMode gameState = GameMode.playing;
-
     /// <summary>
     /// True if our gamestate is "playing", false otherwise
     /// </summary>
