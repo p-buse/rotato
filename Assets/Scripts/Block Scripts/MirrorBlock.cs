@@ -68,6 +68,7 @@ public class MirrorBlock : AbstractBlock {
 
 	public override void finishRotation(Int2 center, int dir) {
 		base.finishRotation (center, dir);
+		heat = 0f;
 	}
 
 	public override void AnimateFrameOfRotation (Int2 center, int direction, float time) {
