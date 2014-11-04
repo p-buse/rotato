@@ -18,6 +18,16 @@ public class NoRotationManager : MonoBehaviour {
 		}
 	}
 
+    public bool AddZone(Int2 position)
+    {
+        return noRotationZones.Add(position);
+    }
+
+    public bool  RemoveZone(Int2 position)
+    {
+        return noRotationZones.Remove(position);
+    }
+
 	public bool hasNoRotationZone(Int2 position){
 	
 		if(noRotationZones.Contains(position)){

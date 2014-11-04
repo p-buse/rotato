@@ -102,6 +102,32 @@ public class BlockManager : MonoBehaviour {
         grid.Add(position, block);
     }
 
+    public void RemoveBlock(Int2 position)
+    {
+        AbstractBlock alreadyThere;
+        if (grid.TryGetValue(position, out alreadyThere))
+        {
+            grid.Remove(position);
+            Destroy(alreadyThere.gameObject);
+        }
+    }
+
+    public void ChangePos(Int2 original, Int2 newPos)
+    {
+        AbstractBlock alreadyThere;
+        if (grid.TryGetValue(original, out alreadyThere))
+        {
+            grid.Remove(original);
+            this.AddBlock(newPos, alreadyThere);
+            alreadyThere.transform.position = new Vector3(newPos.x, newPos.y, alreadyThere.transform.position.z);
+        }
+        else
+        {
+            Debug.LogWarning("Couldn't find block at: " + original);
+        }
+    }
+
+
     public void startRotation(Int2 center)
     {
         // Add the neighbors of the center to our currently rotating blocks
