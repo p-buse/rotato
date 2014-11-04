@@ -113,7 +113,10 @@ public class LevelEditor : MonoBehaviour
 	                                if (player == null)
 	                                {
 	                                    GameObject p = Instantiate(currentBrush.prefab, mouseWorldPos.ToVector2(), Quaternion.identity) as GameObject;
-	                                }
+										blockManager.player = GetComponent<Player>();
+										gameManager.player = GetComponent<Player>();
+										gameManager.playerMovement = GetComponent<PlayerMovement>();
+									}
 	                                else
 	                                {
 	                                    player.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y, player.transform.position.z);
