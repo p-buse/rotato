@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System;
 
 [Serializable]
 public class LevelSkeleton : MonoBehaviour
@@ -16,10 +18,10 @@ public class LevelSkeleton : MonoBehaviour
 	//stores block grid
 	public void setGrid(Dictionary<Int2, AbstractBlock> grid){
 
-		blocks = new List<string> ();
+		blocks = new List<BlockSkeleton> ();
 
 		foreach (var block in grid.Values) {
-			blocks.Add(block.serizalize());
+			blocks.Add(block.getSkeleton());
 		}
 	
 	}
@@ -28,11 +30,11 @@ public class LevelSkeleton : MonoBehaviour
 	public void setNoRoZoneGrid(HashSet<Int2> grid){
 
 		foreach (var zone in grid) {	
-			int[] pos;
+			int[] pos = new int[2];
 			pos[0] = zone.x;
 			pos[1] = zone.y;
 
-			noRoZones.Add(s);
+			noRoZones.Add(pos);
 		}
 
 	}

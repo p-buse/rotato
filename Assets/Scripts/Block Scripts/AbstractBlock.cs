@@ -201,7 +201,9 @@ public abstract class AbstractBlock : MonoBehaviour
         return rotationAngle / 90;
     }
 
-	
+	public virtual BlockSkeleton getSkeleton(){
+		return new BlockSkeleton();
+	}
 
 	
 
