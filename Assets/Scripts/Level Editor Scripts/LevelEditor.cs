@@ -85,7 +85,7 @@ public class LevelEditor : MonoBehaviour
 
         if (gameManager.gameState == GameManager.GameMode.editing)
         {
-            if (Input.GetMouseButton(0) && !MouseInGUI())
+            if (!MouseInGUI())
             {
                 switch (toolMode)
                 {
@@ -93,89 +93,81 @@ public class LevelEditor : MonoBehaviour
                         {
                             if (currentBrush.isPlayer)
                             {
-                                // If there's not a block where we're trying to place the player
-                                if (!blockManager.grid.ContainsKey(mouseWorldPos))
+                                if (Input.GetMouseButton(0))
                                 {
-                                    player = FindObjectOfType<Player>();
-                                    if (player == null)
+                                    // If there's not a block where we're trying to place the player
+                                    if (!blockManager.grid.ContainsKey(mouseWorldPos))
                                     {
-                                        GameObject p = Instantiate(currentBrush.prefab, mouseWorldPos.ToVector2(), Quaternion.identity) as GameObject;
-                                    }
-                                    else
-                                    {
-                                        player.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y, player.transform.position.z);
+                                        player = FindObjectOfType<Player>();
+                                        if (player == null)
+                                        {
+                                            GameObject p = Instantiate(currentBrush.prefab, mouseWorldPos.ToVector2(), Quaternion.identity) as GameObject;
+                                        }
+                                        else
+                                        {
+                                            player.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y, player.transform.position.z);
+                                        }
                                     }
                                 }
                             }
                             else if (currentBrush.isButter)
                             {
-                                ButterBlock butter = FindObjectOfType<ButterBlock>();
-                                if (butter == null)
+                                if (Input.GetMouseButton(0))
                                 {
-                                    GameObject b = Instantiate(currentBrush.prefab, mouseWorldPos.ToVector2(), Quaternion.identity) as GameObject;
-                                    blockManager.AddBlock(mouseWorldPos, b.GetComponent<ButterBlock>());
+                                    ButterBlock butter = FindObjectOfType<ButterBlock>();
+                                    if (butter == null)
+                                    {
+                                        GameObject b = Instantiate(currentBrush.prefab, mouseWorldPos.ToVector2(), Quaternion.identity) as GameObject;
+                                        blockManager.AddBlock(mouseWorldPos, b.GetComponent<ButterBlock>());
+                                    }
+                                    else
+                                    {
+                                        blockManager.ChangePos(butter.GetCurrentPosition(), mouseWorldPos);
+                                    }
                                 }
-                                else
-                                {
-                                    blockManager.ChangePos(butter.GetCurrentPosition(), mouseWorldPos);
-                                }
-
                             }
                             else if (currentBrush.isCrawler)
                             {
-								if (Input.GetMouseButtonDown(0)) {
-                                	Instantiate(currentBrush.prefab, mouseWorldPos.ToVector2(), Quaternion.identity);
-								}
-                            }
-                            else if (currentBrush.isNoRotationZone)
-                            {
-                                if (noRoMan.AddZone(mouseWorldPos))
+                                if (Input.GetMouseButtonDown(0))
                                 {
                                     Instantiate(currentBrush.prefab, mouseWorldPos.ToVector2(), Quaternion.identity);
                                 }
                             }
+                            else if (currentBrush.isNoRotationZone)
+                            {
+                                if (Input.GetMouseButton(0))
+                                {
+                                    if (noRoMan.AddZone(mouseWorldPos))
+                                    {
+                                        Instantiate(currentBrush.prefab, mouseWorldPos.ToVector2(), Quaternion.identity);
+                                    }
+                                }
+                                if (Input.GetMouseButton(1))
+                                {
+                                    noRoMan.RemoveZone(mouseWorldPos);
+                                }
+                            }
                             // Brush is a block
                             else
                             {
-                                if (player != null && !mouseWorldPos.Equals(player.GetRoundedPosition()))
+                                if (Input.GetMouseButton(0))
                                 {
-                                    GameObject b = Instantiate(currentBrush.prefab, mouseWorldPos.ToVector2(), Quaternion.identity) as GameObject;
-                                    AbstractBlock theBlock = b.GetComponent<AbstractBlock>();
-                                    blockManager.AddBlock(mouseWorldPos, theBlock);
+                                    if (player != null && !mouseWorldPos.Equals(player.GetRoundedPosition()))
+                                    {
+                                        GameObject b = Instantiate(currentBrush.prefab, mouseWorldPos.ToVector2(), Quaternion.identity) as GameObject;
+                                        AbstractBlock theBlock = b.GetComponent<AbstractBlock>();
+                                        blockManager.AddBlock(mouseWorldPos, theBlock);
+                                    }
+                                }
+                                else if (Input.GetMouseButton(1))
+                                {
+                                    blockManager.RemoveBlock(mouseWorldPos);
                                 }
                             }
                             break;
                         }
                 }
 
-            }
-            if (Input.GetMouseButton(1))
-            {
-                switch (toolMode)
-                {
-                    case ToolMode.point:
-                        {
-                            if (currentBrush.isPlayer)
-                            {
-                            }
-                            else if (currentBrush.isButter)
-                            {
-                            }
-                            else if (currentBrush.isCrawler)
-                            {
-                            }
-                            else if (currentBrush.isNoRotationZone)
-                            {
-                                noRoMan.RemoveZone(mouseWorldPos);
-                            }
-                            // Brush is a block
-                            else
-                            {
-                                blockManager.RemoveBlock(mouseWorldPos);
-                            }
-                            break;
-                        }
-                }
             }
         }
     }
@@ -185,7 +177,7 @@ public class LevelEditor : MonoBehaviour
 
         if (gameManager.gameState == GameManager.GameMode.editing)
         {
-            
+
             float boxWidth = Screen.width / 3;
             float boxHeight = Screen.height / 10;
             Rect brushRect = new Rect(0, Screen.height - boxHeight, Screen.width, boxHeight);
