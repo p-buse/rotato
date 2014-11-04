@@ -339,6 +339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &458395914
 BoxCollider2D:
@@ -459,6 +460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!4 &560628981
 Transform:
@@ -618,6 +620,7 @@ GameObject:
   - 114: {fileID: 680772638}
   - 114: {fileID: 680772637}
   - 114: {fileID: 680772636}
+  - 114: {fileID: 680772642}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -724,7 +727,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 680772635}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3260915cc33e7094d935c30d3182e445, type: 3}
+  m_Script: {fileID: 11500000, guid: 791e2319e18d22f499c51f1f0bb67af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
@@ -740,14 +743,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb59244c22def94a9636439086a5b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsToRotate: .300000012
   rotateRightKey: 101
   rotateLeftKey: 113
   resetKey: 114
   salt: []
-  winOrLoseCountdownTime: 2
   saltSoFar: 0
+  winOrLoseCountdownTime: 2
+  secondsToRotate: .300000012
   gameState: 0
+  canEdit: 1
 --- !u!4 &680772641
 Transform:
   m_ObjectHideFlags: 0
@@ -760,6 +764,92 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!114 &680772642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400010, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 619052318}
+  m_GameObject: {fileID: 680772635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4462e6d5c73bb54cab52f1fc825b1c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 2800000, guid: 34efe248d57dbcf4997df623eeb8f46f, type: 3}
+  line: {fileID: 2800000, guid: fede794811afbaa4fa2c6060e28d5a4e, type: 3}
+  rect: {fileID: 2800000, guid: 4b8faa2cf37ea774aa43c07310acd8cd, type: 3}
+  brushes:
+  - name: Block
+    image: {fileID: 2800000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+    prefab: {fileID: 100000, guid: d03f54b890c63954594fe3c50eeb5033, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 0
+  - name: Falling Block
+    image: {fileID: 2800000, guid: 604dd8ccd06624f82a5de8bd53315229, type: 3}
+    prefab: {fileID: 100000, guid: 2d934f2537ce78a4a8068a4284c51632, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 0
+  - name: Buttahh
+    image: {fileID: 2800000, guid: 0dd4265b7aa207e41a764259d8fe6add, type: 3}
+    prefab: {fileID: 100000, guid: eabca84ee14edeb44a884612b4ed39b8, type: 2}
+    isPlayer: 0
+    isButter: 1
+    isNoRotationZone: 0
+    isCrawler: 0
+  - name: PLAYUH
+    image: {fileID: 2800000, guid: 5936bfaf9fe74054dad8eac04ebc6210, type: 3}
+    prefab: {fileID: 100000, guid: b3d363273a7a33c4e8e759299619d45e, type: 2}
+    isPlayer: 1
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 0
+  - name: Cannon
+    image: {fileID: 2800000, guid: 2589278f8c71f524899cb7fa6c58ca26, type: 3}
+    prefab: {fileID: 100000, guid: 22ee062d8d8329d468a26e9a80d88367, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 0
+  - name: NoRoZo
+    image: {fileID: 2800000, guid: e8b6df4c05066734d93d32782381d2e4, type: 3}
+    prefab: {fileID: 100000, guid: 4f425c5217c9c2a4092c137129221de8, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 1
+    isCrawler: 0
+  - name: Laser
+    image: {fileID: 2800000, guid: 130fec74a330f4b15a010cefcf749149, type: 3}
+    prefab: {fileID: 100002, guid: 4cef1404cae914aaab5334b18f33e010, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 0
+  - name: Crackedblock
+    image: {fileID: 2800000, guid: 4374976620bcc5848a4283bf8468bd55, type: 3}
+    prefab: {fileID: 100002, guid: 4408f8c41ceb1da40b3e07924073956b, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 0
+  - name: Fixed Blocks
+    image: {fileID: 2800000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+    prefab: {fileID: 100000, guid: d6e0ece4da26741478ebdfe9e9cf3329, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 0
+  - name: Spikes
+    image: {fileID: 2800000, guid: 9a0a26656907b54479e6820b54934f33, type: 3}
+    prefab: {fileID: 100000, guid: 2154c8c31402e7042b3fab4077971733, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 0
 --- !u!1 &807938689
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,7 +964,7 @@ GameObject:
   - 61: {fileID: 908720236}
   m_Layer: 8
   m_Name: CrackedBlock
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -919,6 +1009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
   rotationsLeft: 5
   numberDisplay: {fileID: 0}
@@ -980,7 +1071,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 10
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -988,13 +1079,13 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 1
+      value: .5
       inSlope: 0
-      outSlope: -1.00200403
+      outSlope: -1.11111116
       tangentMode: 0
     - time: 1
       value: 0
-      inSlope: -1.00200403
+      inSlope: -1.11111116
       outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
@@ -1067,6 +1158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
   startPoint: {x: 0, y: 0}
   direction: {x: 0, y: 0}
@@ -1175,9 +1267,9 @@ GameObject:
   - 4: {fileID: 1483795751}
   - 212: {fileID: 1483795753}
   - 60: {fileID: 1483795752}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: blockSprite
-  m_TagString: Untagged
+  m_TagString: Sprite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1321,7 +1413,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 10
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -1329,13 +1421,13 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 1
+      value: .5
       inSlope: 0
-      outSlope: -1.00200403
+      outSlope: -1.11111116
       tangentMode: 0
     - time: 1
       value: 0
-      inSlope: -1.00200403
+      inSlope: -1.11111116
       outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
@@ -1408,6 +1500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
   startPoint: {x: 0, y: 0}
   direction: {x: 0, y: 0}
@@ -1641,7 +1734,7 @@ GameObject:
   - 61: {fileID: 1706948453}
   m_Layer: 8
   m_Name: CrackedBlock
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1686,6 +1779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
   rotationsLeft: 5
   numberDisplay: {fileID: 0}
@@ -1784,9 +1878,9 @@ GameObject:
   - 4: {fileID: 1808626247}
   - 212: {fileID: 1808626246}
   - 60: {fileID: 1808626245}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: blockSprite
-  m_TagString: Untagged
+  m_TagString: Sprite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2024,7 +2118,7 @@ GameObject:
   - 61: {fileID: 2120157619}
   m_Layer: 8
   m_Name: CrackedBlock
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2069,6 +2163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
   blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
   rotationsLeft: 5
   numberDisplay: {fileID: 0}
