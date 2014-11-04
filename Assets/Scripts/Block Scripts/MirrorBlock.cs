@@ -87,7 +87,11 @@ public class MirrorBlock : AbstractBlock {
 	}
 
 	public override void finishRotation(Int2 center, int dir) {
-		base.finishRotation (center, dir);
+		base.finishRotation(center, dir);
+		stopFiring();
+	}
+
+	public void stopFiring() {
 		fireTime = 0f;
 	}
 

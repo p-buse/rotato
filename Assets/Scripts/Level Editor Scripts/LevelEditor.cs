@@ -226,11 +226,23 @@ public class LevelEditor : MonoBehaviour
 							{
 								selectedBlock.orientation += 1;
 								selectedBlock.blockSprite.transform.eulerAngles = new Vector3(0f, 0f, selectedBlock.orientation * 90f);
+								if (selectedBlock as LaserShooter != null) {
+									(selectedBlock as LaserShooter).setFireDirection();
+								}
+								else if (selectedBlock as MirrorBlock != null) {
+									(selectedBlock as MirrorBlock).stopFiring();
+								}
 							}
 							else if(selectedBlock !=null && Input.GetKeyDown(KeyCode.E))
 							{
 								selectedBlock.orientation -= 1;
 								selectedBlock.blockSprite.transform.eulerAngles = new Vector3(0f, 0f, selectedBlock.orientation * 90f);
+								if (selectedBlock as LaserShooter != null) {
+									(selectedBlock as LaserShooter).setFireDirection();
+								}
+								else if (selectedBlock as MirrorBlock != null) {
+									(selectedBlock as MirrorBlock).stopFiring();
+								}
 							}
 
 							

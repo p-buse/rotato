@@ -78,9 +78,13 @@ public class LaserShooter : AbstractBlock {
 	}
 
 	public override void finishRotation(Int2 center, int dir) {
-		base.finishRotation (center, dir);
+		base.finishRotation(center, dir);
+		setFireDirection();
+	}
+
+	public void setFireDirection() {
 		switch (orientation) {
-			case 0: {
+		case 0: {
 				startPoint = new Vector2(transform.position.x, transform.position.y+0.5f);
 				break;
 			}
@@ -99,7 +103,6 @@ public class LaserShooter : AbstractBlock {
 		}
 		direction = directions [orientation];
 	}
-
 	
 	public override void AnimateFrameOfRotation (Int2 center, int direction, float time) {
 		base.AnimateFrameOfRotation (center, direction, time);
