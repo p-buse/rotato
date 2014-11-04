@@ -2,6 +2,11 @@
 using System.Collections;
 
 public class Block : AbstractBlock {
+
+	public override Type myType ()
+	{
+		return Type.Block;
+	}
 		
     public override bool invalidatesRotation()
     {

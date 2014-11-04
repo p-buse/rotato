@@ -86,7 +86,7 @@ public abstract class AbstractBlock : MonoBehaviour
 		type = myType ();
     }
 
-	private abstract Type myType();
+	public abstract Type myType();
 
     // Using LateUpdate instead of Update to avoid conflicts with blocks' own Update functions
     void LateUpdate()

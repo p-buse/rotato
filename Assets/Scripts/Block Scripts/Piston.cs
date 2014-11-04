@@ -47,6 +47,10 @@ public class Piston : AbstractBlock {
 		return false;
 	}
 
+	public override Type myType ()
+	{
+		return Type.Block;
+	}
 
 	void Update(){
 

@@ -16,6 +16,11 @@ public class LaserShooter : AbstractBlock {
 		return true;
 	}
 
+	public override Type myType ()
+	{
+		return Type.Laser;
+	}
+
 	void Start() {
 		laser = gameObject.GetComponent<LineRenderer>();
 		switch (orientation) {

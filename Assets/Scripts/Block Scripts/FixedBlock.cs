@@ -11,6 +11,11 @@ public class FixedBlock : AbstractBlock {
 		return false;
 	}
 
+	public override Type myType ()
+	{
+		return Type.Fixed;
+	}
+
 	public override void AnimateFrameOfRotation (Int2 center, int direction, float time) {}
 
 	public override Int2 posAfterRotation(Int2 center, int dir) {

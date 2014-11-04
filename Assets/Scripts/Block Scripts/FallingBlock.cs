@@ -27,6 +27,11 @@ public class FallingBlock : AbstractBlock {
 		return fallClock < 0f && pushClock < 0f;
 	}
 
+	public override Type myType ()
+	{
+		return Type.Falling;
+	}
+
 	void Update() {
 		if (!gameManager.gameFrozen) {
 			Dictionary<Int2, AbstractBlock> grid = blockManager.grid;

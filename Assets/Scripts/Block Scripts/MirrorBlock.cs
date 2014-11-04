@@ -16,7 +16,12 @@ public class MirrorBlock : AbstractBlock {
 	public override bool isRotatable() {
 		return true;
 	}
-	
+
+	public override Type myType ()
+	{
+		return Type.Mirror;
+	}
+
 	void Start() {
 		laser = gameObject.GetComponent<LineRenderer>();
 		laser.SetPosition (0, Vector2.zero);

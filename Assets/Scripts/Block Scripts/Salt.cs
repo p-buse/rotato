@@ -38,6 +38,11 @@ public class Salt : AbstractBlock {
 	public override bool isRotatable() {
 		return false;
 	}
+
+	public override Type myType ()
+	{
+		return Type.Salt;
+	}
 	
 	public override void AnimateFrameOfRotation (Int2 center, int direction, float time) {}
 	
