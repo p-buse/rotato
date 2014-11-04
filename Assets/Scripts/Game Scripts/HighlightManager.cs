@@ -82,6 +82,12 @@ public class HighlightManager : MonoBehaviour {
                     rotationHighlight.SetActive(false);
                     break;
                 }
+            case GameManager.GameMode.editing:
+                {
+                    selectionHighlight.SetActive(false);
+                    rotationHighlight.SetActive(false);
+                    break;
+                }
         }
         
     }
