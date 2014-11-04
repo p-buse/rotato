@@ -91,6 +91,15 @@ public class BlockManager : MonoBehaviour {
         }
 	}
 
+    public void AddBlock(Int2 position, AbstractBlock block)
+    {
+        if (grid.ContainsKey(position))
+        {
+            grid.Remove(position);
+        }
+        grid.Add(position, block);
+    }
+
     public void startRotation(Int2 center)
     {
         // Add the neighbors of the center to our currently rotating blocks
