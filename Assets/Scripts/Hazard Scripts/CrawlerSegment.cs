@@ -23,9 +23,11 @@ public class CrawlerSegment : MonoBehaviour {
 			{
 				dieSafely();
 			}
-			if(move.myBlock.heat>=6)
-			{
-				dieSafely();
+			if(move.myBlock!=null){
+				if(move.myBlock.heat>=6)
+				{
+					dieSafely();
+				}
 			}
 		}
 

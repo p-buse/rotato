@@ -26,6 +26,11 @@ public class CannonBlock : AbstractBlock
         cannonSprite = blockSprite.GetComponent<SpriteRenderer>();
     }
 
+	public override Type myType ()
+	{
+		return Type.Cannon;
+	}
+
     void Update()
     {
         if (shootCoolDown > 0f)

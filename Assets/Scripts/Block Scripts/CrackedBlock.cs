@@ -17,6 +17,11 @@ public class CrackedBlock : AbstractBlock {
 
 	}
 
+	public override Type myType ()
+	{
+		return Type.Cracked;
+	}
+
 	public override void AnimateFrameOfRotation (Int2 center, int direction, float time)
 	{
 		int dx = Mathf.RoundToInt(transform.position.x) - center.x;

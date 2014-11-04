@@ -83,8 +83,10 @@ public abstract class AbstractBlock : MonoBehaviour
         orientation = FindRotationAngle(blockSprite);
         AbstractBlock.gameManager = FindObjectOfType<GameManager>();
         AbstractBlock.blockManager = FindObjectOfType<BlockManager>();
-        
+		type = myType ();
     }
+
+	public abstract Type myType();
 
     // Using LateUpdate instead of Update to avoid conflicts with blocks' own Update functions
     void LateUpdate()
@@ -199,7 +201,9 @@ public abstract class AbstractBlock : MonoBehaviour
         return rotationAngle / 90;
     }
 
-	
+	public virtual BlockSkeleton getSkeleton(){
+		return new BlockSkeleton();
+	}
 
 	
 

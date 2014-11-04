@@ -2,7 +2,12 @@
 using System.Collections;
 
 public class ButterBlock : AbstractBlock {
-	
+
+	public override Type myType ()
+	{
+		return Type.Butter;
+	}
+
 	public override bool invalidatesRotation() {
 		return false;
 	}
