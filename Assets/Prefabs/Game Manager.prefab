@@ -166,6 +166,9 @@ MonoBehaviour:
   point: {fileID: 2800000, guid: 34efe248d57dbcf4997df623eeb8f46f, type: 3}
   line: {fileID: 2800000, guid: fede794811afbaa4fa2c6060e28d5a4e, type: 3}
   rect: {fileID: 2800000, guid: 4b8faa2cf37ea774aa43c07310acd8cd, type: 3}
+  select: {fileID: 2800000, guid: 263b63edcf629424fad62f9f8b7d446d, type: 3}
+  selectionHighlightPrefab: {fileID: 100002, guid: dacd3e7d37dfe4b79860a23f78af1bb0,
+    type: 2}
   brushes:
   - name: Block
     image: {fileID: 2800000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
