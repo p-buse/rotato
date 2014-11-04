@@ -13,7 +13,7 @@ public class LevelSkeleton : MonoBehaviour
 	public List<int[]> noRoZones; 
 
 	public int[] player;
-	public List<int[]> crawlers;
+	public List<float[]> crawlers;
 
 	//stores block grid
 	public void setGrid(Dictionary<Int2, AbstractBlock> grid){
@@ -41,11 +41,12 @@ public class LevelSkeleton : MonoBehaviour
 
 	public void setCrawlers()
 	{
-		crawlers = new List<int[]> ();
+		crawlers = new List<float[]> ();
 		GameObject[] crawlerObjects = GameObject.FindGameObjectsWithTag ("Crawler");
 		foreach(GameObject crawler in crawlerObjects)
 		{
-			crawlers.Add(new int[]{crawler.transform.position.x, crawler.transform.position.y});
+
+			crawlers.Add(new float[]{crawler.transform.position.x, crawler.transform.position.y});
 		}
 
 	}
