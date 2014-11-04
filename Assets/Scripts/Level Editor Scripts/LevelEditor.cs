@@ -23,6 +23,10 @@ public class LevelEditor : MonoBehaviour
     Player player;
 	AbstractBlock selectedBlock;
 
+	public GameObject selectionHighlightPrefab;
+	GameObject selectionHighlight;
+
+
 
     [System.Serializable]
     public class Brush
@@ -53,10 +57,12 @@ public class LevelEditor : MonoBehaviour
     void Awake()
     {
         this.gameManager = GetComponent<GameManager>();
-        this.toolImages = new Texture[] { this.point, this.line, this.rect };
+        this.toolImages = new Texture[] { this.point, this.line, this.rect, this.select};
         this.player = FindObjectOfType<Player>();
         this.blockManager = FindObjectOfType<BlockManager>();
         this.noRoMan = FindObjectOfType<NoRotationManager>();
+		this.selectionHighlight = Instantiate (selectionHighlightPrefab) as GameObject;
+		selectionHighlight.SetActive (false);
         guiRects = new List<Rect>();
 
         // Get the images for our brushes
@@ -94,6 +100,7 @@ public class LevelEditor : MonoBehaviour
                 {
                     case ToolMode.point:
 	                {
+						selectionHighlight.SetActive(false);
 	                    if (currentBrush.isPlayer)
 	                    {
 	                        if (Input.GetMouseButton(0))
@@ -179,8 +186,14 @@ public class LevelEditor : MonoBehaviour
 							if(blockManager.getBlockAt(mouseWorldPos.x,mouseWorldPos.y)!=null)
 							{
 								selectedBlock = blockManager.getBlockAt(x,y);
+
+								selectionHighlight.SetActive(true);
+								selectionHighlight.transform.position = new Vector3(x, y, selectionHighlight.transform.position.z);
+
 							}
+							
 						}
+
 						
 						//hold right click = drag this block around
 						if(Input.GetMouseButton(1)&& selectedBlock!=null)
@@ -196,6 +209,9 @@ public class LevelEditor : MonoBehaviour
  							}
 
 						}
+
+						break;
+
 					}
                 }
 
