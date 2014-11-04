@@ -59,6 +59,9 @@ public class LaserShooter : AbstractBlock {
                     gameManager.PlaySound("Lasered");
                     gameManager.LoseLevel("Evaporated by a laser");
 				}
+				else if (hit.collider.gameObject.GetComponent<CrawlerSegment>() != null) {
+					hit.collider.gameObject.GetComponent<CrawlerSegment>().dieSafely();
+				}
 				else if (hit.collider.gameObject.tag == "Block") {
 					AbstractBlock blockHit = hit.collider.gameObject.GetComponent<AbstractBlock>();
 					blockHit.addHeat(orientation);
