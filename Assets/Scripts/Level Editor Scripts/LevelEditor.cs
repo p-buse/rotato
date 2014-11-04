@@ -9,7 +9,7 @@ public class LevelEditor : MonoBehaviour
     enum EditorState { idle, drawing };
     EditorState editorState = EditorState.idle;
 
-	enum ToolMode { point = 0, line = 1, rect = 2,select = 3 };
+	enum ToolMode { point = 0, select = 1 };
     ToolMode toolMode = ToolMode.point;
     public Texture point;
     public Texture line;
@@ -57,7 +57,7 @@ public class LevelEditor : MonoBehaviour
     void Awake()
     {
         this.gameManager = GetComponent<GameManager>();
-        this.toolImages = new Texture[] { this.point, this.line, this.rect, this.select};
+        this.toolImages = new Texture[] { this.point, this.select};
         this.player = FindObjectOfType<Player>();
         this.blockManager = FindObjectOfType<BlockManager>();
         this.noRoMan = FindObjectOfType<NoRotationManager>();
