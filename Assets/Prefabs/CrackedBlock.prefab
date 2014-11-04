@@ -28,7 +28,7 @@ GameObject:
   - 61: {fileID: 6100000}
   m_Layer: 8
   m_Name: CrackedBlock
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ed3ebdb61263b4f9861fa344e7c735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: 0
+  blockSprite: {fileID: 0}
+  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
+  heat: 0
   rotationsLeft: 5
   numberDisplay: {fileID: 0}
   numberSprites:
