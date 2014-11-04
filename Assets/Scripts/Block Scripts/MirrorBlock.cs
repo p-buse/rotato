@@ -6,6 +6,8 @@ public class MirrorBlock : AbstractBlock {
 	LineRenderer laser;
 	public Vector2 direction;
 	static Vector2[] directions = {new Vector2 (0, 1), new Vector2 (-1, 0), new Vector2 (0, -1), new Vector2 (1, 0)};
+	bool firing = false;
+	float fireTime = 0f;
 	
 	public override bool invalidatesRotation() {
 		return false;
@@ -25,7 +27,7 @@ public class MirrorBlock : AbstractBlock {
 		if (!gameManager.gameFrozen) {
 			laser.SetPosition (0, Vector2.zero);
 			laser.SetPosition (1, Vector2.zero);
-			if (heat > 0.1f) {
+			if (fireTime > 0.1f && firing) {
 				RaycastHit2D hit = Physics2D.Raycast(transform.position, direction);
 				if (hit.collider != null) {
 					laser.SetPosition(1, new Vector2(Mathf.Abs(direction.x)*(hit.point.x-transform.position.x), Mathf.Abs(direction.y)*(hit.point.y-transform.position.y)));
@@ -46,29 +48,42 @@ public class MirrorBlock : AbstractBlock {
 					laser.SetPosition(1, Vector2.zero);
 				}
 			}
+			fireTime -= Time.deltaTime;
+			if (fireTime < 0f) {
+				fireTime = 0f;
+			}
 		}
 	}
 
 	public override void addHeat(int source) {
 		if (source == (orientation + 2) % 4) {
-			heat += Time.deltaTime * 2;
-			if (heat > 0.2f) {
-				heat = 0.2f;
+			fireTime += Time.deltaTime * 2;
+			if (fireTime > 0.2f) {
+				fireTime = 0.2f;
 			}
 			direction = directions[(orientation + 3) % 4];
+			firing = true;
 		}
 		else if (source == (orientation + 1) % 4) {
-			heat += Time.deltaTime * 2;
-			if (heat > 0.2f) {
-				heat = 0.2f;
+			fireTime += Time.deltaTime * 2;
+			if (fireTime > 0.2f) {
+				fireTime = 0.2f;
 			}
 			direction = directions[orientation];
+			firing = true;
+		}
+		else {
+			heat += Time.deltaTime * 3;
+			if (heat > 9f) {
+				heat = 9f;
+			}
+			firing = false;
 		}
 	}
 
 	public override void finishRotation(Int2 center, int dir) {
 		base.finishRotation (center, dir);
-		heat = 0f;
+		fireTime = 0f;
 	}
 
 	public override void AnimateFrameOfRotation (Int2 center, int direction, float time) {
