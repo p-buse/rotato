@@ -185,10 +185,10 @@ public class LevelEditor : MonoBehaviour
 						{
 							if(blockManager.getBlockAt(mouseWorldPos.x,mouseWorldPos.y)!=null)
 							{
-								selectedBlock = blockManager.getBlockAt(x,y);
+								selectedBlock = blockManager.getBlockAt(mouseWorldPos.x,mouseWorldPos.y);
 
 								selectionHighlight.SetActive(true);
-								selectionHighlight.transform.position = new Vector3(x, y, selectionHighlight.transform.position.z);
+								selectionHighlight.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y, selectionHighlight.transform.position.z);
 
 							}
 							
