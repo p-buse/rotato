@@ -22,6 +22,7 @@ public class LevelEditor : MonoBehaviour
     NoRotationManager noRoMan;
     Player player;
 	AbstractBlock selectedBlock;
+	bool selectedPlayer;
 
 	public GameObject selectionHighlightPrefab;
 	GameObject selectionHighlight;
@@ -180,25 +181,31 @@ public class LevelEditor : MonoBehaviour
 					//Select Mode!
 					case ToolMode.select:
 					{
-						//release left click = select this block
+						//release left click = select this block 
+						//click elsewhere = unselect block, move selected cursor there
 						if(Input.GetMouseButtonUp(0))
 						{
-							if(blockManager.getBlockAt(mouseWorldPos.x,mouseWorldPos.y)!=null)
+							
+							selectedBlock = blockManager.getBlockAt(mouseWorldPos.x,mouseWorldPos.y);
+							selectedPlayer = false;
+							selectedButter = false;
+							selectionHighlight.SetActive(true);
+							selectionHighlight.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y, selectionHighlight.transform.position.z);
+
+							
+							if(selectedBlock ==null && player.GetRoundedPosition().x == mouseWorldPos.x && player.GetRoundedPosition().y == mouseWorldPos.y)
 							{
-								selectedBlock = blockManager.getBlockAt(mouseWorldPos.x,mouseWorldPos.y);
-
-								selectionHighlight.SetActive(true);
-								selectionHighlight.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y, selectionHighlight.transform.position.z);
-
+								selectedPlayer = true;
 							}
 							
+								
 						}
 
 						
 						//hold right click = drag this block around
 						if(Input.GetMouseButton(1)&& selectedBlock!=null)
 					    {
-							//if there's no block or player there, 
+							//if holding block and there's no block or player there, 
 							if(blockManager.getBlockAt(mouseWorldPos.x,mouseWorldPos.y)==null && !mouseWorldPos.Equals(player.GetRoundedPosition()))
 							{
 								blockManager.grid.Remove(selectedBlock.GetCurrentPosition());
@@ -207,6 +214,13 @@ public class LevelEditor : MonoBehaviour
 								blockManager.grid.Add (new Int2(mouseWorldPos.x, mouseWorldPos.y), selectedBlock); 
 								
  							}
+						}
+						if(Input.GetMouseButton(1) && selectedPlayer){
+							if(selectedPlayer && blockManager.getBlockAt(mouseWorldPos.x,mouseWorldPos.y)==null)
+							{
+								player.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y,0);
+								selectionHighlight.transform.position = player.transform.position;
+							}
 
 						}
 
