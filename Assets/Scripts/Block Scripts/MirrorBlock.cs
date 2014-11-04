@@ -93,6 +93,7 @@ public class MirrorBlock : AbstractBlock {
 
 	public void stopFiring() {
 		fireTime = 0f;
+		laser.SetPosition(1, Vector2.zero);
 	}
 
 	public override void AnimateFrameOfRotation (Int2 center, int direction, float time) {
