@@ -39,7 +39,7 @@ public class EditorMethods : MonoBehaviour
 		if(ob is AbstractBlock)
 		{
 			blockManager.grid.Remove((ob as AbstractBlock).GetCurrentPosition);
-			Destroy(ob)
+			Destroy(ob);
 		}
 		else if(ob is CrawlerSegment)
 		{
