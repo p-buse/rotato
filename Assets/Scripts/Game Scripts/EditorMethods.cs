@@ -21,12 +21,11 @@ public class EditorMethods : MonoBehaviour
 
 		newObject.transform.position = new Vector3 (pos.x, pos.y, 0);
 
-		AbstractBlock thisBlock = newObject as AbstractBlock;
-		if(thisBlock !=null)
+		if(newObject is AbstractBlock)
 		{
-				//make new block prefab
+			AbstractBlock thisBlock = newObject as AbstractBlock;
+	
 			BlockManager.grid.Add(pos, thisBlock);
-					
 		}
 					
 	}
@@ -37,16 +36,14 @@ public class EditorMethods : MonoBehaviour
 	/// <param name="prefab">Prefab.</param>
 	private void removeObject(GameObject ob)
 	{
-		AbstractBlock asBlock = ob as AbstractBlock;
-		CrawlerSegment asCrawler = ob as CrawlerSegment;
-		if(asBlock != null)
+		if(ob is AbstractBlock)
 		{
-			blockManager.grid.Remove(asBlock.GetCurrentPosition);
-			Destroy(ob);
+			blockManager.grid.Remove((ob as AbstractBlock).GetCurrentPosition);
+			Destroy(ob)
 		}
-		else if(asCrawler != null)
+		else if(ob is CrawlerSegment)
 		{
-			asCrawler.dieSafely();
+			(ob as CrawlerSegment).dieSafely();
 		}
 		else{
 			Destroy (ob);
