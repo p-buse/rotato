@@ -21,7 +21,7 @@ public class LevelEditor : MonoBehaviour
     BlockManager blockManager;
     NoRotationManager noRoMan;
     Player player;
-	GameObject selectedObject;
+	AbstractBlock selectedBlock;
 
 
     [System.Serializable]
@@ -169,17 +169,32 @@ public class LevelEditor : MonoBehaviour
 	                    }
 	                    break;
 	                }
+
+					//Select Mode!
 					case ToolMode.select:
 					{
+						//release left click = select this block
 						if(Input.GetMouseButtonUp(0))
 						{
-							Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-							int x = Mathf.RoundToInt(worldPos.x);
-							int y = Mathf.RoundToInt(worldPos.y);
-							if(blockManager.getBlockAt(x,y)!=null)
+							if(blockManager.getBlockAt(mouseWorldPos.x,mouseWorldPos.y)!=null)
 							{
-								selectedObject = blockManager.getBlockAt(x,y);
+								selectedBlock = blockManager.getBlockAt(x,y);
 							}
+						}
+						
+						//hold right click = drag this block around
+						if(Input.GetMouseButton(1)&& selectedBlock!=null)
+					    {
+							//if there's no block or player there, 
+							if(blockManager.getBlockAt(mouseWorldPos.x,mouseWorldPos.y)!=null && !mouseWorldPos.Equals(player.GetRoundedPosition()))
+							{
+								blockManager.grid.Remove(selectedBlock.GetCurrentPosition());
+								selectedBlock.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y,0);
+								selectionHighlight.transform.position = selectedBlock.transform.position;
+								blockManager.grid.Add (new Int2(mouseWorldPos.x, mouseWorldPos.y), selectedBlock); 
+								
+ 							}
+
 						}
 					}
                 }
