@@ -213,7 +213,9 @@ public class LevelEditor : MonoBehaviour
 									selectedBlock.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y,0);
 									selectionHighlight.transform.position = selectedBlock.transform.position;
 									blockManager.grid.Add (new Int2(mouseWorldPos.x, mouseWorldPos.y), selectedBlock); 
-									
+									if(selectedBlock as LaserShooter != null) {
+										(selectedBlock as LaserShooter).setFireDirection();
+									}
 	 							}
 								else if(selectedPlayer)
 								{
@@ -228,6 +230,7 @@ public class LevelEditor : MonoBehaviour
 								selectedBlock.blockSprite.transform.eulerAngles = new Vector3(0f, 0f, selectedBlock.orientation * 90f);
 								if (selectedBlock as LaserShooter != null) {
 									(selectedBlock as LaserShooter).setFireDirection();
+									
 								}
 								else if (selectedBlock as MirrorBlock != null) {
 									(selectedBlock as MirrorBlock).stopFiring();
@@ -245,12 +248,7 @@ public class LevelEditor : MonoBehaviour
 								}
 							}
 
-							
 						}
-						
-						
-						
-
 						break;
 
 					}
