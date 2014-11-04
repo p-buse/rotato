@@ -186,7 +186,7 @@ public class LevelEditor : MonoBehaviour
             
             float boxWidth = Screen.width / 3;
             float boxHeight = Screen.height / 10;
-            Rect brushRect = new Rect(0, Screen.height - boxHeight, boxWidth, boxHeight);
+            Rect brushRect = new Rect(0, Screen.height - boxHeight, Screen.width, boxHeight);
             Rect toolRect = new Rect(0, 0, boxWidth, boxHeight);
             Rect playRect = new Rect(Screen.width - boxWidth, 0, boxWidth, boxHeight);
             guiRects.Add(brushRect);
@@ -195,7 +195,7 @@ public class LevelEditor : MonoBehaviour
 
             // Different brushes
             GUILayout.BeginArea(brushRect);
-            this.currentBrushNumber = GUILayout.Toolbar(currentBrushNumber, brushImages, GUILayout.MaxHeight(boxHeight), GUILayout.MaxWidth(boxWidth));
+            this.currentBrushNumber = GUILayout.Toolbar(currentBrushNumber, brushImages, GUILayout.MaxHeight(boxHeight), GUILayout.MaxWidth(Screen.width));
             GUILayout.EndArea();
 
             // Different tools

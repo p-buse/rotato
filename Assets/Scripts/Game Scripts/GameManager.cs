@@ -297,7 +297,9 @@ public class GameManager : MonoBehaviour
         {
             case GameMode.playing:
                 {
-                    GUI.Label(new Rect(0, -5, 100, 50), "Salt: " + saltSoFar);
+                    GUILayout.BeginArea(new Rect(0, 0, boxWidth, boxHeight));
+                    GUILayout.Label("Salt: " + saltSoFar);
+                    GUILayout.EndArea();
                     if (canEdit)
                     {
                         GUILayout.BeginArea(new Rect(Screen.width - boxWidth, Screen.height - boxHeight, boxWidth, boxHeight));
@@ -311,13 +313,13 @@ public class GameManager : MonoBehaviour
                 }
             case GameMode.lost:
                 {
-                    GUI.Label(new Rect(Screen.width / 2, Screen.height / 2 - 200, 200, 200), "<size=100>YOU LOSE!!!</size>", style);
-                    GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 200, 200), "<size=30>" + reasonForLosing + "</size>", style);
+                    GUI.Label(new Rect(0, 0, boxWidth, boxHeight), "<size=" + boxHeight + ">YOU LOSE!!!</size>", style);
+                    GUI.Label(new Rect(0,boxHeight, boxWidth, boxHeight * 2), "<size=" + boxHeight + ">" + reasonForLosing + "</size>", style);
                     break;
                 }
             case GameMode.won:
                 {
-                    GUI.Label(new Rect(Screen.width / 2, Screen.height / 2 - 200, 200, 200), "<size=100>You WIN!!</size>", style);
+                    GUI.Label(new Rect(0, 0, boxWidth, boxHeight), "<size=" + boxHeight + ">YOU WIN!!!</size>", style);
                     break;
                 }
         }
