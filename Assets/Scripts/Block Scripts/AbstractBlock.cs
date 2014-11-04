@@ -22,6 +22,10 @@ public abstract class AbstractBlock : MonoBehaviour
 	public SpriteRenderer blockSpriteRenderer;
 	public List<CrawlerMovement> crawlers;
 
+	//TYPE FOR SERIALIZATION
+	public enum Type {Block, Butter, Cannon, Cracked, Falling, Fixed, Laser, Mirror, Salt, Spikey};
+	private Type type;
+
     private int _orientation;
     /// <summary>
     /// starts at 0 for 12oclock, 1 for 9 oclock, 2 for 6 oclock, 3 for 3 oclock
