@@ -6,12 +6,13 @@ public class CrawlerSegment : MonoBehaviour {
 	//not sure if these are necessary, but whatever
 	GameManager gameManager;
 	BlockManager blockManager;
-
+	CrawlerMovement move;
 
 	void Start()
 	{
 		this.gameManager = FindObjectOfType<GameManager>();
 		this.blockManager = FindObjectOfType<BlockManager>();
+		this.move = transform.GetComponent<CrawlerMovement>();
 	}
 	
 	void Update()
@@ -20,9 +21,11 @@ public class CrawlerSegment : MonoBehaviour {
 		{
 			if (blockManager.getBlockAt (transform.position.x, transform.position.y)) 
 			{
-				CrawlerMovement move = transform.GetComponent<CrawlerMovement>();
-				move.updateMyBlock(null);
-				Destroy (this.gameObject);
+				dieSafely();
+			}
+			if(move.myBlock.heat>=6)
+			{
+				dieSafely();
 			}
 		}
 
@@ -36,6 +39,15 @@ public class CrawlerSegment : MonoBehaviour {
 			gameManager.LoseLevel("Eaten by a Crawler!");
 			
 		}
+		
 	}
-	
+
+	/// <summary>
+	/// Dies safely.
+	/// </summary>
+	public void dieSafely()
+	{
+		move.updateMyBlock(null);
+		Destroy (this.gameObject);
+	}
 }

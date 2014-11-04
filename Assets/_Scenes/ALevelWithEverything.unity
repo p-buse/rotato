@@ -6249,7 +6249,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 652255939}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -5.89091492, y: .703392565, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11694,13 +11694,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb59244c22def94a9636439086a5b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsToRotate: .300000012
   rotateRightKey: 101
   rotateLeftKey: 113
   resetKey: 114
   salt: []
-  winOrLoseCountdownTime: 2
   saltSoFar: 0
+  winOrLoseCountdownTime: 2
+  secondsToRotate: .300000012
   gameState: 0
 --- !u!4 &1252735112
 Transform:
