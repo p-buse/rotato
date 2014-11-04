@@ -191,13 +191,11 @@ public class LevelEditor : MonoBehaviour
 							selectionHighlight.SetActive(true);
 							selectionHighlight.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y, selectionHighlight.transform.position.z);
 
-							
 							if(selectedBlock ==null && player.GetRoundedPosition().x == mouseWorldPos.x && player.GetRoundedPosition().y == mouseWorldPos.y)
 							{
 								selectedPlayer = true;
 							}
 							
-								
 						}
 
 						//if have a thing
@@ -212,10 +210,15 @@ public class LevelEditor : MonoBehaviour
 									blockManager.grid.Remove(selectedBlock.GetCurrentPosition());
 									selectedBlock.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y,0);
 									selectionHighlight.transform.position = selectedBlock.transform.position;
-									blockManager.grid.Add (new Int2(mouseWorldPos.x, mouseWorldPos.y), selectedBlock); 
-									if(selectedBlock as LaserShooter != null) {
+
+									blockManager.grid.Add (new Int2(mouseWorldPos.x, mouseWorldPos.y), selectedBlock);
+									if (selectedBlock as LaserShooter != null) {
 										(selectedBlock as LaserShooter).setFireDirection();
 									}
+									else if (selectedBlock as MirrorBlock != null) {
+										(selectedBlock as MirrorBlock).stopFiring();
+									}
+
 	 							}
 								else if(selectedPlayer)
 								{
