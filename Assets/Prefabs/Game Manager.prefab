@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: -1.91739702, y: 3.51175189, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -237,6 +237,13 @@ MonoBehaviour:
     isButter: 0
     isNoRotationZone: 0
     isCrawler: 0
+  - name: Crawler
+    image: {fileID: 2800000, guid: bb8e531d9a1b5ac4c8d903845052a428, type: 3}
+    prefab: {fileID: 100004, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

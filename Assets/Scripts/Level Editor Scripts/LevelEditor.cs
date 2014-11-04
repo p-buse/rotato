@@ -123,7 +123,9 @@ public class LevelEditor : MonoBehaviour
                             }
                             else if (currentBrush.isCrawler)
                             {
-                                Instantiate(currentBrush.prefab, mouseWorldPos.ToVector2(), Quaternion.identity);
+								if (Input.GetMouseButtonDown(0)) {
+                                	Instantiate(currentBrush.prefab, mouseWorldPos.ToVector2(), Quaternion.identity);
+								}
                             }
                             else if (currentBrush.isNoRotationZone)
                             {
