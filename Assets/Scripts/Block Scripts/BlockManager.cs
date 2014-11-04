@@ -33,7 +33,7 @@ public class BlockManager : MonoBehaviour {
 
 		//Step 2:
 		//iterate through neighbors
-		foreach(var position in neighbors.Keys){
+		foreach(Int2 position in neighbors.Keys){
 
 			//if neighbor invalidates rotation, return false:
 			if(neighbors[position].invalidatesRotation()){
@@ -93,9 +93,11 @@ public class BlockManager : MonoBehaviour {
 
     public void AddBlock(Int2 position, AbstractBlock block)
     {
-        if (grid.ContainsKey(position))
+        AbstractBlock alreadyThere;
+        if (grid.TryGetValue(position, out alreadyThere))
         {
             grid.Remove(position);
+            Destroy(alreadyThere.gameObject);
         }
         grid.Add(position, block);
     }

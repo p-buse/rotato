@@ -17,6 +17,8 @@ public class LevelEditor : MonoBehaviour
     Texture[] toolImages;
 
     GameManager gameManager;
+    BlockManager blockManager;
+    Player player;
 
     [System.Serializable]
     public class Brush
@@ -32,19 +34,70 @@ public class LevelEditor : MonoBehaviour
 
     public Brush[] brushes;
     Texture[] brushImages;
-    int currentPrefab = 0;
+    int currentBrushNumber = 0;
+    Brush currentBrush
+    {
+        get
+        {
+            return brushes[currentBrushNumber];
+        }
+    }
 
 
     void Awake()
     {
         this.gameManager = GetComponent<GameManager>();
         this.toolImages = new Texture[] { this.point, this.line, this.rect };
+        this.player = FindObjectOfType<Player>();
+        this.blockManager = FindObjectOfType<BlockManager>();
 
         // Get the images for our brushes
         this.brushImages = new Texture[brushes.Length];
         for (int i = 0; i < brushes.Length; i++)
         {
             brushImages[i] = brushes[i].image;
+        }
+    }
+
+    void Update()
+    {
+        Vector3 mouseVector = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Int2 mousePos = new Int2(mouseVector.x, mouseVector.y);
+
+        if (gameManager.gameState == GameManager.GameMode.editing)
+        {
+            if (Input.GetMouseButton(0))
+            {
+                switch (toolMode)
+                {
+                    case ToolMode.point:
+                        {
+                            if (currentBrush.isPlayer)
+                            {
+                            }
+                            else if (currentBrush.isButter)
+                            {
+                            }
+                            else if (currentBrush.isCrawler)
+                            {
+                            }
+                            else if (currentBrush.isNoRotationZone)
+                            {
+                            }
+                            // Brush is a block
+                            else
+                            {
+                                if (player != null && mousePos != player.GetRoundedPosition())
+                                {
+                                    GameObject b = Instantiate(currentBrush.prefab, mousePos.ToVector2(), Quaternion.identity) as GameObject;
+                                    AbstractBlock theBlock = b.GetComponent<AbstractBlock>();
+                                    blockManager.AddBlock(mousePos, theBlock);
+                                }
+                            }
+                            break;
+                        }
+                }
+            }
         }
     }
 
@@ -56,7 +109,7 @@ public class LevelEditor : MonoBehaviour
             float boxHeight = Screen.height / 10;
             // Different brushes
             GUILayout.BeginArea(new Rect(0, Screen.height - boxHeight, boxWidth, boxHeight));
-            this.currentPrefab = GUILayout.Toolbar(currentPrefab, brushImages, GUILayout.MaxHeight(boxHeight), GUILayout.MaxWidth(boxWidth));
+            this.currentBrushNumber = GUILayout.Toolbar(currentBrushNumber, brushImages, GUILayout.MaxHeight(boxHeight), GUILayout.MaxWidth(boxWidth));
             GUILayout.EndArea();
 
             // Different tools
