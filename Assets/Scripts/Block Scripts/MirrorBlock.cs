@@ -82,7 +82,6 @@ public class MirrorBlock : AbstractBlock {
 			if (heat > 9f) {
 				heat = 9f;
 			}
-			firing = false;
 		}
 	}
 
