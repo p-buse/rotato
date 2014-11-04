@@ -203,7 +203,7 @@ public class BlockManager : MonoBehaviour {
 	/// Gets the block at position (x,y), x and y floats.
 	/// for falling blocks, only returns it if inside its sprite
 	/// </summary>
-	/// <returns>The <see cref="AbstractBlock"/>.</returns>
+	/// <returns>The block, if it exists, or null if it doesn't.</returns>
 	/// <param name="x">The x coordinate.</param>
 	/// <param name="y">The y coordinate.</param>
 	public AbstractBlock getBlockAt(float x, float y)

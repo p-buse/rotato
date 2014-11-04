@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     float rotationClock = 0f;
 
     // Gamemode stuff
-    public enum GameMode { playing, frozen, rotating, won, lost };
+    public enum GameMode { playing, frozen, rotating, won, lost, editing };
     [HideInInspector]
     public GameMode gameState = GameMode.playing;
     /// <summary>
@@ -53,6 +53,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Editor stuff
+    LevelEditor levelEditor;
+    public bool canEdit = false;
+
     void Awake()
     {
         this.soundManager = GetComponent<SoundManager>();
@@ -62,6 +66,7 @@ public class GameManager : MonoBehaviour
         this.salt = GameObject.FindObjectsOfType<Salt>();
         this.playerMovement = FindObjectOfType<PlayerMovement>();
         this.player = FindObjectOfType<Player>();
+        this.levelEditor = GetComponent<LevelEditor>();
     }
 
     public void PlaySound(string soundName)
@@ -186,6 +191,11 @@ public class GameManager : MonoBehaviour
                     break;
                 }
 
+            case GameMode.editing:
+                {
+                    break;
+                }
+
         }
     }
 
@@ -281,11 +291,22 @@ public class GameManager : MonoBehaviour
     {
         GUIStyle style = new GUIStyle();
         style.richText = true;
+        int boxWidth = Screen.width / 4;
+        int boxHeight = Screen.height / 8;
         switch (gameState)
         {
             case GameMode.playing:
                 {
                     GUI.Label(new Rect(0, -5, 100, 50), "Salt: " + saltSoFar);
+                    if (canEdit)
+                    {
+                        GUILayout.BeginArea(new Rect(Screen.width - boxWidth, Screen.height - boxHeight, boxWidth, boxHeight));
+                        if (GUILayout.Button("Edit"))
+                        {
+                            gameState = GameMode.editing;
+                        }
+                        GUILayout.EndArea();
+                    }
                     break;
                 }
             case GameMode.lost:
