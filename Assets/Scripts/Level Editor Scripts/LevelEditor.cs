@@ -188,7 +188,6 @@ public class LevelEditor : MonoBehaviour
 							
 							selectedBlock = blockManager.getBlockAt(mouseWorldPos.x,mouseWorldPos.y);
 							selectedPlayer = false;
-							selectedButter = false;
 							selectionHighlight.SetActive(true);
 							selectionHighlight.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y, selectionHighlight.transform.position.z);
 
