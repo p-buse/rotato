@@ -248,6 +248,7 @@ public class LevelEditor : MonoBehaviour
             GUILayout.BeginArea(playRect);
             if (GUILayout.Button("Play"))
             {
+				selectionHighlight.SetActive(false);
                 gameManager.gameState = GameManager.GameMode.playing;
             }
             GUILayout.EndArea();
