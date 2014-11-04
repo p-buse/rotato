@@ -200,28 +200,33 @@ public class LevelEditor : MonoBehaviour
 								
 						}
 
-						
-						//hold right click = drag this block around
-						if(Input.GetMouseButton(1)&& selectedBlock!=null)
-					    {
-							//if holding block and there's no block or player there, 
-							if(blockManager.getBlockAt(mouseWorldPos.x,mouseWorldPos.y)==null && !mouseWorldPos.Equals(player.GetRoundedPosition()))
-							{
-								blockManager.grid.Remove(selectedBlock.GetCurrentPosition());
-								selectedBlock.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y,0);
-								selectionHighlight.transform.position = selectedBlock.transform.position;
-								blockManager.grid.Add (new Int2(mouseWorldPos.x, mouseWorldPos.y), selectedBlock); 
-								
- 							}
-						}
-						if(Input.GetMouseButton(1) && selectedPlayer){
-							if(selectedPlayer && blockManager.getBlockAt(mouseWorldPos.x,mouseWorldPos.y)==null)
-							{
-								player.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y,0);
-								selectionHighlight.transform.position = player.transform.position;
+						//if have a thing
+						if(selectedBlock!=null || selectedPlayer)
+						{
+						//hold right click = drag this thing around
+							if(Input.GetMouseButton(1)&&blockManager.getBlockAt(mouseWorldPos.x,mouseWorldPos.y)==null && !mouseWorldPos.Equals(player.GetRoundedPosition()))
+						    {
+								//if holding block and there's no block or player there, 
+								if(selectedBlock !=null )
+								{
+									blockManager.grid.Remove(selectedBlock.GetCurrentPosition());
+									selectedBlock.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y,0);
+									selectionHighlight.transform.position = selectedBlock.transform.position;
+									blockManager.grid.Add (new Int2(mouseWorldPos.x, mouseWorldPos.y), selectedBlock); 
+									
+	 							}
+								else if(selectedPlayer)
+								{
+									player.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y,0);
+									selectionHighlight.transform.position = player.transform.position;
+								}
 							}
 
+							
 						}
+						
+						
+						
 
 						break;
 
