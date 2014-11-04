@@ -212,8 +212,13 @@ public class LevelEditor : MonoBehaviour
 									blockManager.grid.Remove(selectedBlock.GetCurrentPosition());
 									selectedBlock.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y,0);
 									selectionHighlight.transform.position = selectedBlock.transform.position;
-									blockManager.grid.Add (new Int2(mouseWorldPos.x, mouseWorldPos.y), selectedBlock); 
-									
+									blockManager.grid.Add (new Int2(mouseWorldPos.x, mouseWorldPos.y), selectedBlock);
+									if (selectedBlock as LaserShooter != null) {
+										(selectedBlock as LaserShooter).setFireDirection();
+									}
+									else if (selectedBlock as MirrorBlock != null) {
+										(selectedBlock as MirrorBlock).stopFiring();
+									}
 	 							}
 								else if(selectedPlayer)
 								{
