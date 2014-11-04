@@ -199,7 +199,7 @@ public class LevelEditor : MonoBehaviour
 						if(Input.GetMouseButton(1)&& selectedBlock!=null)
 					    {
 							//if there's no block or player there, 
-							if(blockManager.getBlockAt(mouseWorldPos.x,mouseWorldPos.y)!=null && !mouseWorldPos.Equals(player.GetRoundedPosition()))
+							if(blockManager.getBlockAt(mouseWorldPos.x,mouseWorldPos.y)==null && !mouseWorldPos.Equals(player.GetRoundedPosition()))
 							{
 								blockManager.grid.Remove(selectedBlock.GetCurrentPosition());
 								selectedBlock.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y,0);
