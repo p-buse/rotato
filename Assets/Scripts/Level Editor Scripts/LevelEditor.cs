@@ -221,6 +221,17 @@ public class LevelEditor : MonoBehaviour
 									selectionHighlight.transform.position = player.transform.position;
 								}
 							}
+							//rotate ccw
+							else if(selectedBlock !=null && Input.GetKeyDown(KeyCode.Q))
+							{
+								selectedBlock.orientation += 1;
+								selectedBlock.blockSprite.transform.eulerAngles = new Vector3(0f, 0f, selectedBlock.orientation * 90f);
+							}
+							else if(selectedBlock !=null && Input.GetKeyDown(KeyCode.E))
+							{
+								selectedBlock.orientation -= 1;
+								selectedBlock.blockSprite.transform.eulerAngles = new Vector3(0f, 0f, selectedBlock.orientation * 90f);
+							}
 
 							
 						}
