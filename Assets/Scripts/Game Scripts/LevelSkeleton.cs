@@ -13,6 +13,7 @@ public class LevelSkeleton : MonoBehaviour
 	public List<int[]> noRoZones; 
 
 	public int[] player;
+
 	public List<float[]> crawlers;
 
 	//stores block grid
