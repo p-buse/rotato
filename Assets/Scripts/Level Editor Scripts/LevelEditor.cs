@@ -5,10 +5,6 @@ using System.Collections.Generic;
 
 public class LevelEditor : MonoBehaviour
 {
-
-    enum EditorState { idle, drawing };
-    EditorState editorState = EditorState.idle;
-
 	enum ToolMode { point = 0, select = 1 };
     ToolMode toolMode = ToolMode.point;
     public Texture point;
@@ -114,10 +110,10 @@ public class LevelEditor : MonoBehaviour
 	                                player = FindObjectOfType<Player>();
 	                                if (player == null)
 	                                {
-	                                    GameObject p = Instantiate(currentBrush.prefab, mouseWorldPos.ToVector2(), Quaternion.identity) as GameObject;
-										blockManager.player = GetComponent<Player>();
-										gameManager.player = GetComponent<Player>();
-										gameManager.playerMovement = GetComponent<PlayerMovement>();
+                                        Instantiate(currentBrush.prefab, mouseWorldPos.ToVector2(), Quaternion.identity);
+										blockManager.player = FindObjectOfType<Player>();
+										gameManager.player = FindObjectOfType<Player>();
+										gameManager.playerMovement = FindObjectOfType<PlayerMovement>();
 									}
 	                                else
 	                                {

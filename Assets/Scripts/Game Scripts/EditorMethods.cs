@@ -7,6 +7,11 @@ public class EditorMethods : MonoBehaviour
 	GameManager gameManager;
 	BlockManager blockManager;
 	public enum BlockType{regular, cracked, falling, cannon, fix, mirror, laser}
+
+    void Awake()
+    {
+        blockManager = FindObjectOfType<BlockManager>();
+    }
 	
 
 	/// <summary>

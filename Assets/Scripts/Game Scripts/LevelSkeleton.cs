@@ -27,11 +27,8 @@ public class LevelSkeleton
 	//stores norozone grid
 	public void setNoRoZoneGrid(HashSet<Int2> grid){
 
-		foreach (var zone in grid) {	
-			int[] pos = new int[2];
-			pos[0] = zone.x;
-			pos[1] = zone.y;
-
+		foreach (Int2 pos in grid)
+        {
 			noRoZones.Add(pos);
 		}
 
@@ -39,12 +36,10 @@ public class LevelSkeleton
 
 	public void setCrawlers()
 	{
-		crawlers = new List<float[]> ();
 		GameObject[] crawlerObjects = GameObject.FindGameObjectsWithTag ("Crawler");
 		foreach(GameObject crawler in crawlerObjects)
 		{
-
-			crawlers.Add(new float[]{crawler.transform.position.x, crawler.transform.position.y});
+			crawlers.Add(crawler.transform.position);
 		}
 
 	}
@@ -53,8 +48,9 @@ public class LevelSkeleton
     {
         string path = @"c:\temp\SerializationOverview.xml";
         LevelSkeleton level = new LevelSkeleton();
-        level.blocks.Add(new BlockSkeleton(1, 3, 5, 0));
-        level.blocks.Add(new BlockSkeleton(3, 2, 5, 0));
+        level.blocks.Add(new BlockSkeleton("block", new Int2(0, 0), 0));
+        level.blocks.Add(new BlockSkeleton("fixed", new Int2(-5, 2), 2));
+        level.blocks.Add(new BlockSkeleton("cannon", new Int2(-10, 2), 0));
         level.playerPosition = new Int2(3, 5);
         System.Xml.Serialization.XmlSerializer writer = new System.Xml.Serialization.XmlSerializer(typeof(LevelSkeleton));
         System.IO.StreamWriter file = new System.IO.StreamWriter(path);

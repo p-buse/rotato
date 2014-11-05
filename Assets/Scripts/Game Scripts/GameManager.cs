@@ -55,7 +55,6 @@ public class GameManager : MonoBehaviour
     }
 
     // Editor stuff
-    LevelEditor levelEditor;
     public bool canEdit = false;
 
     void Awake()
@@ -67,8 +66,6 @@ public class GameManager : MonoBehaviour
         this.salt = GameObject.FindObjectsOfType<Salt>();
         this.playerMovement = FindObjectOfType<PlayerMovement>();
         this.player = FindObjectOfType<Player>();
-        this.levelEditor = GetComponent<LevelEditor>();
-
     }
 
     public void PlaySound(string soundName)
@@ -195,6 +192,7 @@ public class GameManager : MonoBehaviour
 
             case GameMode.editing:
                 {
+                    // The LevelEditor script will detect this and knows what to do
                     break;
                 }
 
