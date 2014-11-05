@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,8 +13,8 @@ public class GameManager : MonoBehaviour
     BlockManager blockManager;
     NoRotationManager noRotationManager;
     SoundManager soundManager;
-    PlayerMovement playerMovement;
-    Player player;
+    public PlayerMovement playerMovement;
+    public Player player;
 
     // Salt stuff
     [HideInInspector]
@@ -37,7 +38,7 @@ public class GameManager : MonoBehaviour
 
     // Gamemode stuff
     public enum GameMode { playing, frozen, rotating, won, lost, editing };
-    [HideInInspector]
+    //[HideInInspector]
     public GameMode gameState = GameMode.playing;
     /// <summary>
     /// True if our gamestate is "playing", false otherwise
@@ -67,6 +68,7 @@ public class GameManager : MonoBehaviour
         this.playerMovement = FindObjectOfType<PlayerMovement>();
         this.player = FindObjectOfType<Player>();
         this.levelEditor = GetComponent<LevelEditor>();
+
     }
 
     public void PlaySound(string soundName)
@@ -246,7 +248,6 @@ public class GameManager : MonoBehaviour
             return true;
         }
         return false;
-
     }
 
     public void WinLevel()

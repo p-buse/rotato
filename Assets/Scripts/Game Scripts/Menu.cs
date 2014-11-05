@@ -17,7 +17,14 @@ public class Menu : MonoBehaviour
         GUI.BeginGroup(new Rect(0, 100, 500, 500));
         for (int i = 0; i < Application.levelCount; i++)
         {
-            if (i != 0)
+			if (i==0)
+			{
+				if(GUILayout.Button("Level editor"))
+				{
+					Application.LoadLevel(i);
+				}
+			}
+            else
             {
                 if (GUILayout.Button("Load Level: " + i.ToString()))
                 {

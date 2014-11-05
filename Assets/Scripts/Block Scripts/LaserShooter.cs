@@ -23,30 +23,7 @@ public class LaserShooter : AbstractBlock {
 
 	void Start() {
 		laser = gameObject.GetComponent<LineRenderer>();
-		switch (orientation) {
-			case 0: {
-				startPoint = new Vector2(transform.position.x, transform.position.y+0.5f);
-				break;
-			}
-			case 1: {
-				startPoint = new Vector2(transform.position.x-0.5f, transform.position.y);
-				break;
-			}
-			case 2: {
-				startPoint = new Vector2(transform.position.x, transform.position.y-0.5f);
-				break;
-			}
-			case 3: {
-				startPoint = new Vector2(transform.position.x+0.5f, transform.position.y);
-				break;
-			}
-		}
-		laser.SetPosition (0, ((Vector2)transform.position)-startPoint);
-		direction = directions [orientation];
-		RaycastHit2D hit = Physics2D.Raycast(startPoint, direction);
-		if (hit.collider != null) {
-			laser.SetPosition(1, new Vector2(direction.x*(hit.distance+0.5f), direction.y*(hit.distance+0.5f)));
-		}
+		setFireDirection ();
 	}
 
 	void Update() {
@@ -78,26 +55,23 @@ public class LaserShooter : AbstractBlock {
 	}
 
 	public override void finishRotation(Int2 center, int dir) {
-		base.finishRotation (center, dir);
-		switch (orientation) {
-			case 0: {
-				startPoint = new Vector2(transform.position.x, transform.position.y+0.5f);
-				break;
-			}
-			case 1: {
-				startPoint = new Vector2(transform.position.x-0.5f, transform.position.y);
-				break;
-			}
-			case 2: {
-				startPoint = new Vector2(transform.position.x, transform.position.y-0.5f);
-				break;
-			}
-			case 3: {
-				startPoint = new Vector2(transform.position.x+0.5f, transform.position.y);
-				break;
-			}
+		base.finishRotation(center, dir);
+		setFireDirection();
+	}
+
+	public void setFireDirection() {
+		startPoint = (Vector2)transform.position + 0.5f*floatToV2 (orientation);
+
+		direction = floatToV2(orientation);
+		laser.SetPosition (0, startPoint - ((Vector2)transform.position));
+		RaycastHit2D hit = Physics2D.Raycast(startPoint, direction);
+		if (hit.collider != null) {
+			laser.SetPosition(1, new Vector2(Mathf.Abs(direction.x)*(hit.point.x-startPoint.x+direction.x*0.5f), Mathf.Abs(direction.y)*(hit.point.y-startPoint.y+direction.y*0.5f)));
 		}
-		direction = directions [orientation];
+		else {
+			laser.SetPosition(1, new Vector2(direction.x*30.5f, direction.y*30.5f));
+		}
+
 	}
 
 	
@@ -105,5 +79,10 @@ public class LaserShooter : AbstractBlock {
 		base.AnimateFrameOfRotation (center, direction, time);
 		laser.SetPosition (0, ((Vector2)transform.position)-startPoint);
 		laser.SetPosition (1, ((Vector2)transform.position)-startPoint);
+	}
+
+	private Vector2 floatToV2(float direction)
+	{
+		return new Vector2 (-1.0f*Mathf.Sin (direction * Mathf.PI / 2.0f), Mathf.Cos (direction * Mathf.PI / 2.0f));
 	}
 }
