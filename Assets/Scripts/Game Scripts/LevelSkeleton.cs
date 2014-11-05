@@ -3,17 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-[Serializable]
-public class LevelSkeleton : MonoBehaviour
+public class LevelSkeleton
 {
 
-	public List<BlockSkeleton> blocks;
+    public List<BlockSkeleton> blocks = new List<BlockSkeleton>();
 
-	//for each item in list: item[0] is x position, item[1] is y position:
-	public List<int[]> noRoZones; 
+    public List<Int2> noRoZones = new List<Int2>();
 
-	public int[] player;
-	public List<float[]> crawlers;
+    public Int2 playerPosition;
+    public List<Vector2> crawlers = new List<Vector2>();
 
 	//stores block grid
 	public void setGrid(Dictionary<Int2, AbstractBlock> grid){
@@ -50,5 +48,23 @@ public class LevelSkeleton : MonoBehaviour
 		}
 
 	}
-	
+
+    public static void WriteXML()
+    {
+        string path = @"c:\temp\SerializationOverview.xml";
+        LevelSkeleton level = new LevelSkeleton();
+        level.blocks.Add(new BlockSkeleton(1, 3, 5, 0));
+        level.blocks.Add(new BlockSkeleton(3, 2, 5, 0));
+        level.playerPosition = new Int2(3, 5);
+        System.Xml.Serialization.XmlSerializer writer = new System.Xml.Serialization.XmlSerializer(typeof(LevelSkeleton));
+        System.IO.StreamWriter file = new System.IO.StreamWriter(path);
+        Debug.Log("Wrote level to " + path);
+        writer.Serialize(file, level);
+        file.Close();
+    }
+
+    void Start()
+    {
+        WriteXML();
+    }
 }

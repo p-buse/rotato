@@ -62,6 +62,8 @@ public class LevelEditor : MonoBehaviour
         {
             brushImages[i] = brushes[i].image;
         }
+
+        LevelSkeleton.WriteXML();
     }
 
     bool MouseInGUI()
