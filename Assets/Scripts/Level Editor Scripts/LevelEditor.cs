@@ -228,7 +228,7 @@ public class LevelEditor : MonoBehaviour
 								}
 							}
 							//rotate ccw
-							else if(selectedBlock !=null && Input.GetKeyDown(KeyCode.Q))
+							else if(selectedBlock !=null && (Input.GetKeyDown(KeyCode.Q) || Input.GetAxis("Mouse ScrollWheel") > 0))
 							{
 								selectedBlock.orientation += 1;
 								selectedBlock.blockSprite.transform.eulerAngles = new Vector3(0f, 0f, selectedBlock.orientation * 90f);
@@ -240,7 +240,7 @@ public class LevelEditor : MonoBehaviour
 									(selectedBlock as MirrorBlock).stopFiring();
 								}
 							}
-							else if(selectedBlock !=null && Input.GetKeyDown(KeyCode.E))
+							else if(selectedBlock !=null && (Input.GetKeyDown(KeyCode.E) || Input.GetAxis("Mouse ScrollWheel") < 0))
 							{
 								selectedBlock.orientation -= 1;
 								selectedBlock.blockSprite.transform.eulerAngles = new Vector3(0f, 0f, selectedBlock.orientation * 90f);
@@ -256,10 +256,9 @@ public class LevelEditor : MonoBehaviour
 						break;
 
 					}
-                }
-
-            }
-        }
+				}
+			}
+		}
     }
 
     void OnGUI()
