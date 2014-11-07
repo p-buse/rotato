@@ -199,7 +199,7 @@ public abstract class AbstractBlock : MonoBehaviour
     }
 
 	public virtual BlockSkeleton getSkeleton(){
-		return new BlockSkeleton();
+        return new BlockSkeleton(this.myType(), this.GetCurrentPosition(), this.orientation);
 	}
 
 	

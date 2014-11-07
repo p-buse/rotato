@@ -4,7 +4,7 @@ using System;
 
 public class NoRotationManager : MonoBehaviour {
 
-	private HashSet<Int2> noRotationZones; 
+	public HashSet<Int2> noRotationZones; 
 
 	void Awake(){
 		noRotationZones = new HashSet<Int2>();

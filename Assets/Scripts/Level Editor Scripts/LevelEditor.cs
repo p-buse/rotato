@@ -2,6 +2,8 @@
 using System.Collections;
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.IO;
 
 public class LevelEditor : MonoBehaviour
 {
@@ -23,7 +25,7 @@ public class LevelEditor : MonoBehaviour
 	public GameObject selectionHighlightPrefab;
 	GameObject selectionHighlight;
 
-
+    string path = @"c:\temp\SerializationOverview.xml";
 
     [System.Serializable]
     public class Brush
@@ -68,8 +70,6 @@ public class LevelEditor : MonoBehaviour
         {
             brushImages[i] = brushes[i].image;
         }
-
-        LevelSkeleton.WriteXML();
     }
 
     bool MouseInGUI()
@@ -176,9 +176,7 @@ public class LevelEditor : MonoBehaviour
 	                        {
 	                            if (player == null || !mouseWorldPos.Equals(player.GetRoundedPosition()))
 	                            {
-	                                GameObject b = Instantiate(currentBrush.prefab, mouseWorldPos.ToVector2(), Quaternion.identity) as GameObject;
-	                                AbstractBlock theBlock = b.GetComponent<AbstractBlock>();
-	                                blockManager.AddBlock(mouseWorldPos, theBlock);
+                                    CreateBlock(mouseWorldPos, currentBrush.prefab);
 	                            }
 	                        }
 	                        else if (Input.GetMouseButton(1))
@@ -271,6 +269,13 @@ public class LevelEditor : MonoBehaviour
 		}
     }
 
+    private void CreateBlock(Int2 mouseWorldPos, GameObject blockPrefab)
+    {
+        GameObject b = Instantiate(blockPrefab, mouseWorldPos.ToVector2(), Quaternion.identity) as GameObject;
+        AbstractBlock theBlock = b.GetComponent<AbstractBlock>();
+        blockManager.AddBlock(mouseWorldPos, theBlock);
+    }
+
     void OnGUI()
     {
 
@@ -282,9 +287,11 @@ public class LevelEditor : MonoBehaviour
             Rect brushRect = new Rect(0, Screen.height - boxHeight, Screen.width, boxHeight);
             Rect toolRect = new Rect(0, 0, boxWidth, boxHeight);
             Rect playRect = new Rect(Screen.width - boxWidth, 0, boxWidth, boxHeight);
+            Rect editRect = new Rect(Screen.width - boxWidth, boxHeight *2, boxWidth, boxHeight *2);
             guiRects.Add(brushRect);
             guiRects.Add(toolRect);
             guiRects.Add(playRect);
+            guiRects.Add(editRect);
 
             // Different brushes
             GUILayout.BeginArea(brushRect);
@@ -304,6 +311,51 @@ public class LevelEditor : MonoBehaviour
                 gameManager.gameState = GameManager.GameMode.playing;
             }
             GUILayout.EndArea();
+
+            GUILayout.BeginArea(editRect);
+            if (GUILayout.Button("Save"))
+            {
+                LevelSkeleton currentLevel = this.ConvertLevelToSkeleton();
+                LevelEditor.WriteXML(currentLevel, this.path);
+            }
+            if (GUILayout.Button("Load"))
+            {
+                LevelSkeleton loadedLevel = ReadXML(this.path);
+            }
+            GUILayout.EndArea();
         }
+    }
+
+    LevelSkeleton ConvertLevelToSkeleton()
+    {
+        LevelSkeleton skelly = new LevelSkeleton();
+        skelly.setGrid(blockManager.grid);
+        skelly.setNoRoZoneGrid(noRoMan.noRotationZones);
+        skelly.setCrawlers();
+        if (player != null)
+        {
+            skelly.playerPosition = player.GetRoundedPosition();
+        }
+        return skelly;
+    }
+
+    public static void WriteXML(LevelSkeleton level, string path)
+    {
+        level.playerPosition = new Int2(3, 5);
+        XmlSerializer writer = new XmlSerializer(typeof(LevelSkeleton));
+        System.IO.StreamWriter file = new System.IO.StreamWriter(path);
+        Debug.Log("Wrote level to " + path);
+        writer.Serialize(file, level);
+        file.Close();
+    }
+
+    public static LevelSkeleton ReadXML(string path)
+    {
+       XmlSerializer deserializer = new XmlSerializer(typeof(LevelSkeleton));
+       TextReader textReader = new StreamReader(path);
+       LevelSkeleton loadedLevel;
+       loadedLevel = (LevelSkeleton)deserializer.Deserialize(textReader);
+       textReader.Close();
+       return loadedLevel;
     }
 }

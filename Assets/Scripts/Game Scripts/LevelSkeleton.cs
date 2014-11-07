@@ -43,24 +43,4 @@ public class LevelSkeleton
 		}
 
 	}
-
-    public static void WriteXML()
-    {
-        string path = @"c:\temp\SerializationOverview.xml";
-        LevelSkeleton level = new LevelSkeleton();
-        level.blocks.Add(new BlockSkeleton("block", new Int2(0, 0), 0));
-        level.blocks.Add(new BlockSkeleton("fixed", new Int2(-5, 2), 2));
-        level.blocks.Add(new BlockSkeleton("cannon", new Int2(-10, 2), 0));
-        level.playerPosition = new Int2(3, 5);
-        System.Xml.Serialization.XmlSerializer writer = new System.Xml.Serialization.XmlSerializer(typeof(LevelSkeleton));
-        System.IO.StreamWriter file = new System.IO.StreamWriter(path);
-        Debug.Log("Wrote level to " + path);
-        writer.Serialize(file, level);
-        file.Close();
-    }
-
-    void Start()
-    {
-        WriteXML();
-    }
 }
