@@ -6,13 +6,22 @@ public class DeadlyCamera : MonoBehaviour
 
     public Vector2 cameraMovement;
     public bool enableMovement;
+    Player player;
     Collider2D playerCollider;
     GameManager gameManager;
 
     void Start()
     {
-        this.playerCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<Collider2D>();
+        this.player = FindObjectOfType<Player>(); ;
+        this.playerCollider = this.player.GetComponent<Collider2D>();
         this.gameManager = FindObjectOfType<GameManager>();
+        gameManager.PlayerCreated += this.PlayerCreated;
+    }
+
+    void PlayerCreated(GameManager gm, Player p, PlayerMovement pm)
+    {
+        this.player = p;
+        this.playerCollider = p.GetComponent<Collider2D>();
     }
 
     // Update is called once per frame

@@ -70,7 +70,16 @@ public class LevelEditor : MonoBehaviour
 		selectionHighlight.SetActive (false);
         guiRects = new List<Rect>();
         nameToBlockPrefabs = new Dictionary<string,GameObject>();
-        
+        gameManager.PlayerCreated += this.PlayerCreated;
+    }
+
+    void PlayerCreated(GameManager gm, Player p, PlayerMovement pm)
+    {
+        this.player = p;
+    }
+
+    void Start()
+    {
         this.brushImages = new Texture[brushes.Length];
         for (int i = 0; i < brushes.Length; i++)
         {
@@ -301,7 +310,7 @@ public class LevelEditor : MonoBehaviour
             Debug.LogError("couldn't get AbstractBlock component of: " + blockPrefab);
         blockManager.AddBlock(pos, theBlock);
         theBlock.orientation = orientation;
-        theBlock.blockSprite.transform.eulerAngles = new Vector3(0f, 0f, selectedBlock.orientation * 90f);
+        theBlock.blockSprite.transform.eulerAngles = new Vector3(0f, 0f, theBlock.orientation * 90f);
     }
 
     void OnGUI()
@@ -361,9 +370,16 @@ public class LevelEditor : MonoBehaviour
         blockManager.DestroyAllBlocks();
         foreach(BlockSkeleton blockSkelly in skeleton.blocks)
         {
-            GameObject newBlock = nameToBlockPrefabs[blockSkelly.name];
-            print(newBlock);
-            AddBlock(blockSkelly.position, newBlock, blockSkelly.orientation);
+            GameObject newBlock;
+            if (nameToBlockPrefabs.TryGetValue(blockSkelly.name, out newBlock))
+            {
+                print(newBlock);
+                AddBlock(blockSkelly.position, newBlock, blockSkelly.orientation);
+            }
+            else
+            {
+                print("couldn't find block with name: " + blockSkelly.name);
+            }
         }
 
         // Add player
@@ -398,7 +414,6 @@ public class LevelEditor : MonoBehaviour
 
     public static void WriteXML(LevelSkeleton level, string path)
     {
-        level.playerPosition = new Int2(3, 5);
         XmlSerializer writer = new XmlSerializer(typeof(LevelSkeleton));
         System.IO.StreamWriter file = new System.IO.StreamWriter(path);
         Debug.Log("Wrote level to " + path);
