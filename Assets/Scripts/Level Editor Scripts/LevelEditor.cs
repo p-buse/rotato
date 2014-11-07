@@ -37,6 +37,7 @@ public class LevelEditor : MonoBehaviour
         public bool isButter;
         public bool isNoRotationZone;
         public bool isCrawler;
+        public bool isSpikez;
     }
 
     public Brush[] brushes;
@@ -51,6 +52,11 @@ public class LevelEditor : MonoBehaviour
     }
 
     List<Rect> guiRects;
+    Dictionary<string, GameObject> nameToBlockPrefabs;
+    GameObject playerPrefab;
+    GameObject crawlerPrefab;
+    GameObject noRoPrefab;
+    GameObject spikesPrefab;
 
 
     void Awake()
@@ -63,12 +69,33 @@ public class LevelEditor : MonoBehaviour
 		this.selectionHighlight = Instantiate (selectionHighlightPrefab) as GameObject;
 		selectionHighlight.SetActive (false);
         guiRects = new List<Rect>();
-
-        // Get the images for our brushes
+        nameToBlockPrefabs = new Dictionary<string,GameObject>();
+        
         this.brushImages = new Texture[brushes.Length];
         for (int i = 0; i < brushes.Length; i++)
         {
+            // Set the images for our brushes
             brushImages[i] = brushes[i].image;
+
+            if (!brushes[i].isCrawler && !brushes[i].isPlayer && !brushes[i].isNoRotationZone && !brushes[i].isSpikez)
+            {
+                // Set the names of our blocks
+                AbstractBlock block = brushes[i].prefab.GetComponent<AbstractBlock>();
+                if (block == null)
+                    Debug.LogError("Couldn't get block component of prefab: " + brushes[i].prefab);
+                brushes[i].name = block.myType();
+            }
+
+            // Add blocks to our dictionary
+            nameToBlockPrefabs[brushes[i].name] = brushes[i].prefab;
+            if (brushes[i].isCrawler)
+                crawlerPrefab = brushes[i].prefab;
+            if (brushes[i].isNoRotationZone)
+                noRoPrefab = brushes[i].prefab;
+            if (brushes[i].isPlayer)
+                playerPrefab = brushes[i].prefab;
+            if (brushes[i].isSpikez)
+                spikesPrefab = brushes[i].prefab;
         }
     }
 
@@ -111,9 +138,6 @@ public class LevelEditor : MonoBehaviour
 	                                if (player == null)
 	                                {
                                         Instantiate(currentBrush.prefab, mouseWorldPos.ToVector2(), Quaternion.identity);
-										blockManager.player = FindObjectOfType<Player>();
-										gameManager.player = FindObjectOfType<Player>();
-										gameManager.playerMovement = FindObjectOfType<PlayerMovement>();
 									}
 	                                else
 	                                {
@@ -176,7 +200,7 @@ public class LevelEditor : MonoBehaviour
 	                        {
 	                            if (player == null || !mouseWorldPos.Equals(player.GetRoundedPosition()))
 	                            {
-                                    CreateBlock(mouseWorldPos, currentBrush.prefab);
+                                    AddBlock(mouseWorldPos, currentBrush.prefab, 0);
 	                            }
 	                        }
 	                        else if (Input.GetMouseButton(1))
@@ -269,11 +293,15 @@ public class LevelEditor : MonoBehaviour
 		}
     }
 
-    private void CreateBlock(Int2 mouseWorldPos, GameObject blockPrefab)
+    private void AddBlock(Int2 pos, GameObject blockPrefab, int orientation)
     {
-        GameObject b = Instantiate(blockPrefab, mouseWorldPos.ToVector2(), Quaternion.identity) as GameObject;
+        GameObject b = Instantiate(blockPrefab, pos.ToVector2(), Quaternion.identity) as GameObject;
         AbstractBlock theBlock = b.GetComponent<AbstractBlock>();
-        blockManager.AddBlock(mouseWorldPos, theBlock);
+        if (theBlock == null)
+            Debug.LogError("couldn't get AbstractBlock component of: " + blockPrefab);
+        blockManager.AddBlock(pos, theBlock);
+        theBlock.orientation = orientation;
+        theBlock.blockSprite.transform.eulerAngles = new Vector3(0f, 0f, selectedBlock.orientation * 90f);
     }
 
     void OnGUI()
@@ -321,8 +349,37 @@ public class LevelEditor : MonoBehaviour
             if (GUILayout.Button("Load"))
             {
                 LevelSkeleton loadedLevel = ReadXML(this.path);
+                this.LoadLevel(loadedLevel);
             }
             GUILayout.EndArea();
+        }
+    }
+
+    void LoadLevel(LevelSkeleton skeleton)
+    {
+        // Add our blocks
+        blockManager.DestroyAllBlocks();
+        foreach(BlockSkeleton blockSkelly in skeleton.blocks)
+        {
+            GameObject newBlock = nameToBlockPrefabs[blockSkelly.name];
+            print(newBlock);
+            AddBlock(blockSkelly.position, newBlock, blockSkelly.orientation);
+        }
+
+        // Add player
+        Destroy(FindObjectOfType<Player>().gameObject);
+        Instantiate(playerPrefab, skeleton.playerPosition.ToVector2(), Quaternion.identity);
+
+        // TODO Add crawlers
+
+        // Add noRoZones
+        noRoMan.ClearNoRotationZones();
+        foreach (Int2 noRoZone in skeleton.noRoZones)
+        {
+            if (noRoMan.AddZone(noRoZone))
+            {
+                Instantiate(noRoPrefab, noRoZone.ToVector2(), Quaternion.identity);
+            }
         }
     }
 

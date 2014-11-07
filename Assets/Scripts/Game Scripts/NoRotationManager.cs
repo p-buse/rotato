@@ -36,4 +36,9 @@ public class NoRotationManager : MonoBehaviour {
 
 		return false;
 	}
+
+    public void ClearNoRotationZones()
+    {
+        this.noRotationZones = new HashSet<Int2>();
+    }
 }
