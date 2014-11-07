@@ -17,9 +17,9 @@ public class MirrorBlock : AbstractBlock {
 		return true;
 	}
 
-	public override Type myType ()
+	public override string myType ()
 	{
-		return Type.Mirror;
+		return "Mirror";
 	}
 
 	void Start() {

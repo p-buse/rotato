@@ -26,9 +26,9 @@ public class CannonBlock : AbstractBlock
         cannonSprite = blockSprite.GetComponent<SpriteRenderer>();
     }
 
-	public override Type myType ()
+	public override string myType ()
 	{
-		return Type.Cannon;
+		return "Cannon";
 	}
 
     void Update()

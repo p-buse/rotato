@@ -3,9 +3,9 @@ using System.Collections;
 
 public class ButterBlock : AbstractBlock {
 
-	public override Type myType ()
+	public override string myType ()
 	{
-		return Type.Butter;
+		return "Butter";
 	}
 
 	public override bool invalidatesRotation() {

@@ -18,13 +18,12 @@ public abstract class AbstractBlock : MonoBehaviour
     // References to important stuff
     protected static GameManager gameManager;
     protected static BlockManager blockManager;
+    [HideInInspector]
 	public Transform blockSprite;
-	public SpriteRenderer blockSpriteRenderer;
+	protected SpriteRenderer blockSpriteRenderer;
+    [HideInInspector]
 	public List<CrawlerMovement> crawlers;
 
-	//TYPE FOR SERIALIZATION
-	public enum Type {Block, Butter, Cannon, Cracked, Falling, Fixed, Laser, Mirror, Salt, Spikey};
-	private Type type;
 
     private int _orientation;
     /// <summary>
@@ -69,7 +68,8 @@ public abstract class AbstractBlock : MonoBehaviour
     /// </summary>
     /// <param name="obj">The object for which to find the orientation</param>
     /// <returns></returns>
- 
+
+    public abstract string myType();
     
 
     void Awake()
@@ -83,10 +83,7 @@ public abstract class AbstractBlock : MonoBehaviour
         orientation = FindRotationAngle(blockSprite);
         AbstractBlock.gameManager = FindObjectOfType<GameManager>();
         AbstractBlock.blockManager = FindObjectOfType<BlockManager>();
-		type = myType ();
     }
-
-	public abstract Type myType();
 
     // Using LateUpdate instead of Update to avoid conflicts with blocks' own Update functions
     void LateUpdate()

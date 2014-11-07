@@ -8,19 +8,14 @@ public class Player : MonoBehaviour {
 	BlockManager blockManager;
     SpriteRenderer playerSprite;
 
-    void Awake()
-    {
-        // Get rid of all other audio listeners in the scene
-        AudioListener[] listeners = FindObjectsOfType<AudioListener>();
-        foreach (AudioListener al in listeners)
-        {
-            if (!al.gameObject.Equals(this.gameObject))
-                Destroy(al);
-        }
-    }
-    
     void Start()
     {
+        gameManager.CreatePlayer(this, this.gameObject.GetComponent<PlayerMovement>());
+    }
+
+    void Awake()
+    {
+
         this.playerSprite = transform.Find("playerSprite").GetComponent<SpriteRenderer>();
         if (playerSprite == null)
         {
@@ -28,6 +23,14 @@ public class Player : MonoBehaviour {
         }
         this.gameManager = FindObjectOfType<GameManager>();
 		this.blockManager = FindObjectOfType<BlockManager>();
+        
+        // Get rid of all other audio listeners in the scene
+        AudioListener[] listeners = FindObjectsOfType<AudioListener>();
+        foreach (AudioListener al in listeners)
+        {
+            if (al.gameObject.GetInstanceID() != this.gameObject.GetInstanceID())
+                Destroy(al);
+        }
     }
 
     void Update()

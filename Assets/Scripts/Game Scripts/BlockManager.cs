@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System;
 
 public class BlockManager : MonoBehaviour {
-    
+
+    GameManager gameManager;
 	public Dictionary<Int2, AbstractBlock> grid; // changed to public so I can see and change it in falling blocks.  Also changed the value type to AbstractBlock.
     private Dictionary<Int2, AbstractBlock> currentlyRotating;
 	public Dictionary<Int2, AbstractBlock> justRotated;
@@ -68,6 +69,7 @@ public class BlockManager : MonoBehaviour {
 	// Awake is called before Start, and triggers even if the object is deactivated
 	void Awake ()
     {
+        gameManager = GetComponent<GameManager>();
         // Find the player
         player = FindObjectOfType<Player>();
         // we start currently rotating nothing
@@ -89,7 +91,15 @@ public class BlockManager : MonoBehaviour {
                 Debug.LogError(String.Format("Detected two or more blocks at: {0}", blockPosition));
             }
         }
+        // Subscribe the the PlayerCreated event
+        gameManager.PlayerCreated += this.PlayerCreated;
+        
 	}
+
+    void PlayerCreated(GameManager gameManager, Player player, PlayerMovement playerMovement)
+    {
+        this.player = player;
+    }
 
     public void AddBlock(Int2 position, AbstractBlock block)
     {
@@ -235,6 +245,11 @@ public class BlockManager : MonoBehaviour {
 	public bool rotationEmpty() {
 		return currentlyRotating.Count == 0;
 		}
+
+    public AbstractBlock getBlockAt(Int2 pos)
+    {
+        return this.getBlockAt(pos.x, pos.y);
+    }
 
 	/// <summary>
 	/// Gets the block at position (x,y), x and y floats.

@@ -129,14 +129,24 @@ public class LevelEditor : MonoBehaviour
 	                            ButterBlock butter = FindObjectOfType<ButterBlock>();
 	                            if (butter == null)
 	                            {
-	                                GameObject b = Instantiate(currentBrush.prefab, mouseWorldPos.ToVector2(), Quaternion.identity) as GameObject;
-	                                blockManager.AddBlock(mouseWorldPos, b.GetComponent<ButterBlock>());
+                                    if (blockManager.getBlockAt(mouseWorldPos) == null)
+                                    {
+                                        GameObject b = Instantiate(currentBrush.prefab, mouseWorldPos.ToVector2(), Quaternion.identity) as GameObject;
+                                        blockManager.AddBlock(mouseWorldPos, b.GetComponent<ButterBlock>());
+                                    }
 	                            }
 	                            else
 	                            {
-	                                blockManager.ChangePos(butter.GetCurrentPosition(), mouseWorldPos);
+                                    if (blockManager.getBlockAt(mouseWorldPos) == null)
+                                    {
+                                        blockManager.ChangePos(butter.GetCurrentPosition(), mouseWorldPos);
+                                    }
 	                            }
 	                        }
+                            else if (Input.GetMouseButton(1))
+                            {
+                                blockManager.RemoveBlock(mouseWorldPos);
+                            }
 	                    }
 	                    else if (currentBrush.isCrawler)
 	                    {
@@ -164,7 +174,7 @@ public class LevelEditor : MonoBehaviour
 	                    {
 	                        if (Input.GetMouseButton(0))
 	                        {
-	                            if (player != null && !mouseWorldPos.Equals(player.GetRoundedPosition()))
+	                            if (player == null || !mouseWorldPos.Equals(player.GetRoundedPosition()))
 	                            {
 	                                GameObject b = Instantiate(currentBrush.prefab, mouseWorldPos.ToVector2(), Quaternion.identity) as GameObject;
 	                                AbstractBlock theBlock = b.GetComponent<AbstractBlock>();
@@ -192,7 +202,7 @@ public class LevelEditor : MonoBehaviour
 							selectionHighlight.SetActive(true);
 							selectionHighlight.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y, selectionHighlight.transform.position.z);
 
-							if(selectedBlock ==null && player.GetRoundedPosition().x == mouseWorldPos.x && player.GetRoundedPosition().y == mouseWorldPos.y)
+							if(player != null && selectedBlock ==null && player.GetRoundedPosition().x == mouseWorldPos.x && player.GetRoundedPosition().y == mouseWorldPos.y)
 							{
 								selectedPlayer = true;
 							}
@@ -203,7 +213,7 @@ public class LevelEditor : MonoBehaviour
 						if(selectedBlock!=null || selectedPlayer)
 						{
 						//hold right click = drag this thing around
-							if(Input.GetMouseButton(1)&&blockManager.getBlockAt(mouseWorldPos.x,mouseWorldPos.y)==null && !mouseWorldPos.Equals(player.GetRoundedPosition()))
+							if(Input.GetMouseButton(1)&&blockManager.getBlockAt(mouseWorldPos.x,mouseWorldPos.y)==null && (player == null || !mouseWorldPos.Equals(player.GetRoundedPosition())))
 						    {
 								//if holding block and there's no block or player there, 
 								if(selectedBlock !=null )

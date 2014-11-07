@@ -16,9 +16,9 @@ public class LaserShooter : AbstractBlock {
 		return true;
 	}
 
-	public override Type myType ()
+	public override string myType ()
 	{
-		return Type.Laser;
+		return "Laser";
 	}
 
 	void Start() {

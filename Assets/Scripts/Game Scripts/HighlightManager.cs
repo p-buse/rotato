@@ -24,10 +24,19 @@ public class HighlightManager : MonoBehaviour {
         rotationHighlight = Instantiate(rotationHighlightPrefab) as GameObject;
         player = FindObjectOfType<Player>();
         playerMovement = FindObjectOfType<PlayerMovement>();
+        gameManager.PlayerCreated += this.PlayerCreated;
+    }
+
+    void PlayerCreated(GameManager gm, Player p, PlayerMovement pm)
+    {
+        this.player = p;
+        this.playerMovement = pm;
     }
 
     void Update()
     {
+        if (player == null || playerMovement == null)
+            return;
         switch (gameManager.gameState)
         {
             case GameManager.GameMode.playing:

@@ -13,7 +13,13 @@ public class Salt : AbstractBlock {
 		location = new Int2(transform.position.x, transform.position.y);
 		field = GetComponent<TextMesh>();
 		field.text = "" + rotationsBeforeRemove;
+        gameManager.PlayerCreated += this.PlayerCreated;
 	}
+
+    void PlayerCreated(GameManager gm, Player p, PlayerMovement pm)
+    {
+        this.player = p;
+    }
 
 	void Update() {
 		if (player.GetRoundedPosition().Equals(location)) {
@@ -39,9 +45,9 @@ public class Salt : AbstractBlock {
 		return false;
 	}
 
-	public override Type myType ()
+	public override string myType ()
 	{
-		return Type.Salt;
+		return "Salt";
 	}
 	
 	public override void AnimateFrameOfRotation (Int2 center, int direction, float time) {}

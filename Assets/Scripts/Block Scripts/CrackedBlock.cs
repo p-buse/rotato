@@ -17,9 +17,9 @@ public class CrackedBlock : AbstractBlock {
 
 	}
 
-	public override Type myType ()
+	public override string myType ()
 	{
-		return Type.Cracked;
+		return "Cracked";
 	}
 
 	public override void AnimateFrameOfRotation (Int2 center, int direction, float time)

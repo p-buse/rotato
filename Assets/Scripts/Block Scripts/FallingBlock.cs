@@ -27,9 +27,9 @@ public class FallingBlock : AbstractBlock {
 		return fallClock < 0f && pushClock < 0f;
 	}
 
-	public override Type myType ()
+	public override string myType ()
 	{
-		return Type.Falling;
+		return "Falling";
 	}
 
 	void Update() {

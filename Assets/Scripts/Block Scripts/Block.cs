@@ -3,9 +3,9 @@ using System.Collections;
 
 public class Block : AbstractBlock {
 
-	public override Type myType ()
+	public override string myType ()
 	{
-		return Type.Block;
+		return "Block";
 	}
 		
     public override bool invalidatesRotation()

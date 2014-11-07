@@ -16,12 +16,7 @@ public class SoundManager : MonoBehaviour {
     }
 
     public List<Clip> clipList;
-    Player player;
 
-    void Awake()
-    {
-        player = FindObjectOfType<Player>();
-    }
 
     public void PlayClip(string clipName)
     {
@@ -30,7 +25,7 @@ public class SoundManager : MonoBehaviour {
         {
             if (c.name.Equals(clipName))
             {
-                AudioSource.PlayClipAtPoint(c.RandomClip(), player.transform.position);
+                AudioSource.PlayClipAtPoint(c.RandomClip(), Camera.main.transform.position);
                 playedClip = true;
             }
         }

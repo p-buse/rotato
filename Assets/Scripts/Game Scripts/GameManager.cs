@@ -36,6 +36,20 @@ public class GameManager : MonoBehaviour
     bool rotationEmpty;
     float rotationClock = 0f;
 
+    // Setting the player when one is created
+    public delegate void PlayerCreatedHandler(GameManager gameManager, Player player, PlayerMovement playerMovement);
+    public event PlayerCreatedHandler PlayerCreated;
+    public void CreatePlayer(Player newPlayer, PlayerMovement newPlayerMovement)
+    {
+        if (newPlayer == null)
+            print("new player null");
+        if (newPlayerMovement == null)
+            print("new player movement null");
+        this.player = newPlayer;
+        this.playerMovement = newPlayerMovement;
+        this.PlayerCreated(this, newPlayer, newPlayerMovement);
+    }
+
     // Gamemode stuff
     public enum GameMode { playing, frozen, rotating, won, lost, editing };
     //[HideInInspector]
@@ -89,7 +103,9 @@ public class GameManager : MonoBehaviour
                         int x = Mathf.RoundToInt(worldPos.x);
                         int y = Mathf.RoundToInt(worldPos.y);
                         this.currentRotationCenter = new Int2(x, y);
-                        if (isValidCenter(currentRotationCenter) && playerMovement.isGrounded() && !playerMovement.beingShot && !playerInNoRoZone())
+                        if (playerMovement != null && player != null &&
+                            isValidCenter(currentRotationCenter) && playerMovement.isGrounded() 
+                            && !playerMovement.beingShot && !playerInNoRoZone())
                         {
                             PlaySound("EnterRotation");
                             gameState = GameMode.frozen;
@@ -228,6 +244,8 @@ public class GameManager : MonoBehaviour
         }
 
         // Check that the given center is exactly two blocks away from the player
+        if (blockManager.player == null)
+            return true;
         Int2 playerPos = blockManager.player.GetRoundedPosition();
         int absDx = Mathf.Abs(xy.x - playerPos.x);
         int absDy = Mathf.Abs(xy.y - playerPos.y);
@@ -240,6 +258,8 @@ public class GameManager : MonoBehaviour
 
     public bool playerInNoRoZone()
     {
+        if (blockManager.player == null)
+            return false;
         Int2 playerPos = blockManager.player.GetRoundedPosition();
         if (noRotationManager.hasNoRotationZone(playerPos))
         {
