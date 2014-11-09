@@ -44,7 +44,14 @@ public class Player : MonoBehaviour {
         }
     }
 
-    public void FrenchFryify()
+	void OnCollisionStay2D(Collision2D coll) {
+		if (coll.collider.gameObject.tag == "Sprite" && coll.collider.gameObject.transform.parent.gameObject.GetComponent<AbstractBlock>().heat >= 6f && gameManager.gameState == GameManager.GameMode.playing) {
+			gameManager.PlaySound("Burnt");
+			gameManager.LoseLevel("Burnt by a hot block");
+		}
+	}
+	
+	public void FrenchFryify()
     {
         Color starting = playerSprite.color;
         starting.a = 0f;
