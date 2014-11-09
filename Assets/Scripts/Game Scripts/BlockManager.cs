@@ -243,8 +243,16 @@ public class BlockManager : MonoBehaviour {
 	}
 
 	public bool rotationEmpty() {
-		return currentlyRotating.Count == 0;
+		if (currentlyRotating.Count == 0) {
+			return true;
 		}
+		foreach (AbstractBlock currentBlock in currentlyRotating.Values) {
+			if (currentBlock.isRotatable()) {
+				return false;
+			}
+		}
+		return true;
+	}
 
     public AbstractBlock getBlockAt(Int2 pos)
     {
