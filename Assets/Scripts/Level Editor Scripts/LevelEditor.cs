@@ -302,7 +302,7 @@ public class LevelEditor : MonoBehaviour
 		}
     }
 
-    private void AddBlock(Int2 pos, GameObject blockPrefab, int orientation)
+    private AbstractBlock AddBlock(Int2 pos, GameObject blockPrefab, int orientation)
     {
         GameObject b = Instantiate(blockPrefab, pos.ToVector2(), Quaternion.identity) as GameObject;
         AbstractBlock theBlock = b.GetComponent<AbstractBlock>();
@@ -311,6 +311,7 @@ public class LevelEditor : MonoBehaviour
         blockManager.AddBlock(pos, theBlock);
         theBlock.orientation = orientation;
         theBlock.blockSprite.transform.eulerAngles = new Vector3(0f, 0f, theBlock.orientation * 90f);
+        return theBlock;
     }
 
     void OnGUI()
@@ -374,7 +375,13 @@ public class LevelEditor : MonoBehaviour
             if (nameToBlockPrefabs.TryGetValue(blockSkelly.name, out newBlock))
             {
                 print(newBlock);
-                AddBlock(blockSkelly.position, newBlock, blockSkelly.orientation);
+                AbstractBlock currentBlock = AddBlock(blockSkelly.position, newBlock, blockSkelly.orientation);
+
+                if (currentBlock as CrackedBlock != null)
+                {
+                    CrackedBlock currentBlockIfItsCracked = currentBlock as CrackedBlock;
+                    currentBlockIfItsCracked.rotationsLeft = blockSkelly.rotationsTillDeath;
+                }
             }
             else
             {
@@ -386,7 +393,17 @@ public class LevelEditor : MonoBehaviour
         Destroy(FindObjectOfType<Player>().gameObject);
         Instantiate(playerPrefab, skeleton.playerPosition.ToVector2(), Quaternion.identity);
 
-        // TODO Add crawlers
+        // Add crawlers
+        GameObject[] crawlers = GameObject.FindGameObjectsWithTag("Crawler");
+        foreach (GameObject c in crawlers)
+        {
+            Destroy(c);
+        }
+
+        foreach (Vector2 newCrawlerPosition in skeleton.crawlers)
+        {
+            Instantiate(crawlerPrefab, newCrawlerPosition, Quaternion.identity);
+        }
 
         // Add noRoZones
         noRoMan.ClearNoRotationZones();
