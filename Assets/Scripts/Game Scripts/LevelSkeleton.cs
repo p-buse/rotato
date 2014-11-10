@@ -25,13 +25,12 @@ public class LevelSkeleton
 	}
 
 	//stores norozone grid
-	public void setNoRoZoneGrid(HashSet<Int2> grid){
+	public void setNoRoZoneGrid(Dictionary<Int2, NoRotationZone> noRoGrid){
 
-		foreach (Int2 pos in grid)
+		foreach (Int2 pos in noRoGrid.Keys)
         {
-			noRoZones.Add(pos);
+			this.noRoZones.Add(pos);
 		}
-
 	}
 
 	public void setCrawlers()

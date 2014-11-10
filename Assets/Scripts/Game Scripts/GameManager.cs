@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Editor stuff
-    public bool canEdit = false;
+    public bool canEdit;
 
     void Awake()
     {
@@ -321,15 +321,6 @@ public class GameManager : MonoBehaviour
                     GUILayout.BeginArea(new Rect(0, 0, boxWidth, boxHeight));
                     GUILayout.Label("Salt: " + saltSoFar);
                     GUILayout.EndArea();
-                    if (canEdit)
-                    {
-                        GUILayout.BeginArea(new Rect(Screen.width - boxWidth, Screen.height - boxHeight, boxWidth, boxHeight));
-                        if (GUILayout.Button("Edit"))
-                        {
-                            gameState = GameMode.editing;
-                        }
-                        GUILayout.EndArea();
-                    }
                     break;
                 }
             case GameMode.lost:

@@ -22,6 +22,7 @@ public class LevelEditor : MonoBehaviour
 	AbstractBlock selectedBlock;
 	bool selectedPlayer;
 
+    GameObject noRoPrefab;
 	public GameObject selectionHighlightPrefab;
 	GameObject selectionHighlight;
 
@@ -50,7 +51,7 @@ public class LevelEditor : MonoBehaviour
         }
     }
 
-    List<Rect> guiRects;
+    HashSet<Rect> guiRects;
 
 
     void Awake()
@@ -62,13 +63,18 @@ public class LevelEditor : MonoBehaviour
         this.noRoMan = FindObjectOfType<NoRotationManager>();
 		this.selectionHighlight = Instantiate (selectionHighlightPrefab) as GameObject;
 		selectionHighlight.SetActive (false);
-        guiRects = new List<Rect>();
+        guiRects = new HashSet<Rect>();
 
         // Get the images for our brushes
         this.brushImages = new Texture[brushes.Length];
         for (int i = 0; i < brushes.Length; i++)
         {
             brushImages[i] = brushes[i].image;
+            // Set up our no rotation zone prefab
+            if (brushes[i].isNoRotationZone)
+            {
+                this.noRoPrefab = brushes[i].prefab;
+            }
         }
     }
 
@@ -159,14 +165,11 @@ public class LevelEditor : MonoBehaviour
 	                    {
 	                        if (Input.GetMouseButton(0))
 	                        {
-	                            if (noRoMan.AddZone(mouseWorldPos))
-	                            {
-	                                Instantiate(currentBrush.prefab, mouseWorldPos.ToVector2(), Quaternion.identity);
-	                            }
+                                noRoMan.AddNoRoZone(mouseWorldPos, currentBrush.prefab);
 	                        }
 	                        if (Input.GetMouseButton(1))
 	                        {
-	                            noRoMan.RemoveZone(mouseWorldPos);
+	                            noRoMan.RemoveNoRoZone(mouseWorldPos);
 	                        }
 	                    }
 	                    // Brush is a block
@@ -278,21 +281,20 @@ public class LevelEditor : MonoBehaviour
 
     void OnGUI()
     {
-
+        float boxWidth = Screen.width / 3;
+        float boxHeight = Screen.height / 10;
+        Rect brushRect = new Rect(0, Screen.height - boxHeight, Screen.width, boxHeight);
+        Rect toolRect = new Rect(0, 0, boxWidth, boxHeight);
+        Rect playEditRect = new Rect(Screen.width - boxWidth, 0, boxWidth, boxHeight);
+        Rect saveLoadRect = new Rect(Screen.width - boxWidth, boxHeight * 2, boxWidth, boxHeight * 2);
+        // Clear our GUI rectangles, then add our current ones
+        guiRects = new HashSet<Rect>();
+        guiRects.Add(brushRect);
+        guiRects.Add(toolRect);
+        guiRects.Add(playEditRect);
+        guiRects.Add(saveLoadRect);
         if (gameManager.gameState == GameManager.GameMode.editing)
         {
-
-            float boxWidth = Screen.width / 3;
-            float boxHeight = Screen.height / 10;
-            Rect brushRect = new Rect(0, Screen.height - boxHeight, Screen.width, boxHeight);
-            Rect toolRect = new Rect(0, 0, boxWidth, boxHeight);
-            Rect playRect = new Rect(Screen.width - boxWidth, 0, boxWidth, boxHeight);
-            Rect editRect = new Rect(Screen.width - boxWidth, boxHeight *2, boxWidth, boxHeight *2);
-            guiRects.Add(brushRect);
-            guiRects.Add(toolRect);
-            guiRects.Add(playRect);
-            guiRects.Add(editRect);
-
             // Different brushes
             GUILayout.BeginArea(brushRect);
             this.currentBrushNumber = GUILayout.Toolbar(currentBrushNumber, brushImages, GUILayout.MaxHeight(boxHeight), GUILayout.MaxWidth(Screen.width));
@@ -303,16 +305,16 @@ public class LevelEditor : MonoBehaviour
             this.toolMode = (ToolMode)GUILayout.Toolbar((int)toolMode, toolImages, GUILayout.MaxWidth(boxWidth), GUILayout.MaxHeight(boxHeight));
             GUILayout.EndArea();
 
-            // Play button
-            GUILayout.BeginArea(playRect);
+            // Play/Edit button
+            GUILayout.BeginArea(playEditRect);
             if (GUILayout.Button("Play"))
             {
-				selectionHighlight.SetActive(false);
+                selectionHighlight.SetActive(false);
                 gameManager.gameState = GameManager.GameMode.playing;
             }
             GUILayout.EndArea();
 
-            GUILayout.BeginArea(editRect);
+            GUILayout.BeginArea(saveLoadRect);
             if (GUILayout.Button("Save"))
             {
                 LevelSkeleton currentLevel = this.ConvertLevelToSkeleton();
@@ -324,6 +326,16 @@ public class LevelEditor : MonoBehaviour
             }
             GUILayout.EndArea();
         }
+        else if (gameManager.gameState == GameManager.GameMode.playing && gameManager.canEdit)
+        {
+            GUILayout.BeginArea(playEditRect);
+            if (GUILayout.Button("Edit"))
+            {
+                gameManager.gameState = GameManager.GameMode.editing;
+            }
+            GUILayout.EndArea();
+        }
+        
     }
 
     LevelSkeleton ConvertLevelToSkeleton()
