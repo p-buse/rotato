@@ -4,10 +4,8 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
-    // Keys U can press!!!
-    public KeyCode rotateRightKey = KeyCode.E;
-    public KeyCode rotateLeftKey = KeyCode.Q;
-    public KeyCode resetKey = KeyCode.R;
+    // Reset Key
+    public KeyCode resetKey = KeyCode.Escape;
 
     // References to other stuff
     BlockManager blockManager;
@@ -142,7 +140,7 @@ public class GameManager : MonoBehaviour
                 if (rotationClock <= 0f)
                 {
                     // Rotate right!
-                    if (Input.GetKey(rotateRightKey) && blockManager.isValidRotation(currentRotationCenter, -1))
+                    if (Input.GetAxis("Horizontal") > 0 && blockManager.isValidRotation(currentRotationCenter, -1))
                     {
                         PlaySound("RotateRight");
                         blockManager.startRotation(currentRotationCenter);
@@ -152,7 +150,7 @@ public class GameManager : MonoBehaviour
                         gameState = GameMode.rotating;
                     }
                     // Rotate left!
-                    else if (Input.GetKey(rotateLeftKey) && blockManager.isValidRotation(currentRotationCenter, 1))
+                    else if (Input.GetAxis("Horizontal") < 0 && blockManager.isValidRotation(currentRotationCenter, 1))
                     {
                         PlaySound("RotateLeft");
                         blockManager.startRotation(currentRotationCenter);
