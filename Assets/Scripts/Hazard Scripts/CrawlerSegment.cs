@@ -7,7 +7,7 @@ public class CrawlerSegment : MonoBehaviour {
 	GameManager gameManager;
 	BlockManager blockManager;
 	CrawlerMovement move;
-
+	
 	void Start()
 	{
 		this.gameManager = FindObjectOfType<GameManager>();
@@ -19,7 +19,8 @@ public class CrawlerSegment : MonoBehaviour {
 	{
 		if(!gameManager.gameFrozen)
 		{
-			if (blockManager.getBlockAt (transform.position.x, transform.position.y)) 
+			Vector2 top = new Vector2(transform.position.x, transform.position.y)+0.2f*move.floatToV2(move.clinging);
+			if (blockManager.getBlockAt (top.x, top.y)) 
 			{
 				dieSafely();
 			}
@@ -30,9 +31,9 @@ public class CrawlerSegment : MonoBehaviour {
 				}
 			}
 		}
-
+		
 	}
-
+	
 	void OnCollisionEnter2D(Collision2D coll) 
 	{
 		if (coll.gameObject.tag == "Player") 
@@ -43,7 +44,7 @@ public class CrawlerSegment : MonoBehaviour {
 		}
 		
 	}
-
+	
 	/// <summary>
 	/// Dies safely.
 	/// </summary>
