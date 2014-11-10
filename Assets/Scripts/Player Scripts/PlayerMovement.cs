@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float moveSpeed = 1f;
     public float jumpForce = 600f;
+    private Vector2 conservedMovement;
     private bool _beingShot = false;
     public bool beingShot
     {
@@ -31,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
 		this.gameManager = FindObjectOfType<GameManager>();
 		this.blockManager = FindObjectOfType<BlockManager>();
         this.groundCheck = transform.Find("groundCheck");
+        this.conservedMovement = Vector2.zero;
     }
 	
 	void Update ()
@@ -103,9 +105,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!gameManager.gameFrozen)
         {
+            rigidbody2D.gravityScale = 1f;
+            if (!conservedMovement.Equals(Vector2.zero))
+            {
+                rigidbody2D.velocity = conservedMovement;
+                conservedMovement = Vector2.zero;
+            }
             if (!beingShot)
             {
-                rigidbody2D.gravityScale = 1f;
                 rigidbody2D.velocity = new Vector2(horizontalVelocity, rigidbody2D.velocity.y);
                 if (jumping == true && isGrounded())
                 {
@@ -117,6 +124,10 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            if (conservedMovement.Equals(Vector2.zero))
+            {
+                conservedMovement = rigidbody2D.velocity;
+            }
             rigidbody2D.velocity = Vector2.zero;
             rigidbody2D.gravityScale = 0f;
         }
