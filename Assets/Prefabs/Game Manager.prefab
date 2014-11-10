@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.4155235, y: 7.51417351, z: 0}
+  m_LocalPosition: {x: -.0346092395, y: 6.47899818, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -58,13 +58,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateRightKey: 101
   rotateLeftKey: 113
-  resetKey: 114
+  resetKey: 27
+  playerMovement: {fileID: 0}
+  player: {fileID: 0}
   salt: []
   saltSoFar: 0
   winOrLoseCountdownTime: 2
   secondsToRotate: .300000012
   gameState: 0
-  canEdit: 1
+  canEdit: 0
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1

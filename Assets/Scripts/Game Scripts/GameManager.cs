@@ -13,7 +13,9 @@ public class GameManager : MonoBehaviour
     BlockManager blockManager;
     NoRotationManager noRotationManager;
     SoundManager soundManager;
+    [HideInInspector]
     public PlayerMovement playerMovement;
+    [HideInInspector]
     public Player player;
 
     // Salt stuff
