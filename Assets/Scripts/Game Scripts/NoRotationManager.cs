@@ -63,6 +63,6 @@ public class NoRotationManager : MonoBehaviour {
         {
             Destroy(nrz.gameObject);
         }
-        this.noRotationZones = new HashSet<Int2>();
+        this.noRotationZones = new Dictionary<Int2, NoRotationZone>();
     }
 }
