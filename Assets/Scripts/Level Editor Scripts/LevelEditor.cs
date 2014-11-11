@@ -106,7 +106,7 @@ public class LevelEditor : MonoBehaviour
             if (brushes[i].isSpikez)
                 spikesPrefab = brushes[i].prefab;
             }
-        this.path = Application.dataPath;
+        this.path = Application.dataPath + "/theLevel.xml"; //TODO HACK CITY
         }
        
 
