@@ -5,25 +5,35 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/_Scenes/Menu.unity
+  - enabled: 1
+    path: Assets/_Scenes/NewMenu.unity
   - enabled: 1
     path: Assets/_Scenes/LevelEditor.unity
   - enabled: 1
-    path: Assets/_Scenes/Menu 2.unity
+    path: Assets/_Scenes/TutorialScenes/IntroTutorial.unity
+  - enabled: 1
+    path: Assets/_Scenes/TutorialScenes/HowFarCanRotationsGo.unity
+  - enabled: 1
+    path: Assets/_Scenes/TutorialScenes/FallingBlockIntroduction.unity
+  - enabled: 1
+    path: Assets/_Scenes/TutorialScenes/PushingTutorial.unity
   - enabled: 1
     path: Assets/_Scenes/CannonTest.unity
   - enabled: 1
-    path: Assets/_Scenes/ALevelWithEverything.unity
+    path: Assets/_Scenes/MazeLevel.unity
   - enabled: 1
-    path: Assets/_Scenes/CrackedDemonstration.unity
+    path: Assets/_Scenes/TutorialScenes/CrackedBlocks.unity
   - enabled: 1
-    path: Assets/_Scenes/LaserIntroduction.unity
+    path: Assets/_Scenes/TutorialScenes/NoRotationZones.unity
   - enabled: 1
-    path: Assets/_Scenes/LaserHeat.unity
+    path: Assets/_Scenes/TutorialScenes/SaltTutorial.unity
   - enabled: 1
-    path: Assets/_Scenes/TutorialScenes/ClimbFast.unity
+    path: Assets/_Scenes/TutorialScenes/SpikesTutorial.unity
   - enabled: 1
-    path: Assets/_Scenes/Waterfall.unity
+    path: Assets/_Scenes/TutorialScenes/LaserTutorial.unity
   - enabled: 1
-    path: Assets/_Scenes/DavidLevel.unity
+    path: Assets/_Scenes/TutorialScenes/MirrorTutorial.unity
+  - enabled: 1
+    path: Assets/_Scenes/TutorialScenes/CrawlerTutorial.unity
+  - enabled: 1
+    path: Assets/_Scenes/LasersVsCrawlers.unity

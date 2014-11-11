@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 1f;
     public float jumpForce = 600f;
     private Vector2 conservedMovement;
+    public bool grounded;
     private bool _beingShot = false;
     public bool beingShot
     {
@@ -53,8 +54,11 @@ public class PlayerMovement : MonoBehaviour
 
             ResetPush();
 		}
-
-        jumping = Input.GetButtonDown("Vertical");
+        this.grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Solid"));
+        if (Input.GetButtonDown("Vertical") && grounded)
+        {
+            this.jumping = true;
+        }
 	}
 
     private void ResetPush()
@@ -114,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
             if (!beingShot)
             {
                 rigidbody2D.velocity = new Vector2(horizontalVelocity, rigidbody2D.velocity.y);
-                if (jumping == true && isGrounded())
+                if (jumping == true)
                 {
                     rigidbody2D.AddForce(new Vector2(0f, jumpForce));
                     gameManager.PlaySound("Jump");
@@ -135,7 +139,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isGrounded()
     {
-        return Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Solid"));
+        return this.grounded;
     }
 
     void OnCollisionEnter2D(Collision2D coll)
