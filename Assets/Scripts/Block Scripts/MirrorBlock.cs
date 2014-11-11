@@ -40,6 +40,9 @@ public class MirrorBlock : AbstractBlock {
 						gameManager.PlaySound("Lasered");
 						gameManager.LoseLevel("Evaporated by a laser");
 					}
+					else if (hit.collider.gameObject.GetComponent<CrawlerSegment>() != null) {
+						hit.collider.gameObject.GetComponent<CrawlerSegment>().dieSafely();
+					}
 					else if (hit.collider.gameObject.tag == "Block") {
 						AbstractBlock blockHit = hit.collider.gameObject.GetComponent<AbstractBlock>();
 						blockHit.addHeat((int)(Mathf.Abs(direction.x) * (2 + direction.x) + Mathf.Abs(direction.y) * (1 - direction.y)));

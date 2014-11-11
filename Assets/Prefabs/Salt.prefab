@@ -27,6 +27,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 23: {fileID: 2300000}
   - 102: {fileID: 10200000}
+  - 58: {fileID: 5800000}
   m_Layer: 1
   m_Name: Salt
   m_TagString: Block
@@ -53,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: 3, z: 0}
+  m_LocalPosition: {x: 1, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -79,6 +80,17 @@ Renderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!58 &5800000
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .349999994
+  m_Center: {x: 0, y: 0}
 --- !u!102 &10200000
 TextMesh:
   serializedVersion: 3
@@ -112,10 +124,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
   crawlers: []
   heat: 0
-  rotationsBeforeRemove: 4
+  rotationsBeforeRemove: 5
   field: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
