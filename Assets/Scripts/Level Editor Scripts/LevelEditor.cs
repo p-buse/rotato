@@ -26,7 +26,7 @@ public class LevelEditor : MonoBehaviour
 	public GameObject selectionHighlightPrefab;
 	GameObject selectionHighlight;
 
-    string path = @"c:\temp\SerializationOverview.xml";
+    string path;
 
     [System.Serializable]
     public class Brush
@@ -76,6 +76,7 @@ public class LevelEditor : MonoBehaviour
                 this.noRoPrefab = brushes[i].prefab;
             }
         }
+        this.path = Application.dataPath;
     }
 
     bool MouseInGUI()
@@ -239,7 +240,7 @@ public class LevelEditor : MonoBehaviour
 								}
 							}
 							//rotate ccw
-							else if(selectedBlock !=null && (Input.GetKeyDown(KeyCode.Q) || Input.GetAxis("Mouse ScrollWheel") > 0))
+							else if(selectedBlock !=null && (Input.GetKeyDown(KeyCode.A) || Input.GetAxis("Mouse ScrollWheel") > 0))
 							{
 								selectedBlock.orientation += 1;
 								selectedBlock.blockSprite.transform.eulerAngles = new Vector3(0f, 0f, selectedBlock.orientation * 90f);
@@ -251,7 +252,7 @@ public class LevelEditor : MonoBehaviour
 									(selectedBlock as MirrorBlock).stopFiring();
 								}
 							}
-							else if(selectedBlock !=null && (Input.GetKeyDown(KeyCode.E) || Input.GetAxis("Mouse ScrollWheel") < 0))
+							else if(selectedBlock !=null && (Input.GetKeyDown(KeyCode.D) || Input.GetAxis("Mouse ScrollWheel") < 0))
 							{
 								selectedBlock.orientation -= 1;
 								selectedBlock.blockSprite.transform.eulerAngles = new Vector3(0f, 0f, selectedBlock.orientation * 90f);
