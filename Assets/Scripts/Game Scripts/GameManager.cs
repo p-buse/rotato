@@ -222,7 +222,7 @@ public class GameManager : MonoBehaviour
             Salt current = salt[i];
             if (current != null)
             {
-                current.rotationsBeforeRemove--;
+                current.justRotated();
                 current.field.text = "" + current.rotationsBeforeRemove;
                 if (current.rotationsBeforeRemove == 0)
                 {

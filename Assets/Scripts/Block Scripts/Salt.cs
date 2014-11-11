@@ -36,7 +36,26 @@ public class Salt : AbstractBlock {
 			gameManager.saltSoFar++;
 		}
 	}
-	
+
+	/// <summary>
+	/// To be called by the GameManager after a rotation 
+	/// decrements rotationsBeforeRemove
+	/// Destroying this block is left to the GameManager
+	/// </summary>
+	public void justRotated(){
+		if(rotationsBeforeRemove ==1)
+		{
+			for(int i=0;i<crawlers.Count;i++ )
+			{
+				CrawlerMovement c = crawlers[i];
+				c.myBlock = null;
+				c.falling = true;
+			}
+		}
+		rotationsBeforeRemove--;
+		
+	}
+
 	public override bool invalidatesRotation() {
 		return false;
 	}
