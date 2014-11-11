@@ -202,6 +202,16 @@ public abstract class AbstractBlock : MonoBehaviour
         return new BlockSkeleton(this.myType(), this.GetCurrentPosition(), this.orientation);
 	}
 
-	
+	//non-square blocks override this to use their sprite's collider instead
+	/// <summary>
+	/// Checks whether (x,y) is inside this block's collider
+	/// </summary>
+	/// <returns><c>true</c>, if point is inside <c>false</c> otherwise.</returns>
+	/// <param name="x">The x coordinate.</param>
+	/// <param name="y">The y coordinate.</param>
+	public virtual bool isPointInside(float x, float y)
+	{
+		return collider2D.bounds.Contains (new Vector3(x, y, 0));
+	}
 
 }

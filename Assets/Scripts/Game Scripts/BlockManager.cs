@@ -261,7 +261,7 @@ public class BlockManager : MonoBehaviour {
 
 	/// <summary>
 	/// Gets the block at position (x,y), x and y floats.
-	/// for falling blocks, only returns it if inside its sprite
+	/// for falling blocks, lasers, and mirrors, only returns it if inside its sprite
 	/// </summary>
 	/// <returns>The block, if it exists, or null if it doesn't.</returns>
 	/// <param name="x">The x coordinate.</param>
@@ -272,9 +272,7 @@ public class BlockManager : MonoBehaviour {
 		AbstractBlock theBlock;
 		if (grid.TryGetValue (pos, out theBlock)) 
 		{
-			if(theBlock as FallingBlock==null)
-				return theBlock;
-			else if(Mathf.Abs(y - theBlock.transform.position.y)<0.5)
+			if(theBlock.isPointInside(x,y))
 			{
 				return theBlock;
 			}

@@ -60,6 +60,11 @@ public class MirrorBlock : AbstractBlock {
 		}
 	}
 
+	public override bool isPointInside(float x, float y)
+	{
+		return blockSprite.collider2D.bounds.Contains (new Vector3 (x, y, 0));
+	}
+
 	public override void addHeat(int source) {
 		if (source == (orientation + 2) % 4) {
 			fireTime += Time.deltaTime * 2;

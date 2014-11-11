@@ -54,6 +54,11 @@ public class LaserShooter : AbstractBlock {
 		}
 	}
 
+	public override bool isPointInside(float x, float y)
+	{
+		return blockSprite.collider2D.bounds.Contains (new Vector3 (x, y, 0));
+	}
+
 	public override void finishRotation(Int2 center, int dir) {
 		base.finishRotation(center, dir);
 		setFireDirection();
