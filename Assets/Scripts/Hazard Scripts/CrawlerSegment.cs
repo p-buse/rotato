@@ -19,7 +19,7 @@ public class CrawlerSegment : MonoBehaviour {
 	{
 		if(!gameManager.gameFrozen)
 		{
-			Vector2 top = new Vector2(transform.position.x, transform.position.y)+0.2f*move.floatToV2(move.clinging);
+			Vector2 top = new Vector2(transform.position.x, transform.position.y);//+0.2f*move.floatToV2(move.clinging);
 			if (blockManager.getBlockAt (top.x, top.y)) 
 			{
 				dieSafely();
