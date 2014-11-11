@@ -50,6 +50,10 @@ public class FallingBlock : AbstractBlock {
 						if (grid.TryGetValue(above, out check) && check == this) {
 							grid.Remove(above);
 						}
+						if (!grid.TryGetValue(GetCurrentPosition(), out check) || check != this) {
+							grid.Remove(GetCurrentPosition());
+							grid.Add(GetCurrentPosition(), this);
+						}
 					}
 				}
 				if (!grid.TryGetValue(GetCurrentPosition(), out check)) {
@@ -60,14 +64,18 @@ public class FallingBlock : AbstractBlock {
 						if (!grid.TryGetValue(above, out check)) {
 							grid.Add(above, this);
 						}
+						transform.position = new Vector3(GetCurrentPosition().x, GetCurrentPosition().y-fallClock+1f, 0f);
 						if (grid.TryGetValue(GetCurrentPosition(), out check) && (check as FallingBlock == null || (check as FallingBlock).fallClock < 0f)) {
-							transform.position = new Vector3(GetCurrentPosition().x+1f, GetCurrentPosition().y+1f, 0f);
 							fallClock = -1f;
 							if (grid.TryGetValue(GetCurrentPosition(), out check) && check == this) {
 								grid.Remove(GetCurrentPosition());
 							}
+							transform.position = new Vector3(GetCurrentPosition().x, GetCurrentPosition().y+1f, 0f);
+							if (!grid.TryGetValue(GetCurrentPosition(), out check) || check != this) {
+								grid.Remove(GetCurrentPosition());
+								grid.Add(GetCurrentPosition(), this);
+							}
 						}
-						transform.position = new Vector3(GetCurrentPosition().x, GetCurrentPosition().y-fallClock+1f, 0f);
 					}
 					else {
 						if (grid.TryGetValue(above, out check) && check == this) {
@@ -85,6 +93,10 @@ public class FallingBlock : AbstractBlock {
 							}
 							if (grid.TryGetValue(below, out check) && check == this) {
 								grid.Remove(below);
+							}
+							if (!grid.TryGetValue(GetCurrentPosition(), out check) || check != this) {
+								grid.Remove(GetCurrentPosition());
+								grid.Add(GetCurrentPosition(), this);
 							}
 						}
 					}
