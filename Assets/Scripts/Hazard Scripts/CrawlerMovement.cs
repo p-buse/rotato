@@ -189,20 +189,7 @@ public class CrawlerMovement : MonoBehaviour
 		
 		crawlerSprite.transform.eulerAngles = new Vector3(0,0,90.0f*((1.0f-time)*clinging + time*(clinging + direction)));
 	}
-	
-	public void MoveFrameOfRotation(Vector2 center, int direction, float time)
-	{
-		float dx = transform.position.x -center.x;
-		float dy = transform.position.y - center.y;
-		float newdx = -1 * direction * dy;
-		float newdy = direction * dx;
-		Vector3 startVec = new Vector3(dx,dy,0);
-		Vector3 endVec = new Vector3(newdx,newdy,0);
-		
-		transform.position = (Mathf.Cos(time * Mathf.PI / 2.0f)*startVec + Mathf.Sin(time*Mathf.PI/2.0f)*endVec) + new Vector3(-dx,-dy,0);
-		
-		transform.eulerAngles = new Vector3(0,0,90.0f*((1.0f-time)*clinging + time*(clinging + direction)));
-	}
+
 	
 	public void finishRotation(Int2 center, int dir)
 	{
