@@ -75,10 +75,14 @@ public abstract class AbstractBlock : MonoBehaviour
     void Awake()
     {
         this.blockSprite = transform.Find("blockSprite");
-		this.blockSpriteRenderer = blockSprite.GetComponent<SpriteRenderer> ();
         if (blockSprite == null)
         {
             Debug.LogError("block: " + gameObject + "at position: " + GetCurrentPosition() + " couldn't find its sprite!");
+        }
+		this.blockSpriteRenderer = blockSprite.GetComponent<SpriteRenderer> ();
+        if (blockSpriteRenderer == null)
+        {
+            Debug.LogError("block: " + gameObject + "at position: " + GetCurrentPosition() + " couldn't find its sprite renderer!");
         }
         orientation = FindRotationAngle(blockSprite);
         AbstractBlock.gameManager = FindObjectOfType<GameManager>();

@@ -7,9 +7,7 @@ public class LevelSkeleton
 {
 
     public List<BlockSkeleton> blocks = new List<BlockSkeleton>();
-
     public List<Int2> noRoZones = new List<Int2>();
-
     public Int2 playerPosition;
     public List<Vector2> crawlers = new List<Vector2>();
 

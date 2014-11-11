@@ -19,28 +19,37 @@ public class CameraZoom : MonoBehaviour {
 		this.gameManager = FindObjectOfType<GameManager>();
 		this.originalPosition = transform.position;
         player = FindObjectOfType<Player>();
+        gameManager.PlayerCreated += this.PlayerCreated;
 	}
+
+    void PlayerCreated(GameManager gm, Player p, PlayerMovement pm)
+    {
+        this.player = p;
+    }
 
     void Update()
     {
-        if (zoomEnabled)
+        if (player != null)
         {
-            if (gameManager.gameFrozen)
+            if (zoomEnabled)
             {
-                Int2 rotationCenter = gameManager.currentRotationCenter;
-                Vector3 newLocation = new Vector3(rotationCenter.x, rotationCenter.y, -10f);
-                transform.position = Vector3.Lerp(transform.position, newLocation, zoomSpeed * Time.deltaTime);
-                camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, closeZoom, zoomSpeed * Time.deltaTime);
+                if (gameManager.gameFrozen)
+                {
+                    Int2 rotationCenter = gameManager.currentRotationCenter;
+                    Vector3 newLocation = new Vector3(rotationCenter.x, rotationCenter.y, -10f);
+                    transform.position = Vector3.Lerp(transform.position, newLocation, zoomSpeed * Time.deltaTime);
+                    camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, closeZoom, zoomSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    transform.position = Vector3.Lerp(transform.position, originalPosition, zoomSpeed * Time.deltaTime);
+                    camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, farZoom, zoomSpeed * Time.deltaTime);
+                }
             }
-            else
+            if (followPlayer)
             {
-                transform.position = Vector3.Lerp(transform.position, originalPosition, zoomSpeed * Time.deltaTime);
-                camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, farZoom, zoomSpeed * Time.deltaTime);
+                transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x, player.transform.position.y, -10f), zoomSpeed * Time.deltaTime);
             }
-        }
-        if (followPlayer)
-        {
-            transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x, player.transform.position.y, -10f), zoomSpeed * Time.deltaTime);
         }
     }
 }

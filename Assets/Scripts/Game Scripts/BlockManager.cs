@@ -280,5 +280,12 @@ public class BlockManager : MonoBehaviour {
 		return null;
 	}
 
-
+    public void DestroyAllBlocks()
+    {
+        foreach (Int2 pos in this.grid.Keys)
+        {
+            Destroy(grid[pos].gameObject);
+        }
+        this.grid = new Dictionary<Int2, AbstractBlock>();
+    }
 }

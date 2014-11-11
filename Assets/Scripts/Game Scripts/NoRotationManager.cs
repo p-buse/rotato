@@ -55,4 +55,14 @@ public class NoRotationManager : MonoBehaviour {
 	public bool hasNoRotationZone(Int2 position){
         return noRotationZones.ContainsKey(position);
 	}
+
+    public void ClearNoRotationZones()
+    {
+        NoRotationZone[] noRoComponents = FindObjectsOfType<NoRotationZone>();
+        foreach (NoRotationZone nrz in noRoComponents)
+        {
+            Destroy(nrz.gameObject);
+        }
+        this.noRotationZones = new HashSet<Int2>();
+    }
 }

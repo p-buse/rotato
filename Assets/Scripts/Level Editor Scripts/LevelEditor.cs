@@ -38,6 +38,7 @@ public class LevelEditor : MonoBehaviour
         public bool isButter;
         public bool isNoRotationZone;
         public bool isCrawler;
+        public bool isSpikez;
     }
 
     public Brush[] brushes;
@@ -52,6 +53,11 @@ public class LevelEditor : MonoBehaviour
     }
 
     HashSet<Rect> guiRects;
+    Dictionary<string, GameObject> nameToBlockPrefabs;
+    GameObject playerPrefab;
+    GameObject crawlerPrefab;
+    GameObject noRoPrefab;
+    GameObject spikesPrefab;
 
 
     void Awake()
@@ -64,16 +70,42 @@ public class LevelEditor : MonoBehaviour
 		this.selectionHighlight = Instantiate (selectionHighlightPrefab) as GameObject;
 		selectionHighlight.SetActive (false);
         guiRects = new HashSet<Rect>();
+        nameToBlockPrefabs = new Dictionary<string,GameObject>();
+        gameManager.PlayerCreated += this.PlayerCreated;
+    }
 
-        // Get the images for our brushes
+    void PlayerCreated(GameManager gm, Player p, PlayerMovement pm)
+    {
+        this.player = p;
+    }
+
+    void Start()
+    {
         this.brushImages = new Texture[brushes.Length];
         for (int i = 0; i < brushes.Length; i++)
         {
+            // Set the images for our brushes
             brushImages[i] = brushes[i].image;
-            // Set up our no rotation zone prefab
-            if (brushes[i].isNoRotationZone)
+
+            if (!brushes[i].isCrawler && !brushes[i].isPlayer && !brushes[i].isNoRotationZone && !brushes[i].isSpikez)
             {
-                this.noRoPrefab = brushes[i].prefab;
+                // Set the names of our blocks
+                AbstractBlock block = brushes[i].prefab.GetComponent<AbstractBlock>();
+                if (block == null)
+                    Debug.LogError("Couldn't get block component of prefab: " + brushes[i].prefab);
+                brushes[i].name = block.myType();
+            }
+
+            // Add blocks to our dictionary
+            nameToBlockPrefabs[brushes[i].name] = brushes[i].prefab;
+            if (brushes[i].isCrawler)
+                crawlerPrefab = brushes[i].prefab;
+            if (brushes[i].isNoRotationZone)
+                noRoPrefab = brushes[i].prefab;
+            if (brushes[i].isPlayer)
+                playerPrefab = brushes[i].prefab;
+            if (brushes[i].isSpikez)
+                spikesPrefab = brushes[i].prefab;
             }
         }
         this.path = Application.dataPath;
@@ -118,9 +150,6 @@ public class LevelEditor : MonoBehaviour
 	                                if (player == null)
 	                                {
                                         Instantiate(currentBrush.prefab, mouseWorldPos.ToVector2(), Quaternion.identity);
-										blockManager.player = FindObjectOfType<Player>();
-										gameManager.player = FindObjectOfType<Player>();
-										gameManager.playerMovement = FindObjectOfType<PlayerMovement>();
 									}
 	                                else
 	                                {
@@ -180,7 +209,7 @@ public class LevelEditor : MonoBehaviour
 	                        {
 	                            if (player == null || !mouseWorldPos.Equals(player.GetRoundedPosition()))
 	                            {
-                                    CreateBlock(mouseWorldPos, currentBrush.prefab);
+                                    AddBlock(mouseWorldPos, currentBrush.prefab, 0);
 	                            }
 	                        }
 	                        else if (Input.GetMouseButton(1))
@@ -273,11 +302,16 @@ public class LevelEditor : MonoBehaviour
 		}
     }
 
-    private void CreateBlock(Int2 mouseWorldPos, GameObject blockPrefab)
+    private AbstractBlock AddBlock(Int2 pos, GameObject blockPrefab, int orientation)
     {
-        GameObject b = Instantiate(blockPrefab, mouseWorldPos.ToVector2(), Quaternion.identity) as GameObject;
+        GameObject b = Instantiate(blockPrefab, pos.ToVector2(), Quaternion.identity) as GameObject;
         AbstractBlock theBlock = b.GetComponent<AbstractBlock>();
-        blockManager.AddBlock(mouseWorldPos, theBlock);
+        if (theBlock == null)
+            Debug.LogError("couldn't get AbstractBlock component of: " + blockPrefab);
+        blockManager.AddBlock(pos, theBlock);
+        theBlock.orientation = orientation;
+        theBlock.blockSprite.transform.eulerAngles = new Vector3(0f, 0f, theBlock.orientation * 90f);
+        return theBlock;
     }
 
     void OnGUI()
@@ -324,6 +358,7 @@ public class LevelEditor : MonoBehaviour
             if (GUILayout.Button("Load"))
             {
                 LevelSkeleton loadedLevel = ReadXML(this.path);
+                this.LoadLevel(loadedLevel);
             }
             GUILayout.EndArea();
         }
@@ -337,6 +372,57 @@ public class LevelEditor : MonoBehaviour
             GUILayout.EndArea();
         }
         
+    }
+
+    void LoadLevel(LevelSkeleton skeleton)
+    {
+        // Add our blocks
+        blockManager.DestroyAllBlocks();
+        foreach(BlockSkeleton blockSkelly in skeleton.blocks)
+        {
+            GameObject newBlock;
+            if (nameToBlockPrefabs.TryGetValue(blockSkelly.name, out newBlock))
+            {
+                print(newBlock);
+                AbstractBlock currentBlock = AddBlock(blockSkelly.position, newBlock, blockSkelly.orientation);
+
+                if (currentBlock as CrackedBlock != null)
+                {
+                    CrackedBlock currentBlockIfItsCracked = currentBlock as CrackedBlock;
+                    currentBlockIfItsCracked.rotationsLeft = blockSkelly.rotationsTillDeath;
+                }
+            }
+            else
+            {
+                print("couldn't find block with name: " + blockSkelly.name);
+            }
+        }
+
+        // Add player
+        Destroy(FindObjectOfType<Player>().gameObject);
+        Instantiate(playerPrefab, skeleton.playerPosition.ToVector2(), Quaternion.identity);
+
+        // Add crawlers
+        GameObject[] crawlers = GameObject.FindGameObjectsWithTag("Crawler");
+        foreach (GameObject c in crawlers)
+        {
+            Destroy(c);
+        }
+
+        foreach (Vector2 newCrawlerPosition in skeleton.crawlers)
+        {
+            Instantiate(crawlerPrefab, newCrawlerPosition, Quaternion.identity);
+        }
+
+        // Add noRoZones
+        noRoMan.ClearNoRotationZones();
+        foreach (Int2 noRoZone in skeleton.noRoZones)
+        {
+            if (noRoMan.AddZone(noRoZone))
+            {
+                Instantiate(noRoPrefab, noRoZone.ToVector2(), Quaternion.identity);
+            }
+        }
     }
 
     LevelSkeleton ConvertLevelToSkeleton()
@@ -354,7 +440,6 @@ public class LevelEditor : MonoBehaviour
 
     public static void WriteXML(LevelSkeleton level, string path)
     {
-        level.playerPosition = new Int2(3, 5);
         XmlSerializer writer = new XmlSerializer(typeof(LevelSkeleton));
         System.IO.StreamWriter file = new System.IO.StreamWriter(path);
         Debug.Log("Wrote level to " + path);

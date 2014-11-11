@@ -4,6 +4,13 @@ using System.Collections.Generic;
 
 public class SoundManager : MonoBehaviour {
 
+	GameManager gameManager;
+
+	void Awake()
+	{
+		this.gameManager = GetComponent<GameManager>();
+	}
+
     [System.Serializable]
     public class Clip
     {
@@ -25,7 +32,7 @@ public class SoundManager : MonoBehaviour {
         {
             if (c.name.Equals(clipName))
             {
-                AudioSource.PlayClipAtPoint(c.RandomClip(), Camera.main.transform.position);
+                AudioSource.PlayClipAtPoint(c.RandomClip(), gameManager.player.transform.position);
                 playedClip = true;
             }
         }
