@@ -370,6 +370,15 @@ public class LevelEditor : MonoBehaviour
             }
             GUILayout.EndArea();
         }
+        else if (gameManager.gameState == GameManager.GameMode.playing && !gameManager.canEdit)
+        {
+            GUILayout.BeginArea(playEditRect);
+            if (GUILayout.Button("Skip"))
+            {
+                gameManager.GoToNextLevel();
+            }
+            GUILayout.EndArea();
+        }
         
     }
 

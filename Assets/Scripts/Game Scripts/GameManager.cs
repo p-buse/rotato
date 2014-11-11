@@ -288,7 +288,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void GoToNextLevel()
+    public void GoToNextLevel()
     {
         int loadedLevel = Application.loadedLevel;
         if (loadedLevel < Application.levelCount - 1)
