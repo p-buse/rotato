@@ -22,7 +22,6 @@ public class LevelEditor : MonoBehaviour
 	AbstractBlock selectedBlock;
 	bool selectedPlayer;
 
-    GameObject noRoPrefab;
 	public GameObject selectionHighlightPrefab;
 	GameObject selectionHighlight;
 
@@ -107,9 +106,9 @@ public class LevelEditor : MonoBehaviour
             if (brushes[i].isSpikez)
                 spikesPrefab = brushes[i].prefab;
             }
-        }
         this.path = Application.dataPath;
-    }
+        }
+       
 
     bool MouseInGUI()
     {
@@ -418,7 +417,7 @@ public class LevelEditor : MonoBehaviour
         noRoMan.ClearNoRotationZones();
         foreach (Int2 noRoZone in skeleton.noRoZones)
         {
-            if (noRoMan.AddZone(noRoZone))
+            if (noRoMan.AddNoRoZone(noRoZone, noRoPrefab))
             {
                 Instantiate(noRoPrefab, noRoZone.ToVector2(), Quaternion.identity);
             }
