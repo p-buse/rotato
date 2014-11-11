@@ -72,7 +72,6 @@ public class CrackedBlock : AbstractBlock {
 
 		if(rotationsLeft ==1)
 		{
-
 			for(int i=0;i<crawlers.Count;i++ )
 			{
 				CrawlerMovement c = crawlers[i];
