@@ -60,6 +60,13 @@ public class FallingBlock : AbstractBlock {
 						if (!grid.TryGetValue(above, out check)) {
 							grid.Add(above, this);
 						}
+						if (grid.TryGetValue(GetCurrentPosition(), out check) && (check as FallingBlock == null || (check as FallingBlock).fallClock < 0f)) {
+							transform.position = new Vector3(GetCurrentPosition().x+1f, GetCurrentPosition().y+1f, 0f);
+							fallClock = -1f;
+							if (grid.TryGetValue(GetCurrentPosition(), out check) && check == this) {
+								grid.Remove(GetCurrentPosition());
+							}
+						}
 						transform.position = new Vector3(GetCurrentPosition().x, GetCurrentPosition().y-fallClock+1f, 0f);
 					}
 					else {
