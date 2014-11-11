@@ -158,10 +158,6 @@ public abstract class AbstractBlock : MonoBehaviour
 		blockSprite.transform.localPosition = new Vector3(0,0,0);
 		orientation += dir;
         blockSprite.transform.eulerAngles = new Vector3(0f, 0f, orientation * 90f);
-        // Round FallingBlocks' positions
-		if (this as FallingBlock != null) {
-			(this as FallingBlock).location = new Int2(this.transform.position.x, this.transform.position.y);
-		}
 
 		for(int i = 0; i<crawlers.Count;i++)
 		{

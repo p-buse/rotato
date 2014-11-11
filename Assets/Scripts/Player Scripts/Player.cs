@@ -65,7 +65,7 @@ public class Player : MonoBehaviour {
     {
         Int2 above = new Int2 (position.x, position.y + 1);
 	    Int2 below = new Int2 (position.x, position.y - 1);
-        return (grid.ContainsKey(above) && grid[above] as FallingBlock != null && !(grid[above] as FallingBlock).whichHalf && 
+        return (grid.ContainsKey(above) && grid[above] as FallingBlock != null && grid[above].transform.position.y > Mathf.RoundToInt(grid[above].transform.position.y) && 
 		 	(!grid.ContainsKey(new Int2(above.x, above.y+1)) || grid[new Int2(above.x, above.y+1)] != grid[above]) && 
 		 	grid.ContainsKey(below) && (grid[below] as FallingBlock == null || (grid[below] as FallingBlock).fallClock < 0.0f) && !gameManager.gameFrozen);
     }
