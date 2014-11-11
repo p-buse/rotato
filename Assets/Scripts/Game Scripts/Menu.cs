@@ -4,6 +4,9 @@ using System.Collections;
 public class Menu : MonoBehaviour
 {
     public KeyCode quitKey = KeyCode.Escape;
+    public Texture levelEditorButton;
+    public Texture playButton;
+
 
     void Update()
     {
@@ -14,25 +17,22 @@ public class Menu : MonoBehaviour
 
     void OnGUI()
     {
-        GUI.BeginGroup(new Rect(0, 100, 500, 500));
-        for (int i = 0; i < Application.levelCount; i++)
+        Rect topScreen = new Rect(0, 0, Screen.width, Screen.height / 2);
+        Rect bottomScreen = new Rect(0, Screen.height / 2, Screen.width, Screen.height / 2);
+
+        GUILayout.BeginArea(topScreen);
+        if (GUILayout.Button(levelEditorButton))
         {
-			if (i==0)
-			{
-				if(GUILayout.Button("Level editor"))
-				{
-					Application.LoadLevel(i);
-				}
-			}
-            else
-            {
-                if (GUILayout.Button("Load Level: " + i.ToString()))
-                {
-                    Application.LoadLevel(i);
-                }
-            }
+            Application.LoadLevel(1);
         }
-        GUI.EndGroup();
+        GUILayout.EndArea();
+        GUILayout.BeginArea(bottomScreen);
+        if (GUILayout.Button(playButton))
+        {
+            Application.LoadLevel(2);
+        }
+        GUILayout.EndArea();
     }
+        
 	
 }
