@@ -105,7 +105,7 @@ public class CrawlerMovement : MonoBehaviour
 							float oldMoving = moving;
 							moving = (moving +4 + change)%4;
 							clinging =(clinging + 4 + change)%4;
-							updateMyBlock(getMyBlock());
+							//updateMyBlock(getMyBlock());
 							
 						}
 					}
