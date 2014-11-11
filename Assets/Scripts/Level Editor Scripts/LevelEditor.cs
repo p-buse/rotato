@@ -26,7 +26,7 @@ public class LevelEditor : MonoBehaviour
 	public GameObject selectionHighlightPrefab;
 	GameObject selectionHighlight;
 
-    string path = @"c:\temp\SerializationOverview.xml";
+    string path;
 
     [System.Serializable]
     public class Brush
@@ -76,6 +76,7 @@ public class LevelEditor : MonoBehaviour
                 this.noRoPrefab = brushes[i].prefab;
             }
         }
+        this.path = Application.dataPath;
     }
 
     bool MouseInGUI()
