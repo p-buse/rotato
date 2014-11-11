@@ -147,7 +147,7 @@ Transform:
   m_PrefabInternal: {fileID: 1438952597}
   m_GameObject: {fileID: 12191752}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.550000012, z: 0}
+  m_LocalPosition: {x: 0, y: -.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2143145281}
@@ -1641,6 +1641,76 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &330409530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 330409533}
+  - 23: {fileID: 330409532}
+  - 102: {fileID: 330409531}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!102 &330409531
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 330409530}
+  m_Text: LASERS CAN BE REDIRECTED BY MIRRORS
+  m_OffsetZ: 0
+  m_CharacterSize: .00499999989
+  m_LineSpacing: 1
+  m_Anchor: 0
+  m_Alignment: 0
+  m_TabSize: 4
+  m_FontSize: 1000
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+--- !u!23 &330409532
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 330409530}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!4 &330409533
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 330409530}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.30889606, y: 2.21606374, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 89
 --- !u!1 &333143815
 GameObject:
   m_ObjectHideFlags: 0
@@ -12527,6 +12597,7 @@ MonoBehaviour:
     isButter: 0
     isNoRotationZone: 0
     isCrawler: 0
+    isSpikez: 0
   - name: Falling Block
     image: {fileID: 2800000, guid: 604dd8ccd06624f82a5de8bd53315229, type: 3}
     prefab: {fileID: 100000, guid: 2d934f2537ce78a4a8068a4284c51632, type: 2}
@@ -12534,6 +12605,7 @@ MonoBehaviour:
     isButter: 0
     isNoRotationZone: 0
     isCrawler: 0
+    isSpikez: 0
   - name: Buttahh
     image: {fileID: 2800000, guid: 0dd4265b7aa207e41a764259d8fe6add, type: 3}
     prefab: {fileID: 100000, guid: eabca84ee14edeb44a884612b4ed39b8, type: 2}
@@ -12541,6 +12613,7 @@ MonoBehaviour:
     isButter: 1
     isNoRotationZone: 0
     isCrawler: 0
+    isSpikez: 0
   - name: PLAYUH
     image: {fileID: 2800000, guid: 5936bfaf9fe74054dad8eac04ebc6210, type: 3}
     prefab: {fileID: 100000, guid: b3d363273a7a33c4e8e759299619d45e, type: 2}
@@ -12548,6 +12621,7 @@ MonoBehaviour:
     isButter: 0
     isNoRotationZone: 0
     isCrawler: 0
+    isSpikez: 0
   - name: Cannon
     image: {fileID: 2800000, guid: 2589278f8c71f524899cb7fa6c58ca26, type: 3}
     prefab: {fileID: 100000, guid: 22ee062d8d8329d468a26e9a80d88367, type: 2}
@@ -12555,6 +12629,7 @@ MonoBehaviour:
     isButter: 0
     isNoRotationZone: 0
     isCrawler: 0
+    isSpikez: 0
   - name: NoRoZo
     image: {fileID: 2800000, guid: e8b6df4c05066734d93d32782381d2e4, type: 3}
     prefab: {fileID: 100000, guid: 4f425c5217c9c2a4092c137129221de8, type: 2}
@@ -12562,6 +12637,7 @@ MonoBehaviour:
     isButter: 0
     isNoRotationZone: 1
     isCrawler: 0
+    isSpikez: 0
   - name: Laser
     image: {fileID: 2800000, guid: 130fec74a330f4b15a010cefcf749149, type: 3}
     prefab: {fileID: 100002, guid: 4cef1404cae914aaab5334b18f33e010, type: 2}
@@ -12569,6 +12645,7 @@ MonoBehaviour:
     isButter: 0
     isNoRotationZone: 0
     isCrawler: 0
+    isSpikez: 0
   - name: Crackedblock
     image: {fileID: 2800000, guid: 4374976620bcc5848a4283bf8468bd55, type: 3}
     prefab: {fileID: 100002, guid: 4408f8c41ceb1da40b3e07924073956b, type: 2}
@@ -12576,6 +12653,7 @@ MonoBehaviour:
     isButter: 0
     isNoRotationZone: 0
     isCrawler: 0
+    isSpikez: 0
   - name: Fixed Blocks
     image: {fileID: 2800000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
     prefab: {fileID: 100000, guid: d6e0ece4da26741478ebdfe9e9cf3329, type: 2}
@@ -12583,6 +12661,7 @@ MonoBehaviour:
     isButter: 0
     isNoRotationZone: 0
     isCrawler: 0
+    isSpikez: 0
   - name: Spikes
     image: {fileID: 2800000, guid: 9a0a26656907b54479e6820b54934f33, type: 3}
     prefab: {fileID: 100000, guid: 2154c8c31402e7042b3fab4077971733, type: 2}
@@ -12590,6 +12669,7 @@ MonoBehaviour:
     isButter: 0
     isNoRotationZone: 0
     isCrawler: 0
+    isSpikez: 1
   - name: Crawler
     image: {fileID: 2800000, guid: bb8e531d9a1b5ac4c8d903845052a428, type: 3}
     prefab: {fileID: 100004, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
@@ -12597,6 +12677,7 @@ MonoBehaviour:
     isButter: 0
     isNoRotationZone: 0
     isCrawler: 1
+    isSpikez: 0
   - name: Mirror
     image: {fileID: 2800000, guid: 83eccf1aede81426d8a14af93bf80267, type: 3}
     prefab: {fileID: 100002, guid: 9b0413b8f85da4dd4972219ad329b526, type: 2}
@@ -12604,6 +12685,7 @@ MonoBehaviour:
     isButter: 0
     isNoRotationZone: 0
     isCrawler: 0
+    isSpikez: 0
 --- !u!114 &1970226235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12719,8 +12801,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb59244c22def94a9636439086a5b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateRightKey: 101
-  rotateLeftKey: 113
   resetKey: 27
   playerMovement: {fileID: 0}
   player: {fileID: 0}
@@ -13915,6 +13995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4.75
   jumpForce: 630
+  grounded: 0
 --- !u!114 &2143145284
 MonoBehaviour:
   m_ObjectHideFlags: 0

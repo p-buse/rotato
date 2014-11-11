@@ -642,6 +642,7 @@ GameObject:
   - 114: {fileID: 93314823}
   - 23: {fileID: 93314822}
   - 102: {fileID: 93314821}
+  - 58: {fileID: 93314824}
   m_Layer: 1
   m_Name: Salt
   m_TagString: Block
@@ -672,12 +673,12 @@ TextMesh:
   m_GameObject: {fileID: 93314819}
   m_Text: 
   m_OffsetZ: -1
-  m_CharacterSize: .699999988
+  m_CharacterSize: .0500000007
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 100
   m_FontStyle: 1
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -722,6 +723,18 @@ MonoBehaviour:
   heat: 0
   rotationsBeforeRemove: 1
   field: {fileID: 0}
+--- !u!58 &93314824
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800000, guid: 2f278f28a80e9443f88ae5daeb6a29d8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1199282673}
+  m_GameObject: {fileID: 93314819}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .349999994
+  m_Center: {x: 0, y: 0}
 --- !u!1 &98704343
 GameObject:
   m_ObjectHideFlags: 0
@@ -2546,6 +2559,7 @@ MonoBehaviour:
     isButter: 0
     isNoRotationZone: 0
     isCrawler: 0
+    isSpikez: 0
   - name: Falling Block
     image: {fileID: 2800000, guid: 604dd8ccd06624f82a5de8bd53315229, type: 3}
     prefab: {fileID: 100000, guid: 2d934f2537ce78a4a8068a4284c51632, type: 2}
@@ -2553,6 +2567,7 @@ MonoBehaviour:
     isButter: 0
     isNoRotationZone: 0
     isCrawler: 0
+    isSpikez: 0
   - name: Buttahh
     image: {fileID: 2800000, guid: 0dd4265b7aa207e41a764259d8fe6add, type: 3}
     prefab: {fileID: 100000, guid: eabca84ee14edeb44a884612b4ed39b8, type: 2}
@@ -2560,6 +2575,7 @@ MonoBehaviour:
     isButter: 1
     isNoRotationZone: 0
     isCrawler: 0
+    isSpikez: 0
   - name: PLAYUH
     image: {fileID: 2800000, guid: 5936bfaf9fe74054dad8eac04ebc6210, type: 3}
     prefab: {fileID: 100000, guid: b3d363273a7a33c4e8e759299619d45e, type: 2}
@@ -2567,6 +2583,7 @@ MonoBehaviour:
     isButter: 0
     isNoRotationZone: 0
     isCrawler: 0
+    isSpikez: 0
   - name: Cannon
     image: {fileID: 2800000, guid: 2589278f8c71f524899cb7fa6c58ca26, type: 3}
     prefab: {fileID: 100000, guid: 22ee062d8d8329d468a26e9a80d88367, type: 2}
@@ -2574,6 +2591,7 @@ MonoBehaviour:
     isButter: 0
     isNoRotationZone: 0
     isCrawler: 0
+    isSpikez: 0
   - name: NoRoZo
     image: {fileID: 2800000, guid: e8b6df4c05066734d93d32782381d2e4, type: 3}
     prefab: {fileID: 100000, guid: 4f425c5217c9c2a4092c137129221de8, type: 2}
@@ -2581,6 +2599,7 @@ MonoBehaviour:
     isButter: 0
     isNoRotationZone: 1
     isCrawler: 0
+    isSpikez: 0
   - name: Laser
     image: {fileID: 2800000, guid: 130fec74a330f4b15a010cefcf749149, type: 3}
     prefab: {fileID: 100002, guid: 4cef1404cae914aaab5334b18f33e010, type: 2}
@@ -2588,6 +2607,7 @@ MonoBehaviour:
     isButter: 0
     isNoRotationZone: 0
     isCrawler: 0
+    isSpikez: 0
   - name: Crackedblock
     image: {fileID: 2800000, guid: 4374976620bcc5848a4283bf8468bd55, type: 3}
     prefab: {fileID: 100002, guid: 4408f8c41ceb1da40b3e07924073956b, type: 2}
@@ -2595,6 +2615,7 @@ MonoBehaviour:
     isButter: 0
     isNoRotationZone: 0
     isCrawler: 0
+    isSpikez: 0
   - name: Fixed Blocks
     image: {fileID: 2800000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
     prefab: {fileID: 100000, guid: d6e0ece4da26741478ebdfe9e9cf3329, type: 2}
@@ -2602,6 +2623,7 @@ MonoBehaviour:
     isButter: 0
     isNoRotationZone: 0
     isCrawler: 0
+    isSpikez: 0
   - name: Spikes
     image: {fileID: 2800000, guid: 9a0a26656907b54479e6820b54934f33, type: 3}
     prefab: {fileID: 100000, guid: 2154c8c31402e7042b3fab4077971733, type: 2}
@@ -2609,6 +2631,7 @@ MonoBehaviour:
     isButter: 0
     isNoRotationZone: 0
     isCrawler: 0
+    isSpikez: 1
   - name: Crawler
     image: {fileID: 2800000, guid: bb8e531d9a1b5ac4c8d903845052a428, type: 3}
     prefab: {fileID: 100004, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
@@ -2616,6 +2639,7 @@ MonoBehaviour:
     isButter: 0
     isNoRotationZone: 0
     isCrawler: 1
+    isSpikez: 0
   - name: Mirror
     image: {fileID: 2800000, guid: 83eccf1aede81426d8a14af93bf80267, type: 3}
     prefab: {fileID: 100002, guid: 9b0413b8f85da4dd4972219ad329b526, type: 2}
@@ -2623,6 +2647,7 @@ MonoBehaviour:
     isButter: 0
     isNoRotationZone: 0
     isCrawler: 0
+    isSpikez: 0
 --- !u!114 &328991280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2738,8 +2763,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb59244c22def94a9636439086a5b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateRightKey: 101
-  rotateLeftKey: 113
   resetKey: 27
   playerMovement: {fileID: 0}
   player: {fileID: 0}
@@ -3721,6 +3744,76 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 1, y: 1}
   m_Center: {x: 0, y: 0}
+--- !u!1 &452267220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 452267223}
+  - 23: {fileID: 452267222}
+  - 102: {fileID: 452267221}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!102 &452267221
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 452267220}
+  m_Text: YOU CAN ROTATE BLOCKS BEFORE IT DISAPPEARS
+  m_OffsetZ: 0
+  m_CharacterSize: .00499999989
+  m_LineSpacing: 1
+  m_Anchor: 0
+  m_Alignment: 0
+  m_TabSize: 4
+  m_FontSize: 1000
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+--- !u!23 &452267222
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 452267220}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!4 &452267223
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 452267220}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.30889702, y: 1.61767864, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 105
 --- !u!1 &467464520
 GameObject:
   m_ObjectHideFlags: 0
@@ -4239,6 +4332,7 @@ GameObject:
   - 114: {fileID: 526700178}
   - 23: {fileID: 526700177}
   - 102: {fileID: 526700176}
+  - 58: {fileID: 526700179}
   m_Layer: 1
   m_Name: Salt
   m_TagString: Block
@@ -4269,12 +4363,12 @@ TextMesh:
   m_GameObject: {fileID: 526700174}
   m_Text: 
   m_OffsetZ: -1
-  m_CharacterSize: .699999988
+  m_CharacterSize: .0500000007
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 100
   m_FontStyle: 1
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -4319,6 +4413,18 @@ MonoBehaviour:
   heat: 0
   rotationsBeforeRemove: 4
   field: {fileID: 0}
+--- !u!58 &526700179
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800000, guid: 2f278f28a80e9443f88ae5daeb6a29d8,
+    type: 2}
+  m_PrefabInternal: {fileID: 510563680}
+  m_GameObject: {fileID: 526700174}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .349999994
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &535510397
 Prefab:
   m_ObjectHideFlags: 0
@@ -5439,6 +5545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4.75
   jumpForce: 630
+  grounded: 0
 --- !u!114 &637092830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9554,6 +9661,7 @@ GameObject:
   - 114: {fileID: 1256701495}
   - 23: {fileID: 1256701494}
   - 102: {fileID: 1256701493}
+  - 58: {fileID: 1256701497}
   m_Layer: 1
   m_Name: Salt
   m_TagString: Block
@@ -9571,12 +9679,12 @@ TextMesh:
   m_GameObject: {fileID: 1256701492}
   m_Text: 
   m_OffsetZ: -1
-  m_CharacterSize: .699999988
+  m_CharacterSize: .0500000007
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 100
   m_FontStyle: 1
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -9634,6 +9742,18 @@ Transform:
   - {fileID: 543927158}
   m_Father: {fileID: 0}
   m_RootOrder: 20
+--- !u!58 &1256701497
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800000, guid: 2f278f28a80e9443f88ae5daeb6a29d8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1530491476}
+  m_GameObject: {fileID: 1256701492}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .349999994
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1257116683
 GameObject:
   m_ObjectHideFlags: 0
@@ -9881,6 +10001,76 @@ Transform:
   m_Children: []
   m_Father: {fileID: 357097883}
   m_RootOrder: 0
+--- !u!1 &1289454873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1289454876}
+  - 23: {fileID: 1289454875}
+  - 102: {fileID: 1289454874}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!102 &1289454874
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1289454873}
+  m_Text: THE NUMBER ON SALT INDICATES HOW MANY TIMES
+  m_OffsetZ: 0
+  m_CharacterSize: .00499999989
+  m_LineSpacing: 1
+  m_Anchor: 0
+  m_Alignment: 0
+  m_TabSize: 4
+  m_FontSize: 1000
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+--- !u!23 &1289454875
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1289454873}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!4 &1289454876
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1289454873}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.30889702, y: 2.61767864, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 104
 --- !u!1001 &1320961920
 Prefab:
   m_ObjectHideFlags: 0
@@ -10302,7 +10492,7 @@ Transform:
   m_PrefabInternal: {fileID: 1472264344}
   m_GameObject: {fileID: 1380043700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.550000012, z: 0}
+  m_LocalPosition: {x: 0, y: -.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 637092834}
@@ -15650,6 +15840,7 @@ GameObject:
   - 114: {fileID: 2076563331}
   - 23: {fileID: 2076563330}
   - 102: {fileID: 2076563329}
+  - 58: {fileID: 2076563333}
   m_Layer: 1
   m_Name: Salt
   m_TagString: Block
@@ -15667,12 +15858,12 @@ TextMesh:
   m_GameObject: {fileID: 2076563328}
   m_Text: 
   m_OffsetZ: -1
-  m_CharacterSize: .699999988
+  m_CharacterSize: .0500000007
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 100
   m_FontStyle: 1
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -15730,6 +15921,18 @@ Transform:
   - {fileID: 1547619087}
   m_Father: {fileID: 0}
   m_RootOrder: 102
+--- !u!58 &2076563333
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800000, guid: 2f278f28a80e9443f88ae5daeb6a29d8,
+    type: 2}
+  m_PrefabInternal: {fileID: 511212433}
+  m_GameObject: {fileID: 2076563328}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .349999994
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &2079300993
 Prefab:
   m_ObjectHideFlags: 0
