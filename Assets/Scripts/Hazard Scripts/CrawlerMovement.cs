@@ -78,9 +78,9 @@ public class CrawlerMovement : MonoBehaviour
 					updateMyBlock(forwardBlock());
 					if(forwardBlock() is LaserShooter && forwardBlock().orientation == (moving+5)%4)
 					{
-						//						float change = 1f/3f;
-						//						moving = (moving + change + 4)%4;
-						//						clinging = (clinging + change + 4)%4;
+						//float change = 2f/3f;
+						//moving = (moving + change + 4)%4;
+						//clinging = (clinging + change + 4)%4;
 					}
 					else
 					{
@@ -96,17 +96,14 @@ public class CrawlerMovement : MonoBehaviour
 					{
 						float relx = transform.position.x - myBlock.transform.position.x;
 						float rely = transform.position.y - myBlock.transform.position.y;
-						if(!isGrounded() &&  reachedEdge())//(Mathf.Abs(relx)>=0.505f && Mathf.Abs (rely)>=0.505f))
+						if( !isGrounded())
 						{
 							//turn down for what
-							//transform.Translate(0.10f*floatToV3 (moving));
 							transform.Translate(-0.05f*floatToV3 (clinging));
 							float change = moving - clinging ;
 							float oldMoving = moving;
 							moving = (moving +4 + change)%4;
 							clinging =(clinging + 4 + change)%4;
-							//updateMyBlock(getMyBlock());
-							
 						}
 					}
 				}
@@ -114,22 +111,7 @@ public class CrawlerMovement : MonoBehaviour
 			
 		}
 	}
-	
-	private bool reachedEdge()
-	{
-		Vector2 check = (Vector2)transform.position - 0.15f * floatToV2 (clinging);// 0.01f * floatToV2 (moving);
-		//if there's no block right in front of you
-		if(!bumpedBlockForward())
-		{
-			if(!blockManager.getBlockAt(check.x, check.y))
-			{
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	
+
 	/// <summary>
 	/// updates myBlock field
 	/// </summary>
