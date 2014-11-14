@@ -99,9 +99,9 @@ public abstract class AbstractBlock : MonoBehaviour
             {
                 heat = 0f;
             }
-            blockSpriteRenderer.color = new Color(1f, 1f - heat / 9f, 1f - heat / 9f);
-        }
-    }
+			blockSpriteRenderer.color = new Color(1f, Mathf.Min(2f - heat, 1f), Mathf.Min(2f - heat, 1f));
+		}
+	}
 
 	public Int2 GetCurrentPosition()
 	{
@@ -174,14 +174,14 @@ public abstract class AbstractBlock : MonoBehaviour
 	// The player dies on contact with a block with heat 6 or higher, so a block will take 3 seconds to heat up to deadly levels.
 	// The maximum heat is 9, so a block without a laser on it will cool down to safe heat levels in 3 seconds.
 	public virtual void addHeat(int source) {
-		heat += Time.deltaTime * 3;
-		if (heat > 9f) {
-			heat = 9f;
+		heat += Time.deltaTime * 2;
+		if (heat > 2f) {
+			heat = 2f;
 		}
 	}
 
 	void OnCollisionStay2D(Collision2D coll) {
-		if (coll.collider.gameObject.tag == "Player" && heat >= 6f && gameManager.gameState == GameManager.GameMode.playing) {
+		if (coll.collider.gameObject.tag == "Player" && heat >= 1f && gameManager.gameState == GameManager.GameMode.playing) {
             gameManager.PlaySound("Burnt");
             gameManager.LoseLevel("Burnt by a hot block");
 		}

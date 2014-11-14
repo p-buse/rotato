@@ -23,13 +23,6 @@ public class Salt : AbstractBlock {
 
 	void Update() {
 		if (player.GetRoundedPosition().Equals(location)) {
-			Salt[] salt = gameManager.salt;
-			for (int i = 0; i < salt.Length; i++) {
-				if (salt[i] == this) {
-					salt[i] = null;
-					break;
-				}
-			}
             gameManager.PlaySound("GetSalt");
             blockManager.grid.Remove(location);
 			Destroy(this.gameObject);

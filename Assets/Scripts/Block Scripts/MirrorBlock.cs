@@ -86,10 +86,7 @@ public class MirrorBlock : AbstractBlock {
 			firing = true;
 		}
 		else {
-			heat += Time.deltaTime * 3;
-			if (heat > 9f) {
-				heat = 9f;
-			}
+			base.addHeat(orientation);
 		}
 	}
 

@@ -18,8 +18,6 @@ public class GameManager : MonoBehaviour
 
     // Salt stuff
     [HideInInspector]
-    public Salt[] salt;
-    [HideInInspector]
     public int saltSoFar = 0;
 
     // Winning and losing
@@ -77,7 +75,6 @@ public class GameManager : MonoBehaviour
         this.blockManager = GetComponent<BlockManager>();
         this.noRotationManager = GetComponent<NoRotationManager>();
 
-        this.salt = GameObject.FindObjectsOfType<Salt>();
         this.playerMovement = FindObjectOfType<PlayerMovement>();
         this.player = FindObjectOfType<Player>();
     }
@@ -217,21 +214,17 @@ public class GameManager : MonoBehaviour
 
     private void UpdateSalt()
     {
+		Salt[] salt = FindObjectsOfType<Salt> ();
         for (int i = 0; i < salt.Length; i++)
         {
             Salt current = salt[i];
-            if (current != null)
-            {
-                current.justRotated();
-                current.field.text = "" + current.rotationsBeforeRemove;
-                if (current.rotationsBeforeRemove == 0)
-                {
-                    blockManager.grid.Remove(current.GetCurrentPosition());
-                    Destroy(current.gameObject);
-                    salt[i] = null;
-                }
-            }
-
+	        current.justRotated();
+	        current.field.text = "" + current.rotationsBeforeRemove;
+	        if (current.rotationsBeforeRemove == 0)
+	        {
+	            blockManager.grid.Remove(current.GetCurrentPosition());
+	            Destroy(current.gameObject);
+	        }
         }
     }
 

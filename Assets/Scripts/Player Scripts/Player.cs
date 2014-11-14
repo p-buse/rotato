@@ -45,7 +45,7 @@ public class Player : MonoBehaviour {
     }
 
 	void OnCollisionStay2D(Collision2D coll) {
-		if (coll.collider.gameObject.tag == "Sprite" && coll.collider.gameObject.transform.parent.gameObject.GetComponent<AbstractBlock>().heat >= 6f && gameManager.gameState == GameManager.GameMode.playing) {
+		if (coll.collider.gameObject.tag == "Sprite" && coll.collider.gameObject.transform.parent.gameObject.GetComponent<AbstractBlock>().heat >= 1f && gameManager.gameState == GameManager.GameMode.playing) {
 			gameManager.PlaySound("Burnt");
 			gameManager.LoseLevel("Burnt by a hot block");
 		}
