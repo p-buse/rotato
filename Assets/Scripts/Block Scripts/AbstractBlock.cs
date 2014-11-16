@@ -24,6 +24,39 @@ public abstract class AbstractBlock : MonoBehaviour
     [HideInInspector]
 	public List<CrawlerMovement> crawlers;
 
+    public struct Spikes
+    {
+        public SpikyBlock left;
+        public GameObject right;
+        public GameObject up;
+        public GameObject down;
+    }
+
+    Spikes spikes;
+
+    public bool leftSpiked;
+    public bool rightSpiked;
+    public bool upSpiked;
+    public bool downSpiked;
+    public GameObject spikinessPrefab;
+    public void SetSpikinessOnBlock(string direction, bool spiky)
+    {
+        direction = direction.ToLower();
+        if (direction != "left" && direction != "right" && direction != "up" && direction != "down")
+        {
+            Debug.LogError("direction wasn't left, right, up or down!");
+        }
+        switch (direction)
+        {
+            case "left":
+                if (spikes.left == null)
+                {
+                    GameObject leftSpikesObject = Instantiate(spikinessPrefab, transform.position, Quaternion.identity) as GameObject;
+                    spikes.left = leftSpikesObject;
+                    spikes.left.GetComponent
+
+    }
+
 
     private int _orientation;
     /// <summary>

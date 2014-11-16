@@ -4,17 +4,26 @@ using System.Collections;
 public class SpikyBlock : MonoBehaviour
 {
     static GameManager gameManager;
+    public SpriteRenderer spikeSprite;
 
-    void Start()
+    void Awake()
     {
         SpikyBlock.gameManager = FindObjectOfType<GameManager>();
         if (gameManager == null)
         {
             Debug.LogError("couldn't find game manager");
         }
-        // Set our parent to be the block sprite
-        transform.parent.parent = transform.parent.parent.Find("blockSprite");
+        spikeSprite = transform.parent.GetComponentInChildren<SpriteRenderer>();
     }
+
+    public void SetSpikeDirection(string direction)
+    {
+        //switch(direction)
+        //{
+        //    case "left":
+        //        transform.parent.
+    }
+
 
     void OnTriggerEnter2D(Collider2D coll)
     {

@@ -2,7 +2,9 @@ fileFormatVersion: 2
 guid: 1f3bdf9d07bec3748aa1819fea27ffe9
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - blockSprite: {instanceID: 0}
+  - spikinessPrefab: {fileID: 100000, guid: 2154c8c31402e7042b3fab4077971733, type: 2}
   executionOrder: 100
   icon: {instanceID: 0}
   userData: 
