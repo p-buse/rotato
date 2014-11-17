@@ -93,6 +93,7 @@ public class MirrorBlock : AbstractBlock {
 	public override void finishRotation(Int2 center, int dir) {
 		base.finishRotation(center, dir);
 		stopFiring();
+		blockSprite.collider2D.enabled = true;
 	}
 
 	public void stopFiring() {
@@ -104,5 +105,6 @@ public class MirrorBlock : AbstractBlock {
 		base.AnimateFrameOfRotation (center, direction, time);
 		laser.SetPosition (0, Vector2.zero);
 		laser.SetPosition (1, Vector2.zero);
+		blockSprite.collider2D.enabled = false;
 	}
 }
