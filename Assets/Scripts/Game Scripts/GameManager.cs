@@ -18,7 +18,8 @@ public class GameManager : MonoBehaviour
 
     // Salt stuff
     [HideInInspector]
-    public int saltSoFar = 0;
+    public static int saltSoFar = 0;
+	int saltThisLevel = 0;
 
     // Winning and losing
     public float winOrLoseCountdownTime = 2f;
@@ -297,7 +298,13 @@ public class GameManager : MonoBehaviour
     public void ResetLevel()
     {
         Application.LoadLevel(Application.loadedLevel);
+		saltSoFar -= saltThisLevel;
     }
+
+	public void addSalt() {
+		saltSoFar++;
+		saltThisLevel++;
+	}
 
     void OnGUI()
     {

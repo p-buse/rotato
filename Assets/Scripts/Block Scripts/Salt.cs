@@ -26,7 +26,7 @@ public class Salt : AbstractBlock {
             gameManager.PlaySound("GetSalt");
             blockManager.grid.Remove(location);
 			Destroy(this.gameObject);
-			gameManager.saltSoFar++;
+			gameManager.addSalt();
 		}
 	}
 
