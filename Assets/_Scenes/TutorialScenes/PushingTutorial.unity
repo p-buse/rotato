@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &128524244
 BoxCollider2D:
@@ -656,7 +656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &150901040
 BoxCollider2D:
@@ -795,10 +795,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
   fallClock: 0
-  whichHalf: 1
   initiatePush: 0
   pushClock: 0
   pushDirection: 0
@@ -864,7 +863,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 604dd8ccd06624f82a5de8bd53315229, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da7e0a98304234c0b9feb1638c884ca5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &399362599
 Transform:
@@ -933,7 +932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!1001 &451561815
 Prefab:
@@ -1028,7 +1027,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 604dd8ccd06624f82a5de8bd53315229, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da7e0a98304234c0b9feb1638c884ca5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &483882964
 Prefab:
@@ -1168,7 +1167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &571391627
 BoxCollider2D:
@@ -1320,7 +1319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &676120021
 BoxCollider2D:
@@ -1377,7 +1376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &688970555
 BoxCollider2D:
@@ -1478,7 +1477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &716591651
 BoxCollider2D:
@@ -1492,6 +1491,57 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 1, y: 1}
   m_Center: {x: 0, y: 0}
+--- !u!1 &783429059
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100006, guid: b3d363273a7a33c4e8e759299619d45e, type: 2}
+  m_PrefabInternal: {fileID: 451561815}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 783429060}
+  - 212: {fileID: 783429061}
+  m_Layer: 0
+  m_Name: frenchFries
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &783429060
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400006, guid: b3d363273a7a33c4e8e759299619d45e, type: 2}
+  m_PrefabInternal: {fileID: 451561815}
+  m_GameObject: {fileID: 783429059}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2012391991}
+  m_RootOrder: 2
+--- !u!212 &783429061
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21200002, guid: b3d363273a7a33c4e8e759299619d45e,
+    type: 2}
+  m_PrefabInternal: {fileID: 451561815}
+  m_GameObject: {fileID: 783429059}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 3f0d66c0d1d5a430d9b636c46a0793e3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1001 &787242798
 Prefab:
   m_ObjectHideFlags: 0
@@ -1579,7 +1629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &853918954
 BoxCollider2D:
@@ -1636,7 +1686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &874052409
 BoxCollider2D:
@@ -1737,7 +1787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &907383568
 BoxCollider2D:
@@ -1794,7 +1844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &924545237
 BoxCollider2D:
@@ -1821,6 +1871,7 @@ GameObject:
   - 114: {fileID: 972565899}
   - 114: {fileID: 972565898}
   - 114: {fileID: 972565903}
+  - 114: {fileID: 972565904}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -1866,7 +1917,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 972565897}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3260915cc33e7094d935c30d3182e445, type: 3}
+  m_Script: {fileID: 11500000, guid: 791e2319e18d22f499c51f1f0bb67af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
@@ -1882,14 +1933,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb59244c22def94a9636439086a5b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsToRotate: .300000012
-  rotateRightKey: 101
-  rotateLeftKey: 113
-  resetKey: 114
-  salt: []
-  winOrLoseCountdownTime: 2
+  resetKey: 27
+  playerMovement: {fileID: 0}
+  player: {fileID: 0}
   saltSoFar: 0
+  winOrLoseCountdownTime: 2
+  secondsToRotate: .300000012
   gameState: 0
+  canEdit: 0
 --- !u!4 &972565902
 Transform:
   m_ObjectHideFlags: 0
@@ -1963,6 +2014,121 @@ MonoBehaviour:
   - name: Burnt
     clips:
     - {fileID: 8300000, guid: d32ecd85be19a114b9c866fd08e6154b, type: 3}
+--- !u!114 &972565904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400010, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 906290838}
+  m_GameObject: {fileID: 972565897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4462e6d5c73bb54cab52f1fc825b1c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 2800000, guid: 34efe248d57dbcf4997df623eeb8f46f, type: 3}
+  line: {fileID: 2800000, guid: fede794811afbaa4fa2c6060e28d5a4e, type: 3}
+  rect: {fileID: 2800000, guid: 4b8faa2cf37ea774aa43c07310acd8cd, type: 3}
+  select: {fileID: 2800000, guid: 263b63edcf629424fad62f9f8b7d446d, type: 3}
+  selectionHighlightPrefab: {fileID: 100002, guid: dacd3e7d37dfe4b79860a23f78af1bb0,
+    type: 2}
+  brushes:
+  - name: Block
+    image: {fileID: 2800000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+    prefab: {fileID: 100000, guid: d03f54b890c63954594fe3c50eeb5033, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 0
+    isSpikez: 0
+  - name: Falling Block
+    image: {fileID: 2800000, guid: 604dd8ccd06624f82a5de8bd53315229, type: 3}
+    prefab: {fileID: 100000, guid: 2d934f2537ce78a4a8068a4284c51632, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 0
+    isSpikez: 0
+  - name: Buttahh
+    image: {fileID: 2800000, guid: 0dd4265b7aa207e41a764259d8fe6add, type: 3}
+    prefab: {fileID: 100000, guid: eabca84ee14edeb44a884612b4ed39b8, type: 2}
+    isPlayer: 0
+    isButter: 1
+    isNoRotationZone: 0
+    isCrawler: 0
+    isSpikez: 0
+  - name: PLAYUH
+    image: {fileID: 2800000, guid: 5936bfaf9fe74054dad8eac04ebc6210, type: 3}
+    prefab: {fileID: 100000, guid: b3d363273a7a33c4e8e759299619d45e, type: 2}
+    isPlayer: 1
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 0
+    isSpikez: 0
+  - name: Cannon
+    image: {fileID: 2800000, guid: 2589278f8c71f524899cb7fa6c58ca26, type: 3}
+    prefab: {fileID: 100000, guid: 22ee062d8d8329d468a26e9a80d88367, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 0
+    isSpikez: 0
+  - name: NoRoZo
+    image: {fileID: 2800000, guid: e8b6df4c05066734d93d32782381d2e4, type: 3}
+    prefab: {fileID: 100000, guid: 4f425c5217c9c2a4092c137129221de8, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 1
+    isCrawler: 0
+    isSpikez: 0
+  - name: Laser
+    image: {fileID: 2800000, guid: 130fec74a330f4b15a010cefcf749149, type: 3}
+    prefab: {fileID: 100002, guid: 4cef1404cae914aaab5334b18f33e010, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 0
+    isSpikez: 0
+  - name: Crackedblock
+    image: {fileID: 2800000, guid: 4374976620bcc5848a4283bf8468bd55, type: 3}
+    prefab: {fileID: 100002, guid: 4408f8c41ceb1da40b3e07924073956b, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 0
+    isSpikez: 0
+  - name: Fixed Blocks
+    image: {fileID: 2800000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+    prefab: {fileID: 100000, guid: d6e0ece4da26741478ebdfe9e9cf3329, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 0
+    isSpikez: 0
+  - name: Spikes
+    image: {fileID: 2800000, guid: 9a0a26656907b54479e6820b54934f33, type: 3}
+    prefab: {fileID: 100000, guid: 2154c8c31402e7042b3fab4077971733, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 0
+    isSpikez: 1
+  - name: Crawler
+    image: {fileID: 2800000, guid: bb8e531d9a1b5ac4c8d903845052a428, type: 3}
+    prefab: {fileID: 100004, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 1
+    isSpikez: 0
+  - name: Mirror
+    image: {fileID: 2800000, guid: 83eccf1aede81426d8a14af93bf80267, type: 3}
+    prefab: {fileID: 100002, guid: 9b0413b8f85da4dd4972219ad329b526, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 0
+    isSpikez: 0
 --- !u!1001 &1021724052
 Prefab:
   m_ObjectHideFlags: 0
@@ -2050,7 +2216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &1073179067
 BoxCollider2D:
@@ -2304,7 +2470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &1175529309
 BoxCollider2D:
@@ -2465,6 +2631,76 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1232951215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1232951218}
+  - 23: {fileID: 1232951217}
+  - 102: {fileID: 1232951216}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!102 &1232951216
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1232951215}
+  m_Text: CRATES CAN ALSO BE PUSHED
+  m_OffsetZ: 0
+  m_CharacterSize: .00499999989
+  m_LineSpacing: 1
+  m_Anchor: 0
+  m_Alignment: 0
+  m_TabSize: 4
+  m_FontSize: 1000
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+--- !u!23 &1232951217
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1232951215}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!4 &1232951218
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1232951215}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.9452281, y: 5.73446941, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
 --- !u!1001 &1236537386
 Prefab:
   m_ObjectHideFlags: 0
@@ -2596,7 +2832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &1265348518
 BoxCollider2D:
@@ -2748,7 +2984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &1321542166
 BoxCollider2D:
@@ -2907,7 +3143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &1406087372
 BoxCollider2D:
@@ -3031,7 +3267,7 @@ Transform:
   m_PrefabInternal: {fileID: 451561815}
   m_GameObject: {fileID: 1450856121}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.550000012, z: 0}
+  m_LocalPosition: {x: 0, y: -.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2012391991}
@@ -3123,7 +3359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &1492417292
 BoxCollider2D:
@@ -3560,7 +3796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &1748082301
 BoxCollider2D:
@@ -3617,7 +3853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &1771944854
 BoxCollider2D:
@@ -3735,7 +3971,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.34737492
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3754,7 +3990,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1790906657}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .760923982, y: 1.73925447, z: -10}
+  m_LocalPosition: {x: 1.02415025, y: 2.73951316, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3815,7 +4051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &1813035333
 BoxCollider2D:
@@ -3872,7 +4108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &1821046289
 BoxCollider2D:
@@ -4068,7 +4304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &1892992391
 BoxCollider2D:
@@ -4125,10 +4361,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
   fallClock: 0
-  whichHalf: 1
   initiatePush: 0
   pushClock: 0
   pushDirection: 0
@@ -4377,7 +4612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &2000123691
 BoxCollider2D:
@@ -4434,7 +4669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &2005207650
 BoxCollider2D:
@@ -4481,8 +4716,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85593a50be7d84c8386c87ceff9130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 4.75
   jumpForce: 630
+  grounded: 0
 --- !u!114 &2012391987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4547,6 +4783,7 @@ Transform:
   m_Children:
   - {fileID: 138221600}
   - {fileID: 1450856122}
+  - {fileID: 783429060}
   m_Father: {fileID: 0}
   m_RootOrder: 2
 --- !u!81 &2012391992
@@ -4651,7 +4888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &2030021279
 BoxCollider2D:
@@ -4752,7 +4989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 0}
-  blockSpriteRenderer: {fileID: 0}
+  crawlers: []
   heat: 0
 --- !u!61 &2073766305
 BoxCollider2D:
