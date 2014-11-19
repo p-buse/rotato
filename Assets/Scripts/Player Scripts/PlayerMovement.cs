@@ -3,9 +3,20 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
-
-    public float moveSpeed = 1f;
-    public float jumpForce = 600f;
+    struct InputFrame
+    {
+        public bool left;
+        public bool right;
+        public bool jumpPressed;
+        public bool jumpHeld;
+    }
+    InputFrame currentInput;
+    public float groundMoveSpeed = 1f;
+    public float airMoveSpeed = 2f;
+    public float jumpAcceleration = 8f;
+    public AnimationCurve jumpCurve;
+    public int maxJumpTicks = 12;
+    private int currentJumpTicks = 0;
     private Vector2 conservedMovement;
     public bool grounded;
     private bool _beingShot = false;
@@ -35,31 +46,116 @@ public class PlayerMovement : MonoBehaviour
         this.groundCheck = transform.Find("groundCheck");
         this.conservedMovement = Vector2.zero;
     }
+
+    InputFrame GetInput()
+    {
+        InputFrame inputFrame = new InputFrame();
+        float horizInput = Input.GetAxis("Horizontal");
+        if (horizInput > 0)
+        {
+            inputFrame.right = true;
+            inputFrame.left = false;
+        }
+        else if (horizInput < 0)
+        {
+            inputFrame.left = true;
+            inputFrame.right = false;
+        }
+        else
+        {
+            inputFrame.left = false;
+            inputFrame.right = false;
+        }
+        inputFrame.jumpPressed = Input.GetButtonDown("Vertical");
+        inputFrame.jumpHeld = Input.GetButton("Vertical");
+        return inputFrame;
+    }
 	
 	void Update ()
     {
-        float horizInput = Input.GetAxis("Horizontal");
-        if (horizInput > 0) {
-			this.horizontalVelocity = moveSpeed;
-
-            AddPushRight();
-		}
-        else if (horizInput < 0) {
-            this.horizontalVelocity = -moveSpeed;
-
-            AddPushLeft();
-		}
-        else {
-            this.horizontalVelocity = 0f;
-
-            ResetPush();
-		}
-        this.grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Solid"));
-        if (Input.GetButtonDown("Vertical") && grounded)
+        currentInput = GetInput();
+        if (currentInput.right)
         {
-            this.jumping = true;
+            AddPushRight();
         }
+        else if (currentInput.left)
+        {
+            AddPushLeft();
+        }
+        else
+        {
+            ResetPush();
+        }
+        if (jumping)
+        {
+            if (!currentInput.jumpHeld)
+            {
+                jumping = false;
+            }
+        }
+
+        if (currentInput.jumpPressed && grounded)
+        {
+            gameManager.PlaySound("Jump");
+            this.jumping = true;
+            this.currentJumpTicks = 0;
+        }
+        
 	}
+
+    void FixedUpdate()
+    {
+        this.grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Solid"));
+        if (!gameManager.gameFrozen)
+        {
+            rigidbody2D.gravityScale = 1f;
+            if (!conservedMovement.Equals(Vector2.zero))
+            {
+                rigidbody2D.velocity = conservedMovement;
+                conservedMovement = Vector2.zero;
+            }
+            if (!beingShot)
+            {
+                if (currentInput.left)
+                {
+                    if (grounded)
+                        rigidbody2D.AddForce(new Vector2(-groundMoveSpeed, 0f));
+                    else
+                        rigidbody2D.AddForce(new Vector2(-airMoveSpeed, 0f));
+                }
+                if (currentInput.right)
+                {
+                    if (grounded)
+                        rigidbody2D.AddForce(new Vector2(groundMoveSpeed, 0f));
+                    else
+                        rigidbody2D.AddForce(new Vector2(airMoveSpeed, 0f));
+                }
+                if (jumping == true)
+                {
+                    currentJumpTicks += 1;
+                    if (currentJumpTicks >= maxJumpTicks)
+                    {
+                        jumping = false;
+                    }
+                    else
+                    {
+                        //rigidbody2D.AddForce(new Vector2(0f, jumpAcceleration * (maxJumpTicks - currentJumpTicks))); // "Scaled" jump
+                        //rigidbody2D.AddForce(new Vector2(0f, jumpAcceleration)); // "Accelerate" jump
+                        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpAcceleration); //"Linear" jump
+                    }
+                }
+            }
+        }
+        else
+        {
+            if (conservedMovement.Equals(Vector2.zero))
+            {
+                conservedMovement = rigidbody2D.velocity;
+            }
+            rigidbody2D.velocity = Vector2.zero;
+            rigidbody2D.gravityScale = 0f;
+        }
+    }
 
     private void ResetPush()
     {
@@ -105,37 +201,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
-    {
-        if (!gameManager.gameFrozen)
-        {
-            rigidbody2D.gravityScale = 1f;
-            if (!conservedMovement.Equals(Vector2.zero))
-            {
-                rigidbody2D.velocity = conservedMovement;
-                conservedMovement = Vector2.zero;
-            }
-            if (!beingShot)
-            {
-                rigidbody2D.velocity = new Vector2(horizontalVelocity, rigidbody2D.velocity.y);
-                if (jumping == true)
-                {
-                    rigidbody2D.AddForce(new Vector2(0f, jumpForce));
-                    gameManager.PlaySound("Jump");
-                    jumping = false;
-                }
-            }
-        }
-        else
-        {
-            if (conservedMovement.Equals(Vector2.zero))
-            {
-                conservedMovement = rigidbody2D.velocity;
-            }
-            rigidbody2D.velocity = Vector2.zero;
-            rigidbody2D.gravityScale = 0f;
-        }
-    }
+
 
     public bool isGrounded()
     {
