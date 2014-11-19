@@ -31,7 +31,7 @@ public class FallingBlock : AbstractBlock {
 		return "Falling";
 	}
 
-	void Update() {
+	void FixedUpdate() {
 		if (!gameManager.gameFrozen) {
 			Dictionary<Int2, AbstractBlock> grid = blockManager.grid;
 			AbstractBlock check = null;
