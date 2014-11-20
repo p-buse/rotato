@@ -61,8 +61,8 @@ MonoBehaviour:
   player: {fileID: 0}
   winOrLoseCountdownTime: 2
   secondsToRotate: .300000012
-  gameState: 5
-  canEdit: 1
+  gameState: 0
+  canEdit: 0
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
