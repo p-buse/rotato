@@ -63,10 +63,7 @@ public class LevelEditor : MonoBehaviour
     SpecialPrefabs specialPrefabs;
 
     bool awaitingConfirmation = false;
-    enum ConfirmationState { YES, NO, LIMBO };
-    ConfirmationState confirmationState = ConfirmationState.LIMBO;
     string confirmationMessage = "";
-
 
     void Awake()
     {
@@ -408,14 +405,12 @@ public class LevelEditor : MonoBehaviour
                 if (GUILayout.Button("Yes"))
                 {
                     this.confirmationMessage = "";
-                    this.confirmationState = ConfirmationState.YES;
                     this.awaitingConfirmation = false;
-                    this.SaveLevel(levelName);
+                    this.SaveLevel(levelName, true);
                 }
                 if (GUILayout.Button("No"))
                 {
                     this.confirmationMessage = "";
-                    this.confirmationState = ConfirmationState.NO;
                     this.awaitingConfirmation = false;
                 }
             GUILayout.EndHorizontal();
@@ -445,16 +440,15 @@ public class LevelEditor : MonoBehaviour
         return this.levelsPath + levelName + ".xml";
     }
 
-    void SaveLevel(string levelName)
+    void SaveLevel(string levelName, bool overwrite = false)
     {
         string levelPath = PathToLevel(levelName);
-        if (!File.Exists(levelPath) || this.confirmationState == ConfirmationState.YES)
+        if (!File.Exists(levelPath) || overwrite)
         {
             if (this.player != null)
             {
                 LevelSkeleton currentLevel = this.ConvertCurrentLevelToSkeleton();
                 LevelEditor.WriteXML(currentLevel, levelPath);
-                this.confirmationState = ConfirmationState.LIMBO;
             }
             else
             {
