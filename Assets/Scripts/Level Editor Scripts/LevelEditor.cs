@@ -17,7 +17,7 @@ public class LevelEditor : MonoBehaviour
 	enum ToolMode { point = 0, select = 1 };
     ToolMode toolMode = ToolMode.point;
     
-    string levelName;
+    string currentLevelName;
     Texture[] toolImages;
 
     GameManager gameManager;
@@ -67,9 +67,11 @@ public class LevelEditor : MonoBehaviour
 
     bool loadMenu = false;
 
+    Vector2 loadMenuScrollPosition = Vector2.zero;
+
     void Awake()
     {
-        this.levelName = "Untitled";
+        this.currentLevelName = "Untitled";
         this.gameManager = GetComponent<GameManager>();
         this.toolImages = new Texture[] { this.pointTexture, this.selectTexture};
         this.player = FindObjectOfType<Player>();
@@ -144,7 +146,7 @@ public class LevelEditor : MonoBehaviour
         Vector3 mouseVector = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Int2 mouseWorldPos = new Int2(mouseVector.x, mouseVector.y);
 
-        if (gameManager.gameState == GameManager.GameMode.editing && !this.awaitingConfirmation)
+        if (gameManager.gameState == GameManager.GameMode.editing && !this.awaitingConfirmation && !this.loadMenu)
         {
             if (!MouseInGUI())
             {
@@ -337,17 +339,24 @@ public class LevelEditor : MonoBehaviour
         Rect brushRect = new Rect(0, Screen.height - boxHeight, Screen.width, boxHeight);
         Rect toolRect = new Rect(0, 0, boxWidth, boxHeight);
         Rect playEditRect = new Rect(Screen.width - boxWidth, 0, boxWidth, boxHeight);
-        Rect saveLoadRect = new Rect(Screen.width - boxWidth, boxHeight * 2, boxWidth, boxHeight * 1.5f);
+        Rect saveLoadRect = new Rect(Screen.width - boxWidth, boxHeight * 2, boxWidth, boxHeight * 1.1f);
         Rect loadRect = new Rect(Screen.width / 4, Screen.height / 4, Screen.width / 2, Screen.height / 2);
         SetupGUIRects(brushRect, toolRect, playEditRect, saveLoadRect);
         if (!awaitingConfirmation)
         {
             if (gameManager.gameState == GameManager.GameMode.editing)
             {
-                DrawBrushes(boxHeight, brushRect);
-                DrawTools(boxWidth, boxHeight, toolRect);
-                DrawPlayButton(playEditRect);
-                DrawSaveLoadButtons(saveLoadRect);
+                if (!loadMenu)
+                {
+                    DrawBrushes(boxHeight, brushRect);
+                    DrawTools(boxWidth, boxHeight, toolRect);
+                    DrawPlayButton(playEditRect);
+                    DrawSaveLoadButtons(saveLoadRect);
+                }
+                else
+                {
+                    DrawLoadMenu(loadRect);
+                }
             }
             else if (gameManager.gameState == GameManager.GameMode.playing && gameManager.canEdit)
             {
@@ -358,13 +367,9 @@ public class LevelEditor : MonoBehaviour
                 DrawSkipButton(playEditRect);
             }
         }
-        else if (this.loadMenu)
-        {
-            DrawLoadMenu(loadRect);
-        }
         else
         {
-            Rect confirmationRect = new Rect(Screen.width / 4, Screen.height / 4, Screen.width / 4, Screen.height / 4);
+            Rect confirmationRect = new Rect(Screen.width * 0.375f, Screen.height * 0.375f, Screen.width / 4, Screen.height / 4);
             DrawConfirmationWindow(confirmationRect);
         }
     }
@@ -372,7 +377,23 @@ public class LevelEditor : MonoBehaviour
     private void DrawLoadMenu(Rect loadRect)
     {
         GUILayout.BeginArea(loadRect, "", "box");
-        GUILayout.Label("Load");
+        GUILayout.BeginHorizontal();
+        GUILayout.FlexibleSpace();
+        if (GUILayout.Button("X"))
+        {
+            loadMenu = false;
+        }
+        GUILayout.EndHorizontal();
+        this.loadMenuScrollPosition = GUILayout.BeginScrollView(loadMenuScrollPosition);
+        foreach (string levelName in this.GetLevelNames())
+        {
+            if (GUILayout.Button(levelName))
+            {
+                LoadLevel(levelName);
+                loadMenu = false;
+            }
+        }
+        GUILayout.EndScrollView();
         GUILayout.EndArea();
     }
 
@@ -380,6 +401,7 @@ public class LevelEditor : MonoBehaviour
     {
         GUILayout.BeginArea(confirmationRect, "", "box");
         GUILayout.BeginVertical();
+        GUILayout.FlexibleSpace();
         GUILayout.BeginHorizontal();
         GUILayout.Label(confirmationMessage);
         GUILayout.EndHorizontal();
@@ -388,7 +410,7 @@ public class LevelEditor : MonoBehaviour
         {
             this.confirmationMessage = "";
             this.awaitingConfirmation = false;
-            this.SaveLevel(levelName, true);
+            this.SaveLevel(currentLevelName, true);
         }
         if (GUILayout.Button("No"))
         {
@@ -396,6 +418,7 @@ public class LevelEditor : MonoBehaviour
             this.awaitingConfirmation = false;
         }
         GUILayout.EndHorizontal();
+        GUILayout.FlexibleSpace();
         GUILayout.EndVertical();
         GUILayout.EndArea();
     }
@@ -423,14 +446,14 @@ public class LevelEditor : MonoBehaviour
     private void DrawSaveLoadButtons(Rect saveLoadRect)
     {
         GUILayout.BeginArea(saveLoadRect, "", "box");
-        this.levelName = GUILayout.TextField(this.levelName);
+        this.currentLevelName = GUILayout.TextField(this.currentLevelName);
         if (GUILayout.Button("Save"))
         {
-            SaveLevel(this.levelName);
+            SaveLevel(this.currentLevelName);
         }
         if (GUILayout.Button("Load"))
         {
-            LoadLevel(levelName);
+            this.loadMenu = true;
         }
         GUILayout.EndArea();
     }
@@ -463,14 +486,14 @@ public class LevelEditor : MonoBehaviour
         GUILayout.EndArea();
     }
 
-    private void SetupGUIRects(Rect brushRect, Rect toolRect, Rect playEditRect, Rect saveLoadRect)
+    private void SetupGUIRects(params Rect[] rects)
     {
         // Clear our GUI rectangles, then add our current ones
         guiRects = new HashSet<Rect>();
-        guiRects.Add(brushRect);
-        guiRects.Add(toolRect);
-        guiRects.Add(playEditRect);
-        guiRects.Add(saveLoadRect);
+        foreach (Rect r in rects)
+        {
+            guiRects.Add(r);
+        }
     }
 
     void ConfirmOverWrite(string confirmationMessage)
@@ -513,6 +536,7 @@ public class LevelEditor : MonoBehaviour
         {
             this.LoadLevelFromSkeleton(loadedLevel);
         }
+        this.currentLevelName = levelName;
     }
 
     void LoadLevelFromSkeleton(LevelSkeleton skeleton)
@@ -604,5 +628,16 @@ public class LevelEditor : MonoBehaviour
            Debug.LogWarning("Couldn't read file from " + path);
            return null;
        }
+    }
+
+    string[] GetLevelNames()
+    {
+        string[] levelPaths = Directory.GetFiles(levelsPath, "*.xml");
+        for (int i = 0; i < levelPaths.Length; i++)
+        {
+            levelPaths[i] = levelPaths[i].Replace(levelsPath, "");
+            levelPaths[i] = levelPaths[i].Replace(".xml", "");
+        }
+        return levelPaths;
     }
 }
