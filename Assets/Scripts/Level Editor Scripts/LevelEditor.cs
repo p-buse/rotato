@@ -7,12 +7,17 @@ using System.IO;
 
 public class LevelEditor : MonoBehaviour
 {
+    public Texture pointTexture;
+    public Texture selectTexture;
+    public GameObject selectionHighlightPrefab;
+    public Brush[] brushes;
+
+    GameObject selectionHighlight;
+
 	enum ToolMode { point = 0, select = 1 };
     ToolMode toolMode = ToolMode.point;
-    public Texture point;
-    public Texture line;
-    public Texture rect;
-	public Texture select;
+    
+    string levelName;
     Texture[] toolImages;
 
     GameManager gameManager;
@@ -22,10 +27,7 @@ public class LevelEditor : MonoBehaviour
 	AbstractBlock selectedBlock;
 	bool selectedPlayer;
 
-	public GameObject selectionHighlightPrefab;
-	GameObject selectionHighlight;
-
-    string path;
+    string levelsPath;
 
     [System.Serializable]
     public class Brush
@@ -39,8 +41,6 @@ public class LevelEditor : MonoBehaviour
         public bool isCrawler;
         public bool isSpikez;
     }
-
-    public Brush[] brushes;
     Texture[] brushImages;
     int currentBrushNumber = 0;
     Brush currentBrush
@@ -52,25 +52,40 @@ public class LevelEditor : MonoBehaviour
     }
 
     HashSet<Rect> guiRects;
-    Dictionary<string, GameObject> nameToBlockPrefabs;
-    GameObject playerPrefab;
-    GameObject crawlerPrefab;
-    GameObject noRoPrefab;
-    GameObject spikesPrefab;
+    Dictionary<string, GameObject> nameToBlockPrefab;
+    struct SpecialPrefabs
+    {
+        public GameObject playerPrefab;
+        public GameObject crawlerPrefab;
+        public GameObject noRoPrefab;
+        public GameObject spikesPrefab;
+    }
+    SpecialPrefabs specialPrefabs;
+
+    bool awaitingConfirmation = false;
+    enum ConfirmationState { YES, NO, LIMBO };
+    ConfirmationState confirmationState = ConfirmationState.LIMBO;
+    string confirmationMessage = "";
 
 
     void Awake()
     {
+        this.levelName = "Untitled";
         this.gameManager = GetComponent<GameManager>();
-        this.toolImages = new Texture[] { this.point, this.select};
+        this.toolImages = new Texture[] { this.pointTexture, this.selectTexture};
         this.player = FindObjectOfType<Player>();
         this.blockManager = FindObjectOfType<BlockManager>();
         this.noRoMan = FindObjectOfType<NoRotationManager>();
 		this.selectionHighlight = Instantiate (selectionHighlightPrefab) as GameObject;
 		selectionHighlight.SetActive (false);
         guiRects = new HashSet<Rect>();
-        nameToBlockPrefabs = new Dictionary<string,GameObject>();
+        nameToBlockPrefab = new Dictionary<string,GameObject>();
         gameManager.PlayerCreated += this.PlayerCreated;
+        this.levelsPath = Application.dataPath + "/Levels/";
+        if (!Directory.Exists(levelsPath))
+        {
+            Directory.CreateDirectory(levelsPath);
+        }
     }
 
     void PlayerCreated(GameManager gm, Player p, PlayerMovement pm)
@@ -96,17 +111,18 @@ public class LevelEditor : MonoBehaviour
             }
 
             // Add blocks to our dictionary
-            nameToBlockPrefabs[brushes[i].name] = brushes[i].prefab;
+            nameToBlockPrefab[brushes[i].name] = brushes[i].prefab;
+
+            // Add special prefabs
             if (brushes[i].isCrawler)
-                crawlerPrefab = brushes[i].prefab;
+                specialPrefabs.crawlerPrefab = brushes[i].prefab;
             if (brushes[i].isNoRotationZone)
-                noRoPrefab = brushes[i].prefab;
+                specialPrefabs.noRoPrefab = brushes[i].prefab;
             if (brushes[i].isPlayer)
-                playerPrefab = brushes[i].prefab;
+                specialPrefabs.playerPrefab = brushes[i].prefab;
             if (brushes[i].isSpikez)
-                spikesPrefab = brushes[i].prefab;
+                specialPrefabs.spikesPrefab = brushes[i].prefab;
             }
-        this.path = Application.dataPath + "/theLevel.xml"; //TODO HACK CITY
         }
        
 
@@ -129,7 +145,7 @@ public class LevelEditor : MonoBehaviour
         Vector3 mouseVector = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Int2 mouseWorldPos = new Int2(mouseVector.x, mouseVector.y);
 
-        if (gameManager.gameState == GameManager.GameMode.editing)
+        if (gameManager.gameState == GameManager.GameMode.editing && !this.awaitingConfirmation)
         {
             if (!MouseInGUI())
             {
@@ -315,83 +331,161 @@ public class LevelEditor : MonoBehaviour
 
     void OnGUI()
     {
+
+        // Setup our various measurements and boxes.
+        // We do this every frame to adjust for changing window sizes.
         float boxWidth = Screen.width / 3;
         float boxHeight = Screen.height / 10;
         Rect brushRect = new Rect(0, Screen.height - boxHeight, Screen.width, boxHeight);
         Rect toolRect = new Rect(0, 0, boxWidth, boxHeight);
         Rect playEditRect = new Rect(Screen.width - boxWidth, 0, boxWidth, boxHeight);
-        Rect saveLoadRect = new Rect(Screen.width - boxWidth, boxHeight * 2, boxWidth, boxHeight * 2);
+        Rect saveLoadRect = new Rect(Screen.width - boxWidth, boxHeight * 2, boxWidth, boxHeight * 1.5f);
+        SetupGUIRects(brushRect, toolRect, playEditRect, saveLoadRect);
+        if (!awaitingConfirmation)
+        {
+            if (gameManager.gameState == GameManager.GameMode.editing)
+            {
+                // Different brushes
+                GUILayout.BeginArea(brushRect);
+                this.currentBrushNumber = GUILayout.Toolbar(currentBrushNumber, brushImages, GUILayout.MaxHeight(boxHeight), GUILayout.MaxWidth(Screen.width));
+                GUILayout.EndArea();
+
+                // Different tools
+                GUILayout.BeginArea(toolRect);
+                this.toolMode = (ToolMode)GUILayout.Toolbar((int)toolMode, toolImages, GUILayout.MaxWidth(boxWidth), GUILayout.MaxHeight(boxHeight));
+                GUILayout.EndArea();
+
+                // Play/Edit button
+                GUILayout.BeginArea(playEditRect);
+                if (GUILayout.Button("Play"))
+                {
+                    selectionHighlight.SetActive(false);
+                    gameManager.gameState = GameManager.GameMode.playing;
+                }
+                GUILayout.EndArea();
+
+                GUILayout.BeginArea(saveLoadRect, "", "box");
+                this.levelName = GUILayout.TextField(this.levelName);
+                if (GUILayout.Button("Save"))
+                {
+                    SaveLevel(this.levelName);
+                }
+                if (GUILayout.Button("Load"))
+                {
+
+                    LoadLevel(levelName);
+                }
+                GUILayout.EndArea();
+            }
+            else if (gameManager.gameState == GameManager.GameMode.playing && gameManager.canEdit)
+            {
+                GUILayout.BeginArea(playEditRect);
+                if (GUILayout.Button("Edit"))
+                {
+                    gameManager.gameState = GameManager.GameMode.editing;
+                }
+                GUILayout.EndArea();
+            }
+            else if (gameManager.gameState == GameManager.GameMode.playing && !gameManager.canEdit)
+            {
+                GUILayout.BeginArea(playEditRect);
+                if (GUILayout.Button("Skip"))
+                {
+                    gameManager.GoToNextLevel();
+                }
+                GUILayout.EndArea();
+            }
+        }
+        else
+        {
+            Rect confirmationRect = new Rect(Screen.width / 4, Screen.height / 4, Screen.width / 4, Screen.height / 4);
+            GUILayout.BeginArea(confirmationRect, "", "box");
+            GUILayout.BeginVertical();
+            GUILayout.BeginHorizontal();
+                GUILayout.Label(confirmationMessage);
+            GUILayout.EndHorizontal();
+            GUILayout.BeginHorizontal();
+                if (GUILayout.Button("Yes"))
+                {
+                    this.confirmationMessage = "";
+                    this.confirmationState = ConfirmationState.YES;
+                    this.awaitingConfirmation = false;
+                    this.SaveLevel(levelName);
+                }
+                if (GUILayout.Button("No"))
+                {
+                    this.confirmationMessage = "";
+                    this.confirmationState = ConfirmationState.NO;
+                    this.awaitingConfirmation = false;
+                }
+            GUILayout.EndHorizontal();
+            GUILayout.EndVertical();
+            GUILayout.EndArea();
+        }
+    }
+
+    private void SetupGUIRects(Rect brushRect, Rect toolRect, Rect playEditRect, Rect saveLoadRect)
+    {
         // Clear our GUI rectangles, then add our current ones
         guiRects = new HashSet<Rect>();
         guiRects.Add(brushRect);
         guiRects.Add(toolRect);
         guiRects.Add(playEditRect);
         guiRects.Add(saveLoadRect);
-        if (gameManager.gameState == GameManager.GameMode.editing)
-        {
-            // Different brushes
-            GUILayout.BeginArea(brushRect);
-            this.currentBrushNumber = GUILayout.Toolbar(currentBrushNumber, brushImages, GUILayout.MaxHeight(boxHeight), GUILayout.MaxWidth(Screen.width));
-            GUILayout.EndArea();
-
-            // Different tools
-            GUILayout.BeginArea(toolRect);
-            this.toolMode = (ToolMode)GUILayout.Toolbar((int)toolMode, toolImages, GUILayout.MaxWidth(boxWidth), GUILayout.MaxHeight(boxHeight));
-            GUILayout.EndArea();
-
-            // Play/Edit button
-            GUILayout.BeginArea(playEditRect);
-            if (GUILayout.Button("Play"))
-            {
-                selectionHighlight.SetActive(false);
-                gameManager.gameState = GameManager.GameMode.playing;
-            }
-            GUILayout.EndArea();
-
-            GUILayout.BeginArea(saveLoadRect);
-            if (GUILayout.Button("Save"))
-            {
-                LevelSkeleton currentLevel = this.ConvertLevelToSkeleton();
-                LevelEditor.WriteXML(currentLevel, this.path);
-            }
-            if (GUILayout.Button("Load"))
-            {
-                LevelSkeleton loadedLevel = ReadXML(this.path);
-                this.LoadLevel(loadedLevel);
-            }
-            GUILayout.EndArea();
-        }
-        else if (gameManager.gameState == GameManager.GameMode.playing && gameManager.canEdit)
-        {
-            GUILayout.BeginArea(playEditRect);
-            if (GUILayout.Button("Edit"))
-            {
-                gameManager.gameState = GameManager.GameMode.editing;
-            }
-            GUILayout.EndArea();
-        }
-        else if (gameManager.gameState == GameManager.GameMode.playing && !gameManager.canEdit)
-        {
-            GUILayout.BeginArea(playEditRect);
-            if (GUILayout.Button("Skip"))
-            {
-                gameManager.GoToNextLevel();
-            }
-            GUILayout.EndArea();
-        }
-        
     }
 
-    void LoadLevel(LevelSkeleton skeleton)
+    void ConfirmOverWrite(string confirmationMessage)
+    {
+        this.awaitingConfirmation = true;
+        this.confirmationMessage = confirmationMessage;
+    }
+
+    private string PathToLevel(string levelName)
+    {
+        return this.levelsPath + levelName + ".xml";
+    }
+
+    void SaveLevel(string levelName)
+    {
+        string levelPath = PathToLevel(levelName);
+        if (!File.Exists(levelPath) || this.confirmationState == ConfirmationState.YES)
+        {
+            if (this.player != null)
+            {
+                LevelSkeleton currentLevel = this.ConvertCurrentLevelToSkeleton();
+                LevelEditor.WriteXML(currentLevel, levelPath);
+                this.confirmationState = ConfirmationState.LIMBO;
+            }
+            else
+            {
+                Debug.LogError("Can't save level if no player placed!");
+            }
+        }
+        else
+        {
+            ConfirmOverWrite("Overwrite " + levelName + "?");
+        }
+    }
+
+    private void LoadLevel(string levelName)
+    {
+        string levelPath = PathToLevel(levelName);
+        LevelSkeleton loadedLevel = ReadXML(levelPath);
+        if (loadedLevel != null)
+        {
+            this.LoadLevelFromSkeleton(loadedLevel);
+        }
+    }
+
+    void LoadLevelFromSkeleton(LevelSkeleton skeleton)
     {
         // Add our blocks
         blockManager.DestroyAllBlocks();
         foreach(BlockSkeleton blockSkelly in skeleton.blocks)
         {
             GameObject newBlock;
-            if (nameToBlockPrefabs.TryGetValue(blockSkelly.name, out newBlock))
+            if (nameToBlockPrefab.TryGetValue(blockSkelly.name, out newBlock))
             {
-                print(newBlock);
                 AbstractBlock currentBlock = AddBlock(blockSkelly.position, newBlock, blockSkelly.orientation);
 
                 if (currentBlock as CrackedBlock != null)
@@ -407,8 +501,9 @@ public class LevelEditor : MonoBehaviour
         }
 
         // Add player
-        Destroy(FindObjectOfType<Player>().gameObject);
-        Instantiate(playerPrefab, skeleton.playerPosition.ToVector2(), Quaternion.identity);
+        if (player != null)
+            Destroy(player.gameObject);
+        Instantiate(specialPrefabs.playerPrefab, skeleton.playerPosition.ToVector2(), Quaternion.identity);
 
         // Add crawlers
         GameObject[] crawlers = GameObject.FindGameObjectsWithTag("Crawler");
@@ -419,21 +514,21 @@ public class LevelEditor : MonoBehaviour
 
         foreach (Vector2 newCrawlerPosition in skeleton.crawlers)
         {
-            Instantiate(crawlerPrefab, newCrawlerPosition, Quaternion.identity);
+            Instantiate(specialPrefabs.crawlerPrefab, newCrawlerPosition, Quaternion.identity);
         }
 
         // Add noRoZones
         noRoMan.ClearNoRotationZones();
         foreach (Int2 noRoZone in skeleton.noRoZones)
         {
-            if (noRoMan.AddNoRoZone(noRoZone, noRoPrefab))
+            if (noRoMan.AddNoRoZone(noRoZone, specialPrefabs.noRoPrefab))
             {
-                Instantiate(noRoPrefab, noRoZone.ToVector2(), Quaternion.identity);
+                Instantiate(specialPrefabs.noRoPrefab, noRoZone.ToVector2(), Quaternion.identity);
             }
         }
     }
 
-    LevelSkeleton ConvertLevelToSkeleton()
+    LevelSkeleton ConvertCurrentLevelToSkeleton()
     {
         LevelSkeleton skelly = new LevelSkeleton();
         skelly.setGrid(blockManager.grid);
@@ -450,18 +545,26 @@ public class LevelEditor : MonoBehaviour
     {
         XmlSerializer writer = new XmlSerializer(typeof(LevelSkeleton));
         System.IO.StreamWriter file = new System.IO.StreamWriter(path);
-        Debug.Log("Wrote level to " + path);
         writer.Serialize(file, level);
         file.Close();
+        Debug.Log("Wrote level to " + path);
     }
 
     public static LevelSkeleton ReadXML(string path)
     {
        XmlSerializer deserializer = new XmlSerializer(typeof(LevelSkeleton));
-       TextReader textReader = new StreamReader(path);
-       LevelSkeleton loadedLevel;
-       loadedLevel = (LevelSkeleton)deserializer.Deserialize(textReader);
-       textReader.Close();
-       return loadedLevel;
+       try
+       {
+           TextReader textReader = new StreamReader(path);
+           LevelSkeleton loadedLevel;
+           loadedLevel = (LevelSkeleton)deserializer.Deserialize(textReader);
+           textReader.Close();
+           return loadedLevel;
+       }
+       catch (FileNotFoundException)
+       {
+           Debug.LogWarning("Couldn't read file from " + path);
+           return null;
+       }
     }
 }
