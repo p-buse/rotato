@@ -29,7 +29,7 @@ public class ButterBlock : AbstractBlock {
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-		if (coll.gameObject.tag == "Player" && gameManager.gameState == GameManager.GameMode.playing && heat < 1f)
+		if (coll.gameObject.tag == "Player" && gameManager.gameState == GameManager.GameMode.playing && heat <= 0f)
         {
             gameManager.PlaySound("Win");
             gameManager.WinLevel();

@@ -99,7 +99,7 @@ public abstract class AbstractBlock : MonoBehaviour
             {
                 heat = 0f;
             }
-			blockSpriteRenderer.color = new Color(1f, Mathf.Min(2f - heat, 1f), Mathf.Min(2f - heat, 1f));
+			blockSpriteRenderer.color = new Color(1f, 1f - heat * 2.5f, 1f - heat * 2.5f);
 		}
 	}
 
@@ -175,13 +175,13 @@ public abstract class AbstractBlock : MonoBehaviour
 	// The maximum heat is 9, so a block without a laser on it will cool down to safe heat levels in 3 seconds.
 	public virtual void addHeat(int source) {
 		heat += Time.deltaTime * 2;
-		if (heat > 2f) {
-			heat = 2f;
+		if (heat > 0.4f) {
+			heat = 0.4f;
 		}
 	}
 
 	void OnCollisionStay2D(Collision2D coll) {
-		if (coll.collider.gameObject.tag == "Player" && heat >= 1f && gameManager.gameState == GameManager.GameMode.playing) {
+		if (coll.collider.gameObject.tag == "Player" && heat > 0f && gameManager.gameState == GameManager.GameMode.playing) {
             gameManager.PlaySound("Burnt");
             gameManager.LoseLevel("Burnt by a hot block");
 		}
