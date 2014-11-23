@@ -65,6 +65,8 @@ public class LevelEditor : MonoBehaviour
     bool awaitingConfirmation = false;
     string confirmationMessage = "";
 
+    bool loadMenu = false;
+
     void Awake()
     {
         this.levelName = "Untitled";
@@ -328,7 +330,6 @@ public class LevelEditor : MonoBehaviour
 
     void OnGUI()
     {
-
         // Setup our various measurements and boxes.
         // We do this every frame to adjust for changing window sizes.
         float boxWidth = Screen.width / 3;
@@ -337,86 +338,129 @@ public class LevelEditor : MonoBehaviour
         Rect toolRect = new Rect(0, 0, boxWidth, boxHeight);
         Rect playEditRect = new Rect(Screen.width - boxWidth, 0, boxWidth, boxHeight);
         Rect saveLoadRect = new Rect(Screen.width - boxWidth, boxHeight * 2, boxWidth, boxHeight * 1.5f);
+        Rect loadRect = new Rect(Screen.width / 4, Screen.height / 4, Screen.width / 2, Screen.height / 2);
         SetupGUIRects(brushRect, toolRect, playEditRect, saveLoadRect);
         if (!awaitingConfirmation)
         {
             if (gameManager.gameState == GameManager.GameMode.editing)
             {
-                // Different brushes
-                GUILayout.BeginArea(brushRect);
-                this.currentBrushNumber = GUILayout.Toolbar(currentBrushNumber, brushImages, GUILayout.MaxHeight(boxHeight), GUILayout.MaxWidth(Screen.width));
-                GUILayout.EndArea();
-
-                // Different tools
-                GUILayout.BeginArea(toolRect);
-                this.toolMode = (ToolMode)GUILayout.Toolbar((int)toolMode, toolImages, GUILayout.MaxWidth(boxWidth), GUILayout.MaxHeight(boxHeight));
-                GUILayout.EndArea();
-
-                // Play/Edit button
-                GUILayout.BeginArea(playEditRect);
-                if (GUILayout.Button("Play"))
-                {
-                    selectionHighlight.SetActive(false);
-                    gameManager.gameState = GameManager.GameMode.playing;
-                }
-                GUILayout.EndArea();
-
-                GUILayout.BeginArea(saveLoadRect, "", "box");
-                this.levelName = GUILayout.TextField(this.levelName);
-                if (GUILayout.Button("Save"))
-                {
-                    SaveLevel(this.levelName);
-                }
-                if (GUILayout.Button("Load"))
-                {
-
-                    LoadLevel(levelName);
-                }
-                GUILayout.EndArea();
+                DrawBrushes(boxHeight, brushRect);
+                DrawTools(boxWidth, boxHeight, toolRect);
+                DrawPlayButton(playEditRect);
+                DrawSaveLoadButtons(saveLoadRect);
             }
             else if (gameManager.gameState == GameManager.GameMode.playing && gameManager.canEdit)
             {
-                GUILayout.BeginArea(playEditRect);
-                if (GUILayout.Button("Edit"))
-                {
-                    gameManager.gameState = GameManager.GameMode.editing;
-                }
-                GUILayout.EndArea();
+                DrawEditButton(playEditRect);
             }
             else if (gameManager.gameState == GameManager.GameMode.playing && !gameManager.canEdit)
             {
-                GUILayout.BeginArea(playEditRect);
-                if (GUILayout.Button("Skip"))
-                {
-                    gameManager.GoToNextLevel();
-                }
-                GUILayout.EndArea();
+                DrawSkipButton(playEditRect);
             }
+        }
+        else if (this.loadMenu)
+        {
+            DrawLoadMenu(loadRect);
         }
         else
         {
             Rect confirmationRect = new Rect(Screen.width / 4, Screen.height / 4, Screen.width / 4, Screen.height / 4);
-            GUILayout.BeginArea(confirmationRect, "", "box");
-            GUILayout.BeginVertical();
-            GUILayout.BeginHorizontal();
-                GUILayout.Label(confirmationMessage);
-            GUILayout.EndHorizontal();
-            GUILayout.BeginHorizontal();
-                if (GUILayout.Button("Yes"))
-                {
-                    this.confirmationMessage = "";
-                    this.awaitingConfirmation = false;
-                    this.SaveLevel(levelName, true);
-                }
-                if (GUILayout.Button("No"))
-                {
-                    this.confirmationMessage = "";
-                    this.awaitingConfirmation = false;
-                }
-            GUILayout.EndHorizontal();
-            GUILayout.EndVertical();
-            GUILayout.EndArea();
+            DrawConfirmationWindow(confirmationRect);
         }
+    }
+
+    private void DrawLoadMenu(Rect loadRect)
+    {
+        GUILayout.BeginArea(loadRect, "", "box");
+        GUILayout.Label("Load");
+        GUILayout.EndArea();
+    }
+
+    private void DrawConfirmationWindow(Rect confirmationRect)
+    {
+        GUILayout.BeginArea(confirmationRect, "", "box");
+        GUILayout.BeginVertical();
+        GUILayout.BeginHorizontal();
+        GUILayout.Label(confirmationMessage);
+        GUILayout.EndHorizontal();
+        GUILayout.BeginHorizontal();
+        if (GUILayout.Button("Yes"))
+        {
+            this.confirmationMessage = "";
+            this.awaitingConfirmation = false;
+            this.SaveLevel(levelName, true);
+        }
+        if (GUILayout.Button("No"))
+        {
+            this.confirmationMessage = "";
+            this.awaitingConfirmation = false;
+        }
+        GUILayout.EndHorizontal();
+        GUILayout.EndVertical();
+        GUILayout.EndArea();
+    }
+
+    private void DrawSkipButton(Rect playEditRect)
+    {
+        GUILayout.BeginArea(playEditRect);
+        if (GUILayout.Button("Skip"))
+        {
+            gameManager.GoToNextLevel();
+        }
+        GUILayout.EndArea();
+    }
+
+    private void DrawEditButton(Rect playEditRect)
+    {
+        GUILayout.BeginArea(playEditRect);
+        if (GUILayout.Button("Edit"))
+        {
+            gameManager.gameState = GameManager.GameMode.editing;
+        }
+        GUILayout.EndArea();
+    }
+
+    private void DrawSaveLoadButtons(Rect saveLoadRect)
+    {
+        GUILayout.BeginArea(saveLoadRect, "", "box");
+        this.levelName = GUILayout.TextField(this.levelName);
+        if (GUILayout.Button("Save"))
+        {
+            SaveLevel(this.levelName);
+        }
+        if (GUILayout.Button("Load"))
+        {
+            LoadLevel(levelName);
+        }
+        GUILayout.EndArea();
+    }
+
+    private void DrawPlayButton(Rect playEditRect)
+    {
+        // Play/Edit button
+        GUILayout.BeginArea(playEditRect);
+        if (GUILayout.Button("Play"))
+        {
+            selectionHighlight.SetActive(false);
+            gameManager.gameState = GameManager.GameMode.playing;
+        }
+        GUILayout.EndArea();
+    }
+
+    private void DrawTools(float boxWidth, float boxHeight, Rect toolRect)
+    {
+        // Different tools
+        GUILayout.BeginArea(toolRect);
+        this.toolMode = (ToolMode)GUILayout.Toolbar((int)toolMode, toolImages, GUILayout.MaxWidth(boxWidth), GUILayout.MaxHeight(boxHeight));
+        GUILayout.EndArea();
+    }
+
+    private void DrawBrushes(float boxHeight, Rect brushRect)
+    {
+        // Different brushes
+        GUILayout.BeginArea(brushRect);
+        this.currentBrushNumber = GUILayout.Toolbar(currentBrushNumber, brushImages, GUILayout.MaxHeight(boxHeight), GUILayout.MaxWidth(Screen.width));
+        GUILayout.EndArea();
     }
 
     private void SetupGUIRects(Rect brushRect, Rect toolRect, Rect playEditRect, Rect saveLoadRect)
