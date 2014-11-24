@@ -639,6 +639,7 @@ public class LevelEditor : MonoBehaviour
         if (lastBrush != currentBrushNumber)
         {
             UpdateGhostlyBlock();
+            this.toolMode = ToolMode.point;
         }
         GUILayout.EndArea();
     }
