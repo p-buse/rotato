@@ -28,6 +28,10 @@ public class Salt : AbstractBlock {
 			Destroy(this.gameObject);
 			gameManager.addSalt();
 		}
+		if (!gameManager.gameFrozen && rotationsBeforeRemove <= 0) {
+			blockManager.grid.Remove(GetCurrentPosition());
+			Destroy(this.gameObject);
+		}
 	}
 
 	/// <summary>

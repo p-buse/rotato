@@ -297,7 +297,24 @@ public class LevelEditor : MonoBehaviour
                                         (selectedBlock as MirrorBlock).stopFiring();
                                     }
                                 }
-
+								else if (selectedBlock != null && Input.GetKeyDown(KeyCode.W)) {
+									if (selectedBlock as Salt != null) {
+										(selectedBlock as Salt).rotationsBeforeRemove++;
+										(selectedBlock as Salt).field.text = "" + (selectedBlock as Salt).rotationsBeforeRemove;
+									}
+									else if (selectedBlock as CrackedBlock != null) {
+										(selectedBlock as CrackedBlock).rotationsLeft++;
+									}
+								}
+								else if (selectedBlock != null && Input.GetKeyDown(KeyCode.S)) {
+									if (selectedBlock as Salt != null) {
+										(selectedBlock as Salt).rotationsBeforeRemove--;
+										(selectedBlock as Salt).field.text = "" + (selectedBlock as Salt).rotationsBeforeRemove;
+									}
+									else if (selectedBlock as CrackedBlock != null) {
+										(selectedBlock as CrackedBlock).rotationsLeft--;
+									}
+								}
                             }
                             break;
 
