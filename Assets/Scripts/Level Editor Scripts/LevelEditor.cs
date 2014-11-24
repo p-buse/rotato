@@ -42,7 +42,19 @@ public class LevelEditor : MonoBehaviour
         public bool isSpikez;
     }
     Texture[] brushImages;
-    int currentBrushNumber = 0;
+    int _currentBrushNumber = 0;
+    int currentBrushNumber
+    {
+        get
+        {
+            return _currentBrushNumber;
+        }
+        set
+        {
+            _currentBrushNumber = value;
+            UpdateGhostlyBlock();
+        }
+    }
     Brush currentBrush
     {
         get
@@ -72,6 +84,29 @@ public class LevelEditor : MonoBehaviour
     Vector2 loadMenuScrollPosition = Vector2.zero;
 
     GameObject ghostlyBlock;
+    private int _currentOrientation;
+    public int currentOrientation
+    {
+        get
+        {
+            return _currentOrientation;
+        }
+        set
+        {
+            if (value < 0)
+            {
+                _currentOrientation = value + 4;
+            }
+            else if (value >= 4)
+            {
+                _currentOrientation = value % 4;
+            }
+            else
+            {
+                _currentOrientation = value;
+            }
+        }
+    }
 
     void Awake()
     {
@@ -91,6 +126,7 @@ public class LevelEditor : MonoBehaviour
         {
             Directory.CreateDirectory(levelsPath);
         }
+        this.UpdateGhostlyBlock();
     }
 
     void PlayerCreated(GameManager gm, Player p, PlayerMovement pm)
@@ -152,132 +188,198 @@ public class LevelEditor : MonoBehaviour
 
         if (gameManager.gameState == GameManager.GameMode.editing && !this.awaitingConfirmation && !this.loadMenu)
         {
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                currentOrientation -= 1;
+            }
+            else if (Input.GetKeyDown(KeyCode.A))
+            {
+                currentOrientation += 1;
+            }
             if (!MouseInGUI())
             {
                 switch (toolMode)
                 {
                     case ToolMode.point:
-	                {
-						selectionHighlight.SetActive(false);
-	                    if (currentBrush.isPlayer)
-	                    {
-                            PaintPlayer(mouseWorldPos);
-	                    }
-	                    else if (currentBrush.isButter)
-	                    {
-                            PaintButter(mouseWorldPos);
-	                    }
-	                    else if (currentBrush.isCrawler)
-	                    {
-                            PaintCrawler(mouseWorldPos);
-	                    }
-	                    else if (currentBrush.isNoRotationZone)
-	                    {
-                            PaintNoRoZone(mouseWorldPos);
-	                    }
-	                    // Brush is a block
-	                    else
-	                    {
-                            PaintBlock(mouseWorldPos);
-	                    }
-	                    break;
-	                }
+                        {
+                            DrawGhostlyBlock(mouseWorldPos);
+                            selectionHighlight.SetActive(false);
+                            if (currentBrush.isPlayer)
+                            {
+                                PaintPlayer(mouseWorldPos);
+                            }
+                            else if (currentBrush.isButter)
+                            {
+                                PaintButter(mouseWorldPos);
+                            }
+                            else if (currentBrush.isCrawler)
+                            {
+                                PaintCrawler(mouseWorldPos);
+                            }
+                            else if (currentBrush.isNoRotationZone)
+                            {
+                                PaintNoRoZone(mouseWorldPos);
+                            }
+                            // Brush is a block
+                            else
+                            {
+                                PaintBlock(mouseWorldPos);
+                            }
+                            break;
+                        }
 
-					//Select Mode!
-					case ToolMode.select:
-					{
-						//release left click = select this block 
-						//click elsewhere = unselect block, move selected cursor there
-						if(Input.GetMouseButtonUp(0))
-						{
-							
-							selectedBlock = blockManager.getBlockAt(mouseWorldPos.x,mouseWorldPos.y);
-							selectedPlayer = false;
-							selectionHighlight.SetActive(true);
-							selectionHighlight.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y, selectionHighlight.transform.position.z);
+                    //Select Mode!
+                    case ToolMode.select:
+                        {
+                            //release left click = select this block 
+                            //click elsewhere = unselect block, move selected cursor there
+                            if (Input.GetMouseButtonUp(0))
+                            {
 
-							if(player != null && selectedBlock ==null && player.GetRoundedPosition().x == mouseWorldPos.x && player.GetRoundedPosition().y == mouseWorldPos.y)
-							{
-								selectedPlayer = true;
-							}
-							
-						}
+                                selectedBlock = blockManager.getBlockAt(mouseWorldPos.x, mouseWorldPos.y);
+                                selectedPlayer = false;
+                                selectionHighlight.SetActive(true);
+                                selectionHighlight.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y, selectionHighlight.transform.position.z);
 
-						//if have a thing
-						if(selectedBlock!=null || selectedPlayer)
-						{
-						//hold right click = drag this thing around
-							if(Input.GetMouseButton(1)&&blockManager.getBlockAt(mouseWorldPos.x,mouseWorldPos.y)==null && (player == null || !mouseWorldPos.Equals(player.GetRoundedPosition())))
-						    {
-								//if holding block and there's no block or player there, 
-								if(selectedBlock !=null )
-								{
-									blockManager.grid.Remove(selectedBlock.GetCurrentPosition());
-									selectedBlock.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y,0);
-									selectionHighlight.transform.position = selectedBlock.transform.position;
+                                if (player != null && selectedBlock == null && player.GetRoundedPosition().x == mouseWorldPos.x && player.GetRoundedPosition().y == mouseWorldPos.y)
+                                {
+                                    selectedPlayer = true;
+                                }
 
-									blockManager.grid.Add (new Int2(mouseWorldPos.x, mouseWorldPos.y), selectedBlock);
-									if (selectedBlock as LaserShooter != null) {
-										(selectedBlock as LaserShooter).setFireDirection();
-									}
-									else if (selectedBlock as MirrorBlock != null) {
-										(selectedBlock as MirrorBlock).stopFiring();
-									}
+                            }
 
-	 							}
-								else if(selectedPlayer)
-								{
-									player.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y,0);
-									selectionHighlight.transform.position = player.transform.position;
-								}
-							}
-							//rotate ccw
-							else if(selectedBlock !=null && (Input.GetKeyDown(KeyCode.A) || Input.GetAxis("Mouse ScrollWheel") > 0))
-							{
-								selectedBlock.orientation += 1;
-								selectedBlock.blockSprite.transform.eulerAngles = new Vector3(0f, 0f, selectedBlock.orientation * 90f);
-								if (selectedBlock as LaserShooter != null) {
-									(selectedBlock as LaserShooter).setFireDirection();
-									
-								}
-								else if (selectedBlock as MirrorBlock != null) {
-									(selectedBlock as MirrorBlock).stopFiring();
-								}
-							}
-							else if(selectedBlock !=null && (Input.GetKeyDown(KeyCode.D) || Input.GetAxis("Mouse ScrollWheel") < 0))
-							{
-								selectedBlock.orientation -= 1;
-								selectedBlock.blockSprite.transform.eulerAngles = new Vector3(0f, 0f, selectedBlock.orientation * 90f);
-								if (selectedBlock as LaserShooter != null) {
-									(selectedBlock as LaserShooter).setFireDirection();
-								}
-								else if (selectedBlock as MirrorBlock != null) {
-									(selectedBlock as MirrorBlock).stopFiring();
-								}
-							}
+                            //if have a thing
+                            if (selectedBlock != null || selectedPlayer)
+                            {
+                                //hold right click = drag this thing around
+                                if (Input.GetMouseButton(1) && blockManager.getBlockAt(mouseWorldPos.x, mouseWorldPos.y) == null && (player == null || !mouseWorldPos.Equals(player.GetRoundedPosition())))
+                                {
+                                    //if holding block and there's no block or player there, 
+                                    if (selectedBlock != null)
+                                    {
+                                        blockManager.grid.Remove(selectedBlock.GetCurrentPosition());
+                                        selectedBlock.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y, 0);
+                                        selectionHighlight.transform.position = selectedBlock.transform.position;
 
-						}
-						break;
+                                        blockManager.grid.Add(new Int2(mouseWorldPos.x, mouseWorldPos.y), selectedBlock);
+                                        if (selectedBlock as LaserShooter != null)
+                                        {
+                                            (selectedBlock as LaserShooter).setFireDirection();
+                                        }
+                                        else if (selectedBlock as MirrorBlock != null)
+                                        {
+                                            (selectedBlock as MirrorBlock).stopFiring();
+                                        }
 
-					}
-				}
-			}
+                                    }
+                                    else if (selectedPlayer)
+                                    {
+                                        player.transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y, 0);
+                                        selectionHighlight.transform.position = player.transform.position;
+                                    }
+                                }
+                                //rotate ccw
+                                else if (selectedBlock != null && Input.GetKeyDown(KeyCode.A))
+                                {
+                                    selectedBlock.orientation += 1;
+                                    selectedBlock.blockSprite.transform.eulerAngles = new Vector3(0f, 0f, selectedBlock.orientation * 90f);
+                                    if (selectedBlock as LaserShooter != null)
+                                    {
+                                        (selectedBlock as LaserShooter).setFireDirection();
+
+                                    }
+                                    else if (selectedBlock as MirrorBlock != null)
+                                    {
+                                        (selectedBlock as MirrorBlock).stopFiring();
+                                    }
+                                }
+                                else if (selectedBlock != null && Input.GetKeyDown(KeyCode.D))
+                                {
+                                    selectedBlock.orientation -= 1;
+                                    selectedBlock.blockSprite.transform.eulerAngles = new Vector3(0f, 0f, selectedBlock.orientation * 90f);
+                                    if (selectedBlock as LaserShooter != null)
+                                    {
+                                        (selectedBlock as LaserShooter).setFireDirection();
+                                    }
+                                    else if (selectedBlock as MirrorBlock != null)
+                                    {
+                                        (selectedBlock as MirrorBlock).stopFiring();
+                                    }
+                                }
+
+                            }
+                            break;
+
+                        }
+                }
+            }
+            else
+            {
+                DestroyGhostlyBlock();
+            }
 		}
     }
 
-    private void DrawGhostlyBlock(Int2 mouseWorldPos, GameObject gameObject)
+    GameObject VisualBlock(GameObject original)
     {
-        
+        Destroy(original.GetComponentInChildren<AbstractBlock>());
+        Collider2D[] colliders = original.GetComponentsInChildren<Collider2D>();
+        // Destory the ghostly block's collider's so it doesn't push the player around
+        foreach (Collider2D coll in colliders)
+        {
+            Destroy(coll);
+        }
+        return original;
+    }
+
+    private void UpdateGhostlyBlock()
+    {
+        if (!currentBrush.isCrawler && !currentBrush.isPlayer)
+        {
+            if (ghostlyBlock != null)
+            {
+                Destroy(ghostlyBlock);
+                this.ghostlyBlock = Instantiate(VisualBlock(currentBrush.prefab)) as GameObject;
+
+                // Make it *ghostly* by setting alpha value on the sprite
+                SpriteRenderer sr = ghostlyBlock.GetComponentInChildren<SpriteRenderer>();
+                sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0.3f);
+            }
+        }
+    }
+
+    private void DestroyGhostlyBlock()
+    {
+        if (ghostlyBlock != null)
+        {
+            Destroy(ghostlyBlock);
+            ghostlyBlock = null;
+        }
+    }
+
+    private void DrawGhostlyBlock(Int2 mouseWorldPos)
+    {
+        if (ghostlyBlock != null)
+        {
+            if (!currentBrush.isCrawler && !currentBrush.isPlayer)
+            {
+                this.ghostlyBlock.transform.position = mouseWorldPos.ToVector2();
+                this.ghostlyBlock.transform.eulerAngles = new Vector3(0f, 0f, currentOrientation * 90f);
+            }
+            else
+            {
+                DestroyGhostlyBlock();
+            }
+        }
     }
 
     private void PaintBlock(Int2 mouseWorldPos)
     {
-        DrawGhostlyBlock(mouseWorldPos, currentBrush.prefab);
         if (Input.GetMouseButton(0))
         {
             if (player == null || !mouseWorldPos.Equals(player.GetRoundedPosition()))
             {
-                AddBlock(mouseWorldPos, currentBrush.prefab, 0);
+                AddBlock(mouseWorldPos, currentBrush.prefab, currentOrientation);
             }
         }
         else if (Input.GetMouseButton(1))
@@ -555,7 +657,7 @@ public class LevelEditor : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Can't save level if no player placed!");
+                Debug.LogWarning("Can't save level if no player placed!");
             }
         }
         else
@@ -573,6 +675,11 @@ public class LevelEditor : MonoBehaviour
             this.LoadLevelFromSkeleton(loadedLevel);
         }
         this.currentLevelName = levelName;
+    }
+
+    public void ResetLevel()
+    {
+        LoadLevel(currentLevelName);
     }
 
     void LoadLevelFromSkeleton(LevelSkeleton skeleton)

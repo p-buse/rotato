@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     bool rotationEmpty;
     float rotationClock = 0f;
 
+    LevelEditor levelEditor;
+
     // Setting the player when one is created
     public delegate void PlayerCreatedHandler(GameManager gameManager, Player player, PlayerMovement playerMovement);
     public event PlayerCreatedHandler PlayerCreated;
@@ -78,6 +80,7 @@ public class GameManager : MonoBehaviour
 
         this.playerMovement = FindObjectOfType<PlayerMovement>();
         this.player = FindObjectOfType<Player>();
+        this.levelEditor = GetComponent<LevelEditor>();
     }
 
     public void PlaySound(string soundName)
@@ -284,21 +287,37 @@ public class GameManager : MonoBehaviour
 
     public void GoToNextLevel()
     {
-        int loadedLevel = Application.loadedLevel;
-        if (loadedLevel < Application.levelCount - 1)
+        if (canEdit)
         {
-            Application.LoadLevel(loadedLevel + 1);
+            levelEditor.ResetLevel();
+            this.gameState = GameMode.editing;
         }
         else
         {
-            Application.LoadLevel(0);
+            int loadedLevel = Application.loadedLevel;
+            if (loadedLevel < Application.levelCount - 1)
+            {
+                Application.LoadLevel(loadedLevel + 1);
+            }
+            else
+            {
+                Application.LoadLevel(0);
+            }
         }
     }
 
     public void ResetLevel()
     {
-        Application.LoadLevel(Application.loadedLevel);
-		saltSoFar -= saltThisLevel;
+        if (canEdit)
+        {
+            levelEditor.ResetLevel();
+            this.gameState = GameMode.editing;
+        }
+        else
+        {
+            Application.LoadLevel(Application.loadedLevel);
+            saltSoFar -= saltThisLevel;
+        }
     }
 
 	public void addSalt() {
