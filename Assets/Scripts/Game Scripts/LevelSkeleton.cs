@@ -16,9 +16,13 @@ public class LevelSkeleton
 
 		blocks = new List<BlockSkeleton> ();
 
-		foreach (AbstractBlock block in grid.Values) {
-			blocks.Add(block.getSkeleton());
-		}
+        foreach (AbstractBlock block in grid.Values)
+        {
+            if (block != null)
+            {
+                blocks.Add(block.getSkeleton());
+            }
+        }
 	
 	}
 

@@ -16,7 +16,7 @@ public class SpikyBlock : MonoBehaviour
         transform.parent.parent = transform.parent.parent.Find("blockSprite");
     }
 
-    void OnTriggerEnter2D(Collider2D coll)
+    void OnTriggerStay2D(Collider2D coll)
     {
         if (!gameManager.gameFrozen)
         {

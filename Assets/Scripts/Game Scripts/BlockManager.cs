@@ -107,6 +107,7 @@ public class BlockManager : MonoBehaviour {
         if (grid.TryGetValue(position, out alreadyThere))
         {
             grid.Remove(position);
+            if (alreadyThere != null)
             Destroy(alreadyThere.gameObject);
         }
         grid.Add(position, block);
@@ -270,7 +271,7 @@ public class BlockManager : MonoBehaviour {
 	{
 		Int2 pos = new Int2 (x, y);
 		AbstractBlock theBlock;
-		if (grid.TryGetValue (pos, out theBlock)) 
+		if (grid.TryGetValue (pos, out theBlock) && theBlock != null) 
 		{
 			if(theBlock.isPointInside(x,y))
 			{
@@ -284,7 +285,10 @@ public class BlockManager : MonoBehaviour {
     {
         foreach (Int2 pos in this.grid.Keys)
         {
-            Destroy(grid[pos].gameObject);
+            if (grid[pos] != null)
+            {
+                Destroy(grid[pos].gameObject);
+            }
         }
         this.grid = new Dictionary<Int2, AbstractBlock>();
     }

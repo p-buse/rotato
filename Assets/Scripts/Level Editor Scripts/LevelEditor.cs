@@ -42,19 +42,7 @@ public class LevelEditor : MonoBehaviour
         public bool isSpikez;
     }
     Texture[] brushImages;
-    int _currentBrushNumber = 0;
-    int currentBrushNumber
-    {
-        get
-        {
-            return _currentBrushNumber;
-        }
-        set
-        {
-            _currentBrushNumber = value;
-            UpdateGhostlyBlock();
-        }
-    }
+    int currentBrushNumber = 0;
     Brush currentBrush
     {
         get
@@ -185,7 +173,7 @@ public class LevelEditor : MonoBehaviour
     {
         Vector3 mouseVector = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Int2 mouseWorldPos = new Int2(mouseVector.x, mouseVector.y);
-
+        DrawGhostlyBlock(mouseWorldPos);
         if (gameManager.gameState == GameManager.GameMode.editing && !this.awaitingConfirmation && !this.loadMenu)
         {
             if (Input.GetKeyDown(KeyCode.D))
@@ -202,7 +190,6 @@ public class LevelEditor : MonoBehaviour
                 {
                     case ToolMode.point:
                         {
-                            DrawGhostlyBlock(mouseWorldPos);
                             selectionHighlight.SetActive(false);
                             if (currentBrush.isPlayer)
                             {
@@ -219,6 +206,10 @@ public class LevelEditor : MonoBehaviour
                             else if (currentBrush.isNoRotationZone)
                             {
                                 PaintNoRoZone(mouseWorldPos);
+                            }
+                            else if (currentBrush.isSpikez)
+                            {
+                                PaintSpikes(mouseWorldPos);
                             }
                             // Brush is a block
                             else
@@ -313,23 +304,11 @@ public class LevelEditor : MonoBehaviour
                         }
                 }
             }
-            else
-            {
-                DestroyGhostlyBlock();
-            }
-		}
-    }
-
-    GameObject VisualBlock(GameObject original)
-    {
-        Destroy(original.GetComponentInChildren<AbstractBlock>());
-        Collider2D[] colliders = original.GetComponentsInChildren<Collider2D>();
-        // Destory the ghostly block's collider's so it doesn't push the player around
-        foreach (Collider2D coll in colliders)
-        {
-            Destroy(coll);
         }
-        return original;
+        else
+        {
+            HideGhostlyBlock();
+        }
     }
 
     private void UpdateGhostlyBlock()
@@ -339,36 +318,63 @@ public class LevelEditor : MonoBehaviour
             if (ghostlyBlock != null)
             {
                 Destroy(ghostlyBlock);
-                this.ghostlyBlock = Instantiate(VisualBlock(currentBrush.prefab)) as GameObject;
-
-                // Make it *ghostly* by setting alpha value on the sprite
-                SpriteRenderer sr = ghostlyBlock.GetComponentInChildren<SpriteRenderer>();
-                sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0.3f);
             }
+            this.ghostlyBlock = Instantiate(currentBrush.prefab) as GameObject;
+            Component[] components = this.ghostlyBlock.GetComponentsInChildren<Component>();
+            // Destroy everything except an object's sprites
+            foreach (Component comp in components)
+            {
+                SpriteRenderer spriteComponent = comp as SpriteRenderer;
+                if (spriteComponent == null && !comp.Equals(comp.transform))
+                {
+                    Destroy(comp);
+                }
+            }
+            // Make it *ghostly* by setting alpha value on the sprite
+            SpriteRenderer sr = ghostlyBlock.GetComponentInChildren<SpriteRenderer>();
+            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0.3f);
         }
     }
 
-    private void DestroyGhostlyBlock()
+    private void HideGhostlyBlock()
     {
         if (ghostlyBlock != null)
-        {
-            Destroy(ghostlyBlock);
-            ghostlyBlock = null;
-        }
+            ghostlyBlock.transform.position = new Vector3(0f, 0f, -1000f);
     }
 
     private void DrawGhostlyBlock(Int2 mouseWorldPos)
     {
         if (ghostlyBlock != null)
         {
-            if (!currentBrush.isCrawler && !currentBrush.isPlayer)
+            if (!currentBrush.isCrawler && !currentBrush.isPlayer && !MouseInGUI())
             {
                 this.ghostlyBlock.transform.position = mouseWorldPos.ToVector2();
                 this.ghostlyBlock.transform.eulerAngles = new Vector3(0f, 0f, currentOrientation * 90f);
             }
             else
             {
-                DestroyGhostlyBlock();
+                this.ghostlyBlock.transform.position = new Vector3(0f, 0f, -1000f);
+            }
+        }
+    }
+
+
+    private void PaintSpikes(Int2 mouseWorldPos)
+    {
+        if (Input.GetMouseButton(0))
+        {
+            AbstractBlock blockAtMouse = blockManager.getBlockAt(mouseWorldPos);
+            if (blockAtMouse != null)
+            {
+                blockAtMouse.AddSpike(currentBrush.prefab, currentOrientation);
+            }
+        }
+        else if (Input.GetMouseButton(1))
+        {
+            AbstractBlock blockAtMouse = blockManager.getBlockAt(mouseWorldPos);
+            if (blockAtMouse != null)
+            {
+                blockAtMouse.RemoveSpike(currentOrientation);
             }
         }
     }
@@ -455,13 +461,21 @@ public class LevelEditor : MonoBehaviour
         }
     }
 
-    private AbstractBlock AddBlock(Int2 pos, GameObject blockPrefab, int orientation)
+    private AbstractBlock AddBlock(Int2 pos, GameObject blockPrefab, int orientation, List<int> spikiness = null)
     {
         GameObject b = Instantiate(blockPrefab, pos.ToVector2(), Quaternion.identity) as GameObject;
         AbstractBlock theBlock = b.GetComponent<AbstractBlock>();
         if (theBlock == null)
             Debug.LogError("couldn't get AbstractBlock component of: " + blockPrefab);
         blockManager.AddBlock(pos, theBlock);
+        if (spikiness != null)
+        {
+            foreach (int spikeDirection in spikiness)
+            {
+                theBlock.AddSpike(specialPrefabs.spikesPrefab, spikeDirection);
+            }
+            theBlock.spikiness = spikiness;
+        }
         theBlock.orientation = orientation;
         theBlock.blockSprite.transform.eulerAngles = new Vector3(0f, 0f, theBlock.orientation * 90f);
         return theBlock;
@@ -620,7 +634,12 @@ public class LevelEditor : MonoBehaviour
     {
         // Different brushes
         GUILayout.BeginArea(brushRect);
+        int lastBrush = currentBrushNumber;
         this.currentBrushNumber = GUILayout.Toolbar(currentBrushNumber, brushImages, GUILayout.MaxHeight(boxHeight), GUILayout.MaxWidth(Screen.width));
+        if (lastBrush != currentBrushNumber)
+        {
+            UpdateGhostlyBlock();
+        }
         GUILayout.EndArea();
     }
 
@@ -691,8 +710,7 @@ public class LevelEditor : MonoBehaviour
             GameObject newBlock;
             if (nameToBlockPrefab.TryGetValue(blockSkelly.name, out newBlock))
             {
-                AbstractBlock currentBlock = AddBlock(blockSkelly.position, newBlock, blockSkelly.orientation);
-
+                AbstractBlock currentBlock = AddBlock(blockSkelly.position, newBlock, blockSkelly.orientation, blockSkelly.spikiness);
                 if (currentBlock as CrackedBlock != null)
                 {
                     CrackedBlock currentBlockIfItsCracked = currentBlock as CrackedBlock;
@@ -724,6 +742,7 @@ public class LevelEditor : MonoBehaviour
 
         // Add noRoZones
         noRoMan.ClearNoRotationZones();
+        print("number of no ro zones: " + FindObjectsOfType<NoRotationZone>().Length);
         foreach (Int2 noRoZone in skeleton.noRoZones)
         {
             if (noRoMan.AddNoRoZone(noRoZone, specialPrefabs.noRoPrefab))

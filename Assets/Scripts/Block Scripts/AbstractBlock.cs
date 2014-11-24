@@ -71,7 +71,7 @@ public abstract class AbstractBlock : MonoBehaviour
 
     public abstract string myType();
 
-    List<int> spikiness;
+    public List<int> spikiness;
 
     void Awake()
     {
@@ -117,7 +117,7 @@ public abstract class AbstractBlock : MonoBehaviour
         {
             if (FindRotationAngle(spike.transform.parent) == spikeDirection)
             {
-                Destroy(spike.transform.parent);
+                Destroy(spike.transform.parent.gameObject);
 
                 if (!spikiness.Remove(spikeDirection))
                     Debug.LogError("Couldn't remove spike from array with orientation: " + spikeDirection);
@@ -131,16 +131,21 @@ public abstract class AbstractBlock : MonoBehaviour
     {
         if (spikeDirection >= 0 && spikeDirection <= 3)
         {
-            GameObject newSpike = Instantiate(spikePrefab, transform.position, Quaternion.identity) as GameObject;
-            newSpike.transform.eulerAngles = new Vector3(0f, 0f, spikeDirection * 90f);
-            SpikyBlock spikeComponent = newSpike.GetComponent<SpikyBlock>();
-            if (spikeComponent != null)
+            if (!spikiness.Contains(spikeDirection))
             {
-                spikeComponent.SetupSpike();
-            }
-            else
-            {
-                Debug.LogError("Spike at: " + spikeComponent.transform.position + " has no spike component!");
+                spikiness.Add(spikeDirection);
+                GameObject newSpike = Instantiate(spikePrefab, transform.position, Quaternion.identity) as GameObject;
+                newSpike.transform.eulerAngles = new Vector3(0f, 0f, spikeDirection * 90f);
+                newSpike.transform.parent = this.gameObject.transform;
+                SpikyBlock spikeComponent = newSpike.GetComponentInChildren<SpikyBlock>();
+                if (spikeComponent != null)
+                {
+                    spikeComponent.SetupSpike();
+                }
+                else
+                {
+                    Debug.LogError("Spike at: " + GetCurrentPosition() + " has no spike component!");
+                }
             }
         }
         else
@@ -260,7 +265,7 @@ public abstract class AbstractBlock : MonoBehaviour
     }
 
 	public virtual BlockSkeleton getSkeleton(){
-        return new BlockSkeleton(this.myType(), this.GetCurrentPosition(), this.orientation);
+        return new BlockSkeleton(this.myType(), this.GetCurrentPosition(), this.orientation, this.spikiness);
 	}
 
 	//non-square blocks override this to use their sprite's collider instead

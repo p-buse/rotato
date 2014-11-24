@@ -42,6 +42,11 @@ public class CrackedBlock : AbstractBlock {
 		}
 	}
 
+    public override BlockSkeleton getSkeleton()
+    {
+        return new BlockSkeleton(this.myType(), this.GetCurrentPosition(), this.orientation, this.spikiness, this.rotationsLeft);
+    }
+
 	public override void finishRotation(Int2 center, int dir)
 	{
 		base.finishRotation (center, dir);

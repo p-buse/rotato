@@ -58,10 +58,10 @@ public class NoRotationManager : MonoBehaviour {
 
     public void ClearNoRotationZones()
     {
-        NoRotationZone[] noRoComponents = FindObjectsOfType<NoRotationZone>();
-        foreach (NoRotationZone nrz in noRoComponents)
+        foreach (Int2 noRoPos in this.noRotationZones.Keys)
         {
-            Destroy(nrz.gameObject);
+            if (noRotationZones[noRoPos] != null)
+            Destroy(noRotationZones[noRoPos].gameObject);
         }
         this.noRotationZones = new Dictionary<Int2, NoRotationZone>();
     }
