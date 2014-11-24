@@ -119,7 +119,8 @@ public class BlockManager : MonoBehaviour {
         if (grid.TryGetValue(position, out alreadyThere))
         {
             grid.Remove(position);
-            Destroy(alreadyThere.gameObject);
+            if (alreadyThere != null)
+                Destroy(alreadyThere.gameObject);
         }
     }
 
