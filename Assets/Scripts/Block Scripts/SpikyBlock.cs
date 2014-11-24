@@ -5,7 +5,7 @@ public class SpikyBlock : MonoBehaviour
 {
     static GameManager gameManager;
 
-    void Start()
+    public void SetupSpike()
     {
         SpikyBlock.gameManager = FindObjectOfType<GameManager>();
         if (gameManager == null)

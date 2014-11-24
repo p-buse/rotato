@@ -70,7 +70,8 @@ public abstract class AbstractBlock : MonoBehaviour
     /// <returns></returns>
 
     public abstract string myType();
-    
+
+    List<int> spikiness;
 
     void Awake()
     {
@@ -87,7 +88,67 @@ public abstract class AbstractBlock : MonoBehaviour
         orientation = FindRotationAngle(blockSprite);
         AbstractBlock.gameManager = FindObjectOfType<GameManager>();
         AbstractBlock.blockManager = FindObjectOfType<BlockManager>();
+        SetupSpikes();
     }
+
+    public void SetupSpikes()
+    {
+        this.spikiness = new List<int>();
+        SpikyBlock[] spikes = GetComponentsInChildren<SpikyBlock>();
+        foreach (SpikyBlock spike in spikes)
+        {
+            int spikeDirection = FindRotationAngle(spike.transform);
+            if (!spikiness.Contains(spikeDirection))
+            {
+                spikiness.Add(spikeDirection);
+                spike.SetupSpike();
+            }
+            else
+            {
+                Debug.LogError("Duplicate spikes on block at: " + GetCurrentPosition());
+            }
+        }
+    }
+
+    public bool RemoveSpike(int spikeDirection)
+    {
+        SpikyBlock[] spikes = GetComponentsInChildren<SpikyBlock>();
+        foreach (SpikyBlock spike in spikes)
+        {
+            if (FindRotationAngle(spike.transform.parent) == spikeDirection)
+            {
+                Destroy(spike.transform.parent);
+
+                if (!spikiness.Remove(spikeDirection))
+                    Debug.LogError("Couldn't remove spike from array with orientation: " + spikeDirection);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void AddSpike(GameObject spikePrefab, int spikeDirection)
+    {
+        if (spikeDirection >= 0 && spikeDirection <= 3)
+        {
+            GameObject newSpike = Instantiate(spikePrefab, transform.position, Quaternion.identity) as GameObject;
+            newSpike.transform.eulerAngles = new Vector3(0f, 0f, spikeDirection * 90f);
+            SpikyBlock spikeComponent = newSpike.GetComponent<SpikyBlock>();
+            if (spikeComponent != null)
+            {
+                spikeComponent.SetupSpike();
+            }
+            else
+            {
+                Debug.LogError("Spike at: " + spikeComponent.transform.position + " has no spike component!");
+            }
+        }
+        else
+        {
+            Debug.LogError("Invalid spike direction: " + spikeDirection + "! Direction must be an integer between 0 and 3 (inclusive).");
+        }
+    }
+
 
     // Using LateUpdate instead of Update to avoid conflicts with blocks' own Update functions
     void LateUpdate()

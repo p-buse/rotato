@@ -25,7 +25,7 @@ GameObject:
   - 4: {fileID: 400002}
   - 212: {fileID: 21200000}
   m_Layer: 0
-  m_Name: Spike Sprite
+  m_Name: spikeSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 68: {fileID: 6800000}
   m_Layer: 0
-  m_Name: Spike Logic
+  m_Name: spikeLogic
   m_TagString: Deadly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 360ca86e03e98bb4aad26404f94e166d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spikeSprite: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
