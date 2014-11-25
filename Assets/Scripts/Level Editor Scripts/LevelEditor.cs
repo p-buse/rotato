@@ -623,6 +623,9 @@ public class LevelEditor : MonoBehaviour
         {
             this.loadMenu = true;
         }
+		if (GUILayout.Button("New")) {
+			Application.LoadLevel(Application.loadedLevel);
+		}
         GUILayout.EndArea();
     }
 
