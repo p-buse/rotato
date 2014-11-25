@@ -705,6 +705,17 @@ public class LevelEditor : MonoBehaviour
         }
     }
 
+    public void LoadLevelFromTextAsset(TextAsset level)
+    {
+        XmlSerializer deserializer = new XmlSerializer(typeof(LevelSkeleton));
+        LevelSkeleton loadedLevel;
+        using (TextReader reader = new System.IO.StringReader(level.text))
+        {
+            loadedLevel = deserializer.Deserialize(reader) as LevelSkeleton;
+            this.LoadLevelFromSkeleton(loadedLevel);
+        }
+    }
+
     private void LoadLevel(string levelName)
     {
         string levelPath = PathToLevel(levelName);
