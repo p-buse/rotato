@@ -25,7 +25,7 @@ public class CrawlerSegment : MonoBehaviour {
 				dieSafely();
 			}
 			if(move.myBlock!=null){
-				if(move.myBlock.heat>0)
+				if(move.myBlock.heat >= 0.38f)
 				{
 					dieSafely();
 				}
