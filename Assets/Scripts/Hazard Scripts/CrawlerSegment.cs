@@ -8,7 +8,7 @@ public class CrawlerSegment : MonoBehaviour {
 	BlockManager blockManager;
 	CrawlerMovement move;
 	
-	void Start()
+	void Awake()
 	{
 		this.gameManager = FindObjectOfType<GameManager>();
 		this.blockManager = FindObjectOfType<BlockManager>();
@@ -22,6 +22,10 @@ public class CrawlerSegment : MonoBehaviour {
 			//Vector2 top = new Vector2(transform.position.x, transform.position.y)+0.1f*move.floatToV2(move.clinging);
 			if (blockManager.getBlockAt (transform.position.x, transform.position.y)) 
 			{
+				print("block at "+transform.position.x+", "+transform.position.y);
+				print ("my last moving number: "+move.moving);
+				print ("my last moving vector: "+move.floatToV2(move.moving));
+				Debug.DrawLine(transform.position, transform.position + move.floatToV3(move.clinging));
 				dieSafely();
 			}
 			if(move.myBlock!=null){

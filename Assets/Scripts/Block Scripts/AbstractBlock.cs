@@ -280,4 +280,15 @@ public abstract class AbstractBlock : MonoBehaviour
 		return collider2D.bounds.Contains (new Vector3(x, y, 0));
 	}
 
+	/// <summary>
+	/// Given a relative vector to a crawler segment, returns the float in [0,4) 
+	/// corresponding to the normal vector to this block's side in that direction
+	/// </summary>
+	/// <returns>The proper cling float.</returns>
+	/// <param name="relVec">Rel vec.</param>
+	public virtual float relVecToClingFloat(Vector3 relVec)
+	{
+		return Mathf.RoundToInt(Mathf.Atan2 (relVec.y, relVec.x)*2f/Mathf.PI +3f)%4;
+	}
+
 }

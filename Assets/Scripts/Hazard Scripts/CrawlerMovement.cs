@@ -7,8 +7,8 @@ public class CrawlerMovement : MonoBehaviour
 	
 	public float moveSpeed = 1f;
 	
-	GameManager gameManager;
-	BlockManager blockManager;
+	public GameManager gameManager;
+	public BlockManager blockManager;
 	
 	
 	public bool falling = true;
@@ -19,8 +19,9 @@ public class CrawlerMovement : MonoBehaviour
 	//1 mod 4 = (-1,0) left-pointing vector
 	//2 mod 4 = (0,-1) down-pointing vector
 	//3 mod 4 = (1,0) right-pointing vector
-	public float moving;  //current crawling direction, {0,1,2,3}
 	public float clinging; //what side of block is the crawler on? in {0,1,2,3}
+	public float moving;  //current crawling direction, {0,1,2,3}
+
 	//private Vector2 movingVec;
 	//private Vector2 clingingVec;
 	public float fallSpeed = 1.5f;
@@ -29,13 +30,14 @@ public class CrawlerMovement : MonoBehaviour
 
 	//will use this for non-90-degree turns
 	private Vector2 nextClingingVec;
-	
-	
+	public float moveTimer;
+
 	void Awake()
 	{
 		this.gameManager = FindObjectOfType<GameManager>();
 		this.blockManager = FindObjectOfType<BlockManager>();
 		this.crawlerSprite = transform.Find ("crawlerSprite");
+		//moveTimer = 0f;
 		
 	}
 	
@@ -44,6 +46,8 @@ public class CrawlerMovement : MonoBehaviour
 		
 		if(!gameManager.gameFrozen)
 		{
+			crawlerSprite.transform.eulerAngles = new Vector3(0,0,90f*clinging);
+			//Quaternion.FromToRotation(Vector2.up, floatToV2(clinging));
 			if(isGrounded())
 			{
 				falling = false;
@@ -58,7 +62,7 @@ public class CrawlerMovement : MonoBehaviour
 			}
 			
 			//landing behavior
-			if(falling && hasBlockBelow())
+			if(falling && hasBelow)
 			{
 				clinging = 0;
 				if(moving!=1)
@@ -67,41 +71,48 @@ public class CrawlerMovement : MonoBehaviour
 				falling = false;
 			}
 			
-			if(!falling) //crawling
+			//if(!falling) //crawling
+			if(myBlock!=null)
 			{
-				
-				updateMyBlock(getMyBlock());
-				transform.Translate(floatToV3(moving)*Time.deltaTime);
+				moveTimer+=0.5f*Time.deltaTime;
+				float distanceToTravel = 0.5f+0.5f*Mathf.Sin (moveTimer*2.0f*Mathf.PI)*Mathf.Sin (moveTimer*2.0f*Mathf.PI);
+//				Vector3 newPos = transform.position + distanceToTravel*floatToV3(moving)*Time.deltaTime;
+//				if(blockManager.getBlockAt(newPos.x, newPos.y)!=null)
+//				{
+//
+//				}
+				transform.Translate(distanceToTravel*floatToV3(moving)*Time.deltaTime);
+				//transform.Translate(floatToV3(moving)*Time.deltaTime);
+				//print(myBlock.relVecToClingFloat(transform.position - myBlock.transform.position));
 				//when the crawler bumps a block, cling to it and move up it
 				if(bumpedBlockForward())
 				{
 					updateMyBlock(forwardBlock());
-					if(forwardBlock() is LaserShooter && forwardBlock().orientation == (moving+5)%4)
-					{
-						//float change = 2f/3f;
-						//moving = (moving + change + 4)%4;
-						//clinging = (clinging + change + 4)%4;
-					}
-					else
-					{
-						float change = clinging - moving;
-						moving = (moving + change + 4)%4;
-						clinging = (clinging + change + 4)%4;
-					}
-					
+			
+					float change = myBlock.relVecToClingFloat(transform.position - myBlock.transform.position) - clinging;
+					//print ("bumped forward, change = "+change);
+					//float change = clinging - moving;
+					moving = (moving + change + 4)%4;
+					clinging = (clinging + change + 4)%4;
+
 				}
 				else 
 				{
 					if(myBlock!=null)
 					{
-						float relx = transform.position.x - myBlock.transform.position.x;
-						float rely = transform.position.y - myBlock.transform.position.y;
-						if( !isGrounded())
+//						float relx = transform.position.x - myBlock.transform.position.x;
+//						float rely = transform.position.y - myBlock.transform.position.y;
+						if( myBlock.relVecToClingFloat(transform.position - myBlock.transform.position)!= clinging)
+						//if( !isGrounded())
 						{
 							//turn down for what
-							transform.Translate(-0.05f*floatToV3 (clinging));
-							float change = moving - clinging ;
-							float oldMoving = moving;
+							//transform.Translate(-0.08f*floatToV3 (clinging));
+							//transform.Translate(0.08f*floatToV3 (moving));
+							//updateMyBlock(getMyBlock());
+							float change = myBlock.relVecToClingFloat(transform.position - myBlock.transform.position) - clinging;
+							//print(change);
+							//float change = moving - clinging ;
+							//float oldMoving = moving;
 							moving = (moving +4 + change)%4;
 							clinging =(clinging + 4 + change)%4;
 						}
@@ -110,6 +121,12 @@ public class CrawlerMovement : MonoBehaviour
 			}
 			
 		}
+	}
+
+	public bool reachedEdge()
+	{
+		Vector3 pos = transform.position -0.15f*floatToV3 (clinging) + 0.02f*floatToV3 (moving);
+		return blockManager.getBlockAt (pos.x, pos.y);
 	}
 
 	/// <summary>
@@ -127,7 +144,7 @@ public class CrawlerMovement : MonoBehaviour
 	
 	bool bumpedBlockForward()
 	{
-		Vector3 blockPos = transform.position + 0.12f * floatToV3 (moving);
+		Vector3 blockPos = transform.position + 0.15f * floatToV3 (moving);
 		
 		return blockManager.getBlockAt (blockPos.x, blockPos.y)!=null;
 	}
@@ -135,27 +152,41 @@ public class CrawlerMovement : MonoBehaviour
 	
 	AbstractBlock forwardBlock()
 	{
-		Vector3 blockPos = transform.position + 0.12f * floatToV3 (moving);
+		Vector3 blockPos = transform.position + 0.15f * floatToV3 (moving);
 		
 		return blockManager.getBlockAt (blockPos.x, blockPos.y);
 	}
-	
+
+	/// <summary>
+	/// Returns whether the crawler has anything at its feet to cling to
+	/// </summary>
+	/// <returns><c>true</c>, if grounded, <c>false</c> otherwise.</returns>
 	bool isGrounded()
 	{
-		Vector3 belowMe = transform.position - 0.12f * floatToV3 (clinging);
+		Vector3 belowMe = transform.position - 0.13f * floatToV3 (clinging);
 		return blockManager.getBlockAt (belowMe.x, belowMe.y) != null;
 	}
 	
-	AbstractBlock getMyBlock()
+	public AbstractBlock getMyBlock()
 	{
-		Vector3 blockPos = transform.position - 0.12f * floatToV3 (clinging);
-		return blockManager.getBlockAt (blockPos.x, blockPos.y);
+		Vector3 blockPos = transform.position - 0.25f * floatToV3 (clinging);
+		//print (blockPos.x + ", " + blockPos.y);
+		AbstractBlock block = blockManager.getBlockAt (blockPos.x, blockPos.y);
+		if(block ==null)
+		{
+			print("no block at "+Mathf.RoundToInt(blockPos.x)+", "+Mathf.RoundToInt(blockPos.y));
+		}
+		return block;
 	}
 	
-	
+	/// <summary>
+	/// used for resolving falling:
+	/// Returns the block at (x,y-0.15)
+	/// </summary>
+	/// <returns><c>true</c>, if there's a block below <c>false</c> otherwise.</returns>
 	bool hasBlockBelow()
 	{
-		return Physics2D.Raycast (transform.position, new Vector2(0,-1), 0.12f, 1 << LayerMask.NameToLayer ("Solid"));
+		return Physics2D.Raycast (transform.position, new Vector2(0,-1), 0.15f, 1 << LayerMask.NameToLayer ("Solid"));
 	}
 	
 	public void AnimateFrameOfRotation(Int2 center, int direction, float time)
@@ -177,7 +208,7 @@ public class CrawlerMovement : MonoBehaviour
 	{
 		transform.position =  posAfterRotation (center, dir);
 		crawlerSprite.transform.localPosition = Vector3.zero;
-		crawlerSprite.transform.eulerAngles = Vector3.zero;//or (0,0,clinging * 90f) if not rot. symmetric;
+		crawlerSprite.transform.eulerAngles = new Vector3(0,0,clinging * 90f);
 		moving = (moving + dir + 4)%4;
 		clinging = (clinging + dir + 4)%4;
 		
@@ -208,7 +239,7 @@ public class CrawlerMovement : MonoBehaviour
 		nextClingingVec = collision.contacts [0].normal;
 	}
 	
-	//relpaces need for "crawling behavior" in update()?
+	//replaces need for "crawling behavior" in update()?
 	//	void OnCollisionStay2D(Collision2D info)
 	//	{
 	//		print ("Collided");
@@ -230,7 +261,10 @@ public class CrawlerMovement : MonoBehaviour
 	//		}
 	//	}
 	
-	
+//	public float nextMoving()
+//	{
+//
+//	}
 }
 
 
