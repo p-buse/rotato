@@ -269,7 +269,7 @@ public class BlockManager : MonoBehaviour {
 
 	/// <summary>
 	/// Gets the block at position (x,y), x and y floats.
-	/// for falling blocks, lasers, and mirrors, only returns it if inside its sprite
+	/// for falling blocks, lasers, and mirrors, only returns it if inside its sprite (its collider)
 	/// </summary>
 	/// <returns>The block, if it exists, or null if it doesn't.</returns>
 	/// <param name="x">The x coordinate.</param>

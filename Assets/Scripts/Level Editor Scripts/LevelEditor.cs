@@ -114,7 +114,6 @@ public class LevelEditor : MonoBehaviour
         {
             Directory.CreateDirectory(levelsPath);
         }
-        this.UpdateGhostlyBlock();
     }
 
     void PlayerCreated(GameManager gm, Player p, PlayerMovement pm)
@@ -328,7 +327,7 @@ public class LevelEditor : MonoBehaviour
         }
     }
 
-    private void UpdateGhostlyBlock()
+    public void UpdateGhostlyBlock()
     {
         if (!currentBrush.isCrawler && !currentBrush.isPlayer)
         {
