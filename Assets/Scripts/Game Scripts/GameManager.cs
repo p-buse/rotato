@@ -317,10 +317,11 @@ public class GameManager : MonoBehaviour
         if (canEdit)
         {
             levelEditor.ResetLevel();
-            this.gameState = GameMode.editing;
-        }
-        else
-        {
+			this.gameState = GameMode.editing;
+			levelEditor.UpdateGhostlyBlock();
+		}
+		else
+		{
             int loadedLevel = Application.loadedLevel;
             if (loadedLevel < Application.levelCount - 1)
             {
@@ -338,10 +339,11 @@ public class GameManager : MonoBehaviour
         if (canEdit)
         {
             levelEditor.ResetLevel();
-            this.gameState = GameMode.editing;
-        }
-        else
-        {
+			this.gameState = GameMode.editing;
+			levelEditor.UpdateGhostlyBlock();
+		}
+		else
+		{
             Application.LoadLevel(Application.loadedLevel);
             saltSoFar -= saltThisLevel;
         }
