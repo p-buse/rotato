@@ -302,7 +302,7 @@ public class LevelEditor : MonoBehaviour
 										(selectedBlock as Salt).field.text = "" + (selectedBlock as Salt).rotationsBeforeRemove;
 									}
 									else if (selectedBlock as CrackedBlock != null) {
-										(selectedBlock as CrackedBlock).rotationsLeft++;
+										(selectedBlock as CrackedBlock).IncrementRotationsLeft();
 									}
 								}
 								else if (selectedBlock != null && Input.GetKeyDown(KeyCode.S)) {
@@ -311,7 +311,7 @@ public class LevelEditor : MonoBehaviour
 										(selectedBlock as Salt).field.text = "" + (selectedBlock as Salt).rotationsBeforeRemove;
 									}
 									else if (selectedBlock as CrackedBlock != null) {
-										(selectedBlock as CrackedBlock).rotationsLeft--;
+										(selectedBlock as CrackedBlock).DecrementRotationsLeft();
 									}
 								}
                             }
