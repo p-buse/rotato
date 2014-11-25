@@ -363,7 +363,7 @@ public class LevelEditor : MonoBehaviour
     {
         if (ghostlyBlock != null)
         {
-            if (!currentBrush.isCrawler && !currentBrush.isPlayer && !MouseInGUI())
+            if (!currentBrush.isCrawler && !currentBrush.isPlayer && !MouseInGUI() && toolMode == ToolMode.point)
             {
                 this.ghostlyBlock.transform.position = mouseWorldPos.ToVector2();
                 this.ghostlyBlock.transform.eulerAngles = new Vector3(0f, 0f, currentOrientation * 90f);
@@ -760,13 +760,9 @@ public class LevelEditor : MonoBehaviour
 
         // Add noRoZones
         noRoMan.ClearNoRotationZones();
-        print("number of no ro zones: " + FindObjectsOfType<NoRotationZone>().Length);
         foreach (Int2 noRoZone in skeleton.noRoZones)
         {
-            if (noRoMan.AddNoRoZone(noRoZone, specialPrefabs.noRoPrefab))
-            {
-                Instantiate(specialPrefabs.noRoPrefab, noRoZone.ToVector2(), Quaternion.identity);
-            }
+            noRoMan.AddNoRoZone(noRoZone, specialPrefabs.noRoPrefab);
         }
     }
 

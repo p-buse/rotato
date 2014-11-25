@@ -22,7 +22,7 @@ public class Salt : AbstractBlock {
     }
 
 	void Update() {
-		if (player.GetRoundedPosition().Equals(location)) {
+		if (player != null && player.GetRoundedPosition().Equals(location)) {
             gameManager.PlaySound("GetSalt");
             blockManager.grid.Remove(location);
 			Destroy(this.gameObject);
