@@ -62,6 +62,8 @@ public abstract class AbstractBlock : MonoBehaviour
     /// </summary>
 	[HideInInspector]
 	public float heat = 0;
+	[HideInInspector]
+	public int heated = 0;
 
     /// <summary>
     /// Get a particular object's "orientation" given its current rotation in the 2D plane.
@@ -160,13 +162,18 @@ public abstract class AbstractBlock : MonoBehaviour
     {
         if (!gameManager.gameFrozen && heat > 0f)
         {
-            heat -= Time.deltaTime;
-            if (heat < 0f)
-            {
-                heat = 0f;
-            }
-			blockSpriteRenderer.color = new Color(1f, 1f - heat * 2.5f, 1f - heat * 2.5f);
+			if (heated == 0) {
+	            heat -= Time.deltaTime;
+	            if (heat < 0f)
+	            {
+	                heat = 0f;
+	            }
+			}
+			else {
+				heated--;
+			}
 		}
+		blockSpriteRenderer.color = new Color(1f, 1f - heat * 2.5f, 1f - heat * 2.5f);
 	}
 
 	public Int2 GetCurrentPosition()
@@ -240,14 +247,15 @@ public abstract class AbstractBlock : MonoBehaviour
 	// The player dies on contact with a block with heat 6 or higher, so a block will take 3 seconds to heat up to deadly levels.
 	// The maximum heat is 9, so a block without a laser on it will cool down to safe heat levels in 3 seconds.
 	public virtual void addHeat(int source) {
-		heat += Time.deltaTime * 2;
+		heat += Time.deltaTime;
+		heated = 2;
 		if (heat > 0.4f) {
 			heat = 0.4f;
 		}
 	}
 
 	void OnCollisionStay2D(Collision2D coll) {
-		if (coll.collider.gameObject.tag == "Player" && heat >= 0.38f && gameManager.gameState == GameManager.GameMode.playing) {
+		if (coll.collider.gameObject.tag == "Player" && heated > 0 && gameManager.gameState == GameManager.GameMode.playing) {
             gameManager.PlaySound("Burnt");
             gameManager.LoseLevel("Burnt by a hot block");
 		}
