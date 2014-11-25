@@ -7,8 +7,8 @@ public class CrawlerMovement : MonoBehaviour
 	
 	public float moveSpeed = 1f;
 	
-	GameManager gameManager;
-	BlockManager blockManager;
+	public GameManager gameManager;
+	public BlockManager blockManager;
 	
 	
 	public bool falling = true;
@@ -44,6 +44,7 @@ public class CrawlerMovement : MonoBehaviour
 		
 		if(!gameManager.gameFrozen)
 		{
+			crawlerSprite.transform.eulerAngles = new Vector3(0,0,clinging * 90f);
 			if(isGrounded())
 			{
 				falling = false;
@@ -146,7 +147,7 @@ public class CrawlerMovement : MonoBehaviour
 		return blockManager.getBlockAt (belowMe.x, belowMe.y) != null;
 	}
 	
-	AbstractBlock getMyBlock()
+	public AbstractBlock getMyBlock()
 	{
 		Vector3 blockPos = transform.position - 0.12f * floatToV3 (clinging);
 		return blockManager.getBlockAt (blockPos.x, blockPos.y);
@@ -177,7 +178,7 @@ public class CrawlerMovement : MonoBehaviour
 	{
 		transform.position =  posAfterRotation (center, dir);
 		crawlerSprite.transform.localPosition = Vector3.zero;
-		crawlerSprite.transform.eulerAngles = Vector3.zero;//or (0,0,clinging * 90f) if not rot. symmetric;
+		crawlerSprite.transform.eulerAngles = new Vector3(0,0,clinging * 90f);
 		moving = (moving + dir + 4)%4;
 		clinging = (clinging + dir + 4)%4;
 		
