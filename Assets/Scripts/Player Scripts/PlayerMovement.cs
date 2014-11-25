@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
             ResetPush();
 		}
         this.grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Solid"));
-        if (Input.GetButtonDown("Vertical") && grounded)
+        if (Input.GetButtonDown("Vertical") && grounded && !gameManager.gameFrozen)
         {
             this.jumping = true;
         }

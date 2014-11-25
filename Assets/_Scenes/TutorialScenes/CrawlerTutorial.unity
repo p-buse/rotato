@@ -119,6 +119,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1741306
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -278,6 +279,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &5578236
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -322,6 +324,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &7063327
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -556,6 +559,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &28159733
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -803,6 +807,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &93910189
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -873,6 +878,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &97695361
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1702,6 +1708,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &168884134
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2093,6 +2100,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &254746218
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2163,6 +2171,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &259555457
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2988,7 +2997,7 @@ Transform:
   m_PrefabInternal: {fileID: 1685208460}
   m_GameObject: {fileID: 353722755}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.550000012, z: 0}
+  m_LocalPosition: {x: 0, y: -.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1244545076}
@@ -3511,6 +3520,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &456802453
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3912,6 +3922,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &515670978
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3982,6 +3993,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &521834379
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4494,6 +4506,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &578275531
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4772,6 +4785,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &600505121
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5360,6 +5374,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &696819932
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5524,6 +5539,7 @@ GameObject:
   - 114: {fileID: 719692383}
   - 114: {fileID: 719692382}
   - 114: {fileID: 719692381}
+  - 114: {fileID: 719692387}
   - 114: {fileID: 719692380}
   m_Layer: 0
   m_Name: Game Manager
@@ -5544,13 +5560,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4462e6d5c73bb54cab52f1fc825b1c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point: {fileID: 2800000, guid: 34efe248d57dbcf4997df623eeb8f46f, type: 3}
-  line: {fileID: 2800000, guid: fede794811afbaa4fa2c6060e28d5a4e, type: 3}
-  rect: {fileID: 2800000, guid: 4b8faa2cf37ea774aa43c07310acd8cd, type: 3}
-  select: {fileID: 2800000, guid: 263b63edcf629424fad62f9f8b7d446d, type: 3}
+  pointTexture: {fileID: 2800000, guid: 34efe248d57dbcf4997df623eeb8f46f, type: 3}
+  selectTexture: {fileID: 2800000, guid: 263b63edcf629424fad62f9f8b7d446d, type: 3}
   selectionHighlightPrefab: {fileID: 100002, guid: dacd3e7d37dfe4b79860a23f78af1bb0,
     type: 2}
   brushes:
+  - name: Fixed Block
+    image: {fileID: 2800000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+    prefab: {fileID: 100000, guid: d6e0ece4da26741478ebdfe9e9cf3329, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 0
+    isSpikez: 0
   - name: Block
     image: {fileID: 2800000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
     prefab: {fileID: 100000, guid: d03f54b890c63954594fe3c50eeb5033, type: 2}
@@ -5560,18 +5582,10 @@ MonoBehaviour:
     isCrawler: 0
     isSpikez: 0
   - name: Falling Block
-    image: {fileID: 2800000, guid: 604dd8ccd06624f82a5de8bd53315229, type: 3}
+    image: {fileID: 2800000, guid: da7e0a98304234c0b9feb1638c884ca5, type: 3}
     prefab: {fileID: 100000, guid: 2d934f2537ce78a4a8068a4284c51632, type: 2}
     isPlayer: 0
     isButter: 0
-    isNoRotationZone: 0
-    isCrawler: 0
-    isSpikez: 0
-  - name: Buttahh
-    image: {fileID: 2800000, guid: 0dd4265b7aa207e41a764259d8fe6add, type: 3}
-    prefab: {fileID: 100000, guid: eabca84ee14edeb44a884612b4ed39b8, type: 2}
-    isPlayer: 0
-    isButter: 1
     isNoRotationZone: 0
     isCrawler: 0
     isSpikez: 0
@@ -5583,11 +5597,11 @@ MonoBehaviour:
     isNoRotationZone: 0
     isCrawler: 0
     isSpikez: 0
-  - name: Cannon
-    image: {fileID: 2800000, guid: 2589278f8c71f524899cb7fa6c58ca26, type: 3}
-    prefab: {fileID: 100000, guid: 22ee062d8d8329d468a26e9a80d88367, type: 2}
+  - name: Butter
+    image: {fileID: 2800000, guid: 0dd4265b7aa207e41a764259d8fe6add, type: 3}
+    prefab: {fileID: 100000, guid: eabca84ee14edeb44a884612b4ed39b8, type: 2}
     isPlayer: 0
-    isButter: 0
+    isButter: 1
     isNoRotationZone: 0
     isCrawler: 0
     isSpikez: 0
@@ -5607,7 +5621,23 @@ MonoBehaviour:
     isNoRotationZone: 0
     isCrawler: 0
     isSpikez: 0
-  - name: Crackedblock
+  - name: Mirror
+    image: {fileID: 2800000, guid: 83eccf1aede81426d8a14af93bf80267, type: 3}
+    prefab: {fileID: 100002, guid: 9b0413b8f85da4dd4972219ad329b526, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 0
+    isSpikez: 0
+  - name: Salt
+    image: {fileID: 2800000, guid: e7e739659693b4f2aa059b11e1bbd615, type: 3}
+    prefab: {fileID: 100002, guid: 2f278f28a80e9443f88ae5daeb6a29d8, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 0
+    isSpikez: 0
+  - name: Cracked Block
     image: {fileID: 2800000, guid: 4374976620bcc5848a4283bf8468bd55, type: 3}
     prefab: {fileID: 100002, guid: 4408f8c41ceb1da40b3e07924073956b, type: 2}
     isPlayer: 0
@@ -5615,13 +5645,13 @@ MonoBehaviour:
     isNoRotationZone: 0
     isCrawler: 0
     isSpikez: 0
-  - name: Fixed Blocks
-    image: {fileID: 2800000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
-    prefab: {fileID: 100000, guid: d6e0ece4da26741478ebdfe9e9cf3329, type: 2}
+  - name: Crawler
+    image: {fileID: 2800000, guid: bb8e531d9a1b5ac4c8d903845052a428, type: 3}
+    prefab: {fileID: 100004, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
     isPlayer: 0
     isButter: 0
     isNoRotationZone: 0
-    isCrawler: 0
+    isCrawler: 1
     isSpikez: 0
   - name: Spikes
     image: {fileID: 2800000, guid: 9a0a26656907b54479e6820b54934f33, type: 3}
@@ -5631,17 +5661,9 @@ MonoBehaviour:
     isNoRotationZone: 0
     isCrawler: 0
     isSpikez: 1
-  - name: Crawler
-    image: {fileID: 2800000, guid: bb8e531d9a1b5ac4c8d903845052a428, type: 3}
-    prefab: {fileID: 100004, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-    isPlayer: 0
-    isButter: 0
-    isNoRotationZone: 0
-    isCrawler: 1
-    isSpikez: 0
-  - name: Mirror
-    image: {fileID: 2800000, guid: 83eccf1aede81426d8a14af93bf80267, type: 3}
-    prefab: {fileID: 100002, guid: 9b0413b8f85da4dd4972219ad329b526, type: 2}
+  - name: Cannon
+    image: {fileID: 2800000, guid: 2589278f8c71f524899cb7fa6c58ca26, type: 3}
+    prefab: {fileID: 100000, guid: 22ee062d8d8329d468a26e9a80d88367, type: 2}
     isPlayer: 0
     isButter: 0
     isNoRotationZone: 0
@@ -5732,7 +5754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa4c52eb1b4847459daa04a6a9140cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightColor: {r: .162555203, g: .463235319, b: .122621119, a: .427450985}
+  highlightColor: {r: 1, g: 1, b: 1, a: .156862751}
   selectionHighlightPrefab: {fileID: 100032, guid: be358ba3253a94349a34bbb1307c47fd,
     type: 2}
   rotationHighlightPrefab: {fileID: 100016, guid: ce8c766236b9691489df64677f5b2353,
@@ -5762,14 +5784,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb59244c22def94a9636439086a5b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resetKey: 27
+  pauseKey: 27
   playerMovement: {fileID: 0}
   player: {fileID: 0}
-  salt: []
-  saltSoFar: 0
   winOrLoseCountdownTime: 2
   secondsToRotate: .300000012
   gameState: 0
+  lastState: 0
   canEdit: 0
 --- !u!4 &719692386
 Transform:
@@ -5783,6 +5804,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
+--- !u!114 &719692387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400012, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 656689413}
+  m_GameObject: {fileID: 719692379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12aab2acbe199e3478b806a42c7df768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &770665298
 GameObject:
   m_ObjectHideFlags: 0
@@ -6186,6 +6219,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &819681470
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6546,6 +6580,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &878974439
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6603,6 +6638,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &880880472
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6856,6 +6892,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &925567256
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7052,6 +7089,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &947519783
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7680,6 +7718,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1034410942
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7812,6 +7851,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1039780977
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7869,6 +7909,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1041917639
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7913,6 +7954,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1043976849
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8419,6 +8461,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1107583080
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9010,6 +9053,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1179213185
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9156,6 +9200,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1214810989
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9447,6 +9492,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1229448542
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9553,6 +9599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4.75
   jumpForce: 630
+  grounded: 0
 --- !u!114 &1244545072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9822,6 +9869,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1267558268
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10358,6 +10406,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1332478431
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10648,6 +10697,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!4 &1353654634
 Transform:
   m_ObjectHideFlags: 0
@@ -10693,6 +10743,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1353952014
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11050,6 +11101,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1388055472
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11436,6 +11488,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1428181547
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11493,6 +11546,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1429014693
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11782,6 +11836,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1478340617
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11978,6 +12033,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1500173550
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13016,6 +13072,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1630624135
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13393,6 +13450,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1681677579
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13924,6 +13982,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1742513111
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14096,6 +14155,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1761919846
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14183,6 +14243,76 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a994116b0da88e4998ecdb7bf367843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1762394812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1762394815}
+  - 23: {fileID: 1762394814}
+  - 102: {fileID: 1762394813}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!102 &1762394813
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1762394812}
+  m_Text: WHAT'S THAT?
+  m_OffsetZ: 0
+  m_CharacterSize: .00499999989
+  m_LineSpacing: 1
+  m_Anchor: 0
+  m_Alignment: 0
+  m_TabSize: 4
+  m_FontSize: 1000
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+--- !u!23 &1762394814
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1762394812}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!4 &1762394815
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1762394812}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.42607307, y: 3.66584826, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 64
 --- !u!1 &1770111710
 GameObject:
   m_ObjectHideFlags: 0
@@ -14602,6 +14732,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1851683603
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14919,6 +15050,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1879577823
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14989,6 +15121,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1879847159
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15097,6 +15230,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1889615598
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15251,6 +15385,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1920407737
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15730,6 +15865,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1958266924
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15800,6 +15936,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1964356248
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16102,6 +16239,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &2000700712
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16247,6 +16385,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &2013848233
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17093,6 +17232,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &2093577120
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17239,6 +17379,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &2116036099
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17309,6 +17450,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &2117131316
 BoxCollider2D:
   m_ObjectHideFlags: 0

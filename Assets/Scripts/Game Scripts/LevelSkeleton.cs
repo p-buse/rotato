@@ -10,6 +10,14 @@ public class LevelSkeleton
     public List<Int2> noRoZones = new List<Int2>();
     public Int2 playerPosition;
     public List<Vector2> crawlers = new List<Vector2>();
+    public struct CameraSkeleton
+    {
+        public float size;
+        public Vector2 position;
+        public Vector2 movement;
+        public bool enableMovement;
+    }
+    public CameraSkeleton camera;
 
 	//stores block grid
 	public void setGrid(Dictionary<Int2, AbstractBlock> grid){

@@ -658,7 +658,7 @@ public class LevelEditor : MonoBehaviour
             UpdateGhostlyBlock();
             this.toolMode = ToolMode.point;
         }
-        GUILayout.EndArea();
+        GUILayout.EndArea();    
     }
 
     private void SetupGUIRects(params Rect[] rects)
@@ -714,6 +714,15 @@ public class LevelEditor : MonoBehaviour
         this.currentLevelName = levelName;
     }
 
+    public void LoadLevelFromPath(string levelPath)
+    {
+        LevelSkeleton loadedLevel = ReadXML(levelPath);
+        if (loadedLevel != null)
+        {
+            this.LoadLevelFromSkeleton(loadedLevel);
+        }
+    }
+
     public void ResetLevel()
     {
         LoadLevel(currentLevelName);
@@ -764,6 +773,13 @@ public class LevelEditor : MonoBehaviour
         {
             noRoMan.AddNoRoZone(noRoZone, specialPrefabs.noRoPrefab);
         }
+
+        //// Set camera
+        //Camera.main.orthographicSize = skeleton.camera.size;
+        //Camera.main.transform.position = skeleton.camera.position;
+        //DeadlyCamera deadlyCamera = Camera.main.GetComponent<DeadlyCamera>();
+        //deadlyCamera.cameraMovement = skeleton.camera.movement;
+        //deadlyCamera.enableMovement = skeleton.camera.enableMovement;
     }
 
     LevelSkeleton ConvertCurrentLevelToSkeleton()
@@ -776,6 +792,12 @@ public class LevelEditor : MonoBehaviour
         {
             skelly.playerPosition = player.GetRoundedPosition();
         }
+        //// Set camera
+        //DeadlyCamera deadlyCamera = Camera.main.GetComponent<DeadlyCamera>();
+        //skelly.camera.size = Camera.main.orthographicSize;
+        //skelly.camera.position = Camera.main.transform.position;
+        //skelly.camera.movement = deadlyCamera.cameraMovement;
+        //skelly.camera.enableMovement = deadlyCamera.enableMovement;
         return skelly;
     }
 

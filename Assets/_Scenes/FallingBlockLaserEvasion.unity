@@ -221,6 +221,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &31002083
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -265,6 +266,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &39678740
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -347,6 +349,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!1001 &54010827
 Prefab:
   m_ObjectHideFlags: 0
@@ -472,7 +475,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4f425c5217c9c2a4092c137129221de8, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f425c5217c9c2a4092c137129221de8, type: 2}
@@ -529,7 +532,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 776fab7b2bc486e4cb3364b34dd89f82, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: .352941185}
+  m_Color: {r: 0, g: 0, b: 0, a: .53725493}
 --- !u!1001 &107684519
 Prefab:
   m_ObjectHideFlags: 0
@@ -721,6 +724,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
   fallClock: 0
   initiatePush: 0
   pushClock: 0
@@ -1090,7 +1094,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 604dd8ccd06624f82a5de8bd53315229, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da7e0a98304234c0b9feb1638c884ca5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &300199004
 Transform:
@@ -1198,7 +1202,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 776fab7b2bc486e4cb3364b34dd89f82, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: .352941185}
+  m_Color: {r: 0, g: 0, b: 0, a: .53725493}
 --- !u!1001 &333669723
 Prefab:
   m_ObjectHideFlags: 0
@@ -1334,7 +1338,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 776fab7b2bc486e4cb3364b34dd89f82, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: .352941185}
+  m_Color: {r: 0, g: 0, b: 0, a: .53725493}
 --- !u!1001 &361218643
 Prefab:
   m_ObjectHideFlags: 0
@@ -1473,7 +1477,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 776fab7b2bc486e4cb3364b34dd89f82, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: .352941185}
+  m_Color: {r: 0, g: 0, b: 0, a: .53725493}
 --- !u!1 &419008289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1506,6 +1510,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &419008291
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1648,6 +1653,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &532229311
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1710,7 +1716,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4f425c5217c9c2a4092c137129221de8, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f425c5217c9c2a4092c137129221de8, type: 2}
@@ -1767,7 +1773,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 776fab7b2bc486e4cb3364b34dd89f82, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: .352941185}
+  m_Color: {r: 0, g: 0, b: 0, a: .53725493}
 --- !u!1 &560134435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,7 +1824,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 776fab7b2bc486e4cb3364b34dd89f82, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: .352941185}
+  m_Color: {r: 0, g: 0, b: 0, a: .53725493}
 --- !u!1 &564422963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,6 +1870,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &564422966
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1972,6 +1979,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &598181254
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2034,7 +2042,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 776fab7b2bc486e4cb3364b34dd89f82, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: .352941185}
+  m_Color: {r: 0, g: 0, b: 0, a: .53725493}
 --- !u!1 &625636340
 GameObject:
   m_ObjectHideFlags: 0
@@ -2126,7 +2134,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 776fab7b2bc486e4cb3364b34dd89f82, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: .352941185}
+  m_Color: {r: 0, g: 0, b: 0, a: .53725493}
 --- !u!1 &660233100
 GameObject:
   m_ObjectHideFlags: 0
@@ -2205,7 +2213,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4f425c5217c9c2a4092c137129221de8, type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f425c5217c9c2a4092c137129221de8, type: 2}
@@ -2308,6 +2316,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &696657376
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2630,6 +2639,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &806751490
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2687,6 +2697,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &841256515
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2878,6 +2889,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &903726068
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2935,6 +2947,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &909884078
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3010,7 +3023,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 776fab7b2bc486e4cb3364b34dd89f82, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: .352941185}
+  m_Color: {r: 0, g: 0, b: 0, a: .53725493}
 --- !u!1001 &941287793
 Prefab:
   m_ObjectHideFlags: 0
@@ -3048,7 +3061,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4f425c5217c9c2a4092c137129221de8, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f425c5217c9c2a4092c137129221de8, type: 2}
@@ -3348,6 +3361,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
   direction: {x: 0, y: 0}
 --- !u!4 &1052742777
 Transform:
@@ -3399,7 +3413,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4f425c5217c9c2a4092c137129221de8, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f425c5217c9c2a4092c137129221de8, type: 2}
@@ -3495,6 +3509,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1090337095
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3603,6 +3618,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
   fallClock: 0
   initiatePush: 0
   pushClock: 0
@@ -3656,7 +3672,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 604dd8ccd06624f82a5de8bd53315229, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da7e0a98304234c0b9feb1638c884ca5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1109813255
 Transform:
@@ -3785,13 +3801,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4462e6d5c73bb54cab52f1fc825b1c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point: {fileID: 2800000, guid: 34efe248d57dbcf4997df623eeb8f46f, type: 3}
-  line: {fileID: 2800000, guid: fede794811afbaa4fa2c6060e28d5a4e, type: 3}
-  rect: {fileID: 2800000, guid: 4b8faa2cf37ea774aa43c07310acd8cd, type: 3}
-  select: {fileID: 2800000, guid: 263b63edcf629424fad62f9f8b7d446d, type: 3}
+  pointTexture: {fileID: 2800000, guid: 34efe248d57dbcf4997df623eeb8f46f, type: 3}
+  selectTexture: {fileID: 2800000, guid: 263b63edcf629424fad62f9f8b7d446d, type: 3}
   selectionHighlightPrefab: {fileID: 100002, guid: dacd3e7d37dfe4b79860a23f78af1bb0,
     type: 2}
   brushes:
+  - name: Fixed Block
+    image: {fileID: 2800000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+    prefab: {fileID: 100000, guid: d6e0ece4da26741478ebdfe9e9cf3329, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 0
+    isSpikez: 0
   - name: Block
     image: {fileID: 2800000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
     prefab: {fileID: 100000, guid: d03f54b890c63954594fe3c50eeb5033, type: 2}
@@ -3801,18 +3823,10 @@ MonoBehaviour:
     isCrawler: 0
     isSpikez: 0
   - name: Falling Block
-    image: {fileID: 2800000, guid: 604dd8ccd06624f82a5de8bd53315229, type: 3}
+    image: {fileID: 2800000, guid: da7e0a98304234c0b9feb1638c884ca5, type: 3}
     prefab: {fileID: 100000, guid: 2d934f2537ce78a4a8068a4284c51632, type: 2}
     isPlayer: 0
     isButter: 0
-    isNoRotationZone: 0
-    isCrawler: 0
-    isSpikez: 0
-  - name: Buttahh
-    image: {fileID: 2800000, guid: 0dd4265b7aa207e41a764259d8fe6add, type: 3}
-    prefab: {fileID: 100000, guid: eabca84ee14edeb44a884612b4ed39b8, type: 2}
-    isPlayer: 0
-    isButter: 1
     isNoRotationZone: 0
     isCrawler: 0
     isSpikez: 0
@@ -3824,11 +3838,11 @@ MonoBehaviour:
     isNoRotationZone: 0
     isCrawler: 0
     isSpikez: 0
-  - name: Cannon
-    image: {fileID: 2800000, guid: 2589278f8c71f524899cb7fa6c58ca26, type: 3}
-    prefab: {fileID: 100000, guid: 22ee062d8d8329d468a26e9a80d88367, type: 2}
+  - name: Butter
+    image: {fileID: 2800000, guid: 0dd4265b7aa207e41a764259d8fe6add, type: 3}
+    prefab: {fileID: 100000, guid: eabca84ee14edeb44a884612b4ed39b8, type: 2}
     isPlayer: 0
-    isButter: 0
+    isButter: 1
     isNoRotationZone: 0
     isCrawler: 0
     isSpikez: 0
@@ -3848,7 +3862,23 @@ MonoBehaviour:
     isNoRotationZone: 0
     isCrawler: 0
     isSpikez: 0
-  - name: Crackedblock
+  - name: Mirror
+    image: {fileID: 2800000, guid: 83eccf1aede81426d8a14af93bf80267, type: 3}
+    prefab: {fileID: 100002, guid: 9b0413b8f85da4dd4972219ad329b526, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 0
+    isSpikez: 0
+  - name: Salt
+    image: {fileID: 2800000, guid: e7e739659693b4f2aa059b11e1bbd615, type: 3}
+    prefab: {fileID: 100002, guid: 2f278f28a80e9443f88ae5daeb6a29d8, type: 2}
+    isPlayer: 0
+    isButter: 0
+    isNoRotationZone: 0
+    isCrawler: 0
+    isSpikez: 0
+  - name: Cracked Block
     image: {fileID: 2800000, guid: 4374976620bcc5848a4283bf8468bd55, type: 3}
     prefab: {fileID: 100002, guid: 4408f8c41ceb1da40b3e07924073956b, type: 2}
     isPlayer: 0
@@ -3856,13 +3886,13 @@ MonoBehaviour:
     isNoRotationZone: 0
     isCrawler: 0
     isSpikez: 0
-  - name: Fixed Blocks
-    image: {fileID: 2800000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
-    prefab: {fileID: 100000, guid: d6e0ece4da26741478ebdfe9e9cf3329, type: 2}
+  - name: Crawler
+    image: {fileID: 2800000, guid: bb8e531d9a1b5ac4c8d903845052a428, type: 3}
+    prefab: {fileID: 100004, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
     isPlayer: 0
     isButter: 0
     isNoRotationZone: 0
-    isCrawler: 0
+    isCrawler: 1
     isSpikez: 0
   - name: Spikes
     image: {fileID: 2800000, guid: 9a0a26656907b54479e6820b54934f33, type: 3}
@@ -3872,17 +3902,9 @@ MonoBehaviour:
     isNoRotationZone: 0
     isCrawler: 0
     isSpikez: 1
-  - name: Crawler
-    image: {fileID: 2800000, guid: bb8e531d9a1b5ac4c8d903845052a428, type: 3}
-    prefab: {fileID: 100004, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-    isPlayer: 0
-    isButter: 0
-    isNoRotationZone: 0
-    isCrawler: 1
-    isSpikez: 0
-  - name: Mirror
-    image: {fileID: 2800000, guid: 83eccf1aede81426d8a14af93bf80267, type: 3}
-    prefab: {fileID: 100002, guid: 9b0413b8f85da4dd4972219ad329b526, type: 2}
+  - name: Cannon
+    image: {fileID: 2800000, guid: 2589278f8c71f524899cb7fa6c58ca26, type: 3}
+    prefab: {fileID: 100000, guid: 22ee062d8d8329d468a26e9a80d88367, type: 2}
     isPlayer: 0
     isButter: 0
     isNoRotationZone: 0
@@ -3973,7 +3995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa4c52eb1b4847459daa04a6a9140cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightColor: {r: .162555203, g: .463235319, b: .122621119, a: .427450985}
+  highlightColor: {r: 1, g: 1, b: 1, a: .156862751}
   selectionHighlightPrefab: {fileID: 100032, guid: be358ba3253a94349a34bbb1307c47fd,
     type: 2}
   rotationHighlightPrefab: {fileID: 100016, guid: ce8c766236b9691489df64677f5b2353,
@@ -4006,10 +4028,10 @@ MonoBehaviour:
   resetKey: 27
   playerMovement: {fileID: 0}
   player: {fileID: 0}
-  salt: []
-  saltSoFar: 0
   winOrLoseCountdownTime: 2
   secondsToRotate: .300000012
+  cursorOK: {fileID: 2800000, guid: 774210f13265f7c4f879fd742bd4d49e, type: 3}
+  cursorNeutral: {fileID: 2800000, guid: 79159855bb5d9314483de13e1d3be6e1, type: 3}
   gameState: 0
   canEdit: 0
 --- !u!4 &1188922863
@@ -4074,7 +4096,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 776fab7b2bc486e4cb3364b34dd89f82, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: .352941185}
+  m_Color: {r: 0, g: 0, b: 0, a: .53725493}
 --- !u!1 &1203727557
 GameObject:
   m_ObjectHideFlags: 0
@@ -4120,6 +4142,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1203727560
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4182,7 +4205,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 776fab7b2bc486e4cb3364b34dd89f82, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: .352941185}
+  m_Color: {r: 0, g: 0, b: 0, a: .53725493}
 --- !u!1 &1224580868
 GameObject:
   m_ObjectHideFlags: 0
@@ -4320,6 +4343,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1249612845
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4518,7 +4542,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 776fab7b2bc486e4cb3364b34dd89f82, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: .352941185}
+  m_Color: {r: 0, g: 0, b: 0, a: .53725493}
 --- !u!1001 &1296802815
 Prefab:
   m_ObjectHideFlags: 0
@@ -4825,6 +4849,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1358443889
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5015,6 +5040,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1469012758
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5078,7 +5104,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 776fab7b2bc486e4cb3364b34dd89f82, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: .352941185}
+  m_Color: {r: 0, g: 0, b: 0, a: .53725493}
 --- !u!4 &1511901652
 Transform:
   m_ObjectHideFlags: 0
@@ -5128,7 +5154,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4f425c5217c9c2a4092c137129221de8, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f425c5217c9c2a4092c137129221de8, type: 2}
@@ -5224,6 +5250,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1585316314
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5268,6 +5295,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1588482936
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5338,6 +5366,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1590585230
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5698,6 +5727,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1654060038
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5768,6 +5798,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1654362120
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5907,6 +5938,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1695931736
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6041,7 +6073,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 130fec74a330f4b15a010cefcf749149, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf219d69d98174a5eb737519ea7da4a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1724843001
 Prefab:
@@ -6264,6 +6296,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &1757602404
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6459,7 +6492,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4f425c5217c9c2a4092c137129221de8, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f425c5217c9c2a4092c137129221de8, type: 2}
@@ -6543,7 +6576,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 776fab7b2bc486e4cb3364b34dd89f82, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: .352941185}
+  m_Color: {r: 0, g: 0, b: 0, a: .53725493}
 --- !u!1 &1839589609
 GameObject:
   m_ObjectHideFlags: 0
@@ -6777,7 +6810,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 776fab7b2bc486e4cb3364b34dd89f82, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: .352941185}
+  m_Color: {r: 0, g: 0, b: 0, a: .53725493}
 --- !u!1001 &1931364625
 Prefab:
   m_ObjectHideFlags: 0
@@ -6815,7 +6848,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4f425c5217c9c2a4092c137129221de8, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f425c5217c9c2a4092c137129221de8, type: 2}
@@ -7050,6 +7083,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
   startPoint: {x: 0, y: 0}
   direction: {x: 0, y: 0}
 --- !u!4 &1968797378
@@ -7213,7 +7247,7 @@ PolygonCollider2D:
   m_PrefabInternal: {fileID: 893753142}
   m_GameObject: {fileID: 2003679330}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b965fec59e1e6464293761f6313d7319, type: 2}
   m_IsTrigger: 0
   m_Poly:
     m_Paths:
@@ -7294,7 +7328,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 776fab7b2bc486e4cb3364b34dd89f82, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: .352941185}
+  m_Color: {r: 0, g: 0, b: 0, a: .53725493}
 --- !u!1 &2035122779
 GameObject:
   m_ObjectHideFlags: 0
@@ -7378,6 +7412,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &2036009779
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7772,7 +7807,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 776fab7b2bc486e4cb3364b34dd89f82, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: .352941185}
+  m_Color: {r: 0, g: 0, b: 0, a: .53725493}
 --- !u!1 &2097739969
 GameObject:
   m_ObjectHideFlags: 0
@@ -7818,6 +7853,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  spikiness: 
 --- !u!61 &2097739972
 BoxCollider2D:
   m_ObjectHideFlags: 0
