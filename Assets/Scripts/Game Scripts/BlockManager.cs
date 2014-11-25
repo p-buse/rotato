@@ -103,13 +103,7 @@ public class BlockManager : MonoBehaviour {
 
     public void AddBlock(Int2 position, AbstractBlock block)
     {
-        AbstractBlock alreadyThere;
-        if (grid.TryGetValue(position, out alreadyThere))
-        {
-            grid.Remove(position);
-            if (alreadyThere != null)
-            Destroy(alreadyThere.gameObject);
-        }
+		RemoveBlock(position);
         grid.Add(position, block);
     }
 
@@ -119,8 +113,20 @@ public class BlockManager : MonoBehaviour {
         if (grid.TryGetValue(position, out alreadyThere))
         {
             grid.Remove(position);
-            if (alreadyThere != null)
+			if (alreadyThere as FallingBlock != null) {
+				Int2 above = new Int2(position.x, position.y + 1);
+				AbstractBlock check;
+				if (grid.TryGetValue(above, out check) && check == alreadyThere) {
+					grid.Remove(above);
+				}
+				Int2 below = new Int2(position.x, position.y - 1);
+				if (grid.TryGetValue(below, out check) && check == alreadyThere) {
+					grid.Remove(below);
+				}
+			}
+            if (alreadyThere != null) {
                 Destroy(alreadyThere.gameObject);
+			}
         }
     }
 
