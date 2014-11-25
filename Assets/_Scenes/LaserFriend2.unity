@@ -177,7 +177,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &12558172
 GameObject:
@@ -419,7 +419,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &20099317
 GameObject:
@@ -458,7 +458,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &20099319
 Transform:
@@ -1229,7 +1229,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &51501062
 GameObject:
@@ -1472,7 +1472,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &65544803
 Transform:
@@ -1535,7 +1535,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &66796877
 GameObject:
@@ -1574,7 +1574,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &66796879
 Transform:
@@ -1750,12 +1750,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &76803329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1805,7 +1804,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &77311461
 Transform:
@@ -2069,12 +2068,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &100790846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2298,7 +2296,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &108102822
 Transform:
@@ -2415,7 +2413,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &115323593
 Prefab:
@@ -2623,12 +2621,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &129332965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2777,7 +2774,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &131609143
 GameObject:
@@ -2828,7 +2825,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &133232371
 Prefab:
@@ -3039,7 +3036,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &152491318
 GameObject:
@@ -3101,12 +3098,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .119999997
 --- !u!114 &152491322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3226,7 +3222,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &160345064
 Prefab:
@@ -3367,7 +3363,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &167078315
 Transform:
@@ -3469,7 +3465,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &170491613
 Transform:
@@ -3543,12 +3539,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .0799999982
 --- !u!114 &170604461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3610,7 +3605,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &178461652
 GameObject:
@@ -3661,7 +3656,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &180318312
 GameObject:
@@ -3906,7 +3901,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &188385218
 GameObject:
@@ -4151,12 +4146,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .0399999991
 --- !u!114 &192348837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4206,7 +4200,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &197690572
 Transform:
@@ -4368,12 +4362,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .0399999991
 --- !u!114 &207679530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4523,7 +4516,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &225434615
 Prefab:
@@ -4618,7 +4611,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &231159171
 GameObject:
@@ -4766,7 +4759,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &235493525
 Transform:
@@ -4899,12 +4892,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &242520119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5550,7 +5542,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &281209366
 Transform:
@@ -5694,7 +5686,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &285895612
 GameObject:
@@ -5858,12 +5850,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .159999996
 --- !u!114 &290933186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5957,7 +5948,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &293202022
 Transform:
@@ -6008,7 +5999,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &293873020
 Transform:
@@ -6115,7 +6106,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &309418463
 Prefab:
@@ -6861,12 +6852,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &342572534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7150,12 +7140,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &363207474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7256,7 +7245,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &369008308
 Transform:
@@ -7677,7 +7666,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &385304571
 Prefab:
@@ -8002,12 +7991,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &397319616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8080,12 +8068,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &402587938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8612,12 +8599,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &412356727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8690,12 +8676,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &414814902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8768,12 +8753,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &414827060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8955,12 +8939,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .239999995
 --- !u!114 &422615233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9320,7 +9303,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &435271879
 Prefab:
@@ -9542,7 +9525,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &444961636
 Transform:
@@ -9649,7 +9632,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &450736687
 GameObject:
@@ -9688,7 +9671,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &450736689
 Transform:
@@ -9820,12 +9803,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .200000003
 --- !u!114 &459302562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9987,7 +9969,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &470109425
 Transform:
@@ -10580,7 +10562,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &490721839
 GameObject:
@@ -10731,12 +10713,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .119999997
 --- !u!114 &496648471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10911,12 +10892,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &500420954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11105,12 +11085,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &502269788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11230,7 +11209,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &506405912
 GameObject:
@@ -11458,7 +11437,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &509451032
 Transform:
@@ -12093,12 +12072,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .239999995
 --- !u!114 &537775390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12171,12 +12149,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &540651230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12430,7 +12407,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &567710734
 Transform:
@@ -12733,7 +12710,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &586152616
 Transform:
@@ -13181,7 +13158,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &604646034
 GameObject:
@@ -13243,12 +13220,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &604646038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13298,7 +13274,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &607470839
 Transform:
@@ -13349,7 +13325,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &608916181
 Transform:
@@ -13769,7 +13745,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &640590121
 Transform:
@@ -13894,12 +13870,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .0799999982
 --- !u!114 &642548776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14074,12 +14049,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .0399999991
 --- !u!114 &647524364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14404,7 +14378,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &656865298
 Transform:
@@ -14645,7 +14619,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &669034606
 Transform:
@@ -14812,7 +14786,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &670658612
 Transform:
@@ -14977,7 +14951,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &677306698
 GameObject:
@@ -15159,7 +15133,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &687076768
 Prefab:
@@ -15254,7 +15228,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &690899894
 GameObject:
@@ -15305,7 +15279,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &690946933
 GameObject:
@@ -15367,12 +15341,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .0399999991
 --- !u!114 &690946937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15509,7 +15482,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &709494858
 Transform:
@@ -15611,7 +15584,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &715299342
 Transform:
@@ -15867,12 +15840,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .200000003
 --- !u!114 &721604289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16050,7 +16022,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &727488706
 GameObject:
@@ -16229,7 +16201,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &736913615
 Transform:
@@ -16457,12 +16429,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .0799999982
 --- !u!114 &749144541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16563,7 +16534,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &750554136
 Transform:
@@ -16728,7 +16699,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &758458749
 GameObject:
@@ -16943,12 +16914,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &765491499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17191,7 +17161,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &773001576
 Transform:
@@ -17541,7 +17511,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &784832156
 Transform:
@@ -17833,7 +17803,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &795261382
 Transform:
@@ -17896,7 +17866,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &801799359
 GameObject:
@@ -18335,12 +18305,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .200000003
 --- !u!114 &821357737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18539,12 +18508,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &833291551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19229,7 +19197,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &868720019
 GameObject:
@@ -19268,7 +19236,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &868720021
 Transform:
@@ -19319,7 +19287,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &868897840
 Transform:
@@ -19802,12 +19770,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &893031013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20486,12 +20453,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .239999995
 --- !u!114 &927383885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20609,7 +20575,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &932196356
 Transform:
@@ -20741,7 +20707,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &934627461
 Transform:
@@ -20815,12 +20781,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &935479893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20893,12 +20858,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .119999997
 --- !u!114 &939126766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20948,7 +20912,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &939437450
 Transform:
@@ -21124,12 +21088,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &941726283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21202,12 +21165,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &943047227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21327,7 +21289,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &947473646
 Prefab:
@@ -21433,12 +21395,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &948389648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21552,7 +21513,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &961376220
 GameObject:
@@ -21591,7 +21552,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &961376222
 Transform:
@@ -21654,7 +21615,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &965067054
 GameObject:
@@ -21693,7 +21654,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &965067056
 Transform:
@@ -21868,7 +21829,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &986543988
 GameObject:
@@ -21919,7 +21880,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &989360142
 GameObject:
@@ -22487,7 +22448,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1016755535
 Transform:
@@ -22747,7 +22708,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1028622091
 Prefab:
@@ -22947,7 +22908,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1040754365
 Transform:
@@ -23056,7 +23017,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1043977185
 Transform:
@@ -23119,7 +23080,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1045380027
 GameObject:
@@ -23170,7 +23131,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1047834851
 Prefab:
@@ -23495,12 +23456,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &1056326681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24175,12 +24135,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &1089881052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24312,12 +24271,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &1093430713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24462,7 +24420,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1094767740
 Transform:
@@ -24611,7 +24569,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1102168481
 GameObject:
@@ -24819,12 +24777,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &1115585415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24897,12 +24854,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &1116358777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25067,7 +25023,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1123437409
 GameObject:
@@ -25106,7 +25062,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1123437411
 Transform:
@@ -25245,7 +25201,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1127294210
 Transform:
@@ -25422,12 +25378,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .119999997
 --- !u!114 &1137044235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25500,12 +25455,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &1144715835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25796,7 +25750,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1155817838
 Transform:
@@ -25895,7 +25849,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1161674780
 Transform:
@@ -25958,7 +25912,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1163280399
 GameObject:
@@ -25997,7 +25951,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1163280401
 Transform:
@@ -26217,12 +26171,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .119999997
 --- !u!114 &1171280410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26272,7 +26225,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1171441397
 Transform:
@@ -26323,7 +26276,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1172132502
 Transform:
@@ -26503,7 +26456,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1180725743
 GameObject:
@@ -26542,7 +26495,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1180725745
 Transform:
@@ -26670,12 +26623,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .0799999982
 --- !u!114 &1183079494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26836,12 +26788,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .200000003
 --- !u!114 &1185779610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26903,7 +26854,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1190135297
 Prefab:
@@ -27009,12 +26960,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &1191270110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27105,7 +27055,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1203018965
 GameObject:
@@ -27225,7 +27175,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1210923115
 Transform:
@@ -27299,12 +27249,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .239999995
 --- !u!114 &1211866256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27720,7 +27669,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1227631455
 GameObject:
@@ -27782,12 +27731,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &1227631459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28234,12 +28182,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .119999997
 --- !u!114 &1238745387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28469,7 +28416,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1271320245
 GameObject:
@@ -28844,12 +28791,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &1297700412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29127,12 +29073,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &1304584204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29226,7 +29171,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1309825067
 Transform:
@@ -29328,7 +29273,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1314188900
 Transform:
@@ -29453,12 +29398,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &1320643552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29559,7 +29503,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1323594240
 Transform:
@@ -29610,7 +29554,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1325632226
 Transform:
@@ -29724,7 +29668,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1328869054
 GameObject:
@@ -29763,7 +29707,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1328869056
 Transform:
@@ -29837,12 +29781,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &1333784991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29892,7 +29835,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1339040782
 Transform:
@@ -29966,12 +29909,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .159999996
 --- !u!114 &1348423953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30526,7 +30468,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1376587175
 GameObject:
@@ -30577,7 +30519,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1378164470
 GameObject:
@@ -30731,12 +30673,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &1382462519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31159,7 +31100,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1415574763
 Transform:
@@ -31788,7 +31729,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1445375145
 Transform:
@@ -31997,7 +31938,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1452910194
 Prefab:
@@ -32103,12 +32044,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &1454718688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32214,7 +32154,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1468276758
 Prefab:
@@ -32393,7 +32333,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1471083370
 Transform:
@@ -33020,7 +32960,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1505372194
 GameObject:
@@ -33120,7 +33060,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1507549343
 Transform:
@@ -33423,7 +33363,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5936bfaf9fe74054dad8eac04ebc6210, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f8ccefd7a3fd40a4dbd18ea480026e55, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1521393601
 Transform:
@@ -33541,12 +33481,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &1537845986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33596,7 +33535,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1537987864
 Transform:
@@ -33730,12 +33669,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .239999995
 --- !u!114 &1551955049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33821,12 +33759,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &1553027945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34094,7 +34031,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1579317103
 GameObject:
@@ -34247,7 +34184,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1582734566
 Prefab:
@@ -34672,7 +34609,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1599364806
 GameObject:
@@ -34734,12 +34671,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .159999996
 --- !u!114 &1599364810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34845,7 +34781,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1601069712
 GameObject:
@@ -34896,7 +34832,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1601267467
 GameObject:
@@ -34958,12 +34894,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &1601267471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35013,7 +34948,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1601811592
 Transform:
@@ -35474,12 +35409,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &1624302526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35722,12 +35656,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &1632501943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35931,7 +35864,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1640578877
 GameObject:
@@ -35993,12 +35926,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .0799999982
 --- !u!114 &1640578881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36060,7 +35992,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1642755000
 Prefab:
@@ -36155,7 +36087,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1645859736
 GameObject:
@@ -36341,7 +36273,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1652182271
 Prefab:
@@ -36436,7 +36368,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1659298728
 GameObject:
@@ -36527,12 +36459,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .159999996
 --- !u!114 &1665613793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36582,7 +36513,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1669089625
 Transform:
@@ -36689,7 +36620,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1672758815
 GameObject:
@@ -36751,12 +36682,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .159999996
 --- !u!114 &1672758819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36973,7 +36903,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1680246573
 Transform:
@@ -37047,12 +36977,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .200000003
 --- !u!114 &1685014684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37148,7 +37077,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1692066418
 GameObject:
@@ -37364,12 +37293,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &1699300187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37527,7 +37455,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1704631072
 Transform:
@@ -37724,7 +37652,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1712314259
 Transform:
@@ -37821,7 +37749,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1726662053
 GameObject:
@@ -37883,12 +37811,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &1726662057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37961,12 +37888,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &1727117177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38130,7 +38056,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1737595320
 Prefab:
@@ -38306,7 +38232,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1766241145
 Prefab:
@@ -38440,7 +38366,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1767812567
 Transform:
@@ -38645,7 +38571,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1770395028
 Transform:
@@ -38907,7 +38833,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1779059787
 Transform:
@@ -39012,7 +38938,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1783808264
 Transform:
@@ -39075,7 +39001,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1786492074
 Prefab:
@@ -39170,7 +39096,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1790890412
 GameObject:
@@ -39460,12 +39386,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .0799999982
 --- !u!114 &1796242085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39617,7 +39542,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1806920748
 Transform:
@@ -40338,7 +40263,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1837583324
 Prefab:
@@ -40843,7 +40768,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1869110134
 GameObject:
@@ -40894,7 +40819,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1876851005
 Prefab:
@@ -41222,7 +41147,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1882921915
 Transform:
@@ -41296,12 +41221,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &1883714376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41363,7 +41287,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1892357455
 Prefab:
@@ -41712,7 +41636,6 @@ MonoBehaviour:
   spikiness: 
   startPoint: {x: 0, y: 0}
   direction: {x: 0, y: 0}
-  orient: 0
 --- !u!1001 &1907543966
 Prefab:
   m_ObjectHideFlags: 0
@@ -42073,12 +41996,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .239999995
 --- !u!114 &1918679796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42603,7 +42525,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1942744358
 Transform:
@@ -42934,7 +42856,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1959121540
 Transform:
@@ -43104,7 +43026,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1968713958
 Transform:
@@ -43155,7 +43077,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1971197289
 Transform:
@@ -43260,12 +43182,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .200000003
 --- !u!114 &1975102764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43351,12 +43272,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .0399999991
 --- !u!114 &1975521396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43418,7 +43338,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1979403510
 Prefab:
@@ -43513,7 +43433,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1981849097
 Prefab:
@@ -43915,12 +43835,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .0399999991
 --- !u!114 &1994404768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43995,7 +43914,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &2013986328
 Prefab:
@@ -44252,7 +44171,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2020037950
 Transform:
@@ -44424,7 +44343,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2025492270
 GameObject:
@@ -44568,7 +44487,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2026402418
 Transform:
@@ -44631,7 +44550,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2034628714
 GameObject:
@@ -44682,7 +44601,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2035903551
 GameObject:
@@ -44861,12 +44780,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 1
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: .159999996
 --- !u!114 &2037672808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45272,7 +45190,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2060331176
 GameObject:
@@ -45427,7 +45345,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2064134079
 Transform:
@@ -45589,12 +45507,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &2070412030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45656,7 +45573,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &2079542180
 Prefab:
@@ -45759,7 +45676,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &2080708516
 Prefab:
@@ -45986,7 +45903,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2097668671
 GameObject:
@@ -46088,7 +46005,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2098879493
 GameObject:
@@ -46219,7 +46136,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2102099241
 Transform:
@@ -46620,12 +46537,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &2127469990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46687,7 +46603,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd97e86559436b41b09e1dd2831ab33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2129845383
 GameObject:
@@ -46749,12 +46665,11 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  clinging: 0
   moving: 3
+  clinging: 0
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
-  moveTimer: 0
 --- !u!114 &2129845387
 MonoBehaviour:
   m_ObjectHideFlags: 0
