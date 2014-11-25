@@ -3,8 +3,14 @@ using System.Collections;
 
 public class ClickableButton : MonoBehaviour {
     public int levelToLoad;
-    float zoomSpeed = 0.4f;
-    float zoomFactor = 1.2f;
+    public float zoomSpeed = 0.4f;
+    public float zoomFactor = 1.2f;
+    float originalZoom;
+
+    void Start()
+    {
+        this.originalZoom = transform.localScale.x;
+    }
 
     void OnMouseUpAsButton()
     {
@@ -20,7 +26,7 @@ public class ClickableButton : MonoBehaviour {
         }
         else
         {
-            transform.localScale = Vector3.Lerp(transform.lossyScale, new Vector3(1f, 1f, 1f), zoomSpeed);
+            transform.localScale = Vector3.Lerp(transform.lossyScale, new Vector3(originalZoom, originalZoom, originalZoom), zoomSpeed);
         }
     }
 }
