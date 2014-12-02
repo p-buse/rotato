@@ -13,7 +13,10 @@ public class DeadlyCamera : MonoBehaviour
     void Start()
     {
         this.player = FindObjectOfType<Player>(); ;
-        this.playerCollider = this.player.GetComponent<Collider2D>();
+        if (player != null)
+        {
+            this.playerCollider = this.player.GetComponent<Collider2D>();
+        }
         this.gameManager = FindObjectOfType<GameManager>();
         gameManager.PlayerCreated += this.PlayerCreated;
     }
@@ -33,7 +36,7 @@ public class DeadlyCamera : MonoBehaviour
         }
         Plane[] cameraView = GeometryUtility.CalculateFrustumPlanes(camera);
         // If the player is outside the frame, reset the level
-        if (gameManager.gameState == GameManager.GameMode.playing && !GeometryUtility.TestPlanesAABB(cameraView, playerCollider.bounds))
+        if (this.player != null && gameManager.gameState == GameManager.GameMode.playing && !GeometryUtility.TestPlanesAABB(cameraView, playerCollider.bounds))
         {
             gameManager.PlaySound("Fall");
             gameManager.LoseLevel("Fell out of the world");

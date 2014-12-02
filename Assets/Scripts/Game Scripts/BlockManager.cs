@@ -103,12 +103,7 @@ public class BlockManager : MonoBehaviour {
 
     public void AddBlock(Int2 position, AbstractBlock block)
     {
-        AbstractBlock alreadyThere;
-        if (grid.TryGetValue(position, out alreadyThere))
-        {
-            grid.Remove(position);
-            Destroy(alreadyThere.gameObject);
-        }
+		RemoveBlock(position);
         grid.Add(position, block);
     }
 
@@ -118,7 +113,20 @@ public class BlockManager : MonoBehaviour {
         if (grid.TryGetValue(position, out alreadyThere))
         {
             grid.Remove(position);
-            Destroy(alreadyThere.gameObject);
+			if (alreadyThere as FallingBlock != null) {
+				Int2 above = new Int2(position.x, position.y + 1);
+				AbstractBlock check;
+				if (grid.TryGetValue(above, out check) && check == alreadyThere) {
+					grid.Remove(above);
+				}
+				Int2 below = new Int2(position.x, position.y - 1);
+				if (grid.TryGetValue(below, out check) && check == alreadyThere) {
+					grid.Remove(below);
+				}
+			}
+            if (alreadyThere != null) {
+                Destroy(alreadyThere.gameObject);
+			}
         }
     }
 
@@ -261,7 +269,7 @@ public class BlockManager : MonoBehaviour {
 
 	/// <summary>
 	/// Gets the block at position (x,y), x and y floats.
-	/// for falling blocks, lasers, and mirrors, only returns it if inside its sprite
+	/// for falling blocks, lasers, and mirrors, only returns it if inside its sprite (its collider)
 	/// </summary>
 	/// <returns>The block, if it exists, or null if it doesn't.</returns>
 	/// <param name="x">The x coordinate.</param>
@@ -270,7 +278,7 @@ public class BlockManager : MonoBehaviour {
 	{
 		Int2 pos = new Int2 (x, y);
 		AbstractBlock theBlock;
-		if (grid.TryGetValue (pos, out theBlock)) 
+		if (grid.TryGetValue (pos, out theBlock) && theBlock != null) 
 		{
 			if(theBlock.isPointInside(x,y))
 			{
@@ -284,7 +292,10 @@ public class BlockManager : MonoBehaviour {
     {
         foreach (Int2 pos in this.grid.Keys)
         {
-            Destroy(grid[pos].gameObject);
+            if (grid[pos] != null)
+            {
+                Destroy(grid[pos].gameObject);
+            }
         }
         this.grid = new Dictionary<Int2, AbstractBlock>();
     }

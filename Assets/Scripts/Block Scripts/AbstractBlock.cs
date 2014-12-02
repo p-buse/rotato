@@ -62,6 +62,8 @@ public abstract class AbstractBlock : MonoBehaviour
     /// </summary>
 	[HideInInspector]
 	public float heat = 0;
+	[HideInInspector]
+	public int heated = 0;
 
     /// <summary>
     /// Get a particular object's "orientation" given its current rotation in the 2D plane.
@@ -70,7 +72,8 @@ public abstract class AbstractBlock : MonoBehaviour
     /// <returns></returns>
 
     public abstract string myType();
-    
+
+    public List<int> spikiness;
 
     void Awake()
     {
@@ -87,20 +90,90 @@ public abstract class AbstractBlock : MonoBehaviour
         orientation = FindRotationAngle(blockSprite);
         AbstractBlock.gameManager = FindObjectOfType<GameManager>();
         AbstractBlock.blockManager = FindObjectOfType<BlockManager>();
+        SetupSpikes();
     }
+
+    public void SetupSpikes()
+    {
+        this.spikiness = new List<int>();
+        SpikyBlock[] spikes = GetComponentsInChildren<SpikyBlock>();
+        foreach (SpikyBlock spike in spikes)
+        {
+            int spikeDirection = FindRotationAngle(spike.transform);
+            if (!spikiness.Contains(spikeDirection))
+            {
+                spikiness.Add(spikeDirection);
+                spike.SetupSpike();
+            }
+            else
+            {
+                Debug.LogError("Duplicate spikes on block at: " + GetCurrentPosition());
+            }
+        }
+    }
+
+    public bool RemoveSpike(int spikeDirection)
+    {
+        SpikyBlock[] spikes = GetComponentsInChildren<SpikyBlock>();
+        foreach (SpikyBlock spike in spikes)
+        {
+            if (FindRotationAngle(spike.transform.parent) == spikeDirection)
+            {
+                Destroy(spike.transform.parent.gameObject);
+
+                if (!spikiness.Remove(spikeDirection))
+                    Debug.LogError("Couldn't remove spike from array with orientation: " + spikeDirection);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void AddSpike(GameObject spikePrefab, int spikeDirection)
+    {
+        if (spikeDirection >= 0 && spikeDirection <= 3)
+        {
+            if (!spikiness.Contains(spikeDirection))
+            {
+                spikiness.Add(spikeDirection);
+                GameObject newSpike = Instantiate(spikePrefab, transform.position, Quaternion.identity) as GameObject;
+                newSpike.transform.eulerAngles = new Vector3(0f, 0f, spikeDirection * 90f);
+                newSpike.transform.parent = this.gameObject.transform;
+                SpikyBlock spikeComponent = newSpike.GetComponentInChildren<SpikyBlock>();
+                if (spikeComponent != null)
+                {
+                    spikeComponent.SetupSpike();
+                }
+                else
+                {
+                    Debug.LogError("Spike at: " + GetCurrentPosition() + " has no spike component!");
+                }
+            }
+        }
+        else
+        {
+            Debug.LogError("Invalid spike direction: " + spikeDirection + "! Direction must be an integer between 0 and 3 (inclusive).");
+        }
+    }
+
 
     // Using LateUpdate instead of Update to avoid conflicts with blocks' own Update functions
     void LateUpdate()
     {
         if (!gameManager.gameFrozen && heat > 0f)
         {
-            heat -= Time.deltaTime;
-            if (heat < 0f)
-            {
-                heat = 0f;
-            }
-			blockSpriteRenderer.color = new Color(1f, Mathf.Min(2f - heat, 1f), Mathf.Min(2f - heat, 1f));
+			if (heated == 0) {
+	            heat -= Time.deltaTime;
+	            if (heat < 0f)
+	            {
+	                heat = 0f;
+	            }
+			}
+			else {
+				heated--;
+			}
 		}
+		blockSpriteRenderer.color = new Color(1f, 1f - heat * 2.5f, 1f - heat * 2.5f);
 	}
 
 	public Int2 GetCurrentPosition()
@@ -174,14 +247,15 @@ public abstract class AbstractBlock : MonoBehaviour
 	// The player dies on contact with a block with heat 6 or higher, so a block will take 3 seconds to heat up to deadly levels.
 	// The maximum heat is 9, so a block without a laser on it will cool down to safe heat levels in 3 seconds.
 	public virtual void addHeat(int source) {
-		heat += Time.deltaTime * 2;
-		if (heat > 2f) {
-			heat = 2f;
+		heat += Time.deltaTime;
+		heated = 2;
+		if (heat > 0.4f) {
+			heat = 0.4f;
 		}
 	}
 
 	void OnCollisionStay2D(Collision2D coll) {
-		if (coll.collider.gameObject.tag == "Player" && heat >= 1f && gameManager.gameState == GameManager.GameMode.playing) {
+		if (coll.collider.gameObject.tag == "Player" && heated > 0 && gameManager.gameState == GameManager.GameMode.playing) {
             gameManager.PlaySound("Burnt");
             gameManager.LoseLevel("Burnt by a hot block");
 		}
@@ -199,7 +273,7 @@ public abstract class AbstractBlock : MonoBehaviour
     }
 
 	public virtual BlockSkeleton getSkeleton(){
-        return new BlockSkeleton(this.myType(), this.GetCurrentPosition(), this.orientation);
+        return new BlockSkeleton(this.myType(), this.GetCurrentPosition(), this.orientation, this.spikiness);
 	}
 
 	//non-square blocks override this to use their sprite's collider instead

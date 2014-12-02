@@ -25,11 +25,11 @@ public class NoRotationManager : MonoBehaviour {
             
             GameObject newNoRoZone = Instantiate(noRoPrefab, pos.ToVector2(), Quaternion.identity) as GameObject;
             NoRotationZone nrzComponent = newNoRoZone.GetComponent<NoRotationZone>();
-            noRotationZones.Add(pos, nrzComponent);
             if (nrzComponent == null)
             {
                 Debug.LogError("NoRoZone gameobject at " + pos + " couldn't find norozone component!");
             }
+            noRotationZones.Add(pos, nrzComponent);
             return true;
         }
         else // There's already a noRoZone at position pos
@@ -58,10 +58,12 @@ public class NoRotationManager : MonoBehaviour {
 
     public void ClearNoRotationZones()
     {
-        NoRotationZone[] noRoComponents = FindObjectsOfType<NoRotationZone>();
-        foreach (NoRotationZone nrz in noRoComponents)
+        foreach (Int2 noRoPos in this.noRotationZones.Keys)
         {
-            Destroy(nrz.gameObject);
+            if (noRotationZones[noRoPos] != null)
+            {
+                Destroy(noRotationZones[noRoPos].gameObject);
+            }
         }
         this.noRotationZones = new Dictionary<Int2, NoRotationZone>();
     }

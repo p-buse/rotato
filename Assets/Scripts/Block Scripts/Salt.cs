@@ -22,11 +22,15 @@ public class Salt : AbstractBlock {
     }
 
 	void Update() {
-		if (player.GetRoundedPosition().Equals(location)) {
+		if (player != null && player.GetRoundedPosition().Equals(location)) {
             gameManager.PlaySound("GetSalt");
             blockManager.grid.Remove(location);
 			Destroy(this.gameObject);
 			gameManager.addSalt();
+		}
+		if (!gameManager.gameFrozen && rotationsBeforeRemove <= 0) {
+			blockManager.grid.Remove(GetCurrentPosition());
+			Destroy(this.gameObject);
 		}
 	}
 

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour
 {
     // Reset Key
-    public KeyCode resetKey = KeyCode.Escape;
+    public KeyCode pauseKey = KeyCode.Escape;
 
     // References to other stuff
     BlockManager blockManager;
@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public PlayerMovement playerMovement;
     [HideInInspector]
     public Player player;
+    CampaignManager campaignManager;
 
     // Salt stuff
     [HideInInspector]
@@ -35,6 +36,8 @@ public class GameManager : MonoBehaviour
     bool rotationEmpty;
     float rotationClock = 0f;
 
+    LevelEditor levelEditor;
+
     // Setting the player when one is created
     public delegate void PlayerCreatedHandler(GameManager gameManager, Player player, PlayerMovement playerMovement);
     public event PlayerCreatedHandler PlayerCreated;
@@ -50,9 +53,11 @@ public class GameManager : MonoBehaviour
     }
 
     // Gamemode stuff
-    public enum GameMode { playing, frozen, rotating, won, lost, editing };
+    public enum GameMode { playing, frozen, rotating, won, lost, editing, paused };
     //[HideInInspector]
     public GameMode gameState = GameMode.playing;
+    // Used for returning from pause menu
+    public GameMode lastState = GameMode.playing;
     /// <summary>
     /// True if our gamestate is "playing", false otherwise
     /// </summary>
@@ -70,6 +75,9 @@ public class GameManager : MonoBehaviour
     // Editor stuff
     public bool canEdit;
 
+    // Used for scrolling area in GUI
+    Vector2 currentScroll = Vector2.zero;
+
     void Awake()
     {
         this.soundManager = GetComponent<SoundManager>();
@@ -78,6 +86,8 @@ public class GameManager : MonoBehaviour
 
         this.playerMovement = FindObjectOfType<PlayerMovement>();
         this.player = FindObjectOfType<Player>();
+        this.levelEditor = GetComponent<LevelEditor>();
+        this.campaignManager = GetComponent<CampaignManager>();
     }
 
     public void PlaySound(string soundName)
@@ -87,23 +97,32 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(resetKey))
+        if (Input.GetKeyDown(pauseKey))
         {
-            ResetLevel();
+            if (gameState != GameMode.paused)
+            {
+                lastState = gameState;
+                gameState = GameMode.paused;
+            }
+            else
+            {
+                gameState = lastState;
+            }
         }
+        Time.timeScale = 1f;
         switch (gameState)
         {
             case GameMode.playing:
                 {
+                    Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    int x = Mathf.RoundToInt(worldPos.x);
+                    int y = Mathf.RoundToInt(worldPos.y);
+                    this.currentRotationCenter = new Int2(x, y);
+
                     if (Input.GetMouseButtonDown(0))
                     {
-                        Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                        int x = Mathf.RoundToInt(worldPos.x);
-                        int y = Mathf.RoundToInt(worldPos.y);
-                        this.currentRotationCenter = new Int2(x, y);
-                        if (playerMovement != null && player != null &&
-                            isValidCenter(currentRotationCenter) && playerMovement.isGrounded() 
-                            && !playerMovement.beingShot && !playerInNoRoZone())
+                        
+                        if (ValidCenterToClick(currentRotationCenter))
                         {
                             PlaySound("EnterRotation");
                             gameState = GameMode.frozen;
@@ -135,7 +154,7 @@ public class GameManager : MonoBehaviour
                     }
                 }
                 // If we're not already rotating
-                if (rotationClock <= 0f)
+                if (rotationClock <= 0f && Input.GetMouseButton(0))
                 {
                     // Rotate right!
                     if (Input.GetAxis("Horizontal") > 0 && blockManager.isValidRotation(currentRotationCenter, -1))
@@ -209,8 +228,19 @@ public class GameManager : MonoBehaviour
                     // The LevelEditor script will detect this and knows what to do
                     break;
                 }
-
+            case GameMode.paused:
+                {
+                    Time.timeScale = 0f;
+                    break;
+                }
         }
+    }
+
+    private bool ValidCenterToClick(Int2 rotationCenter)
+    {
+        return playerMovement != null && player != null &&
+                                    isValidCenter(rotationCenter) && playerMovement.isGrounded()
+                                    && !playerMovement.beingShot && !playerInNoRoZone();
     }
 
     private void UpdateSalt()
@@ -284,21 +314,39 @@ public class GameManager : MonoBehaviour
 
     public void GoToNextLevel()
     {
-        int loadedLevel = Application.loadedLevel;
-        if (loadedLevel < Application.levelCount - 1)
+        if (canEdit)
         {
-            Application.LoadLevel(loadedLevel + 1);
-        }
-        else
-        {
-            Application.LoadLevel(0);
+            levelEditor.ResetLevel();
+			this.gameState = GameMode.editing;
+			levelEditor.UpdateGhostlyBlock();
+		}
+		else
+		{
+            int loadedLevel = Application.loadedLevel;
+            if (loadedLevel < Application.levelCount - 1)
+            {
+                Application.LoadLevel(loadedLevel + 1);
+            }
+            else
+            {
+                Application.LoadLevel(0);
+            }
         }
     }
 
     public void ResetLevel()
     {
-        Application.LoadLevel(Application.loadedLevel);
-		saltSoFar -= saltThisLevel;
+        if (canEdit)
+        {
+            levelEditor.ResetLevel();
+			this.gameState = GameMode.editing;
+			levelEditor.UpdateGhostlyBlock();
+		}
+		else
+		{
+            Application.LoadLevel(Application.loadedLevel);
+            saltSoFar -= saltThisLevel;
+        }
     }
 
 	public void addSalt() {
@@ -332,7 +380,46 @@ public class GameManager : MonoBehaviour
                     GUI.Label(new Rect(0, 0, boxWidth, boxHeight), "<size=" + boxHeight + ">YOU WIN!!!</size>", style);
                     break;
                 }
+            case GameMode.paused:
+                {
+                    GUILayout.BeginArea(new Rect(Screen.width / 4, Screen.height / 4, Screen.width / 2, Screen.height / 2), "", "box");
+                    if (GUILayout.Button("Return to Game"))
+                    {
+                        gameState = lastState;
+                    }
+                    if (GUILayout.Button("Main Menu"))
+                    {
+                        ReturnToMainMenu();
+                    }
+                    if (!canEdit)
+                    {
+                        if (GUILayout.Button("Restart Current Level"))
+                        {
+                            ResetLevel();
+                        }
+                    }
+                    //currentScroll = GUILayout.BeginScrollView(currentScroll);
+                    //foreach(string campaignName in campaignManager.GetCampaigns())
+                    //{
+                    //    GUILayout.Label(campaignName);
+                    //    foreach(string levelName in campaignManager.GetLevelsInCampaign(campaignName))
+                    //    {
+                    //        if (GUILayout.Button(levelName))
+                    //        {
+                    //            levelEditor.LoadLevelFromPath(levelName);
+                    //        }
+                    //    }
+                    //}
+                    //GUILayout.EndScrollView();
+                    GUILayout.EndArea();
+                    break;
+                }
         }
+    }
+
+    public void ReturnToMainMenu()
+    {
+        Application.LoadLevel(0);
     }
 
 }
