@@ -3,17 +3,21 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
-    struct InputFrame
+    struct CapturedInput
     {
         public bool left;
         public bool right;
         public bool jumpPressed;
         public bool jumpHeld;
     }
-    InputFrame currentInput;
+    CapturedInput currentInput;
     public float groundMoveSpeed = 1f;
     public float airMoveSpeed = 2f;
     public float jumpAcceleration = 8f;
+    public float groundFriction = 10f;
+    public float airFriction = 10f;
+    public float maxHorizontalSpeed = 10f;
+    public float gravityScale = 1f;
     public AnimationCurve jumpCurve;
     public int maxJumpTicks = 12;
     private int currentJumpTicks = 0;
@@ -47,9 +51,9 @@ public class PlayerMovement : MonoBehaviour
         this.conservedMovement = Vector2.zero;
     }
 
-    InputFrame GetInput()
+    CapturedInput GetInput()
     {
-        InputFrame inputFrame = new InputFrame();
+        CapturedInput inputFrame = new CapturedInput();
         float horizInput = Input.GetAxis("Horizontal");
         if (horizInput > 0)
         {
@@ -108,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
         this.grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Solid"));
         if (!gameManager.gameFrozen)
         {
-            rigidbody2D.gravityScale = 1f;
+            rigidbody2D.gravityScale = this.gravityScale;
             if (!conservedMovement.Equals(Vector2.zero))
             {
                 rigidbody2D.velocity = conservedMovement;
@@ -119,17 +123,38 @@ public class PlayerMovement : MonoBehaviour
                 if (currentInput.left)
                 {
                     if (grounded)
-                        rigidbody2D.AddForce(new Vector2(-groundMoveSpeed, 0f));
+                    {
+                        //rigidbody2D.velocity.AddForce(-groundMoveSpeed, 0f);
+                        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x - groundMoveSpeed, rigidbody2D.velocity.y);
+                    }
                     else
-                        rigidbody2D.AddForce(new Vector2(-airMoveSpeed, 0f));
+                    {
+                        //rigidbody2D.AddForce(new Vector2(-airMoveSpeed, 0f)); 
+                        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x - airMoveSpeed, rigidbody2D.velocity.y);
+                    }
                 }
                 if (currentInput.right)
                 {
                     if (grounded)
-                        rigidbody2D.AddForce(new Vector2(groundMoveSpeed, 0f));
+                    {
+                        //rigidbody2D.AddForce(new Vector2(groundMoveSpeed, 0f));
+                        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x + groundMoveSpeed, rigidbody2D.velocity.y);
+                    }
                     else
-                        rigidbody2D.AddForce(new Vector2(airMoveSpeed, 0f));
+                    {
+                        //rigidbody2D.AddForce(new Vector2(-airMoveSpeed, 0f)); 
+                        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x + airMoveSpeed, rigidbody2D.velocity.y);
+                    }
                 }
+                if (grounded)
+                {
+                    rigidbody2D.velocity = new Vector2(Mathf.Lerp(rigidbody2D.velocity.x, 0f, Time.deltaTime * groundFriction), rigidbody2D.velocity.y);
+                }
+                else
+                {
+                    rigidbody2D.velocity = new Vector2(Mathf.Lerp(rigidbody2D.velocity.x, 0f, Time.deltaTime * airFriction), rigidbody2D.velocity.y);
+                }
+                rigidbody2D.velocity = new Vector2(Mathf.Clamp(rigidbody2D.velocity.x, -maxHorizontalSpeed, maxHorizontalSpeed), rigidbody2D.velocity.y);
                 if (jumping == true)
                 {
                     currentJumpTicks += 1;
