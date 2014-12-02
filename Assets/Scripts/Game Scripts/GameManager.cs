@@ -398,6 +398,10 @@ public class GameManager : MonoBehaviour
                             ResetLevel();
                         }
                     }
+					if (GUILayout.Button ("Skip Level"))
+					{
+						GoToNextLevel();
+					}
                     //currentScroll = GUILayout.BeginScrollView(currentScroll);
                     //foreach(string campaignName in campaignManager.GetCampaigns())
                     //{

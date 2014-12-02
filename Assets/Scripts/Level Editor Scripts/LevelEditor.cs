@@ -529,10 +529,6 @@ public class LevelEditor : MonoBehaviour
             {
                 DrawEditButton(playEditRect);
             }
-            else if (gameManager.gameState == GameManager.GameMode.playing && !gameManager.canEdit)
-            {
-                DrawSkipButton(playEditRect);
-            }
         }
         else
         {
@@ -587,16 +583,6 @@ public class LevelEditor : MonoBehaviour
         GUILayout.EndHorizontal();
         GUILayout.FlexibleSpace();
         GUILayout.EndVertical();
-        GUILayout.EndArea();
-    }
-
-    private void DrawSkipButton(Rect playEditRect)
-    {
-        GUILayout.BeginArea(playEditRect);
-        if (GUILayout.Button("Skip"))
-        {
-            gameManager.GoToNextLevel();
-        }
         GUILayout.EndArea();
     }
 
