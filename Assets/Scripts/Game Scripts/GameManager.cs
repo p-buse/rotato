@@ -78,6 +78,9 @@ public class GameManager : MonoBehaviour
     // Used for scrolling area in GUI
     Vector2 currentScroll = Vector2.zero;
 
+    // Cursor
+    public GameObject cursorPrefab;
+
     void Awake()
     {
         this.soundManager = GetComponent<SoundManager>();
@@ -88,6 +91,7 @@ public class GameManager : MonoBehaviour
         this.player = FindObjectOfType<Player>();
         this.levelEditor = GetComponent<LevelEditor>();
         this.campaignManager = GetComponent<CampaignManager>();
+        Instantiate(cursorPrefab);
     }
 
     public void PlaySound(string soundName)
