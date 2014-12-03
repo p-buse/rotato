@@ -11,15 +11,15 @@ public class PlayerMovement : MonoBehaviour
         public bool jumpHeld;
     }
     CapturedInput currentInput;
-    public float groundMoveSpeed = 1f;
-    public float airMoveSpeed = 2f;
-    public float jumpAcceleration = 8f;
-    public float groundFriction = 10f;
-    public float airFriction = 10f;
-    public float maxHorizontalSpeed = 10f;
-    public float gravityScale = 1f;
+    public float groundMoveSpeed;
+    public float airMoveSpeed;
+    public float jumpAcceleration;
+    public float groundFriction;
+    public float airFriction;
+    public float maxHorizontalSpeed;
+    public float gravityScale;
     public AnimationCurve jumpCurve;
-    public int maxJumpTicks = 12;
+    public int maxJumpTicks;
     private int currentJumpTicks = 0;
     private Vector2 conservedMovement;
     public bool grounded;

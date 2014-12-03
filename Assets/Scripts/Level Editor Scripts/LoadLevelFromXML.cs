@@ -6,11 +6,12 @@ public class LoadLevelFromXML : MonoBehaviour {
 	public TextAsset level;
     public bool loadLevel;
     LevelEditor levelEditor;
+    Camera cam;
 
     void Awake()
     {
         levelEditor = GetComponent<LevelEditor>();
-        Camera cam = FindObjectOfType<Camera>();
+        this.cam = FindObjectOfType<Camera>();
     }
 
 
