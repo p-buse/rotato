@@ -50,6 +50,7 @@ public class CrawlerSegment : MonoBehaviour {
 	/// </summary>
 	public void dieSafely()
 	{
+        gameManager.PlaySound("CrawlerDeath", 0.2f);
 		move.updateMyBlock(null);
 		Destroy (this.gameObject);
 	}

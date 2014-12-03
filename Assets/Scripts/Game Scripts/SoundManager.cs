@@ -25,14 +25,14 @@ public class SoundManager : MonoBehaviour {
     public List<Clip> clipList;
 
 
-    public void PlayClip(string clipName)
+    public void PlayClip(string clipName, float volume)
     {
         bool playedClip = false;
         foreach (Clip c in clipList)
         {
             if (c.name.Equals(clipName))
             {
-                AudioSource.PlayClipAtPoint(c.RandomClip(), gameManager.player.transform.position);
+                AudioSource.PlayClipAtPoint(c.RandomClip(), gameManager.player.transform.position, volume);
                 playedClip = true;
             }
         }

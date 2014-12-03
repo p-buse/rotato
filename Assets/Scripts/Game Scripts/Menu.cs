@@ -3,14 +3,13 @@ using System.Collections;
 
 public class Menu : MonoBehaviour
 {
-    public KeyCode quitKey = KeyCode.Escape;
     public Texture levelEditorButton;
     public Texture playButton;
 
 
     void Update()
     {
-        if (Input.GetKey(quitKey))
+        if (Input.GetButtonDown("Escape"))
             Application.Quit();
     }
 

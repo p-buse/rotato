@@ -3,14 +3,6 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
-    struct CapturedInput
-    {
-        public bool left;
-        public bool right;
-        public bool jumpPressed;
-        public bool jumpHeld;
-    }
-    CapturedInput currentInput;
     public float groundMoveSpeed;
     public float airMoveSpeed;
     public float jumpAcceleration;
@@ -38,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
 
     GameManager gameManager;
 	BlockManager blockManager;
+    private InputManager.CapturedInput currentInput;
 
     bool jumping = false;
     float horizontalVelocity = 0f;
@@ -50,61 +43,38 @@ public class PlayerMovement : MonoBehaviour
         this.groundCheck = transform.Find("groundCheck");
         this.conservedMovement = Vector2.zero;
     }
-
-    CapturedInput GetInput()
-    {
-        CapturedInput inputFrame = new CapturedInput();
-        float horizInput = Input.GetAxis("Horizontal");
-        if (horizInput > 0)
-        {
-            inputFrame.right = true;
-            inputFrame.left = false;
-        }
-        else if (horizInput < 0)
-        {
-            inputFrame.left = true;
-            inputFrame.right = false;
-        }
-        else
-        {
-            inputFrame.left = false;
-            inputFrame.right = false;
-        }
-        inputFrame.jumpPressed = Input.GetButtonDown("Vertical");
-        inputFrame.jumpHeld = Input.GetButton("Vertical");
-        return inputFrame;
-    }
 	
 	void Update ()
     {
-        currentInput = GetInput();
-        if (currentInput.right)
+        if (!gameManager.gameFrozen)
         {
-            AddPushRight();
-        }
-        else if (currentInput.left)
-        {
-            AddPushLeft();
-        }
-        else
-        {
-            ResetPush();
-        }
-        if (jumping)
-        {
-            if (!currentInput.jumpHeld)
+            currentInput = gameManager.currentInput;
+            if (currentInput.right)
             {
-                jumping = false;
+                AddPushRight();
+            }
+            else if (currentInput.left)
+            {
+                AddPushLeft();
+            }
+            else
+            {
+                ResetPush();
+            }
+            if (jumping)
+            {
+                if (!currentInput.up)
+                {
+                    jumping = false;
+                }
+            }
+            if (currentInput.upPressed && grounded)
+            {
+                gameManager.PlaySound("Jump");
+                this.jumping = true;
+                this.currentJumpTicks = 0;
             }
         }
-
-        if (currentInput.jumpPressed && grounded)
-        {
-            gameManager.PlaySound("Jump");
-            this.jumping = true;
-            this.currentJumpTicks = 0;
-        }
-        
 	}
 
     void FixedUpdate()

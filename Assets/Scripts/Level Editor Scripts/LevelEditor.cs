@@ -175,11 +175,11 @@ public class LevelEditor : MonoBehaviour
         DrawGhostlyBlock(mouseWorldPos);
         if (gameManager.gameState == GameManager.GameMode.editing && !this.awaitingConfirmation && !this.loadMenu)
         {
-            if (Input.GetKeyDown(KeyCode.D))
+            if (gameManager.currentInput.rightPressed)
             {
                 currentOrientation -= 1;
             }
-            else if (Input.GetKeyDown(KeyCode.A))
+            else if (gameManager.currentInput.leftPressed)
             {
                 currentOrientation += 1;
             }
@@ -269,7 +269,7 @@ public class LevelEditor : MonoBehaviour
                                     }
                                 }
                                 //rotate ccw
-                                else if (selectedBlock != null && Input.GetKeyDown(KeyCode.A))
+                                else if (selectedBlock != null && gameManager.currentInput.leftPressed)
                                 {
                                     selectedBlock.orientation += 1;
                                     selectedBlock.blockSprite.transform.eulerAngles = new Vector3(0f, 0f, selectedBlock.orientation * 90f);
@@ -283,7 +283,7 @@ public class LevelEditor : MonoBehaviour
                                         (selectedBlock as MirrorBlock).stopFiring();
                                     }
                                 }
-                                else if (selectedBlock != null && Input.GetKeyDown(KeyCode.D))
+                                else if (selectedBlock != null && gameManager.currentInput.rightPressed)
                                 {
                                     selectedBlock.orientation -= 1;
                                     selectedBlock.blockSprite.transform.eulerAngles = new Vector3(0f, 0f, selectedBlock.orientation * 90f);
@@ -296,7 +296,7 @@ public class LevelEditor : MonoBehaviour
                                         (selectedBlock as MirrorBlock).stopFiring();
                                     }
                                 }
-								else if (selectedBlock != null && Input.GetKeyDown(KeyCode.W)) {
+								else if (selectedBlock != null && gameManager.currentInput.upPressed) {
 									if (selectedBlock as Salt != null) {
 										(selectedBlock as Salt).rotationsBeforeRemove++;
 										(selectedBlock as Salt).field.text = "" + (selectedBlock as Salt).rotationsBeforeRemove;
@@ -305,7 +305,7 @@ public class LevelEditor : MonoBehaviour
 										(selectedBlock as CrackedBlock).IncrementRotationsLeft();
 									}
 								}
-								else if (selectedBlock != null && Input.GetKeyDown(KeyCode.S)) {
+								else if (selectedBlock != null && gameManager.currentInput.downPressed) {
 									if (selectedBlock as Salt != null) {
 										(selectedBlock as Salt).rotationsBeforeRemove--;
 										(selectedBlock as Salt).field.text = "" + (selectedBlock as Salt).rotationsBeforeRemove;

@@ -14,10 +14,17 @@ public class CursorScript : MonoBehaviour
         this.gameManager = FindObjectOfType<GameManager>();
         this.animator = GetComponentInChildren<Animator>();
         this.cursorState = 0;
-        Screen.showCursor = false;
     }
     void Update()
     {
+        if (gameManager.gameState == GameManager.GameMode.editing)
+        {
+            Screen.showCursor = true;
+        }
+        else
+        {
+            Screen.showCursor = false;
+        }
         this.transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (!gameManager.gameFrozen)
         {

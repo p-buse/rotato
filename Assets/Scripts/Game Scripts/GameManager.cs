@@ -4,9 +4,6 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
-    // Reset Key
-    public KeyCode pauseKey = KeyCode.Escape;
-
     // References to other stuff
     BlockManager blockManager;
     NoRotationManager noRotationManager;
@@ -78,11 +75,22 @@ public class GameManager : MonoBehaviour
     // Used for scrolling area in GUI
     Vector2 currentScroll = Vector2.zero;
 
+
     // Cursor
     public GameObject cursorPrefab;
 
+    InputManager inputManager;
+    public InputManager.CapturedInput currentInput
+    {
+        get
+        {
+            return inputManager.current;
+        }
+    }
+
     void Awake()
     {
+        this.inputManager = GetComponent<InputManager>();
         this.soundManager = GetComponent<SoundManager>();
         this.blockManager = GetComponent<BlockManager>();
         this.noRotationManager = GetComponent<NoRotationManager>();
@@ -94,9 +102,9 @@ public class GameManager : MonoBehaviour
         Instantiate(cursorPrefab);
     }
 
-    public void PlaySound(string soundName)
+    public void PlaySound(string soundName, float volume = 1f)
     {
-        soundManager.PlayClip(soundName);
+        soundManager.PlayClip(soundName, volume);
     }
 
     public bool MouseIsInRotatableArea()
@@ -111,7 +119,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(pauseKey))
+        if (currentInput.escapePressed)
         {
             if (gameState != GameMode.paused)
             {
@@ -171,7 +179,7 @@ public class GameManager : MonoBehaviour
                 if (rotationClock <= 0f && Input.GetMouseButton(0))
                 {
                     // Rotate right!
-                    if (Input.GetAxis("Horizontal") > 0)
+                    if (currentInput.rightPressed)
                     {
                         if (blockManager.isValidRotation(currentRotationCenter, -1))
                         {
@@ -188,7 +196,7 @@ public class GameManager : MonoBehaviour
                         }
                     }
                     // Rotate left!
-                    else if (Input.GetAxis("Horizontal") < 0 )
+                    else if (currentInput.leftPressed)
                     {
                         if (blockManager.isValidRotation(currentRotationCenter, 1))
                         {
