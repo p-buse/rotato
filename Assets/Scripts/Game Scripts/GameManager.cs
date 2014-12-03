@@ -171,24 +171,38 @@ public class GameManager : MonoBehaviour
                 if (rotationClock <= 0f && Input.GetMouseButton(0))
                 {
                     // Rotate right!
-                    if (Input.GetAxis("Horizontal") > 0 && blockManager.isValidRotation(currentRotationCenter, -1))
+                    if (Input.GetAxis("Horizontal") > 0)
                     {
-                        PlaySound("RotateRight");
-                        blockManager.startRotation(currentRotationCenter);
-                        rotationClock = 1f;
-                        currentRotationDirection = -1;
-                        rotationEmpty = blockManager.rotationEmpty();
-                        gameState = GameMode.rotating;
+                        if (blockManager.isValidRotation(currentRotationCenter, -1))
+                        {
+                            PlaySound("RotateRight");
+                            blockManager.startRotation(currentRotationCenter);
+                            rotationClock = 1f;
+                            currentRotationDirection = -1;
+                            rotationEmpty = blockManager.rotationEmpty();
+                            gameState = GameMode.rotating;
+                        }
+                        else
+                        {
+                            PlaySound("Error");
+                        }
                     }
                     // Rotate left!
-                    else if (Input.GetAxis("Horizontal") < 0 && blockManager.isValidRotation(currentRotationCenter, 1))
+                    else if (Input.GetAxis("Horizontal") < 0 )
                     {
-                        PlaySound("RotateLeft");
-                        blockManager.startRotation(currentRotationCenter);
-                        rotationClock = 1f;
-                        currentRotationDirection = 1;
-                        rotationEmpty = blockManager.rotationEmpty();
-                        gameState = GameMode.rotating;
+                        if (blockManager.isValidRotation(currentRotationCenter, 1))
+                        {
+                            PlaySound("RotateLeft");
+                            blockManager.startRotation(currentRotationCenter);
+                            rotationClock = 1f;
+                            currentRotationDirection = 1;
+                            rotationEmpty = blockManager.rotationEmpty();
+                            gameState = GameMode.rotating;
+                        }
+                        else
+                        {
+                            PlaySound("Error");
+                        }
                     }
                 }
 

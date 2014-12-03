@@ -154,6 +154,9 @@ MonoBehaviour:
   - name: Lasered
     clips:
     - {fileID: 8300000, guid: 8dd65767d6e4c5046944ee5780fe1dcd, type: 3}
+  - name: Error
+    clips:
+    - {fileID: 8300000, guid: a9b1ef64e875bc54f953d7a9afddca09, type: 3}
   - name: Burnt
     clips:
     - {fileID: 8300000, guid: d32ecd85be19a114b9c866fd08e6154b, type: 3}
