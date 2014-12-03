@@ -95,6 +95,16 @@ public class GameManager : MonoBehaviour
         soundManager.PlayClip(soundName);
     }
 
+    public bool MouseIsInRotatableArea()
+    {
+        return this.ValidCenterToClick(currentRotationCenter);
+    }
+
+    public bool MouseIsInNoRoZone()
+    {
+        return noRotationManager.hasNoRotationZone(currentRotationCenter);
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(pauseKey))
@@ -261,6 +271,8 @@ public class GameManager : MonoBehaviour
 
     public bool isValidCenter(Int2 xy)
     {
+        if (xy == null)
+            return false;
 
         if (noRotationManager.hasNoRotationZone(xy))
         {
