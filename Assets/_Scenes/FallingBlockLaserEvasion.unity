@@ -323,7 +323,7 @@ Transform:
   m_Children:
   - {fileID: 1621659333}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!61 &43910536
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1661,7 +1661,7 @@ Transform:
   m_Children:
   - {fileID: 1423762892}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
 --- !u!58 &452482851
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3954,6 +3954,7 @@ GameObject:
   - 114: {fileID: 1188922858}
   - 114: {fileID: 1188922864}
   - 114: {fileID: 1188922857}
+  - 114: {fileID: 1188922866}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -4140,6 +4141,9 @@ MonoBehaviour:
   - name: Lasered
     clips:
     - {fileID: 8300000, guid: 8dd65767d6e4c5046944ee5780fe1dcd, type: 3}
+  - name: Error
+    clips:
+    - {fileID: 8300000, guid: a9b1ef64e875bc54f953d7a9afddca09, type: 3}
   - name: Burnt
     clips:
     - {fileID: 8300000, guid: d32ecd85be19a114b9c866fd08e6154b, type: 3}
@@ -4168,6 +4172,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 1, b: 1, a: .156862751}
+  highlightPulseStep: .00999999978
+  highlightPulseMax: .180000007
+  highlightPulseMin: .150000006
   selectionHighlightPrefab: {fileID: 100032, guid: be358ba3253a94349a34bbb1307c47fd,
     type: 2}
   rotationHighlightPrefab: {fileID: 100016, guid: ce8c766236b9691489df64677f5b2353,
@@ -4197,7 +4204,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb59244c22def94a9636439086a5b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseKey: 27
   playerMovement: {fileID: 0}
   player: {fileID: 0}
   winOrLoseCountdownTime: 2
@@ -4205,6 +4211,7 @@ MonoBehaviour:
   gameState: 0
   lastState: 0
   canEdit: 0
+  cursorPrefab: {fileID: 100002, guid: b81ddec0e6b48bf4b80f35275715704a, type: 2}
 --- !u!4 &1188922863
 Transform:
   m_ObjectHideFlags: 0
@@ -4216,7 +4223,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!114 &1188922864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4243,6 +4250,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: {fileID: 0}
   loadLevel: 0
+--- !u!114 &1188922866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400016, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 1742702571}
+  m_GameObject: {fileID: 1188922856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cc8433eeb188641bf98ed0b88876d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1203445993
 GameObject:
   m_ObjectHideFlags: 0
@@ -7368,11 +7387,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 2000285197}
   - 58: {fileID: 2000285203}
-  - 58: {fileID: 2000285202}
   - 50: {fileID: 2000285201}
   - 114: {fileID: 2000285200}
   - 114: {fileID: 2000285199}
   - 81: {fileID: 2000285198}
+  - 61: {fileID: 2000285202}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -7415,8 +7434,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85593a50be7d84c8386c87ceff9130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4.75
-  jumpForce: 630
+  groundMoveSpeed: 5
+  airMoveSpeed: 1.29999995
+  jumpAcceleration: 7
+  groundFriction: 25
+  airFriction: 10
+  maxHorizontalSpeed: 5
+  gravityScale: .899999976
+  jumpCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  maxJumpTicks: 18
   grounded: 0
 --- !u!114 &2000285200
 MonoBehaviour:
@@ -7446,17 +7476,17 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!58 &2000285202
-CircleCollider2D:
+--- !u!61 &2000285202
+BoxCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5800002, guid: b3d363273a7a33c4e8e759299619d45e,
+  m_PrefabParentObject: {fileID: 6100000, guid: b3d363273a7a33c4e8e759299619d45e,
     type: 2}
   m_PrefabInternal: {fileID: 973552144}
   m_GameObject: {fileID: 2000285196}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Radius: .25
+  m_Size: {x: .439999998, y: .5}
   m_Center: {x: 0, y: .209999993}
 --- !u!58 &2000285203
 CircleCollider2D:

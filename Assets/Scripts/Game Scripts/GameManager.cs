@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public Player player;
     CampaignManager campaignManager;
+    HighlightManager highlightManager;
 
     // Salt stuff
     [HideInInspector]
@@ -94,7 +95,7 @@ public class GameManager : MonoBehaviour
         this.soundManager = GetComponent<SoundManager>();
         this.blockManager = GetComponent<BlockManager>();
         this.noRotationManager = GetComponent<NoRotationManager>();
-
+        this.highlightManager = GetComponent<HighlightManager>();
         this.playerMovement = FindObjectOfType<PlayerMovement>();
         this.player = FindObjectOfType<Player>();
         this.levelEditor = GetComponent<LevelEditor>();
@@ -115,6 +116,20 @@ public class GameManager : MonoBehaviour
     public bool MouseIsInNoRoZone()
     {
         return noRotationManager.hasNoRotationZone(currentRotationCenter);
+    }
+
+    IEnumerator ShakeObject(GameObject obj, float timeToShake, float shakeIntensity)
+    {
+        Vector3 originalPosition = obj.transform.position;
+        for (float t = 0f; t <= timeToShake; t += Time.deltaTime)
+        {
+            obj.transform.position = new Vector3(
+                obj.transform.position.x + Random.Range(-shakeIntensity, shakeIntensity),
+                obj.transform.position.y + Random.Range(-shakeIntensity, shakeIntensity),
+                obj.transform.position.z);
+            yield return null;
+        }
+        obj.transform.position = originalPosition;
     }
 
     void Update()
@@ -192,7 +207,7 @@ public class GameManager : MonoBehaviour
                         }
                         else
                         {
-                            PlaySound("Error");
+                            ShakeHighlighting();
                         }
                     }
                     // Rotate left!
@@ -209,7 +224,7 @@ public class GameManager : MonoBehaviour
                         }
                         else
                         {
-                            PlaySound("Error");
+                            ShakeHighlighting();
                         }
                     }
                 }
@@ -270,6 +285,12 @@ public class GameManager : MonoBehaviour
                     break;
                 }
         }
+    }
+
+    private void ShakeHighlighting()
+    {
+        StartCoroutine(ShakeObject(highlightManager.rotationHighlight, 0.2f, 0.3f));
+        PlaySound("Error");
     }
 
     private bool ValidCenterToClick(Int2 rotationCenter)

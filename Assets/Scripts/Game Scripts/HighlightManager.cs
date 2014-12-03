@@ -20,7 +20,7 @@ public class HighlightManager : MonoBehaviour {
     public GameObject rotationHighlightPrefab;
     GameObject selectionHighlight;
     SpriteRenderer[] selectionSquares;
-    GameObject rotationHighlight;
+    public GameObject rotationHighlight;
 
     void Awake()
     {
