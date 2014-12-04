@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
+using UnityEngine;
+using System.Collections;
+
 public class CrawlerMovement : MonoBehaviour
 {
 	//this crawler segment has radius 0.1
@@ -21,17 +24,17 @@ public class CrawlerMovement : MonoBehaviour
 	//3 mod 4 = (1,0) right-pointing vector
 	public float clinging; //what side of block is the crawler on? in {0,1,2,3}
 	public float moving;  //current crawling direction, {0,1,2,3}
-
+	
 	//private Vector2 movingVec;
 	//private Vector2 clingingVec;
 	public float fallSpeed = 1.5f;
 	public AbstractBlock myBlock; //which block am I on?
 	public Transform crawlerSprite;
-
+	
 	//will use this for non-90-degree turns
 	private Vector2 nextClingingVec;
 	public float moveTimer;
-
+	
 	void Awake()
 	{
 		this.gameManager = FindObjectOfType<GameManager>();
@@ -75,35 +78,36 @@ public class CrawlerMovement : MonoBehaviour
 			if(myBlock!=null)
 			{
 				moveTimer+=0.5f*Time.deltaTime;
-				float distanceToTravel = 0.5f+0.5f*Mathf.Sin (moveTimer*2.0f*Mathf.PI)*Mathf.Sin (moveTimer*2.0f*Mathf.PI);
-//				Vector3 newPos = transform.position + distanceToTravel*floatToV3(moving)*Time.deltaTime;
-//				if(blockManager.getBlockAt(newPos.x, newPos.y)!=null)
-//				{
-//
-//				}
-				transform.Translate(distanceToTravel*floatToV3(moving)*Time.deltaTime);
+				float amt = 0.07f*Mathf.Sin (moveTimer*2.0f*Mathf.PI)*Mathf.Sin (moveTimer*2.0f*Mathf.PI);
+				crawlerSprite.transform.localPosition = amt*floatToV3(moving);
+				//				Vector3 newPos = transform.position + distanceToTravel*floatToV3(moving)*Time.deltaTime;
+				//				if(blockManager.getBlockAt(newPos.x, newPos.y)!=null)
+				//				{
+				//
+				//				}
+				transform.Translate(floatToV3(moving)*Time.deltaTime);
 				//transform.Translate(floatToV3(moving)*Time.deltaTime);
 				//print(myBlock.relVecToClingFloat(transform.position - myBlock.transform.position));
 				//when the crawler bumps a block, cling to it and move up it
 				if(bumpedBlockForward())
 				{
 					updateMyBlock(forwardBlock());
-			
+					
 					float change = myBlock.relVecToClingFloat(transform.position - myBlock.transform.position) - clinging;
 					//print ("bumped forward, change = "+change);
 					//float change = clinging - moving;
 					moving = (moving + change + 4)%4;
 					clinging = (clinging + change + 4)%4;
-
+					
 				}
 				else 
 				{
 					if(myBlock!=null)
 					{
-//						float relx = transform.position.x - myBlock.transform.position.x;
-//						float rely = transform.position.y - myBlock.transform.position.y;
+						//						float relx = transform.position.x - myBlock.transform.position.x;
+						//						float rely = transform.position.y - myBlock.transform.position.y;
 						if( myBlock.relVecToClingFloat(transform.position - myBlock.transform.position)!= clinging)
-						//if( !isGrounded())
+							//if( !isGrounded())
 						{
 							//turn down for what
 							//transform.Translate(-0.08f*floatToV3 (clinging));
@@ -122,13 +126,13 @@ public class CrawlerMovement : MonoBehaviour
 			
 		}
 	}
-
+	
 	public bool reachedEdge()
 	{
 		Vector3 pos = transform.position -0.15f*floatToV3 (clinging) + 0.02f*floatToV3 (moving);
 		return blockManager.getBlockAt (pos.x, pos.y);
 	}
-
+	
 	/// <summary>
 	/// updates myBlock field
 	/// </summary>
@@ -156,7 +160,7 @@ public class CrawlerMovement : MonoBehaviour
 		
 		return blockManager.getBlockAt (blockPos.x, blockPos.y);
 	}
-
+	
 	/// <summary>
 	/// Returns whether the crawler has anything at its feet to cling to
 	/// </summary>
@@ -202,7 +206,7 @@ public class CrawlerMovement : MonoBehaviour
 		
 		crawlerSprite.transform.eulerAngles = new Vector3(0,0,90.0f*((1.0f-time)*clinging + time*(clinging + direction)));
 	}
-
+	
 	
 	public void finishRotation(Int2 center, int dir)
 	{
@@ -234,10 +238,10 @@ public class CrawlerMovement : MonoBehaviour
 		return new Vector3 (-1.0f*Mathf.Sin (direction * Mathf.PI / 2.0f), Mathf.Cos (direction * Mathf.PI / 2.0f),0);
 	}
 	
-	void OnCollisionEnter2D(Collision2D collision)
-	{
-		nextClingingVec = collision.contacts [0].normal;
-	}
+	
+	
+	
+
 	
 	//replaces need for "crawling behavior" in update()?
 	//	void OnCollisionStay2D(Collision2D info)
