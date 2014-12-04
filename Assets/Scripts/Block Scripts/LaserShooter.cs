@@ -7,6 +7,7 @@ public class LaserShooter : AbstractBlock {
 	public Vector2 startPoint;
 	public Vector2 direction;
 	static Vector2[] directions = {new Vector2 (0, 1), new Vector2 (-1, 0), new Vector2 (0, -1), new Vector2 (1, 0)};
+	public float orient;
 
 	public override bool invalidatesRotation() {
 		return false;
@@ -27,6 +28,7 @@ public class LaserShooter : AbstractBlock {
 	}
 
 	void Update() {
+		orient = orientation;
 		if (!gameManager.gameFrozen) {
 			laser.SetPosition (0, startPoint - ((Vector2)transform.position));
 			RaycastHit2D hit = Physics2D.Raycast(startPoint, direction);
@@ -56,7 +58,7 @@ public class LaserShooter : AbstractBlock {
 
 	public override bool isPointInside(float x, float y)
 	{
-		return blockSprite.collider2D.bounds.Contains (new Vector3 (x, y, 0));
+		return blockSprite.collider2D.OverlapPoint(new Vector2 (x, y));
 	}
 
 	public override void finishRotation(Int2 center, int dir) {
@@ -80,8 +82,42 @@ public class LaserShooter : AbstractBlock {
 
 	}
 
+	/// <summary>
+	/// Given a relative vector, returns the float in [0,4) 
+	/// corresponding to the normal vector to this block's side in that direction
+	/// </summary>
+	/// <returns>The proper cling float.</returns>
+	/// <param name="relVec">Rel vec.</param>
+	public override float relVecToClingFloat(Vector3 relVec)
+	{
+		//float angle = (Mathf.Atan2 (relVec.y, relVec.x)*2f/Mathf.PI + 3f)%4;
+		float angle = (Vector3.Angle(new Vector3(1,0,0), relVec)+360f)%360;
+		float tip = (90f + 90f * orientation) % 360;
+		float ccwCorner = (225f + 90f * orientation) % 360;
+		float cwCorner = (315f + 90f * orientation) % 360;
+		//first side? (ccw of beam)
+		if (angleIsBetween(angle, tip,ccwCorner))
+	    {
+			return (orientation + 2f/3f)%4;
+		}
+		//bottom?
+		if (angleIsBetween(angle, ccwCorner,cwCorner))
+		{
+			//print ("hit bottom");
+			return (orientation + 2f)%4f;
+		}
+		//cw side of beam?
+		if (angleIsBetween(angle, cwCorner,tip))
+		{
+			//print ("hi");
+			return (orientation + 10f/3f)%4;
+		}
+		//print ("something weird");
+		return 1f;
+	}
 	
-	public override void AnimateFrameOfRotation (Int2 center, int direction, float time) {
+	public override void AnimateFrameOfRotation (Int2 center, int direction, float time) 
+	{
 		base.AnimateFrameOfRotation (center, direction, time);
 		laser.SetPosition (0, ((Vector2)transform.position)-startPoint);
 		laser.SetPosition (1, ((Vector2)transform.position)-startPoint);
@@ -91,5 +127,26 @@ public class LaserShooter : AbstractBlock {
 	private Vector2 floatToV2(float direction)
 	{
 		return new Vector2 (-1.0f*Mathf.Sin (direction * Mathf.PI / 2.0f), Mathf.Cos (direction * Mathf.PI / 2.0f));
+	}
+
+	/// <summary>
+	/// returns whether the given float is in [start, end)
+	/// handles wrapping by assuming you give them in ccw order
+	/// (so it should actually work for floats or degrees or radians)
+	/// </summary>
+	/// <returns>The <see cref="System.Boolean"/>.</returns>
+	/// <param name="myAngle">My angle.</param>
+	/// <param name="start">Start.</param>
+	/// <param name="end">End.</param>
+	private bool angleIsBetween(float myAngle, float start, float end)
+	{
+		//print ("Is "+myAngle+" between "+start+" and "+end+"?");
+		if(start<end)
+			return start<=myAngle && myAngle<end;
+		if(end<start)
+			return start<=myAngle || end>myAngle;
+	
+		//print ("Is "+myAngle+" between "+start+" and "+end+"?");
+		return false;
 	}
 }

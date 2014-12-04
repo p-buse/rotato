@@ -7,35 +7,27 @@ public class CrawlerParent : MonoBehaviour {
 	BlockManager blockManager;
 	public int clinging=0;
 	public int moving=1;
-	//public AbstractBlock startBlock;
 	
-	void Awake()
+	void Start()
 	{
 		this.gameManager = FindObjectOfType<GameManager>();
 		this.blockManager = FindObjectOfType<BlockManager>();
-//		if(startBlock ==null)
-//		{
-//			Collision2D hit = Physics2D.Raycast ((Vector2)transform.position, -1.0f*floatToV2 (clinging), 0.15f);
-//			if(hit!=null)
-//			{
-//				startBlock = blockManager.getBlockAt(hit.transform.position);
-//			}
-//			this.startBlock = blockManager.getBlockAt(hitPos.x, hitPos.y);
-//			print (startBlock.transform.position);
-		//}
-		//print (startBlock.transform.position);
-		CrawlerMovement[] segments = transform.GetComponentsInChildren<CrawlerMovement> ();
-		for(int i = 0; i<segments.Length;i++)
+
+		CrawlerMovement[] children = transform.GetComponentsInChildren<CrawlerMovement> ();
+		for(int i = 0; i<children.Length;i++)
 		{
 			//print ("found a CrawlerMovement");
-			segments[i].blockManager = blockManager;
-			segments[i].gameManager = gameManager;
-			segments[i].clinging = this.clinging;
-			segments[i].moving = this.moving;
+			children[i].blockManager = blockManager;
+			children[i].gameManager = gameManager;
+			children[i].clinging = this.clinging;
+			children[i].moving = this.moving;
 			//segments[i].falling = false;
-			segments[i].updateMyBlock(segments[i].getMyBlock());
+
+			setBlock(children[i]);
+			//children[i].updateMyBlock(children[i].getMyBlock());
+
 			//print (segments[i].myBlock);
-			segments[i].transform.eulerAngles = Vector3.zero;
+			//segments[i].transform.eulerAngles = Vector3.zero;
 			//segments[i].transform.parent= null;
 		}
 	}
@@ -48,9 +40,21 @@ public class CrawlerParent : MonoBehaviour {
 		}
 	}
 
-	public Vector2 floatToV2(float direction)
+	//so can put parent at 3/4 of the way in one direction, 1/2 in other
+	void setBlock(CrawlerMovement child)
 	{
-		return new Vector2 (-1.0f*Mathf.Sin (direction * Mathf.PI / 2.0f), Mathf.Cos (direction * Mathf.PI / 2.0f));
+		Vector3 pos = child.transform.position - 0.2f * floatToV3 (clinging);
+		AbstractBlock block = blockManager.getBlockAt (pos.x, pos.y);
+		if(block!=null)
+		{
+			child.updateMyBlock(block);
+		}
+
+	}
+
+	public Vector3 floatToV3(float direction)
+	{
+		return new Vector3 (-1.0f*Mathf.Sin (direction * Mathf.PI / 2.0f), Mathf.Cos (direction * Mathf.PI / 2.0f),0);
 	}
 
 

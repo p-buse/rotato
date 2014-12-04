@@ -475,8 +475,8 @@ Transform:
 --- !u!1 &20594314
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100004, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 100000, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 20594315}
@@ -490,8 +490,8 @@ GameObject:
 --- !u!4 &20594315
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400004, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 400000, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 20594314}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 18, y: 1.6916362, z: 0}
@@ -538,6 +538,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &20760646
 BoxCollider2D:
@@ -751,8 +752,8 @@ Prefab:
 --- !u!1 &31350585
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100032, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 100000, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 31350586}
@@ -767,8 +768,8 @@ GameObject:
 --- !u!4 &31350586
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400032, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 400000, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 31350585}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -779,9 +780,9 @@ Transform:
 --- !u!212 &31350587
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 21200014, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 21200000, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 31350585}
   m_Enabled: 1
   m_CastShadows: 0
@@ -926,6 +927,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &39725267
 BoxCollider2D:
@@ -1010,6 +1012,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   rotationsLeft: 1
   numberDisplay: {fileID: 0}
@@ -1065,6 +1068,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &42049892
 BoxCollider2D:
@@ -1234,8 +1238,8 @@ SpriteRenderer:
 --- !u!1 &51501062
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 100002, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 51501063}
@@ -1250,8 +1254,8 @@ GameObject:
 --- !u!4 &51501063
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400000, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 400002, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 51501062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1262,9 +1266,9 @@ Transform:
 --- !u!212 &51501064
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 21200000, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 21200000, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 51501062}
   m_Enabled: 1
   m_CastShadows: 0
@@ -1378,6 +1382,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &58608386
 BoxCollider2D:
@@ -1677,6 +1682,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &76153140
 BoxCollider2D:
@@ -1755,6 +1761,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &76803329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1916,8 +1923,8 @@ SpriteRenderer:
 --- !u!1 &84170211
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100010, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 100004, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 84170212}
@@ -1932,8 +1939,8 @@ GameObject:
 --- !u!4 &84170212
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400010, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 400004, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 84170211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1944,9 +1951,9 @@ Transform:
 --- !u!212 &84170213
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 21200008, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 21200002, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 84170211}
   m_Enabled: 1
   m_CastShadows: 0
@@ -2073,6 +2080,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &100790846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2117,6 +2125,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &102831958
 BoxCollider2D:
@@ -2188,6 +2197,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &104773550
 BoxCollider2D:
@@ -2233,6 +2243,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &105302822
 BoxCollider2D:
@@ -2513,8 +2524,8 @@ SpriteRenderer:
 --- !u!1 &125951956
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100020, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 100002, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 125951957}
@@ -2529,8 +2540,8 @@ GameObject:
 --- !u!4 &125951957
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400020, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 400002, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 125951956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -2541,9 +2552,9 @@ Transform:
 --- !u!212 &125951958
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 21200008, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 21200002, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 125951956}
   m_Enabled: 1
   m_CastShadows: 0
@@ -2626,6 +2637,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &129332965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2712,6 +2724,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &131150815
 BoxCollider2D:
@@ -2916,6 +2929,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &141888583
 BoxCollider2D:
@@ -2961,6 +2975,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &142736156
 BoxCollider2D:
@@ -3103,6 +3118,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &152491322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3147,6 +3163,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &153139858
 BoxCollider2D:
@@ -3300,6 +3317,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &166670675
 BoxCollider2D:
@@ -3544,6 +3562,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &170604461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3839,6 +3858,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &187347683
 BoxCollider2D:
@@ -3982,6 +4002,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   direction: {x: 0, y: 0}
 --- !u!1001 &190620448
@@ -4060,6 +4081,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &192142116
 BoxCollider2D:
@@ -4151,6 +4173,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &192348837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4305,8 +4328,8 @@ Prefab:
 --- !u!1 &207679526
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100016, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 100006, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 207679527}
@@ -4323,8 +4346,8 @@ GameObject:
 --- !u!4 &207679527
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400016, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 400006, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 207679526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.300000012, y: 0, z: 0}
@@ -4336,9 +4359,9 @@ Transform:
 --- !u!58 &207679528
 CircleCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5800000, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 5800000, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 207679526}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -4348,9 +4371,9 @@ CircleCollider2D:
 --- !u!114 &207679529
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 11400000, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 207679526}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -4367,12 +4390,13 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &207679530
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400002, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 11400002, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 207679526}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -4658,6 +4682,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &231159174
 BoxCollider2D:
@@ -4805,6 +4830,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &240975195
 BoxCollider2D:
@@ -4897,6 +4923,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &242520119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4982,6 +5009,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!4 &248998503
 Transform:
@@ -5129,6 +5157,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &257880480
 BoxCollider2D:
@@ -5238,6 +5267,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &261570574
 BoxCollider2D:
@@ -5296,6 +5326,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &265367842
 BoxCollider2D:
@@ -5354,6 +5385,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &266667110
 BoxCollider2D:
@@ -5479,6 +5511,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &275192023
 BoxCollider2D:
@@ -5635,6 +5668,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   direction: {x: 0, y: 0}
 --- !u!1 &282526645
@@ -5733,6 +5767,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &285895615
 BoxCollider2D:
@@ -5855,6 +5890,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &290933186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6251,6 +6287,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &313716768
 BoxCollider2D:
@@ -6267,8 +6304,8 @@ BoxCollider2D:
 --- !u!1 &315894250
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100002, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 100008, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 315894251}
@@ -6283,8 +6320,8 @@ GameObject:
 --- !u!4 &315894251
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400002, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 400008, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 315894250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -6295,9 +6332,9 @@ Transform:
 --- !u!212 &315894252
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 21200002, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 21200004, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 315894250}
   m_Enabled: 1
   m_CastShadows: 0
@@ -6466,6 +6503,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &323047709
 BoxCollider2D:
@@ -6677,6 +6715,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &333287457
 BoxCollider2D:
@@ -6766,6 +6805,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &337070196
 BoxCollider2D:
@@ -6857,6 +6897,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &342572534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7009,6 +7050,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &358331882
 BoxCollider2D:
@@ -7054,6 +7096,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &361354906
 BoxCollider2D:
@@ -7145,6 +7188,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &363207474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7267,6 +7311,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 375421838}
+  - 114: {fileID: 375421840}
   - 114: {fileID: 375421837}
   - 114: {fileID: 375421836}
   - 114: {fileID: 375421835}
@@ -7549,6 +7594,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12aab2acbe199e3478b806a42c7df768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &375421840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400014, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 1519006286}
+  m_GameObject: {fileID: 375421831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b88df71ead32b5e45903469939483814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: {fileID: 0}
+  loadLevel: 0
 --- !u!1 &375507927
 GameObject:
   m_ObjectHideFlags: 0
@@ -7801,6 +7860,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &386095099
 BoxCollider2D:
@@ -7859,6 +7919,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &387256103
 BoxCollider2D:
@@ -7904,6 +7965,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &397007240
 BoxCollider2D:
@@ -7996,6 +8058,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &397319616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8073,6 +8136,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &402587938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8186,6 +8250,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   shootDelayTime: .300000012
   shootCooldownTime: 1
@@ -8222,6 +8287,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &404638735
 BoxCollider2D:
@@ -8309,6 +8375,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &405772451
 BoxCollider2D:
@@ -8380,6 +8447,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &406933190
 BoxCollider2D:
@@ -8513,6 +8581,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &412094313
 BoxCollider2D:
@@ -8542,8 +8611,8 @@ Transform:
 --- !u!1 &412356723
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100008, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 100004, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 412356724}
@@ -8560,8 +8629,8 @@ GameObject:
 --- !u!4 &412356724
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400008, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 400004, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 412356723}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.300000012, y: 0, z: 0}
@@ -8573,9 +8642,9 @@ Transform:
 --- !u!58 &412356725
 CircleCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5800002, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 5800000, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 412356723}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -8585,9 +8654,9 @@ CircleCollider2D:
 --- !u!114 &412356726
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400006, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 11400000, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 412356723}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -8604,12 +8673,13 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &412356727
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400004, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 11400002, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 412356723}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -8619,8 +8689,8 @@ MonoBehaviour:
 --- !u!1 &414814898
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100022, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 100006, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 414814899}
@@ -8637,8 +8707,8 @@ GameObject:
 --- !u!4 &414814899
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400022, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 400006, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 414814898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .180000007, y: 0, z: 0}
@@ -8650,9 +8720,9 @@ Transform:
 --- !u!58 &414814900
 CircleCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5800010, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 5800002, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 414814898}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -8662,9 +8732,9 @@ CircleCollider2D:
 --- !u!114 &414814901
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400020, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 11400004, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 414814898}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -8681,12 +8751,13 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &414814902
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400022, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 11400006, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 414814898}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -8758,6 +8829,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &414827060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8802,6 +8874,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &418754561
 BoxCollider2D:
@@ -8944,6 +9017,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &422615233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9717,6 +9791,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &456987036
 BoxCollider2D:
@@ -9746,8 +9821,8 @@ Transform:
 --- !u!1 &459302558
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100024, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 100010, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 459302559}
@@ -9764,8 +9839,8 @@ GameObject:
 --- !u!4 &459302559
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400024, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 400010, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 459302558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .180000007, y: 0, z: 0}
@@ -9777,9 +9852,9 @@ Transform:
 --- !u!58 &459302560
 CircleCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5800008, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 5800002, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 459302558}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -9789,9 +9864,9 @@ CircleCollider2D:
 --- !u!114 &459302561
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400016, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 11400004, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 459302558}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -9808,12 +9883,13 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &459302562
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400018, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 11400006, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 459302558}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -9919,6 +9995,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &461236681
 BoxCollider2D:
@@ -10164,6 +10241,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &472081935
 BoxCollider2D:
@@ -10235,6 +10313,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &474193352
 BoxCollider2D:
@@ -10280,6 +10359,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &476986019
 BoxCollider2D:
@@ -10363,6 +10443,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   shootDelayTime: .300000012
   shootCooldownTime: 1
@@ -10596,6 +10677,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &490721841
 BoxCollider2D:
@@ -10718,6 +10800,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &496648471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10775,6 +10858,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &497713412
 BoxCollider2D:
@@ -10897,6 +10981,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &500420954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10968,6 +11053,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &501030311
 BoxCollider2D:
@@ -11090,6 +11176,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &502269788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11147,6 +11234,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &505535797
 BoxCollider2D:
@@ -11256,6 +11344,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &506405915
 BoxCollider2D:
@@ -11272,8 +11361,8 @@ BoxCollider2D:
 --- !u!1 &506909089
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100036, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 100012, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 506909090}
@@ -11288,8 +11377,8 @@ GameObject:
 --- !u!4 &506909090
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400036, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 400012, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 506909089}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.94069672e-08, y: -.00767421722, z: 0}
@@ -11300,9 +11389,9 @@ Transform:
 --- !u!212 &506909091
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 21200016, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 21200006, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 506909089}
   m_Enabled: 1
   m_CastShadows: 0
@@ -11605,6 +11694,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &515700461
 BoxCollider2D:
@@ -11772,6 +11862,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &528943865
 BoxCollider2D:
@@ -11997,6 +12088,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   direction: {x: 0, y: 0}
 --- !u!4 &537172507
@@ -12077,6 +12169,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &537775390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12154,6 +12247,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &540651230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12300,6 +12394,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &557396843
 BoxCollider2D:
@@ -12647,6 +12742,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &581609807
 BoxCollider2D:
@@ -13225,6 +13321,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &604646038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13396,6 +13493,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   shootDelayTime: .300000012
   shootCooldownTime: 1
@@ -13476,6 +13574,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &630564605
 BoxCollider2D:
@@ -13547,6 +13646,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &636343334
 BoxCollider2D:
@@ -13813,8 +13913,8 @@ SpriteRenderer:
 --- !u!1 &642548772
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100018, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 100014, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 642548773}
@@ -13831,8 +13931,8 @@ GameObject:
 --- !u!4 &642548773
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400018, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 400014, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 642548772}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.180000007, y: 0, z: 0}
@@ -13844,9 +13944,9 @@ Transform:
 --- !u!58 &642548774
 CircleCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5800002, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 5800004, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 642548772}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -13856,9 +13956,9 @@ CircleCollider2D:
 --- !u!114 &642548775
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400004, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 11400008, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 642548772}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -13875,12 +13975,13 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &642548776
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400006, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 11400010, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 642548772}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -13976,6 +14077,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &647492466
 BoxCollider2D:
@@ -14054,6 +14156,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &647524364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14230,6 +14333,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   direction: {x: 0, y: 0}
 --- !u!1 &652537941
@@ -14328,6 +14432,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &656295312
 BoxCollider2D:
@@ -14437,6 +14542,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &659092746
 BoxCollider2D:
@@ -14665,6 +14771,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &669905336
 BoxCollider2D:
@@ -14736,6 +14843,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &670465991
 BoxCollider2D:
@@ -14889,6 +14997,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &674283822
 BoxCollider2D:
@@ -15014,6 +15123,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &678757371
 BoxCollider2D:
@@ -15346,6 +15456,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &690946937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15432,6 +15543,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &707779820
 BoxCollider2D:
@@ -15765,6 +15877,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   direction: {x: 0, y: 0}
 --- !u!4 &720906668
@@ -15845,6 +15958,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &721604289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15889,6 +16003,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &722388407
 BoxCollider2D:
@@ -15947,6 +16062,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &723182250
 BoxCollider2D:
@@ -16075,51 +16191,6 @@ SpriteRenderer:
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: dd4e59e38cf31a044a425cb3ecce3f43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!1001 &734517988
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400000, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 5.69999981
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-      propertyPath: m_RootOrder
-      value: 38
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
-  m_ParentPrefab: {fileID: 100100000, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_RootGameObject: {fileID: 1711410206}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1001 &734768065
 Prefab:
   m_ObjectHideFlags: 0
@@ -16343,6 +16414,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &748028293
 BoxCollider2D:
@@ -16434,6 +16506,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &749144541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16580,6 +16653,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &754127139
 BoxCollider2D:
@@ -16841,6 +16915,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &763299592
 BoxCollider2D:
@@ -16919,6 +16994,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &765491499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17031,6 +17107,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &768134396
 BoxCollider2D:
@@ -17251,6 +17328,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &775321631
 BoxCollider2D:
@@ -17322,6 +17400,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &778351078
 BoxCollider2D:
@@ -17570,6 +17649,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &785653324
 BoxCollider2D:
@@ -17913,6 +17993,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &801799362
 BoxCollider2D:
@@ -17971,6 +18052,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &805666325
 BoxCollider2D:
@@ -18310,6 +18392,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &821357737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18513,6 +18596,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &833291551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18622,6 +18706,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &839808949
 BoxCollider2D:
@@ -18693,6 +18778,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &841046071
 BoxCollider2D:
@@ -18795,6 +18881,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &846927194
 BoxCollider2D:
@@ -18918,6 +19005,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &854618066
 BoxCollider2D:
@@ -19135,6 +19223,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &864259642
 BoxCollider2D:
@@ -19397,6 +19486,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &873022335
 BoxCollider2D:
@@ -19442,6 +19532,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &879934455
 BoxCollider2D:
@@ -19697,6 +19788,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &882857523
 BoxCollider2D:
@@ -19713,8 +19805,8 @@ BoxCollider2D:
 --- !u!1 &893031009
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100030, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 100008, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 893031010}
@@ -19731,8 +19823,8 @@ GameObject:
 --- !u!4 &893031010
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400030, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 400008, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 893031009}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .419999987, y: 0, z: 0}
@@ -19744,9 +19836,9 @@ Transform:
 --- !u!58 &893031011
 CircleCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5800014, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 5800004, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 893031009}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -19756,9 +19848,9 @@ CircleCollider2D:
 --- !u!114 &893031012
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400028, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 11400008, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 893031009}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -19775,12 +19867,13 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &893031013
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400030, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 11400010, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 893031009}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -19877,6 +19970,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &897975660
 BoxCollider2D:
@@ -19935,6 +20029,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &899134900
 BoxCollider2D:
@@ -19993,6 +20088,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &900148162
 BoxCollider2D:
@@ -20234,6 +20330,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &908574485
 BoxCollider2D:
@@ -20380,6 +20477,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &925380124
 BoxCollider2D:
@@ -20458,6 +20556,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &927383885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20655,6 +20754,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   direction: {x: 0, y: 0}
 --- !u!4 &934470595
@@ -20786,6 +20886,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &935479893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20863,6 +20964,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &939126766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20958,6 +21060,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &939851720
 BoxCollider2D:
@@ -21093,6 +21196,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &941726283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21170,6 +21274,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &943047227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21227,6 +21332,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &944572140
 BoxCollider2D:
@@ -21400,6 +21506,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &948389648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21914,6 +22021,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &989360144
 BoxCollider2D:
@@ -22213,6 +22321,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1007695562
 BoxCollider2D:
@@ -22258,6 +22367,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1008709281
 BoxCollider2D:
@@ -22551,6 +22661,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1017964349
 BoxCollider2D:
@@ -22967,6 +23078,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1041381962
 BoxCollider2D:
@@ -23260,6 +23372,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1050990888
 BoxCollider2D:
@@ -23318,6 +23431,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1054139062
 BoxCollider2D:
@@ -23461,6 +23575,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1056326681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23763,6 +23878,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1066431778
 BoxCollider2D:
@@ -24049,6 +24165,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1089739799
 BoxCollider2D:
@@ -24140,6 +24257,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1089881052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24198,6 +24316,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1090284899
 BoxCollider2D:
@@ -24276,6 +24395,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1093430713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24782,6 +24902,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1115585415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24859,6 +24980,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1116358777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24961,6 +25083,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1121108872
 BoxCollider2D:
@@ -25247,6 +25370,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1133456405
 BoxCollider2D:
@@ -25383,6 +25507,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1137044235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25460,6 +25585,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1144715835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25612,6 +25738,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1146704970
 BoxCollider2D:
@@ -26085,6 +26212,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1170473632
 BoxCollider2D:
@@ -26114,8 +26242,8 @@ Transform:
 --- !u!1 &1171280406
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100020, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 100016, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1171280407}
@@ -26132,8 +26260,8 @@ GameObject:
 --- !u!4 &1171280407
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400020, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 400016, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 1171280406}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.0599999987, y: 0, z: 0}
@@ -26145,9 +26273,9 @@ Transform:
 --- !u!58 &1171280408
 CircleCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5800004, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 5800006, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 1171280406}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -26157,9 +26285,9 @@ CircleCollider2D:
 --- !u!114 &1171280409
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400008, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 11400012, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 1171280406}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -26176,12 +26304,13 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1171280410
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400010, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 11400014, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 1171280406}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -26628,6 +26757,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1183079494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26793,6 +26923,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1185779610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26903,8 +27034,8 @@ Prefab:
 --- !u!1 &1191270106
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100012, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 100010, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1191270107}
@@ -26921,8 +27052,8 @@ GameObject:
 --- !u!4 &1191270107
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400012, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 400010, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 1191270106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.180000007, y: 0, z: 0}
@@ -26934,9 +27065,9 @@ Transform:
 --- !u!58 &1191270108
 CircleCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5800004, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 5800006, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 1191270106}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -26946,9 +27077,9 @@ CircleCollider2D:
 --- !u!114 &1191270109
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400010, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 11400012, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 1191270106}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -26965,12 +27096,13 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1191270110
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400008, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 11400014, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 1191270106}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -27123,6 +27255,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   direction: {x: 0, y: 0}
 --- !u!4 &1203018968
@@ -27254,6 +27387,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1211866256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27429,58 +27563,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 83eccf1aede81426d8a14af93bf80267, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!1001 &1215642528
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400004, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.6916362
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-      propertyPath: m_RootOrder
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: clinging
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: moving
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_RootGameObject: {fileID: 20594314}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1 &1219332616
 GameObject:
   m_ObjectHideFlags: 0
@@ -27560,6 +27642,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   direction: {x: 0, y: 0}
 --- !u!1 &1222762401
@@ -27594,6 +27677,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1222762403
 BoxCollider2D:
@@ -27736,6 +27820,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1227631459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27914,8 +27999,8 @@ SpriteRenderer:
 --- !u!1 &1231439765
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100010, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 100012, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1231439767}
@@ -27930,9 +28015,9 @@ GameObject:
 --- !u!212 &1231439766
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 21200004, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 21200004, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 1231439765}
   m_Enabled: 1
   m_CastShadows: 0
@@ -27953,8 +28038,8 @@ SpriteRenderer:
 --- !u!4 &1231439767
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400010, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 400012, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 1231439765}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -28045,6 +28130,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1233270353
 BoxCollider2D:
@@ -28187,6 +28273,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1238745387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28463,6 +28550,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1271320248
 BoxCollider2D:
@@ -28616,6 +28704,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1288626132
 BoxCollider2D:
@@ -28718,6 +28807,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1297592137
 BoxCollider2D:
@@ -28796,6 +28886,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1297700412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28987,6 +29078,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1303464720
 BoxCollider2D:
@@ -29078,6 +29170,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1304584204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29341,8 +29434,8 @@ SpriteRenderer:
 --- !u!1 &1320643548
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100034, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 100018, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1320643549}
@@ -29359,8 +29452,8 @@ GameObject:
 --- !u!4 &1320643549
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400034, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 400018, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 1320643548}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.419999987, y: 0, z: 0}
@@ -29372,9 +29465,9 @@ Transform:
 --- !u!58 &1320643550
 CircleCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5800016, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 5800008, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 1320643548}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -29384,9 +29477,9 @@ CircleCollider2D:
 --- !u!114 &1320643551
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400032, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 11400016, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 1320643548}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -29403,12 +29496,13 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1320643552
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400034, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 11400018, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 1320643548}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -29571,8 +29665,8 @@ Transform:
 --- !u!1 &1326256430
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100024, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 100014, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1326256431}
@@ -29587,8 +29681,8 @@ GameObject:
 --- !u!4 &1326256431
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400024, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 400014, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 1326256430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -29599,9 +29693,9 @@ Transform:
 --- !u!212 &1326256432
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 21200010, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 21200006, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 1326256430}
   m_Enabled: 1
   m_CastShadows: 0
@@ -29786,6 +29880,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1333784991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29852,8 +29947,8 @@ Transform:
 --- !u!1 &1348423949
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100022, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 100020, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1348423950}
@@ -29870,8 +29965,8 @@ GameObject:
 --- !u!4 &1348423950
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400022, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 400020, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 1348423949}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .0599999987, y: 0, z: 0}
@@ -29883,9 +29978,9 @@ Transform:
 --- !u!58 &1348423951
 CircleCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5800006, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 5800010, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 1348423949}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -29895,9 +29990,9 @@ CircleCollider2D:
 --- !u!114 &1348423952
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400012, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 11400020, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 1348423949}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -29914,12 +30009,13 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1348423953
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400014, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 11400022, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 1348423949}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -30002,6 +30098,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1350103975
 BoxCollider2D:
@@ -30129,8 +30226,8 @@ Prefab:
 --- !u!1 &1354135865
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100012, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 100022, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1354135866}
@@ -30145,8 +30242,8 @@ GameObject:
 --- !u!4 &1354135866
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400012, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 400022, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 1354135865}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -30157,9 +30254,9 @@ Transform:
 --- !u!212 &1354135867
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 21200010, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 21200008, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 1354135865}
   m_Enabled: 1
   m_CastShadows: 0
@@ -30223,6 +30320,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1358623444
 BoxCollider2D:
@@ -30600,6 +30698,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1378247614
 BoxCollider2D:
@@ -30678,6 +30777,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1382462519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30874,6 +30974,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1391027812
 BoxCollider2D:
@@ -31017,6 +31118,54 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2154c8c31402e7042b3fab4077971733, type: 2}
   m_RootGameObject: {fileID: 404690270}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
+--- !u!1001 &1406767016
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400022, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 400022, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 5.69999981
+      objectReference: {fileID: 0}
+    - target: {fileID: 400022, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400022, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400022, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400022, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400022, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400022, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+      propertyPath: m_RootOrder
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 100022, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+      propertyPath: m_Name
+      value: Crawler right
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_RootGameObject: {fileID: 1711410206}
   m_IsPrefabParent: 0
   m_IsExploded: 1
 --- !u!1001 &1412702276
@@ -31190,6 +31339,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1421733026
 BoxCollider2D:
@@ -31261,6 +31411,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1422333730
 BoxCollider2D:
@@ -31319,6 +31470,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1425065856
 BoxCollider2D:
@@ -31408,6 +31560,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1429224568
 BoxCollider2D:
@@ -31479,6 +31632,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1430499580
 BoxCollider2D:
@@ -31537,6 +31691,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1435759644
 BoxCollider2D:
@@ -32049,6 +32204,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1454718688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32392,6 +32548,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1471153509
 BoxCollider2D:
@@ -32450,6 +32607,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1472494666
 BoxCollider2D:
@@ -32495,6 +32653,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1479010789
 BoxCollider2D:
@@ -32845,6 +33004,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   direction: {x: 0, y: 0}
 --- !u!4 &1493748641
@@ -33006,6 +33166,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   shootDelayTime: .300000012
   shootCooldownTime: 1
@@ -33150,6 +33311,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1514093542
 BoxCollider2D:
@@ -33424,8 +33586,8 @@ Prefab:
 --- !u!1 &1537845982
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100026, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 100016, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1537845983}
@@ -33442,8 +33604,8 @@ GameObject:
 --- !u!4 &1537845983
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400026, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 400016, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 1537845982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .300000012, y: 0, z: 0}
@@ -33455,9 +33617,9 @@ Transform:
 --- !u!58 &1537845984
 CircleCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5800012, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 5800008, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 1537845982}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -33467,9 +33629,9 @@ CircleCollider2D:
 --- !u!114 &1537845985
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400024, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 11400016, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 1537845982}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -33486,12 +33648,13 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1537845986
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400026, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 11400018, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 1537845982}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -33625,8 +33788,8 @@ Transform:
 --- !u!1 &1551955046
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100026, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 100024, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1551955050}
@@ -33643,9 +33806,9 @@ GameObject:
 --- !u!58 &1551955047
 CircleCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5800010, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 5800012, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 1551955046}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -33655,9 +33818,9 @@ CircleCollider2D:
 --- !u!114 &1551955048
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400020, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 11400024, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 1551955046}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -33674,12 +33837,13 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1551955049
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400022, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 11400026, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 1551955046}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -33689,8 +33853,8 @@ MonoBehaviour:
 --- !u!4 &1551955050
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400026, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 400024, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 1551955046}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .300000012, y: 0, z: 0}
@@ -33764,6 +33928,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1553027945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33821,6 +33986,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1554261240
 BoxCollider2D:
@@ -34078,6 +34244,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1579317106
 BoxCollider2D:
@@ -34371,6 +34538,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1589005020
 BoxCollider2D:
@@ -34676,6 +34844,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1599364810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34899,6 +35068,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1601267471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35089,6 +35259,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1609148601
 BoxCollider2D:
@@ -35414,6 +35585,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1624302526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35483,6 +35655,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   shootDelayTime: .300000012
   shootCooldownTime: 1
@@ -35532,6 +35705,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1627989376
 BoxCollider2D:
@@ -35599,8 +35773,8 @@ SpriteRenderer:
 --- !u!1 &1632501939
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100014, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 100018, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1632501940}
@@ -35617,8 +35791,8 @@ GameObject:
 --- !u!4 &1632501940
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400014, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 400018, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 1632501939}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.0599999987, y: 0, z: 0}
@@ -35630,9 +35804,9 @@ Transform:
 --- !u!58 &1632501941
 CircleCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5800006, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 5800010, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 1632501939}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -35642,9 +35816,9 @@ CircleCollider2D:
 --- !u!114 &1632501942
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400012, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 11400020, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 1632501939}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -35661,12 +35835,13 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1632501943
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400014, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 11400022, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 1632501939}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -35931,6 +36106,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1640578881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36222,6 +36398,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   direction: {x: 0, y: 0}
 --- !u!1 &1651965175
@@ -36464,6 +36641,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1665613793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36687,6 +36865,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1672758819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36744,6 +36923,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1674655518
 BoxCollider2D:
@@ -36789,6 +36969,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1674913289
 BoxCollider2D:
@@ -36982,6 +37163,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1685014684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37124,6 +37306,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1692066421
 BoxCollider2D:
@@ -37182,6 +37365,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1692984790
 BoxCollider2D:
@@ -37298,6 +37482,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1699300187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37370,8 +37555,8 @@ Prefab:
 --- !u!1 &1700130625
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100006, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 100020, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1700130626}
@@ -37386,8 +37571,8 @@ GameObject:
 --- !u!4 &1700130626
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400006, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 400020, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 1700130625}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -37398,9 +37583,9 @@ Transform:
 --- !u!212 &1700130627
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 21200002, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 21200008, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 1700130625}
   m_Enabled: 1
   m_CastShadows: 0
@@ -37526,8 +37711,8 @@ Transform:
 --- !u!1 &1711410206
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 100022, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1711410207}
@@ -37541,8 +37726,8 @@ GameObject:
 --- !u!4 &1711410207
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400000, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 400022, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 1711410206}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8, y: 5.69999981, z: 0}
@@ -37602,6 +37787,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1711440452
 BoxCollider2D:
@@ -37816,6 +38002,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1726662057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37893,6 +38080,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1727117177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38168,6 +38356,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   direction: {x: 0, y: 0}
 --- !u!4 &1739381629
@@ -38281,8 +38470,8 @@ Prefab:
 --- !u!1 &1767194745
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100006, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 100026, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1767194746}
@@ -38297,8 +38486,8 @@ GameObject:
 --- !u!4 &1767194746
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400006, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 400026, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 1767194745}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -38309,9 +38498,9 @@ Transform:
 --- !u!212 &1767194747
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 21200004, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 21200010, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 1767194745}
   m_Enabled: 1
   m_CastShadows: 0
@@ -38412,6 +38601,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1768442494
 BoxCollider2D:
@@ -38674,6 +38864,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1772073633
 BoxCollider2D:
@@ -38732,6 +38923,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1773058365
 BoxCollider2D:
@@ -39143,6 +39335,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1790890415
 BoxCollider2D:
@@ -39300,6 +39493,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1792995559
 BoxCollider2D:
@@ -39391,6 +39585,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1796242085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39479,6 +39674,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1802303339
 BoxCollider2D:
@@ -39703,6 +39899,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1814129134
 BoxCollider2D:
@@ -39829,6 +40026,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1815982026
 BoxCollider2D:
@@ -39887,6 +40085,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1817737294
 BoxCollider2D:
@@ -39989,6 +40188,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1825638749
 BoxCollider2D:
@@ -40047,6 +40247,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1829157225
 BoxCollider2D:
@@ -40092,6 +40293,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1833460005
 BoxCollider2D:
@@ -40122,8 +40324,8 @@ Transform:
 --- !u!1 &1833968912
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100008, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 100028, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1833968913}
@@ -40138,8 +40340,8 @@ GameObject:
 --- !u!4 &1833968913
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400008, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabParentObject: {fileID: 400028, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 1833968912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -40150,9 +40352,9 @@ Transform:
 --- !u!212 &1833968914
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 21200006, guid: a0ed543e35b70ff4fa05a48d445d7755,
+  m_PrefabParentObject: {fileID: 21200012, guid: 9a83ee0f7db27074aa98c486a36f2c42,
     type: 2}
-  m_PrefabInternal: {fileID: 1215642528}
+  m_PrefabInternal: {fileID: 1895298409}
   m_GameObject: {fileID: 1833968912}
   m_Enabled: 1
   m_CastShadows: 0
@@ -40355,6 +40557,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1838837035
 BoxCollider2D:
@@ -40649,6 +40852,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1861308893
 BoxCollider2D:
@@ -40948,6 +41152,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1877343182
 BoxCollider2D:
@@ -41097,6 +41302,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1882723695
 BoxCollider2D:
@@ -41226,6 +41432,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1883714376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41345,6 +41552,54 @@ Prefab:
   m_RootGameObject: {fileID: 1903718322}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1001 &1895298409
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.6916362
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+      propertyPath: m_RootOrder
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+      propertyPath: m_Name
+      value: Crawler
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+  m_RootGameObject: {fileID: 20594314}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &1895674709
 GameObject:
   m_ObjectHideFlags: 0
@@ -41403,6 +41658,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   rotationsLeft: 1
   numberDisplay: {fileID: 0}
@@ -41492,6 +41748,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   direction: {x: 0, y: 0}
 --- !u!1 &1903718322
@@ -41633,9 +41890,11 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   startPoint: {x: 0, y: 0}
   direction: {x: 0, y: 0}
+  orient: 0
 --- !u!1001 &1907543966
 Prefab:
   m_ObjectHideFlags: 0
@@ -41807,6 +42066,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1910848553
 BoxCollider2D:
@@ -41923,6 +42183,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1912593755
 BoxCollider2D:
@@ -42001,6 +42262,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1918679796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42136,6 +42398,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   direction: {x: 0, y: 0}
 --- !u!1 &1929989651
@@ -42183,6 +42446,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1929989654
 BoxCollider2D:
@@ -42462,6 +42726,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1942600423
 BoxCollider2D:
@@ -42571,6 +42836,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1948223880
 BoxCollider2D:
@@ -42629,6 +42895,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1948811851
 BoxCollider2D:
@@ -42700,6 +42967,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   shootDelayTime: .300000012
   shootCooldownTime: 1
@@ -42806,6 +43074,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1958758502
 BoxCollider2D:
@@ -42873,8 +43142,8 @@ Transform:
 --- !u!1 &1967393934
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100016, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 100024, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1967393935}
@@ -42889,8 +43158,8 @@ GameObject:
 --- !u!4 &1967393935
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400016, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 400024, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 1967393934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -42901,9 +43170,9 @@ Transform:
 --- !u!212 &1967393936
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 21200006, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 21200010, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 1967393934}
   m_Enabled: 1
   m_CastShadows: 0
@@ -43187,6 +43456,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1975102764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43277,6 +43547,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1975521396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43680,6 +43951,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1988947720
 BoxCollider2D:
@@ -43840,6 +44112,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1994404768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44005,6 +44278,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2016668051
 BoxCollider2D:
@@ -44050,6 +44324,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2019483631
 BoxCollider2D:
@@ -44121,6 +44396,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2019583075
 BoxCollider2D:
@@ -44268,6 +44544,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2025087435
 BoxCollider2D:
@@ -44402,6 +44679,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   shootDelayTime: .300000012
   shootCooldownTime: 1
@@ -44635,6 +44913,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2035903553
 BoxCollider2D:
@@ -44707,6 +44986,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2037064311
 BoxCollider2D:
@@ -44785,6 +45065,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &2037672808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44843,6 +45124,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2042263823
 BoxCollider2D:
@@ -44922,6 +45204,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
   direction: {x: 0, y: 0}
 --- !u!4 &2042547534
@@ -45033,6 +45316,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2047188253
 BoxCollider2D:
@@ -45224,6 +45508,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2060331178
 BoxCollider2D:
@@ -45282,6 +45567,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2061307001
 BoxCollider2D:
@@ -45512,6 +45798,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &2070412030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46073,6 +46360,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2099052409
 BoxCollider2D:
@@ -46182,6 +46470,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2102523866
 BoxCollider2D:
@@ -46253,6 +46542,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2103323360
 BoxCollider2D:
@@ -46362,6 +46652,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2114688618
 BoxCollider2D:
@@ -46407,6 +46698,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2123418141
 BoxCollider2D:
@@ -46480,8 +46772,8 @@ Prefab:
 --- !u!1 &2127469986
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100018, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 100026, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2127469987}
@@ -46498,8 +46790,8 @@ GameObject:
 --- !u!4 &2127469987
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400018, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 400026, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 2127469986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .0599999987, y: 0, z: 0}
@@ -46511,9 +46803,9 @@ Transform:
 --- !u!58 &2127469988
 CircleCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5800008, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 5800012, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 2127469986}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -46523,9 +46815,9 @@ CircleCollider2D:
 --- !u!114 &2127469989
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400016, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 11400024, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 2127469986}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -46542,12 +46834,13 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &2127469990
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400018, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 11400026, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 2127469986}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -46670,6 +46963,7 @@ MonoBehaviour:
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &2129845387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46714,6 +47008,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2133795926
 BoxCollider2D:
@@ -46794,8 +47089,8 @@ Transform:
 --- !u!1 &2139926667
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100028, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 100028, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2139926668}
@@ -46810,8 +47105,8 @@ GameObject:
 --- !u!4 &2139926668
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400028, guid: d3c0063df59b27046b01117eaa9024d8, type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabParentObject: {fileID: 400028, guid: 159d2df1853870847b67c0d222b7c63f, type: 2}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 2139926667}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -46822,9 +47117,9 @@ Transform:
 --- !u!212 &2139926669
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 21200012, guid: d3c0063df59b27046b01117eaa9024d8,
+  m_PrefabParentObject: {fileID: 21200012, guid: 159d2df1853870847b67c0d222b7c63f,
     type: 2}
-  m_PrefabInternal: {fileID: 734517988}
+  m_PrefabInternal: {fileID: 1406767016}
   m_GameObject: {fileID: 2139926667}
   m_Enabled: 1
   m_CastShadows: 0
