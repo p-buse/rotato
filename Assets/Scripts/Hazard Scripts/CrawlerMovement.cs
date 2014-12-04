@@ -114,13 +114,13 @@ public class CrawlerMovement : MonoBehaviour
 							//turn down for what
 							//transform.Translate(-0.02f*floatToV3 (clinging));
 							//transform.Translate(0.08f*floatToV3 (moving));
-//							if(isGrounded()){
-//								updateMyBlock(getMyBlock());
-//							}
+							if(isGrounded()){
+								updateMyBlock(getMyBlock());
+							}
 							//Vector3 nextFramePosition = transform.position + Time.deltaTime*floatToV3(moving);
-							//float change = myBlock.relVecToClingFloat(transform.position - myBlock.transform.position) - clinging;
+							float change = myBlock.relVecToClingFloat(transform.position - myBlock.transform.position) - clinging;
 							//print(change);
-							float change = moving - clinging ;
+							//float change = moving - clinging ;
 							//float oldMoving = moving;
 							moving = (moving +4 + change)%4;
 							clinging =(clinging + 4 + change)%4;
