@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LevelSkeleton xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <minRotationsUsed>0</minRotationsUsed>
   <blocks>
     <BlockSkeleton>
       <name>Fixed</name>
@@ -1055,16 +1056,6 @@
       <rotationsTillDeath>0</rotationsTillDeath>
       <spikiness />
     </BlockSkeleton>
-    <BlockSkeleton>
-      <name>Salt</name>
-      <position>
-        <x>0</x>
-        <y>-5</y>
-      </position>
-      <orientation>0</orientation>
-      <rotationsTillDeath>0</rotationsTillDeath>
-      <spikiness />
-    </BlockSkeleton>
   </blocks>
   <noRoZones>
     <Int2>
@@ -1262,10 +1253,11 @@
   </playerPosition>
   <crawlers />
   <camera>
-    <size>0</size>
+    <orthographicSize>0</orthographicSize>
     <position>
       <x>0</x>
       <y>0</y>
+      <z>0</z>
     </position>
     <movement>
       <x>0</x>
