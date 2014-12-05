@@ -65,7 +65,7 @@ public class MirrorBlock : AbstractBlock {
 
 	public override bool isPointInside(float x, float y)
 	{
-		return blockSprite.collider2D.bounds.Contains (new Vector3 (x, y, 0));
+		return blockSprite.collider2D.OverlapPoint(new Vector2 (x, y));
 	}
 
 	public override void addHeat(int source) {
@@ -98,27 +98,49 @@ public class MirrorBlock : AbstractBlock {
 	/// <param name="relVec">Rel vec.</param>
 	public override float relVecToClingFloat(Vector3 relVec)
 	{
+		float inRadius = 0.5f * (2f - Mathf.Sqrt (2));
+
+		//have to measure from the right angle, so that this can detect when they leave the diagonal
+		relVec = relVec + (0.5f -inRadius)* floatToV3 (orientation) + (0.5f -inRadius)* floatToV3 ((orientation + 3)%4);
+		//actually, measure from incenter (intersection of angle bisectors) so that the angles to corners are still nice
+		//and you can detect when it leaves flat sides, too
+
 		//float angle = (Mathf.Atan2 (relVec.y, relVec.x)*2f/Mathf.PI + 3f)%4;
 		float angle = (Vector3.Angle(new Vector3(1,0,0), relVec)+360f)%360;
+		if(relVec.y<0)
+		{
+			angle = 360 - angle;
+		}
 		//print ("to this block you are at an angle of " + angle);
-		float topLeftCorner = (135f + 90f * orientation) % 360;
+//		float topLeftCorner = (135f + 90f * orientation) % 360;
+//		float ccwCorner = (225f + 90f * orientation) % 360;
+//		float cwCorner = (315f + 90f * orientation) % 360;
+		float topLeftCorner = (112.5f + 90f * orientation) % 360;
 		float ccwCorner = (225f + 90f * orientation) % 360;
-		float cwCorner = (315f + 90f * orientation) % 360;
-		//first side? (ccw of beam)
+		float cwCorner = (337.5f + 90f* orientation) % 360;
+
+
+		//first side? 
+
 		if (angleIsBetween(angle, topLeftCorner,ccwCorner))
 		{
+			print (angle+" is between "+topLeftCorner+" and "+ccwCorner+", now on side 1");
 			return (orientation + 1f)%4;
 		}
 		//bottom?
 		if (angleIsBetween(angle, ccwCorner,cwCorner))
 		{
+			print (angle+" is between "+ccwCorner+" and "+cwCorner+", now on side 2");
 			return (orientation + 2f)%4f;
 		}
-		//cw side of beam?
+		//diagonal
 		if (angleIsBetween(angle, cwCorner,topLeftCorner))
 		{
+			print (angle+" is between "+cwCorner+" and "+topLeftCorner+", now on diagonal");
 			return (orientation + 3.5f)%4;
 		}
+
+
 		//print ("somethingweird");
 		return 1f;
 	}
@@ -142,6 +164,11 @@ public class MirrorBlock : AbstractBlock {
 
 		//print ("This shouldn't happen");
 		return false;
+	}
+
+	private Vector3 floatToV3(float direction)
+	{			
+		return new Vector3 (-1.0f*Mathf.Sin (direction * Mathf.PI / 2.0f), Mathf.Cos (direction * Mathf.PI / 2.0f),0);
 	}
 
 	public override void finishRotation(Int2 center, int dir) {

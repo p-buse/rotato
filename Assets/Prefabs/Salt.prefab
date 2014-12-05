@@ -126,6 +126,8 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
+  spikiness: 
   rotationsBeforeRemove: 5
   field: {fileID: 0}
 --- !u!212 &21200000
@@ -148,7 +150,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e7e739659693b4f2aa059b11e1bbd615, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 23ba99fefa4ca4f2fa916025e20e39c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

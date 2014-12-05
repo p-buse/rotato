@@ -6,12 +6,21 @@ public class HighlightManager : MonoBehaviour {
     Player player;
     GameManager gameManager;
     public Color highlightColor;
+
+    // Highlight pulsing
+    public float highlightPulseStep = 0.01f;
+    public float highlightPulseMax = .3f;
+    public float highlightPulseMin = .15f;
+    /// <summary>
+    /// flips between 1 and -1 to make the pulsing go up and down
+    /// </summary>
+    float highlightMultiplier = 1f;
     PlayerMovement playerMovement;
     public GameObject selectionHighlightPrefab;
     public GameObject rotationHighlightPrefab;
     GameObject selectionHighlight;
     SpriteRenderer[] selectionSquares;
-    GameObject rotationHighlight;
+    public GameObject rotationHighlight;
 
     void Awake()
     {
@@ -35,6 +44,7 @@ public class HighlightManager : MonoBehaviour {
 
     void Update()
     {
+        PulseHighlightColor();
         if (player == null || playerMovement == null)
             return;
         switch (gameManager.gameState)
@@ -99,5 +109,20 @@ public class HighlightManager : MonoBehaviour {
                 }
         }
         
+    }
+
+    private void PulseHighlightColor()
+    {
+        float currentAlphaValue = highlightColor.a;
+        if (currentAlphaValue > highlightPulseMax)
+        {
+            highlightMultiplier = -1f;
+        }
+        else if (currentAlphaValue < highlightPulseMin)
+        {
+            highlightMultiplier = 1f;
+        }
+        float newAlphaValue = currentAlphaValue + (highlightPulseStep * highlightMultiplier);
+        this.highlightColor = new Color(highlightColor.r, highlightColor.g, highlightColor.b, newAlphaValue);
     }
 }

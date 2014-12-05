@@ -4,9 +4,6 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
-    // Reset Key
-    public KeyCode pauseKey = KeyCode.Escape;
-
     // References to other stuff
     BlockManager blockManager;
     NoRotationManager noRotationManager;
@@ -16,6 +13,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public Player player;
     CampaignManager campaignManager;
+    HighlightManager highlightManager;
 
     // Salt stuff
     [HideInInspector]
@@ -78,26 +76,65 @@ public class GameManager : MonoBehaviour
     // Used for scrolling area in GUI
     Vector2 currentScroll = Vector2.zero;
 
+
+    // Cursor
+    public GameObject cursorPrefab;
+
+    InputManager inputManager;
+    public InputManager.CapturedInput currentInput
+    {
+        get
+        {
+            return inputManager.current;
+        }
+    }
+
     void Awake()
     {
+        this.inputManager = GetComponent<InputManager>();
         this.soundManager = GetComponent<SoundManager>();
         this.blockManager = GetComponent<BlockManager>();
         this.noRotationManager = GetComponent<NoRotationManager>();
-
+        this.highlightManager = GetComponent<HighlightManager>();
         this.playerMovement = FindObjectOfType<PlayerMovement>();
         this.player = FindObjectOfType<Player>();
         this.levelEditor = GetComponent<LevelEditor>();
         this.campaignManager = GetComponent<CampaignManager>();
+        Instantiate(cursorPrefab);
     }
 
-    public void PlaySound(string soundName)
+    public void PlaySound(string soundName, float volume = 1f)
     {
-        soundManager.PlayClip(soundName);
+        soundManager.PlayClip(soundName, volume);
+    }
+
+    public bool MouseIsInRotatableArea()
+    {
+        return this.ValidCenterToClick(currentRotationCenter);
+    }
+
+    public bool MouseIsInNoRoZone()
+    {
+        return noRotationManager.hasNoRotationZone(currentRotationCenter);
+    }
+
+    IEnumerator ShakeObject(GameObject obj, float timeToShake, float shakeIntensity)
+    {
+        Vector3 originalPosition = obj.transform.position;
+        for (float t = 0f; t <= timeToShake; t += Time.deltaTime)
+        {
+            obj.transform.position = new Vector3(
+                obj.transform.position.x + Random.Range(-shakeIntensity, shakeIntensity),
+                obj.transform.position.y + Random.Range(-shakeIntensity, shakeIntensity),
+                obj.transform.position.z);
+            yield return null;
+        }
+        obj.transform.position = originalPosition;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(pauseKey))
+        if (currentInput.escapePressed)
         {
             if (gameState != GameMode.paused)
             {
@@ -118,10 +155,12 @@ public class GameManager : MonoBehaviour
                     int x = Mathf.RoundToInt(worldPos.x);
                     int y = Mathf.RoundToInt(worldPos.y);
                     this.currentRotationCenter = new Int2(x, y);
+					
 
                     if (Input.GetMouseButtonDown(0))
                     {
-                        
+						print (worldPos.x+", "+worldPos.y);
+						print (blockManager.getBlockAt(worldPos.x, worldPos.y));
                         if (ValidCenterToClick(currentRotationCenter))
                         {
                             PlaySound("EnterRotation");
@@ -157,24 +196,38 @@ public class GameManager : MonoBehaviour
                 if (rotationClock <= 0f && Input.GetMouseButton(0))
                 {
                     // Rotate right!
-                    if (Input.GetAxis("Horizontal") > 0 && blockManager.isValidRotation(currentRotationCenter, -1))
+                    if (currentInput.rightPressed)
                     {
-                        PlaySound("RotateRight");
-                        blockManager.startRotation(currentRotationCenter);
-                        rotationClock = 1f;
-                        currentRotationDirection = -1;
-                        rotationEmpty = blockManager.rotationEmpty();
-                        gameState = GameMode.rotating;
+                        if (blockManager.isValidRotation(currentRotationCenter, -1))
+                        {
+                            PlaySound("RotateRight");
+                            blockManager.startRotation(currentRotationCenter);
+                            rotationClock = 1f;
+                            currentRotationDirection = -1;
+                            rotationEmpty = blockManager.rotationEmpty();
+                            gameState = GameMode.rotating;
+                        }
+                        else
+                        {
+                            ShakeHighlighting();
+                        }
                     }
                     // Rotate left!
-                    else if (Input.GetAxis("Horizontal") < 0 && blockManager.isValidRotation(currentRotationCenter, 1))
+                    else if (currentInput.leftPressed)
                     {
-                        PlaySound("RotateLeft");
-                        blockManager.startRotation(currentRotationCenter);
-                        rotationClock = 1f;
-                        currentRotationDirection = 1;
-                        rotationEmpty = blockManager.rotationEmpty();
-                        gameState = GameMode.rotating;
+                        if (blockManager.isValidRotation(currentRotationCenter, 1))
+                        {
+                            PlaySound("RotateLeft");
+                            blockManager.startRotation(currentRotationCenter);
+                            rotationClock = 1f;
+                            currentRotationDirection = 1;
+                            rotationEmpty = blockManager.rotationEmpty();
+                            gameState = GameMode.rotating;
+                        }
+                        else
+                        {
+                            ShakeHighlighting();
+                        }
                     }
                 }
 
@@ -236,6 +289,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void ShakeHighlighting()
+    {
+        StartCoroutine(ShakeObject(highlightManager.rotationHighlight, 0.2f, 0.3f));
+        PlaySound("Error");
+    }
+
     private bool ValidCenterToClick(Int2 rotationCenter)
     {
         return playerMovement != null && player != null &&
@@ -261,6 +320,8 @@ public class GameManager : MonoBehaviour
 
     public bool isValidCenter(Int2 xy)
     {
+        if (xy == null)
+            return false;
 
         if (noRotationManager.hasNoRotationZone(xy))
         {
@@ -317,10 +378,11 @@ public class GameManager : MonoBehaviour
         if (canEdit)
         {
             levelEditor.ResetLevel();
-            this.gameState = GameMode.editing;
-        }
-        else
-        {
+			this.gameState = GameMode.editing;
+			levelEditor.UpdateGhostlyBlock();
+		}
+		else
+		{
             int loadedLevel = Application.loadedLevel;
             if (loadedLevel < Application.levelCount - 1)
             {
@@ -338,10 +400,11 @@ public class GameManager : MonoBehaviour
         if (canEdit)
         {
             levelEditor.ResetLevel();
-            this.gameState = GameMode.editing;
-        }
-        else
-        {
+			this.gameState = GameMode.editing;
+			levelEditor.UpdateGhostlyBlock();
+		}
+		else
+		{
             Application.LoadLevel(Application.loadedLevel);
             saltSoFar -= saltThisLevel;
         }
@@ -396,6 +459,10 @@ public class GameManager : MonoBehaviour
                             ResetLevel();
                         }
                     }
+					if (GUILayout.Button ("Skip Level"))
+					{
+						GoToNextLevel();
+					}
                     //currentScroll = GUILayout.BeginScrollView(currentScroll);
                     //foreach(string campaignName in campaignManager.GetCampaigns())
                     //{

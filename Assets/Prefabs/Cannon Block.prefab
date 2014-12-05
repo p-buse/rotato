@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   - 61: {fileID: 6100000}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Cannon Block
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ MonoBehaviour:
   heat: 0
   shootDelayTime: .300000012
   shootCooldownTime: 1
-  shootForce: 1000
+  shootForce: 1900
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

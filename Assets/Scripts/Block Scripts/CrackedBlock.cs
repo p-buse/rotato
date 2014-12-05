@@ -4,11 +4,22 @@ using System.Collections;
 public class CrackedBlock : AbstractBlock {
 	//displayed on the model.  if this is 0 and it's rotated again, after the rotation this block will diappear.
 	//because this is public, it can be set individually from the unity scene, right?
-	public int rotationsLeft;
+    public int rotationsLeft = 5;
 
 	Transform numberDisplayObject;
 	public SpriteRenderer numberDisplay;
 	public Sprite[] numberSprites;
+
+    public void IncrementRotationsLeft()
+    {
+        if (rotationsLeft < 5)
+            rotationsLeft++;
+    }
+    public void DecrementRotationsLeft()
+    {
+        if (rotationsLeft > 0)
+            rotationsLeft--;
+    }
 
 	void Start()
 	{

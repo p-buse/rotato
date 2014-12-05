@@ -288,6 +288,8 @@ public class BlockManager : MonoBehaviour {
 		return null;
 	}
 
+
+
     public void DestroyAllBlocks()
     {
         foreach (Int2 pos in this.grid.Keys)

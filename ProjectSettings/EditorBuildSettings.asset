@@ -14,15 +14,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/TutorialScenes/HowFarCanRotationsGo.unity
   - enabled: 1
-    path: Assets/_Scenes/TestLevel.unity
-  - enabled: 1
     path: Assets/_Scenes/TutorialScenes/FallingBlockIntroduction.unity
   - enabled: 1
     path: Assets/_Scenes/TutorialScenes/PushingTutorial.unity
   - enabled: 1
-    path: Assets/_Scenes/Basic Rotation Puzzle.unity
-  - enabled: 1
     path: Assets/_Scenes/TutorialScenes/SaltTutorial.unity
+  - enabled: 1
+    path: Assets/_Scenes/TestLevel.unity
+  - enabled: 1
+    path: Assets/_Scenes/Flying.unity
+  - enabled: 1
+    path: Assets/_Scenes/Reuse Block.unity
   - enabled: 1
     path: Assets/_Scenes/ReturnToMenu.unity
   - enabled: 1
@@ -37,6 +39,10 @@ EditorBuildSettings:
     path: Assets/_Scenes/NoRoZone Minefield.unity
   - enabled: 1
     path: Assets/_Scenes/TutorialScenes/NoRotationZones.unity
+  - enabled: 1
+    path: Assets/_Scenes/CityLevel.unity
+  - enabled: 1
+    path: Assets/_Scenes/RooftopCannons.unity
   - enabled: 1
     path: Assets/_Scenes/ReturnToMenu.unity
   - enabled: 1
@@ -54,14 +60,26 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/FallingBlockLaserEvasion.unity
   - enabled: 1
-    path: Assets/_Scenes/LasersVsCrawlers.unity
+    path: Assets/_Scenes/LaserFriend.unity
+  - enabled: 1
+    path: Assets/_Scenes/LaserFriend2.unity
+  - enabled: 1
+    path: Assets/_Scenes/LaserBlocking.unity
+  - enabled: 1
+    path: Assets/_Scenes/Escape.unity
   - enabled: 1
     path: Assets/_Scenes/ReturnToMenu.unity
   - enabled: 1
+    path: Assets/_Scenes/Basic Rotation Puzzle.unity
+  - enabled: 1
     path: Assets/_Scenes/Claustrophobia.unity
+  - enabled: 1
+    path: Assets/_Scenes/Cage.unity
   - enabled: 1
     path: Assets/_Scenes/MazeLevel.unity
   - enabled: 1
     path: Assets/_Scenes/TutorialScenes/CrackedBlocks.unity
   - enabled: 1
     path: Assets/_Scenes/TutorialScenes/NoRotationZones.unity
+  - enabled: 1
+    path: Assets/_Scenes/NoRoZone2.unity

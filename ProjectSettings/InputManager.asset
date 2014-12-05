@@ -5,13 +5,13 @@ InputManager:
   m_ObjectHideFlags: 0
   m_Axes:
   - serializedVersion: 3
-    m_Name: Horizontal
-    descriptiveName: Move Right
-    descriptiveNegativeName: Move Left
-    negativeButton: left
-    positiveButton: right
-    altNegativeButton: a
-    altPositiveButton: d
+    m_Name: Up
+    descriptiveName: Jump / Increase
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: up
+    altNegativeButton: 
+    altPositiveButton: w
     gravity: 9999
     dead: 1
     sensitivity: 3
@@ -21,13 +21,13 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Vertical
-    descriptiveName: Jump
+    m_Name: Down
+    descriptiveName: Decrease
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: up
+    positiveButton: down
     altNegativeButton: 
-    altPositiveButton: w
+    altPositiveButton: s
     gravity: 9999
     dead: 1
     sensitivity: 3
@@ -51,4 +51,52 @@ InputManager:
     invert: 0
     type: 1
     axis: 2
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Left
+    descriptiveName: Move Left / Rotate Counterclockwise
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: left
+    altNegativeButton: 
+    altPositiveButton: a
+    gravity: 9999
+    dead: 1
+    sensitivity: 3
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Right
+    descriptiveName: Move Right / Rotate Clockwise
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: right
+    altNegativeButton: 
+    altPositiveButton: d
+    gravity: 9999
+    dead: 1
+    sensitivity: 3
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Escape
+    descriptiveName: Pause
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: escape
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 9999
+    dead: 1
+    sensitivity: 3
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
     joyNum: 0

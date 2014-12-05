@@ -58,7 +58,7 @@ public class LaserShooter : AbstractBlock {
 
 	public override bool isPointInside(float x, float y)
 	{
-		return blockSprite.collider2D.bounds.Contains (new Vector3 (x, y, 0));
+		return blockSprite.collider2D.OverlapPoint(new Vector2 (x, y));
 	}
 
 	public override void finishRotation(Int2 center, int dir) {
@@ -90,14 +90,18 @@ public class LaserShooter : AbstractBlock {
 	/// <param name="relVec">Rel vec.</param>
 	public override float relVecToClingFloat(Vector3 relVec)
 	{
-		//float angle = (Mathf.Atan2 (relVec.y, relVec.x)*2f/Mathf.PI + 3f)%4;
 		float angle = (Vector3.Angle(new Vector3(1,0,0), relVec)+360f)%360;
+		if(relVec.y<0)
+		{
+			angle = 360 - angle;
+		}
 		float tip = (90f + 90f * orientation) % 360;
 		float ccwCorner = (225f + 90f * orientation) % 360;
 		float cwCorner = (315f + 90f * orientation) % 360;
 		//first side? (ccw of beam)
 		if (angleIsBetween(angle, tip,ccwCorner))
 	    {
+			//print (" on side 1");
 			return (orientation + 2f/3f)%4;
 		}
 		//bottom?
@@ -110,6 +114,7 @@ public class LaserShooter : AbstractBlock {
 		if (angleIsBetween(angle, cwCorner,tip))
 		{
 			//print ("hi");
+			//print (" on side -1");
 			return (orientation + 10f/3f)%4;
 		}
 		//print ("something weird");
@@ -129,6 +134,10 @@ public class LaserShooter : AbstractBlock {
 		return new Vector2 (-1.0f*Mathf.Sin (direction * Mathf.PI / 2.0f), Mathf.Cos (direction * Mathf.PI / 2.0f));
 	}
 
+	private Vector3 floatToV3(float direction)
+	{
+		return new Vector3 (-1.0f*Mathf.Sin (direction * Mathf.PI / 2.0f), Mathf.Cos (direction * Mathf.PI / 2.0f),0);
+	}
 	/// <summary>
 	/// returns whether the given float is in [start, end)
 	/// handles wrapping by assuming you give them in ccw order

@@ -53,7 +53,10 @@ public class NoRotationManager : MonoBehaviour {
     }
 
 	public bool hasNoRotationZone(Int2 position){
-        return noRotationZones.ContainsKey(position);
+        if (position != null)
+            return noRotationZones.ContainsKey(position);
+        else
+            return false;
 	}
 
     public void ClearNoRotationZones()

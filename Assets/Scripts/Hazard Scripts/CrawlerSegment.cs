@@ -20,16 +20,16 @@ public class CrawlerSegment : MonoBehaviour {
 		if(!gameManager.gameFrozen)
 		{
 			//Vector2 top = new Vector2(transform.position.x, transform.position.y)+0.1f*move.floatToV2(move.clinging);
-			if (blockManager.getBlockAt (transform.position.x, transform.position.y)) 
+			if (blockManager.getBlockAt (transform.position.x, transform.position.y)!=null) 
 			{
-				print("block at "+transform.position.x+", "+transform.position.y);
-				print ("my last moving number: "+move.moving);
-				print ("my last moving vector: "+move.floatToV2(move.moving));
-				Debug.DrawLine(transform.position, transform.position + move.floatToV3(move.clinging));
+//				print("block at "+transform.position.x+", "+transform.position.y);
+//				print ("my last moving number: "+move.moving);
+//				print ("my last moving vector: "+move.floatToV2(move.moving));
+//				Debug.DrawLine(transform.position, transform.position + move.floatToV3(move.clinging));
 				dieSafely();
 			}
 			if(move.myBlock!=null){
-				if(move.myBlock.heat >= 0.38f)
+				if(move.myBlock.heated > 0)
 				{
 					dieSafely();
 				}
@@ -54,6 +54,7 @@ public class CrawlerSegment : MonoBehaviour {
 	/// </summary>
 	public void dieSafely()
 	{
+        gameManager.PlaySound("CrawlerDeath", 0.2f);
 		move.updateMyBlock(null);
 		Destroy (this.gameObject);
 	}
