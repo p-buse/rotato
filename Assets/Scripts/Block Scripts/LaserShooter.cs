@@ -4,6 +4,7 @@ using System.Collections;
 public class LaserShooter : AbstractBlock {
 
 	LineRenderer laser;
+	float laserWidth = 0f;
 	public Vector2 startPoint;
 	public Vector2 direction;
 	static Vector2[] directions = {new Vector2 (0, 1), new Vector2 (-1, 0), new Vector2 (0, -1), new Vector2 (1, 0)};
@@ -30,6 +31,9 @@ public class LaserShooter : AbstractBlock {
 	void Update() {
 		orient = orientation;
 		if (!gameManager.gameFrozen) {
+			laserWidth += Time.deltaTime * 8;
+			float newWidth = Mathf.Sin(laserWidth * Mathf.PI) * 0.04f + 0.065f;
+			laser.SetWidth(newWidth, newWidth);
 			laser.SetPosition (0, startPoint - ((Vector2)transform.position));
 			RaycastHit2D hit = Physics2D.Raycast(startPoint, direction);
 			if (hit.collider != null) {

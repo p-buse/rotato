@@ -4,6 +4,7 @@ using System.Collections;
 public class MirrorBlock : AbstractBlock {
 	
 	LineRenderer laser;
+	float laserWidth = 0f;
 	public Vector2 direction;
 	static Vector2[] directions = {new Vector2 (0, 1), new Vector2 (-1, 0), new Vector2 (0, -1), new Vector2 (1, 0)};
 	bool firing = false;
@@ -30,6 +31,9 @@ public class MirrorBlock : AbstractBlock {
 	
 	void Update() {
 		if (!gameManager.gameFrozen) {
+			laserWidth += Time.deltaTime * 8;
+			float newWidth = Mathf.Sin(laserWidth * Mathf.PI) * 0.04f + 0.065f;
+			laser.SetWidth(newWidth, newWidth);
 			laser.SetPosition (0, Vector2.zero);
 			laser.SetPosition (1, Vector2.zero);
 			if (fireTime > 0.1f && firing) {
