@@ -5,14 +5,16 @@ using System.Collections.Generic;
 public class CrawlerParent : MonoBehaviour {
 	GameManager gameManager;
 	BlockManager blockManager;
-	public int clinging=0;
-	public int moving=1;
-	
+	public float clinging;
+	public float moving;
+	public int startDir;
+
 	void Start()
 	{
 		this.gameManager = FindObjectOfType<GameManager>();
 		this.blockManager = FindObjectOfType<BlockManager>();
-
+		clinging = (transform.eulerAngles.z / 90+4)%4;
+		moving = (transform.eulerAngles.z / 90+startDir+4)%4;
 		CrawlerMovement[] children = transform.GetComponentsInChildren<CrawlerMovement> ();
 		for(int i = 0; i<children.Length;i++)
 		{
@@ -23,8 +25,12 @@ public class CrawlerParent : MonoBehaviour {
 			children[i].moving = this.moving;
 			//segments[i].falling = false;
 
-			setBlock(children[i]);
-			//children[i].updateMyBlock(children[i].getMyBlock());
+			//setBlock(children[i]);
+			//print(children[i].getMyBlock());
+
+			children[i].updateMyBlock(children[i].getMyBlock());
+			//children[i].transform.parent = null;
+			children[i].transform.eulerAngles = new Vector3(0,0,0);
 
 			//print (segments[i].myBlock);
 			//segments[i].transform.eulerAngles = Vector3.zero;

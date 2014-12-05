@@ -68,8 +68,8 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Radius: .209999993
-  m_Center: {x: 0, y: 0}
+  m_Radius: .180000007
+  m_Center: {x: .0350000001, y: .0299999993}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -97,8 +97,8 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
