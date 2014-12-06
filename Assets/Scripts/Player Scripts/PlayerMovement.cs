@@ -33,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
     private InputManager.CapturedInput currentInput;
 
     bool jumping = false;
-    float horizontalVelocity = 0f;
     Transform groundCheck;
 
     void Awake()

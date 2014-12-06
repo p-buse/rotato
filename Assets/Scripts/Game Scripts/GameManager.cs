@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     public PlayerMovement playerMovement;
     [HideInInspector]
     public Player player;
-    CampaignManager campaignManager;
     HighlightManager highlightManager;
 
     // Salt stuff
@@ -73,10 +72,6 @@ public class GameManager : MonoBehaviour
     // Editor stuff
     public bool canEdit;
 
-    // Used for scrolling area in GUI
-    Vector2 currentScroll = Vector2.zero;
-
-
     // Cursor
     public GameObject cursorPrefab;
 
@@ -99,7 +94,6 @@ public class GameManager : MonoBehaviour
         this.playerMovement = FindObjectOfType<PlayerMovement>();
         this.player = FindObjectOfType<Player>();
         this.levelEditor = GetComponent<LevelEditor>();
-        this.campaignManager = GetComponent<CampaignManager>();
         Instantiate(cursorPrefab);
     }
 
@@ -159,8 +153,8 @@ public class GameManager : MonoBehaviour
 
                     if (Input.GetMouseButtonDown(0))
                     {
-						print (worldPos.x+", "+worldPos.y);
-						print (blockManager.getBlockAt(worldPos.x, worldPos.y));
+                        //print (worldPos.x+", "+worldPos.y);
+                        //print (blockManager.getBlockAt(worldPos.x, worldPos.y));
                         if (ValidCenterToClick(currentRotationCenter))
                         {
                             PlaySound("EnterRotation");

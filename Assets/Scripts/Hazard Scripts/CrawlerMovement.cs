@@ -1,9 +1,6 @@
 using UnityEngine;
 using System.Collections;
 
-using UnityEngine;
-using System.Collections;
-
 public class CrawlerMovement : MonoBehaviour
 {
 	//this crawler segment has radius 0.1

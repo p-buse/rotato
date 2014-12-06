@@ -5,7 +5,6 @@ using System.Collections.Generic;
 [RequireComponent(typeof(AudioListener))]
 public class Player : MonoBehaviour {
     GameManager gameManager;
-	BlockManager blockManager;
     SpriteRenderer playerSprite;
 
     void Start()
@@ -22,7 +21,6 @@ public class Player : MonoBehaviour {
             Debug.LogError("couldn't find player's sprite!");
         }
         this.gameManager = FindObjectOfType<GameManager>();
-		this.blockManager = FindObjectOfType<BlockManager>();
         
         // Get rid of all other audio listeners in the scene
         AudioListener[] listeners = FindObjectsOfType<AudioListener>();
@@ -31,12 +29,6 @@ public class Player : MonoBehaviour {
             if (al.gameObject.GetInstanceID() != this.gameObject.GetInstanceID())
                 Destroy(al);
         }
-    }
-
-    void Update()
-    {
-		Int2 position = this.GetRoundedPosition();
-		Dictionary<Int2, AbstractBlock> grid = blockManager.grid;
     }
 
 	void OnCollisionStay2D(Collision2D coll) {
