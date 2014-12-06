@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public Player player;
     HighlightManager highlightManager;
+    LevelEditor levelEditor;
 
     // Salt stuff
     [HideInInspector]
@@ -33,7 +34,7 @@ public class GameManager : MonoBehaviour
     bool rotationEmpty;
     float rotationClock = 0f;
 
-    LevelEditor levelEditor;
+    
 
     // Setting the player when one is created
     public delegate void PlayerCreatedHandler(GameManager gameManager, Player player, PlayerMovement playerMovement);
@@ -51,7 +52,6 @@ public class GameManager : MonoBehaviour
 
     // Gamemode stuff
     public enum GameMode { playing, frozen, rotating, won, lost, editing, paused };
-    //[HideInInspector]
     public GameMode gameState = GameMode.playing;
     // Used for returning from pause menu
     public GameMode lastState = GameMode.playing;
@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
     // Cursor
     public GameObject cursorPrefab;
 
+    // Input stuff
     InputManager inputManager;
     public InputManager.CapturedInput currentInput
     {
@@ -83,6 +84,10 @@ public class GameManager : MonoBehaviour
             return inputManager.current;
         }
     }
+
+    // Bounding box of the level
+    Transform topLeft;
+    Transform bottomRight;
 
     void Awake()
     {
@@ -95,6 +100,8 @@ public class GameManager : MonoBehaviour
         this.player = FindObjectOfType<Player>();
         this.levelEditor = GetComponent<LevelEditor>();
         Instantiate(cursorPrefab);
+        this.topLeft = transform.FindChild("topLeft");
+        this.bottomRight = transform.FindChild("bottomRight");
     }
 
     public void PlaySound(string soundName, float volume = 1f)
@@ -145,6 +152,7 @@ public class GameManager : MonoBehaviour
         {
             case GameMode.playing:
                 {
+                    CheckOutsideWorld();
                     Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     int x = Mathf.RoundToInt(worldPos.x);
                     int y = Mathf.RoundToInt(worldPos.y);
@@ -280,6 +288,18 @@ public class GameManager : MonoBehaviour
                     Time.timeScale = 0f;
                     break;
                 }
+        }
+    }
+
+    private void CheckOutsideWorld()
+    {
+        if (player.transform.position.x < topLeft.position.x ||
+            player.transform.position.x > bottomRight.position.x ||
+            player.transform.position.y > topLeft.position.y ||
+            player.transform.position.y < bottomRight.position.y)
+        {
+            PlaySound("Fall");
+            LoseLevel("Outside the world!");
         }
     }
 
