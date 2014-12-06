@@ -293,13 +293,16 @@ public class GameManager : MonoBehaviour
 
     private void CheckOutsideWorld()
     {
-        if (player.transform.position.x < topLeft.position.x ||
-            player.transform.position.x > bottomRight.position.x ||
-            player.transform.position.y > topLeft.position.y ||
-            player.transform.position.y < bottomRight.position.y)
+        if (player != null)
         {
-            PlaySound("Fall");
-            LoseLevel("Outside the world!");
+            if (player.transform.position.x < topLeft.position.x ||
+                player.transform.position.x > bottomRight.position.x ||
+                player.transform.position.y > topLeft.position.y ||
+                player.transform.position.y < bottomRight.position.y)
+            {
+                PlaySound("Fall");
+                LoseLevel("Outside the world!");
+            }
         }
     }
 
