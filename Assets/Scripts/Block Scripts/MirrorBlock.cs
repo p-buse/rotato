@@ -128,19 +128,19 @@ public class MirrorBlock : AbstractBlock {
 
 		if (angleIsBetween(angle, topLeftCorner,ccwCorner))
 		{
-			print (angle+" is between "+topLeftCorner+" and "+ccwCorner+", now on side 1");
+			//print (angle+" is between "+topLeftCorner+" and "+ccwCorner+", now on side 1");
 			return (orientation + 1f)%4;
 		}
 		//bottom?
 		if (angleIsBetween(angle, ccwCorner,cwCorner))
 		{
-			print (angle+" is between "+ccwCorner+" and "+cwCorner+", now on side 2");
+			//print (angle+" is between "+ccwCorner+" and "+cwCorner+", now on side 2");
 			return (orientation + 2f)%4f;
 		}
 		//diagonal
 		if (angleIsBetween(angle, cwCorner,topLeftCorner))
 		{
-			print (angle+" is between "+cwCorner+" and "+topLeftCorner+", now on diagonal");
+			//print (angle+" is between "+cwCorner+" and "+topLeftCorner+", now on diagonal");
 			return (orientation + 3.5f)%4;
 		}
 

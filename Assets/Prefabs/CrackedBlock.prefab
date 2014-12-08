@@ -112,6 +112,8 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
+  spikiness: 
   rotationsLeft: 5
   numberDisplay: {fileID: 0}
   numberSprites:

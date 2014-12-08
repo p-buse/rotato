@@ -186,7 +186,7 @@ public class CrawlerMovement : MonoBehaviour
 		if(block ==null)
 		{
 			//print("no block at "+Mathf.RoundToInt(blockPos.x)+", "+Mathf.RoundToInt(blockPos.y));
-			print("no block at "+blockPos.x+", "+blockPos.y);
+			//print("no block at "+blockPos.x+", "+blockPos.y);
 		}
 		return block;
 		

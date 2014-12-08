@@ -117,7 +117,6 @@ public class LaserShooter : AbstractBlock {
 		//cw side of beam?
 		if (angleIsBetween(angle, cwCorner,tip))
 		{
-			//print ("hi");
 			//print (" on side -1");
 			return (orientation + 10f/3f)%4;
 		}
