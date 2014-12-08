@@ -53,4 +53,9 @@ public class CursorScript : MonoBehaviour
         this.animator.SetInteger("cursorState", (int)this.cursorState);
     }
 
+    void OnDestroy()
+    {
+        Screen.showCursor = true;
+    }
+
 }

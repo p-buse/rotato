@@ -740,7 +740,7 @@ public class LevelEditor : MonoBehaviour
                 if (currentBlock as CrackedBlock != null)
                 {
                     CrackedBlock currentBlockIfItsCracked = currentBlock as CrackedBlock;
-                    currentBlockIfItsCracked.rotationsLeft = blockSkelly.rotationsTillDeath;
+                    currentBlockIfItsCracked.SetRotationsLeft(blockSkelly.rotationsTillDeath);
                 }
             }
             else

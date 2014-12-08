@@ -4,29 +4,51 @@ using System.Collections;
 public class CrackedBlock : AbstractBlock {
 	//displayed on the model.  if this is 0 and it's rotated again, after the rotation this block will diappear.
 	//because this is public, it can be set individually from the unity scene, right?
-    public int rotationsLeft = 5;
+    [SerializeField]
+    int rotationsLeft = 5;
+    Animator anim;
+    public bool shouldBeDead
+    {
+        get
+        {
+            return (rotationsLeft < 1);
+        }
+    }
 
-	Transform numberDisplayObject;
-	public SpriteRenderer numberDisplay;
-	public Sprite[] numberSprites;
+
+    void Start()
+    {
+        this.anim = GetComponent<Animator>();
+        this.anim.SetInteger("rotationsLeft", this.rotationsLeft);
+    }
 
     public void IncrementRotationsLeft()
     {
         if (rotationsLeft < 5)
+        {
             rotationsLeft++;
+            this.anim.SetInteger("rotationsLeft", this.rotationsLeft);
+        }
     }
     public void DecrementRotationsLeft()
     {
         if (rotationsLeft > 0)
+        {
             rotationsLeft--;
+            this.anim.SetInteger("rotationsLeft", this.rotationsLeft);
+        }
     }
 
-	void Start()
-	{
-		numberDisplayObject = transform.FindChild ("numberDisplay");
-		numberDisplay = transform.FindChild ("numberDisplay").GetComponent<SpriteRenderer> ();
+    public void SetRotationsLeft(int newRotationsLeft)
+    {
+        this.rotationsLeft = newRotationsLeft;
+        if (anim == null)
+        {
+            anim = GetComponent<Animator>();
+        }
+        this.anim.SetInteger("rotationsLeft", this.rotationsLeft);
+    }
 
-	}
 
 	public override string myType ()
 	{
@@ -43,8 +65,6 @@ public class CrackedBlock : AbstractBlock {
 		Vector3 endVec = new Vector3(newdx,newdy,0);
 		
 		blockSprite.transform.localPosition = (Mathf.Cos(time * Mathf.PI / 2.0f)*startVec + Mathf.Sin(time*Mathf.PI/2.0f)*endVec) + new Vector3(-dx,-dy,0);
-		numberDisplayObject.transform.localPosition = (Mathf.Cos(time * Mathf.PI / 2.0f)*startVec + Mathf.Sin(time*Mathf.PI/2.0f)*endVec) + new Vector3(-dx,-dy,0);
-
 		blockSprite.transform.eulerAngles = new Vector3(0,0,90.0f*((1.0f-time)*orientation + time*(orientation + direction)));
 		for(int i = 0; i<crawlers.Count;i++)
 		{
@@ -58,12 +78,6 @@ public class CrackedBlock : AbstractBlock {
         return new BlockSkeleton(this.myType(), this.GetCurrentPosition(), this.orientation, this.spikiness, this.rotationsLeft);
     }
 
-	public override void finishRotation(Int2 center, int dir)
-	{
-		base.finishRotation (center, dir);
-		numberDisplayObject.transform.localPosition = new Vector3 (0, 0, 0);
-	}
-
 	public override bool invalidatesRotation()
 	{
 		return false;
@@ -72,11 +86,6 @@ public class CrackedBlock : AbstractBlock {
 	public override bool isRotatable()
 	{
 		return true;
-	}
-
-	void Update()
-	{
-		numberDisplay.sprite = numberSprites [rotationsLeft];
 	}
 
 	/// <summary>
@@ -96,7 +105,7 @@ public class CrackedBlock : AbstractBlock {
 			}
 		}
 
-		rotationsLeft--;
+		DecrementRotationsLeft();
 
 	}
 }

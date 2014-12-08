@@ -86,8 +86,8 @@ public class GameManager : MonoBehaviour
     }
 
     // Bounding box of the level
-    Transform topLeft;
-    Transform bottomRight;
+    public Transform topLeft;
+    public Transform bottomRight;
 
     void Awake()
     {

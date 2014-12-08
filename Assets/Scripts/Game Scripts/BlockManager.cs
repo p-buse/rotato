@@ -183,7 +183,7 @@ public class BlockManager : MonoBehaviour {
 				//decrement the health of cracked blocks
 				cracked.wasJustRotated ();
 				//destroy them if necessary
-				if (cracked.rotationsLeft < 1) 
+				if (cracked.shouldBeDead) 
 				{
 					grid.Remove (pos);
 					//if this block broke because of the rotation, destroy it and don't keep it in the grid
