@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviour
     public PlayerMovement playerMovement;
     [HideInInspector]
     public Player player;
-    CampaignManager campaignManager;
     HighlightManager highlightManager;
+    LevelEditor levelEditor;
 
     // Salt stuff
     [HideInInspector]
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     bool rotationEmpty;
     float rotationClock = 0f;
 
-    LevelEditor levelEditor;
+    
 
     // Setting the player when one is created
     public delegate void PlayerCreatedHandler(GameManager gameManager, Player player, PlayerMovement playerMovement);
@@ -52,7 +52,6 @@ public class GameManager : MonoBehaviour
 
     // Gamemode stuff
     public enum GameMode { playing, frozen, rotating, won, lost, editing, paused };
-    //[HideInInspector]
     public GameMode gameState = GameMode.playing;
     // Used for returning from pause menu
     public GameMode lastState = GameMode.playing;
@@ -73,13 +72,10 @@ public class GameManager : MonoBehaviour
     // Editor stuff
     public bool canEdit;
 
-    // Used for scrolling area in GUI
-    Vector2 currentScroll = Vector2.zero;
-
-
     // Cursor
     public GameObject cursorPrefab;
 
+    // Input stuff
     InputManager inputManager;
     public InputManager.CapturedInput currentInput
     {
@@ -88,6 +84,10 @@ public class GameManager : MonoBehaviour
             return inputManager.current;
         }
     }
+
+    // Bounding box of the level
+    Transform topLeft;
+    Transform bottomRight;
 
     void Awake()
     {
@@ -99,8 +99,9 @@ public class GameManager : MonoBehaviour
         this.playerMovement = FindObjectOfType<PlayerMovement>();
         this.player = FindObjectOfType<Player>();
         this.levelEditor = GetComponent<LevelEditor>();
-        this.campaignManager = GetComponent<CampaignManager>();
         Instantiate(cursorPrefab);
+        this.topLeft = transform.FindChild("topLeft");
+        this.bottomRight = transform.FindChild("bottomRight");
     }
 
     public void PlaySound(string soundName, float volume = 1f)
@@ -151,6 +152,7 @@ public class GameManager : MonoBehaviour
         {
             case GameMode.playing:
                 {
+                    CheckOutsideWorld();
                     Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     int x = Mathf.RoundToInt(worldPos.x);
                     int y = Mathf.RoundToInt(worldPos.y);
@@ -159,8 +161,8 @@ public class GameManager : MonoBehaviour
 
                     if (Input.GetMouseButtonDown(0))
                     {
-						print (worldPos.x+", "+worldPos.y);
-						print (blockManager.getBlockAt(worldPos.x, worldPos.y));
+                        //print (worldPos.x+", "+worldPos.y);
+                        //print (blockManager.getBlockAt(worldPos.x, worldPos.y));
                         if (ValidCenterToClick(currentRotationCenter))
                         {
                             PlaySound("EnterRotation");
@@ -286,6 +288,21 @@ public class GameManager : MonoBehaviour
                     Time.timeScale = 0f;
                     break;
                 }
+        }
+    }
+
+    private void CheckOutsideWorld()
+    {
+        if (player != null)
+        {
+            if (player.transform.position.x < topLeft.position.x ||
+                player.transform.position.x > bottomRight.position.x ||
+                player.transform.position.y > topLeft.position.y ||
+                player.transform.position.y < bottomRight.position.y)
+            {
+                PlaySound("Fall");
+                LoseLevel("Outside the world!");
+            }
         }
     }
 

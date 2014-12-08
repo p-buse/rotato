@@ -7,7 +7,6 @@ public class LaserShooter : AbstractBlock {
 	float laserWidth = 0f;
 	public Vector2 startPoint;
 	public Vector2 direction;
-	static Vector2[] directions = {new Vector2 (0, 1), new Vector2 (-1, 0), new Vector2 (0, -1), new Vector2 (1, 0)};
 	public float orient;
 
 	public override bool invalidatesRotation() {

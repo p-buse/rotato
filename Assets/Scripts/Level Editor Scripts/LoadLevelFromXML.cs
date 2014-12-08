@@ -20,8 +20,8 @@ public class LoadLevelFromXML : MonoBehaviour {
         if (loadLevel)
         {
             levelEditor.LoadLevelFromTextAsset(level);
-			cam.orthographicSize = 10; //TODO it's a temp hack until loading camera position from the level editor works
-			cam.gameObject.AddComponent<DeadlyCamera>();
+			cam.orthographicSize = 10;
+			cam.gameObject.AddComponent<CameraMovement>();
         }
     }
 }
