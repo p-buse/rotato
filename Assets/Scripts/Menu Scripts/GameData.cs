@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 using System.IO;
 using System;
 
-public class GameData: MonoBehaviour {
+public class GameData {
 
     private static GameData _instance;
     public static GameData instance
