@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 using System.IO;
 using System;
 
-public class GameData {
+public class GameData: ScriptableObject {
 
     private static GameData _instance;
     public static GameData instance
@@ -58,8 +58,9 @@ public class GameData {
         }
     }
 
-    public bool TryGetLevel(GameDataSkeleton skelly, int levelIndex, out GameDataSkeleton.LevelDataSkeleton outputLevel)
+    public bool TryGetLevel(int levelIndex, out GameDataSkeleton.LevelDataSkeleton outputLevel)
     {
+        GameDataSkeleton skelly = ReadXML(path);
         foreach (GameDataSkeleton.LevelDataSkeleton levelSkelly in skelly.levelData)
         {
             if (levelSkelly.levelIndex == levelIndex)
@@ -89,7 +90,7 @@ public class GameData {
     {
         GameDataSkeleton skelly = ReadXML(path);
         GameDataSkeleton.LevelDataSkeleton levelSkelly;
-        if (TryGetLevel(skelly, levelIndex, out levelSkelly))
+        if (TryGetLevel(levelIndex, out levelSkelly))
         {
             levelSkelly.yourBestVeggies = Math.Max(veggieAmount, levelSkelly.yourBestVeggies);
 			setLevel(skelly, levelIndex, levelSkelly);
@@ -105,7 +106,7 @@ public class GameData {
     {
         GameDataSkeleton skelly = ReadXML(path);
         GameDataSkeleton.LevelDataSkeleton levelSkelly;
-        if (TryGetLevel(skelly, levelIndex, out levelSkelly))
+        if (TryGetLevel(levelIndex, out levelSkelly))
         {
             levelSkelly.fewestRotations = Math.Min(rotationsUsed, levelSkelly.fewestRotations);
 			setLevel(skelly, levelIndex, levelSkelly);
@@ -128,7 +129,7 @@ public class GameData {
     {
         GameDataSkeleton skelly = ReadXML(path);
         GameDataSkeleton.LevelDataSkeleton levelSkelly;
-        if (!TryGetLevel(skelly, levelIndex, out levelSkelly))
+        if (!TryGetLevel(levelIndex, out levelSkelly))
         {
             GameDataSkeleton.LevelDataSkeleton blankLevel = new GameDataSkeleton.LevelDataSkeleton();
             blankLevel.veggieCount = veggieCount;
