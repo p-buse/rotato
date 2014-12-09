@@ -64,6 +64,7 @@ public abstract class AbstractBlock : MonoBehaviour
 	public float heat = 0;
 	[HideInInspector]
 	public int heated = 0;
+	float heatClock = 0f;
 
     /// <summary>
     /// Get a particular object's "orientation" given its current rotation in the 2D plane.
@@ -162,6 +163,7 @@ public abstract class AbstractBlock : MonoBehaviour
     {
         if (!gameManager.gameFrozen && heat > 0f)
         {
+			heatClock += Time.deltaTime * 4;
 			if (heated == 0) {
 	            heat -= Time.deltaTime;
 	            if (heat < 0f)
@@ -173,7 +175,7 @@ public abstract class AbstractBlock : MonoBehaviour
 				heated--;
 			}
 		}
-		blockSpriteRenderer.color = new Color(1f, 1f - heat * 2.5f, 1f - heat * 2.5f);
+		blockSpriteRenderer.color = new Color(1f, 1f - heat * (2.1f + 0.4f * Mathf.Sin(heatClock * Mathf.PI)), 1f - heat * (2.1f + 0.4f * Mathf.Cos(heatClock * Mathf.PI)));
 	}
 
 	public Int2 GetCurrentPosition()
