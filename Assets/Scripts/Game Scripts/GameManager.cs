@@ -52,9 +52,10 @@ public class GameManager : MonoBehaviour
 
     // Gamemode stuff
     public enum GameMode { playing, frozen, rotating, won, lost, editing, paused };
+    [HideInInspector]
     public GameMode gameState = GameMode.playing;
     // Used for returning from pause menu
-    public GameMode lastState = GameMode.playing;
+    GameMode lastState = GameMode.playing;
     /// <summary>
     /// True if our gamestate is "playing", false otherwise
     /// </summary>
@@ -86,8 +87,12 @@ public class GameManager : MonoBehaviour
     }
 
     // Bounding box of the level
+    [HideInInspector]
     public Transform topLeft;
+    [HideInInspector]
     public Transform bottomRight;
+
+    public PhysicsMaterial2D noFrictionMaterial;
 
     void Awake()
     {
@@ -102,6 +107,26 @@ public class GameManager : MonoBehaviour
         Instantiate(cursorPrefab);
         this.topLeft = transform.FindChild("topLeft");
         this.bottomRight = transform.FindChild("bottomRight");
+        SetupEdgeCollidersOnWorldBounds();
+    }
+
+    private void SetupEdgeCollidersOnWorldBounds()
+    {
+        float verticalExtentOfWorldBounds = (topLeft.transform.position.y - bottomRight.transform.position.y) * 2;
+        GameObject leftEdge = new GameObject("leftEdge", typeof(EdgeCollider2D));
+        leftEdge.transform.position = topLeft.transform.position;
+        leftEdge.transform.parent = topLeft;
+        leftEdge.layer = LayerMask.NameToLayer("Solid");
+        leftEdge.transform.eulerAngles = new Vector3(0f, 0f, -90f);
+        leftEdge.transform.localScale = new Vector3(verticalExtentOfWorldBounds, 1f);
+        leftEdge.GetComponent<EdgeCollider2D>().sharedMaterial = noFrictionMaterial;
+        GameObject rightEdge = new GameObject("rightEdge", typeof(EdgeCollider2D));
+        rightEdge.transform.position = bottomRight.transform.position;
+        rightEdge.transform.parent = bottomRight;
+        rightEdge.layer = LayerMask.NameToLayer("Solid");
+        rightEdge.transform.eulerAngles = new Vector3(0f, 0f, -90f);
+        rightEdge.transform.localScale = new Vector3(verticalExtentOfWorldBounds, 1f);
+        rightEdge.GetComponent<EdgeCollider2D>().sharedMaterial = noFrictionMaterial;
     }
 
     public void PlaySound(string soundName, float volume = 1f)
@@ -131,6 +156,16 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         obj.transform.position = originalPosition;
+    }
+
+    public void SetTopLeftPos(Vector2 pos)
+    {
+        this.topLeft.transform.position = pos;
+    }
+
+    public void SetBottomRightPos(Vector2 pos)
+    {
+        this.bottomRight.transform.position = pos;
     }
 
     void Update()

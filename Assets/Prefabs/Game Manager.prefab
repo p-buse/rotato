@@ -119,9 +119,11 @@ MonoBehaviour:
   winOrLoseCountdownTime: 2
   secondsToRotate: .300000012
   gameState: 0
-  lastState: 0
   canEdit: 0
   cursorPrefab: {fileID: 100002, guid: b81ddec0e6b48bf4b80f35275715704a, type: 2}
+  topLeft: {fileID: 0}
+  bottomRight: {fileID: 0}
+  noFrictionMaterial: {fileID: 6200000, guid: b965fec59e1e6464293761f6313d7319, type: 2}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1

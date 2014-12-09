@@ -50,9 +50,6 @@ public class LevelEditor : MonoBehaviour
             return brushes[currentBrushNumber];
         }
     }
-
-    
-
     HashSet<Rect> guiRects;
     Dictionary<string, GameObject> nameToBlockPrefab;
     struct SpecialPrefabs
@@ -64,10 +61,10 @@ public class LevelEditor : MonoBehaviour
     }
     SpecialPrefabs specialPrefabs;
 
-    bool awaitingConfirmation = false;
     string confirmationMessage = "";
 
-    bool loadMenu = false;
+    enum EditorState { Editing, LoadMenu, NewLevel, AwaitingConfirmation};
+    EditorState editorState = EditorState.NewLevel;
 
     Vector2 loadMenuScrollPosition = Vector2.zero;
 
@@ -95,6 +92,10 @@ public class LevelEditor : MonoBehaviour
             }
         }
     }
+
+    float smallLevelSize = 50;
+    float mediumLevelSize = 100;
+    float largeLevelSize = 150;
 
     void Awake()
     {
@@ -173,7 +174,7 @@ public class LevelEditor : MonoBehaviour
         Vector3 mouseVector = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Int2 mouseWorldPos = new Int2(mouseVector.x, mouseVector.y);
         DrawGhostlyBlock(mouseWorldPos);
-        if (gameManager.gameState == GameManager.GameMode.editing && !this.awaitingConfirmation && !this.loadMenu)
+        if (gameManager.gameState == GameManager.GameMode.editing && editorState == EditorState.Editing)
         {
             if (gameManager.currentInput.rightPressed)
             {
@@ -508,32 +509,33 @@ public class LevelEditor : MonoBehaviour
         Rect playEditRect = new Rect(Screen.width - boxWidth, 0, boxWidth, boxHeight);
         Rect saveLoadRect = new Rect(Screen.width - boxWidth, boxHeight * 2, boxWidth, boxHeight * 2);
         Rect loadRect = new Rect(Screen.width / 4, Screen.height / 4, Screen.width / 2, Screen.height / 2);
+        Rect confirmationRect = new Rect(Screen.width * 0.375f, Screen.height * 0.375f, Screen.width / 4, Screen.height / 4);
         SetupGUIRects(brushRect, toolRect, playEditRect, saveLoadRect);
-        if (!awaitingConfirmation)
+        if (gameManager.gameState == GameManager.GameMode.editing)
         {
-            if (gameManager.gameState == GameManager.GameMode.editing)
+            if (editorState == EditorState.Editing)
             {
-                if (!loadMenu)
-                {
-                    DrawBrushes(boxHeight, brushRect);
-                    DrawTools(boxWidth, boxHeight, toolRect);
-                    DrawPlayButton(playEditRect);
-                    DrawSaveLoadButtons(saveLoadRect);
-                }
-                else
-                {
-                    DrawLoadMenu(loadRect);
-                }
+                DrawBrushes(boxHeight, brushRect);
+                DrawTools(boxWidth, boxHeight, toolRect);
+                DrawPlayButton(playEditRect);
+                DrawSaveLoadButtons(saveLoadRect);
             }
-            else if (gameManager.gameState == GameManager.GameMode.playing && gameManager.canEdit)
+            else if (editorState == EditorState.LoadMenu)
             {
-                DrawEditButton(playEditRect);
+                DrawLoadMenu(loadRect);
+            }
+            else if (editorState == EditorState.AwaitingConfirmation)
+            {
+            DrawConfirmationWindow(confirmationRect);
+            }
+            else if (editorState == EditorState.NewLevel)
+            {
+                DrawNewLevelMenu(loadRect);
             }
         }
-        else
+        else if (gameManager.gameState == GameManager.GameMode.playing && gameManager.canEdit)
         {
-            Rect confirmationRect = new Rect(Screen.width * 0.375f, Screen.height * 0.375f, Screen.width / 4, Screen.height / 4);
-            DrawConfirmationWindow(confirmationRect);
+            DrawEditButton(playEditRect);
         }
     }
 
@@ -544,7 +546,7 @@ public class LevelEditor : MonoBehaviour
         GUILayout.FlexibleSpace();
         if (GUILayout.Button("X"))
         {
-            loadMenu = false;
+            editorState = EditorState.Editing;
         }
         GUILayout.EndHorizontal();
         this.loadMenuScrollPosition = GUILayout.BeginScrollView(loadMenuScrollPosition);
@@ -553,11 +555,49 @@ public class LevelEditor : MonoBehaviour
             if (GUILayout.Button(levelName))
             {
                 LoadLevel(levelName);
-                loadMenu = false;
+                editorState = EditorState.Editing;
             }
         }
         GUILayout.EndScrollView();
         GUILayout.EndArea();
+    }
+
+    private void DrawNewLevelMenu(Rect newMenuRect)
+    {
+        GUILayout.BeginArea(newMenuRect, "", "box");
+        GUILayout.BeginHorizontal();
+            GUILayout.FlexibleSpace();
+            GUILayout.Label("New level size:");
+            GUILayout.FlexibleSpace();
+        GUILayout.EndHorizontal();
+        GUILayout.BeginHorizontal();
+        GUILayout.FlexibleSpace();
+        if (GUILayout.Button("Small"))
+        {
+            CreateNewLevel(smallLevelSize);
+            editorState = EditorState.Editing;
+        }
+        GUILayout.FlexibleSpace();
+        if (GUILayout.Button("Medium"))
+        {
+            CreateNewLevel(mediumLevelSize);
+            editorState = EditorState.Editing;
+        }
+        GUILayout.FlexibleSpace();
+        if (GUILayout.Button("Large"))
+        {
+            CreateNewLevel(largeLevelSize);
+            editorState = EditorState.Editing;
+        }
+        GUILayout.FlexibleSpace();
+        GUILayout.EndHorizontal();
+        GUILayout.EndArea();
+    }
+
+    private void CreateNewLevel(float levelSize)
+    {
+        gameManager.SetTopLeftPos(new Vector2(-levelSize, levelSize));
+        gameManager.SetBottomRightPos(new Vector2(levelSize, -levelSize));
     }
 
     private void DrawConfirmationWindow(Rect confirmationRect)
@@ -572,13 +612,13 @@ public class LevelEditor : MonoBehaviour
         if (GUILayout.Button("Yes"))
         {
             this.confirmationMessage = "";
-            this.awaitingConfirmation = false;
+            editorState = EditorState.Editing;
             this.SaveLevel(currentLevelName, true);
         }
         if (GUILayout.Button("No"))
         {
             this.confirmationMessage = "";
-            this.awaitingConfirmation = false;
+            editorState = EditorState.Editing;
         }
         GUILayout.EndHorizontal();
         GUILayout.FlexibleSpace();
@@ -606,7 +646,7 @@ public class LevelEditor : MonoBehaviour
         }
         if (GUILayout.Button("Load"))
         {
-            this.loadMenu = true;
+            editorState = EditorState.LoadMenu;
         }
 		if (GUILayout.Button("New")) {
 			Application.LoadLevel(Application.loadedLevel);
@@ -661,7 +701,7 @@ public class LevelEditor : MonoBehaviour
 
     void ConfirmOverWrite(string confirmationMessage)
     {
-        this.awaitingConfirmation = true;
+        editorState = EditorState.AwaitingConfirmation;
         this.confirmationMessage = confirmationMessage;
     }
 

@@ -22,8 +22,8 @@ public class CameraMovement : MonoBehaviour {
 
     void Start()
     {
-     float vertExtent = Camera.main.camera.orthographicSize / 2;  
-     float horzExtent = (vertExtent * Screen.width / Screen.height) / 2;
+     float vertExtent = Camera.main.camera.orthographicSize;  
+     float horzExtent = (vertExtent * Screen.width / Screen.height);
      leftBound = (float)(gameManager.topLeft.position.x + horzExtent);
      rightBound = (float)(gameManager.bottomRight.position.x - horzExtent);
      bottomBound = (float)(gameManager.bottomRight.position.y + vertExtent);
