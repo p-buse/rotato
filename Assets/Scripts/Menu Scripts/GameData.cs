@@ -6,6 +6,19 @@ using System;
 
 public class GameData: MonoBehaviour {
 
+    private static GameData _instance;
+    public static GameData instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new GameData();
+            }
+            return _instance;
+        }
+    }
+
     public static string fileName = "GameData.xml";
     public string path;
 
