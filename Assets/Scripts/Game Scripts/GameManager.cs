@@ -414,9 +414,11 @@ public class GameManager : MonoBehaviour
         {
             resetClock = winOrLoseCountdownTime;
             gameState = GameMode.won;
-			GameData.instance.ChangeUnlockedLevel(Application.loadedLevel);
-			GameData.instance.ChangeBestVeggies(Application.loadedLevel, veggiesFreed);
-			GameData.instance.ChangeBestRotations(Application.loadedLevel, rotations);
+			if (!canEdit) {
+				GameData.instance.ChangeUnlockedLevel(Application.loadedLevel);
+				GameData.instance.ChangeBestVeggies(Application.loadedLevel, veggiesFreed);
+				GameData.instance.ChangeBestRotations(Application.loadedLevel, rotations);
+			}
         }
     }
 
