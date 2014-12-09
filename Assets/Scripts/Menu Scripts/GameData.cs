@@ -65,7 +65,7 @@ public class GameData: MonoBehaviour {
         GameDataSkeleton.LevelDataSkeleton levelSkelly;
         if (TryGetLevel(skelly, levelIndex, out levelSkelly))
         {
-            levelSkelly.yourBestVeggies = veggieAmount;
+            levelSkelly.yourBestVeggies = Math.Max(veggieAmount, levelSkelly.yourBestVeggies);
             WriteXML(skelly, path);
         }
         else
@@ -80,7 +80,7 @@ public class GameData: MonoBehaviour {
         GameDataSkeleton.LevelDataSkeleton levelSkelly;
         if (TryGetLevel(skelly, levelIndex, out levelSkelly))
         {
-            levelSkelly.fewestRotations = rotationsUsed;
+            levelSkelly.fewestRotations = Math.Max(rotationsUsed, levelSkelly.fewestRotations);
             WriteXML(skelly, path);
         }
         else

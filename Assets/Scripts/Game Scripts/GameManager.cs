@@ -14,11 +14,12 @@ public class GameManager : MonoBehaviour
     public Player player;
     HighlightManager highlightManager;
     LevelEditor levelEditor;
+	GameData gameData;
 
     // Salt stuff
     [HideInInspector]
-    public static int saltSoFar = 0;
-	int saltThisLevel = 0;
+    public int veggiesFreed = 0;
+	int totalVeggies;
 
     // Winning and losing
     public float winOrLoseCountdownTime = 2f;
@@ -33,7 +34,7 @@ public class GameManager : MonoBehaviour
     int rotationsSinceFreezing = 0;
     bool rotationEmpty;
     float rotationClock = 0f;
-
+	int rotations = 0;
     
 
     // Setting the player when one is created
@@ -104,10 +105,13 @@ public class GameManager : MonoBehaviour
         this.playerMovement = FindObjectOfType<PlayerMovement>();
         this.player = FindObjectOfType<Player>();
         this.levelEditor = GetComponent<LevelEditor>();
+		this.totalVeggies = FindObjectsOfType<Salt>().Length;
+		this.gameData = GetComponent<GameData>();
         Instantiate(cursorPrefab);
         this.topLeft = transform.FindChild("topLeft");
         this.bottomRight = transform.FindChild("bottomRight");
         SetupEdgeCollidersOnWorldBounds();
+		gameData.AddLevel(Application.loadedLevel, totalVeggies);
     }
 
     private void SetupEdgeCollidersOnWorldBounds()
@@ -223,6 +227,7 @@ public class GameManager : MonoBehaviour
                             if (rotationsSinceFreezing % 4 != 0 && !rotationEmpty)
                             {
                                 blockManager.DecrementCracked(blockManager.justRotated);
+								rotations++;
                                 UpdateSalt();
                             }
                             rotationsSinceFreezing = 0;
@@ -411,6 +416,9 @@ public class GameManager : MonoBehaviour
         {
             resetClock = winOrLoseCountdownTime;
             gameState = GameMode.won;
+			gameData.ChangeUnlockedLevel(Application.loadedLevel);
+			gameData.ChangeBestVeggies(Application.loadedLevel, veggiesFreed);
+			gameData.ChangeBestRotations(Application.loadedLevel, rotations);
         }
     }
 
@@ -458,13 +466,11 @@ public class GameManager : MonoBehaviour
 		else
 		{
             Application.LoadLevel(Application.loadedLevel);
-            saltSoFar -= saltThisLevel;
         }
     }
 
 	public void addSalt() {
-		saltSoFar++;
-		saltThisLevel++;
+		veggiesFreed++;
 	}
 
     void OnGUI()
@@ -477,8 +483,8 @@ public class GameManager : MonoBehaviour
         {
             case GameMode.playing:
                 {
-                    GUILayout.BeginArea(new Rect(0, 0, boxWidth, boxHeight));
-                    GUILayout.Label("Salt: " + saltSoFar);
+                    GUILayout.BeginArea(new Rect(0, 0, boxWidth*2, boxHeight));
+                    GUILayout.Label("Veggies freed: " + veggiesFreed + "/" + totalVeggies + "\tRotations used: " + rotations);
                     GUILayout.EndArea();
                     break;
                 }
