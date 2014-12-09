@@ -63,8 +63,8 @@ public class LevelEditor : MonoBehaviour
 
     string confirmationMessage = "";
 
-    enum EditorState { Editing, LoadMenu, NewLevel, AwaitingConfirmation};
-    EditorState editorState = EditorState.NewLevel;
+    public enum EditorState { Editing, LoadMenu, NewLevel, AwaitingConfirmation};
+    public EditorState editorState = EditorState.NewLevel;
 
     Vector2 loadMenuScrollPosition = Vector2.zero;
 
@@ -93,9 +93,9 @@ public class LevelEditor : MonoBehaviour
         }
     }
 
-    float smallLevelSize = 50;
-    float mediumLevelSize = 100;
-    float largeLevelSize = 150;
+    float smallLevelSize = 15;
+    float mediumLevelSize = 30;
+    float largeLevelSize = 60;
 
     void Awake()
     {

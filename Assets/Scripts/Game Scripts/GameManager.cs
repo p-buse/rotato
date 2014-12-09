@@ -94,6 +94,9 @@ public class GameManager : MonoBehaviour
 
     public PhysicsMaterial2D noFrictionMaterial;
 
+    public delegate void BoundsChangedHandler(GameManager gm, Transform topLeft, Transform bottomRight);
+    public event BoundsChangedHandler BoundsChanged;
+
     void Awake()
     {
         this.inputManager = GetComponent<InputManager>();
@@ -163,11 +166,19 @@ public class GameManager : MonoBehaviour
     public void SetTopLeftPos(Vector2 pos)
     {
         this.topLeft.transform.position = pos;
+        if (BoundsChanged != null)
+        {
+            BoundsChanged(this, topLeft, bottomRight);
+        }
     }
 
     public void SetBottomRightPos(Vector2 pos)
     {
         this.bottomRight.transform.position = pos;
+        if (BoundsChanged != null)
+        {
+            BoundsChanged(this, topLeft, bottomRight);
+        }
     }
 
     void Update()

@@ -243,6 +243,7 @@ GameObject:
   - 114: {fileID: 1732115197}
   - 114: {fileID: 1732115196}
   - 114: {fileID: 1732115203}
+  - 114: {fileID: 1732115205}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -498,14 +499,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 0}
   player: {fileID: 0}
+  veggiesFreed: 0
   winOrLoseCountdownTime: 2
   secondsToRotate: .300000012
   gameState: 5
-  lastState: 0
   canEdit: 1
   cursorPrefab: {fileID: 100002, guid: b81ddec0e6b48bf4b80f35275715704a, type: 2}
   topLeft: {fileID: 0}
   bottomRight: {fileID: 0}
+  noFrictionMaterial: {fileID: 6200000, guid: b965fec59e1e6464293761f6313d7319, type: 2}
 --- !u!4 &1732115202
 Transform:
   m_ObjectHideFlags: 0
@@ -513,7 +515,7 @@ Transform:
   m_PrefabInternal: {fileID: 1911609469}
   m_GameObject: {fileID: 1732115195}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.1744347, y: 18.7809029, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 629415656}
@@ -546,6 +548,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: {fileID: 0}
   loadLevel: 0
+--- !u!114 &1732115205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400012, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 1911609469}
+  m_GameObject: {fileID: 1732115195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4fcca795ad2fa42a72a77e6902900c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: C:/Users/paul/Documents/Coding/Unity Projects/Rotato_GameplayPrototype/Assets/GameData.xml
 --- !u!1001 &1911609469
 Prefab:
   m_ObjectHideFlags: 0
@@ -555,11 +570,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -24.1744347
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 18.7809029
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
       propertyPath: m_LocalPosition.z
