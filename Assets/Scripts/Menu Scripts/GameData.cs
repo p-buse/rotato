@@ -59,6 +59,19 @@ public class GameData: MonoBehaviour {
         return false;
     }
 
+	public bool setLevel(GameDataSkeleton skelly, int levelIndex, GameDataSkeleton.LevelDataSkeleton changedSkelly) {
+		GameDataSkeleton.LevelDataSkeleton levelSkelly = new GameDataSkeleton.LevelDataSkeleton();
+		foreach (GameDataSkeleton.LevelDataSkeleton l in skelly.levelData) {
+			if (l.levelIndex == levelIndex) {
+				levelSkelly = l;
+				break;
+			}
+		}
+		skelly.levelData.Remove(levelSkelly);
+		skelly.levelData.Add(changedSkelly);
+		return true;
+	}
+
     public void ChangeBestVeggies(int levelIndex, int veggieAmount)
     {
         GameDataSkeleton skelly = ReadXML(path);
@@ -66,6 +79,7 @@ public class GameData: MonoBehaviour {
         if (TryGetLevel(skelly, levelIndex, out levelSkelly))
         {
             levelSkelly.yourBestVeggies = Math.Max(veggieAmount, levelSkelly.yourBestVeggies);
+			setLevel(skelly, levelIndex, levelSkelly);
             WriteXML(skelly, path);
         }
         else
@@ -80,7 +94,8 @@ public class GameData: MonoBehaviour {
         GameDataSkeleton.LevelDataSkeleton levelSkelly;
         if (TryGetLevel(skelly, levelIndex, out levelSkelly))
         {
-            levelSkelly.fewestRotations = Math.Max(rotationsUsed, levelSkelly.fewestRotations);
+            levelSkelly.fewestRotations = Math.Min(rotationsUsed, levelSkelly.fewestRotations);
+			setLevel(skelly, levelIndex, levelSkelly);
             WriteXML(skelly, path);
         }
         else
