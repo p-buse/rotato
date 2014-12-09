@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     public Player player;
     HighlightManager highlightManager;
     LevelEditor levelEditor;
-	GameData gameData;
 
     // Salt stuff
     [HideInInspector]
@@ -106,12 +105,11 @@ public class GameManager : MonoBehaviour
         this.player = FindObjectOfType<Player>();
         this.levelEditor = GetComponent<LevelEditor>();
 		this.totalVeggies = FindObjectsOfType<Salt>().Length;
-		this.gameData = GetComponent<GameData>();
         Instantiate(cursorPrefab);
         this.topLeft = transform.FindChild("topLeft");
         this.bottomRight = transform.FindChild("bottomRight");
         SetupEdgeCollidersOnWorldBounds();
-		gameData.AddLevel(Application.loadedLevel, totalVeggies);
+		GameData.instance.AddLevel(Application.loadedLevel, totalVeggies);
     }
 
     private void SetupEdgeCollidersOnWorldBounds()
@@ -416,9 +414,9 @@ public class GameManager : MonoBehaviour
         {
             resetClock = winOrLoseCountdownTime;
             gameState = GameMode.won;
-			gameData.ChangeUnlockedLevel(Application.loadedLevel);
-			gameData.ChangeBestVeggies(Application.loadedLevel, veggiesFreed);
-			gameData.ChangeBestRotations(Application.loadedLevel, rotations);
+			GameData.instance.ChangeUnlockedLevel(Application.loadedLevel);
+			GameData.instance.ChangeBestVeggies(Application.loadedLevel, veggiesFreed);
+			GameData.instance.ChangeBestRotations(Application.loadedLevel, rotations);
         }
     }
 

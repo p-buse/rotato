@@ -13,7 +13,7 @@ public class GameData: ScriptableObject {
         {
             if (_instance == null)
             {
-                _instance = new GameData();
+                _instance = ScriptableObject.CreateInstance<GameData>();
             }
             return _instance;
         }
