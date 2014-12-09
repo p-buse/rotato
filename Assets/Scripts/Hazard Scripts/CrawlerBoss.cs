@@ -21,6 +21,7 @@ public class CrawlerBoss : MonoBehaviour {
 		{
 			moveClock+=Time.deltaTime;
 			transform.localPosition += Time.deltaTime*(new Vector3(Mathf.Sin (moveClock*Mathf.PI/2f),0,0));
+			transform.localPosition += 0.05f*Time.deltaTime*Vector3.right;
 			//Vector2 top = new Vector2(transform.position.x, transform.position.y)+0.1f*move.floatToV2(move.clinging);
 			AbstractBlock block = blockManager.getBlockAt (transform.position.x, transform.position.y);
 			if (block!=null) 
