@@ -2480,7 +2480,7 @@ Transform:
   m_Children:
   - {fileID: 908861954}
   m_Father: {fileID: 0}
-  m_RootOrder: 767
+  m_RootOrder: 768
 --- !u!1 &51139491
 GameObject:
   m_ObjectHideFlags: 0
@@ -8455,7 +8455,7 @@ Transform:
   m_Children:
   - {fileID: 141842657}
   m_Father: {fileID: 0}
-  m_RootOrder: 762
+  m_RootOrder: 763
 --- !u!114 &156501273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16495,7 +16495,7 @@ Transform:
   m_Children:
   - {fileID: 426485495}
   m_Father: {fileID: 0}
-  m_RootOrder: 772
+  m_RootOrder: 773
 --- !u!114 &283008089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18131,7 +18131,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 777
+  m_RootOrder: 771
 --- !u!1 &321690476
 GameObject:
   m_ObjectHideFlags: 0
@@ -21790,7 +21790,7 @@ Transform:
   m_Children:
   - {fileID: 457951884}
   m_Father: {fileID: 0}
-  m_RootOrder: 763
+  m_RootOrder: 764
 --- !u!114 &405573224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26784,7 +26784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b8e88b798241f94fa7265f167d0478b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Font: {fileID: 11400000, guid: 769e99e2da571f84c905b3b6393649ca, type: 2}
+  Font: {fileID: 0}
   Text: "Good thing this city\n loves cannons!"
   Size: 4
   Leading: 0
@@ -29903,7 +29903,7 @@ Transform:
   m_Children:
   - {fileID: 1284832665}
   m_Father: {fileID: 0}
-  m_RootOrder: 758
+  m_RootOrder: 759
 --- !u!114 &554255391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32332,7 +32332,7 @@ Transform:
   m_Children:
   - {fileID: 939631368}
   m_Father: {fileID: 0}
-  m_RootOrder: 759
+  m_RootOrder: 760
 --- !u!114 &592184067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35983,7 +35983,7 @@ Transform:
   m_Children:
   - {fileID: 1138126774}
   m_Father: {fileID: 0}
-  m_RootOrder: 773
+  m_RootOrder: 774
 --- !u!1 &658345439
 GameObject:
   m_ObjectHideFlags: 0
@@ -47842,7 +47842,7 @@ Transform:
   m_Children:
   - {fileID: 944768536}
   m_Father: {fileID: 0}
-  m_RootOrder: 760
+  m_RootOrder: 761
 --- !u!1 &868827491
 GameObject:
   m_ObjectHideFlags: 0
@@ -52315,7 +52315,7 @@ Transform:
   m_Children:
   - {fileID: 692893385}
   m_Father: {fileID: 0}
-  m_RootOrder: 775
+  m_RootOrder: 776
 --- !u!114 &936151301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54917,7 +54917,7 @@ Transform:
   m_Children:
   - {fileID: 681327466}
   m_Father: {fileID: 0}
-  m_RootOrder: 766
+  m_RootOrder: 767
 --- !u!114 &978152929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62742,7 +62742,7 @@ Transform:
   m_Children:
   - {fileID: 349022983}
   m_Father: {fileID: 0}
-  m_RootOrder: 764
+  m_RootOrder: 765
 --- !u!114 &1117497420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64062,6 +64062,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1145636915
 Prefab:
   m_ObjectHideFlags: 0
@@ -69668,6 +69669,58 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.size
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[18].clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[19].clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[20].clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[21].clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[22].clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[23].clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[24].clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[25].clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[26].clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[27].clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[28].clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[29].clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
       propertyPath: m_LocalPosition.x
       value: -6.17443085
@@ -69716,6 +69769,106 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -17
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: theme
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[18].name
+      value: CrawlerDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[18].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d1518d76267ffbd4380978bfd420227a, type: 3}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[19].name
+      value: CrawlerDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[19].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d1518d76267ffbd4380978bfd420227a, type: 3}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[20].name
+      value: CrawlerDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[20].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d1518d76267ffbd4380978bfd420227a, type: 3}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[21].name
+      value: CrawlerDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[21].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d1518d76267ffbd4380978bfd420227a, type: 3}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[22].name
+      value: CrawlerDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[22].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d1518d76267ffbd4380978bfd420227a, type: 3}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[23].name
+      value: CrawlerDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[23].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d1518d76267ffbd4380978bfd420227a, type: 3}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[24].name
+      value: CrawlerDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[24].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d1518d76267ffbd4380978bfd420227a, type: 3}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[25].name
+      value: CrawlerDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[25].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d1518d76267ffbd4380978bfd420227a, type: 3}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[26].name
+      value: CrawlerDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[26].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d1518d76267ffbd4380978bfd420227a, type: 3}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[27].name
+      value: CrawlerDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[27].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d1518d76267ffbd4380978bfd420227a, type: 3}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[28].name
+      value: CrawlerDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[28].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d1518d76267ffbd4380978bfd420227a, type: 3}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[29].name
+      value: CrawlerDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: clipList.Array.data[29].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d1518d76267ffbd4380978bfd420227a, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
   m_RootGameObject: {fileID: 1935647930}
@@ -70977,7 +71130,7 @@ Transform:
   m_Children:
   - {fileID: 2080635871}
   m_Father: {fileID: 0}
-  m_RootOrder: 774
+  m_RootOrder: 775
 --- !u!114 &1270180670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83895,7 +84048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b8e88b798241f94fa7265f167d0478b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Font: {fileID: 11400000, guid: 769e99e2da571f84c905b3b6393649ca, type: 2}
+  Font: {fileID: 0}
   Text: "You've arrived at Monstranto's lab. \nWe hear they had a shoddy\nroof job
     recently..."
   Size: 4
@@ -83952,7 +84105,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 769
+  m_RootOrder: 758
 --- !u!1 &1516837979
 GameObject:
   m_ObjectHideFlags: 0
@@ -85035,7 +85188,7 @@ Transform:
   m_Children:
   - {fileID: 831878269}
   m_Father: {fileID: 0}
-  m_RootOrder: 768
+  m_RootOrder: 769
 --- !u!1 &1542926023
 GameObject:
   m_ObjectHideFlags: 0
@@ -86404,6 +86557,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!61 &1563079142
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -86644,7 +86798,7 @@ Transform:
   m_Children:
   - {fileID: 1405299920}
   m_Father: {fileID: 0}
-  m_RootOrder: 761
+  m_RootOrder: 762
 --- !u!1001 &1570663793
 Prefab:
   m_ObjectHideFlags: 0
@@ -104371,7 +104525,7 @@ Transform:
   m_Children:
   - {fileID: 619538503}
   m_Father: {fileID: 0}
-  m_RootOrder: 771
+  m_RootOrder: 772
 --- !u!1 &1888072691
 GameObject:
   m_ObjectHideFlags: 0
@@ -106686,6 +106840,7 @@ GameObject:
   - 114: {fileID: 1935647932}
   - 114: {fileID: 1935647931}
   - 114: {fileID: 1935647940}
+  - 114: {fileID: 1935647938}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -106814,6 +106969,7 @@ MonoBehaviour:
     isNoRotationZone: 0
     isCrawler: 0
     isSpikez: 0
+  editorState: 2
 --- !u!114 &1935647932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106941,6 +107097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 0}
   player: {fileID: 0}
+  veggiesFreed: 0
   winOrLoseCountdownTime: 2
   secondsToRotate: .300000012
   gameState: 0
@@ -106949,6 +107106,7 @@ MonoBehaviour:
   topLeft: {fileID: 0}
   bottomRight: {fileID: 0}
   noFrictionMaterial: {fileID: 6200000, guid: b965fec59e1e6464293761f6313d7319, type: 2}
+  theme: 1
 --- !u!4 &1935647937
 Transform:
   m_ObjectHideFlags: 0
@@ -106963,6 +107121,19 @@ Transform:
   - {fileID: 1465900932}
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &1935647938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400012, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 1247742528}
+  m_GameObject: {fileID: 1935647930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4fcca795ad2fa42a72a77e6902900c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: C:/Users/dmm/Documents/rotato-gameplay-prototype/Assets/GameData.xml
 --- !u!114 &1935647939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107624,7 +107795,7 @@ Transform:
   m_Children:
   - {fileID: 563689811}
   m_Father: {fileID: 0}
-  m_RootOrder: 776
+  m_RootOrder: 777
 --- !u!1 &1944663047
 GameObject:
   m_ObjectHideFlags: 0
@@ -115816,7 +115987,7 @@ Transform:
   m_Children:
   - {fileID: 857616724}
   m_Father: {fileID: 0}
-  m_RootOrder: 765
+  m_RootOrder: 766
 --- !u!1 &2083720630
 GameObject:
   m_ObjectHideFlags: 0
