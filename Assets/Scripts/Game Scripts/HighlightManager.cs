@@ -8,9 +8,9 @@ public class HighlightManager : MonoBehaviour {
     public Color highlightColor;
 
     // Highlight pulsing
-    public float highlightPulseStep = 0.01f;
-    public float highlightPulseMax = .3f;
-    public float highlightPulseMin = .15f;
+    public float highlightPulseStep;
+    public float highlightPulseMax;
+    public float highlightPulseMin;
     /// <summary>
     /// flips between 1 and -1 to make the pulsing go up and down
     /// </summary>
@@ -44,7 +44,6 @@ public class HighlightManager : MonoBehaviour {
 
     void Update()
     {
-        PulseHighlightColor();
         if (player == null || playerMovement == null)
             return;
         switch (gameManager.gameState)
@@ -62,8 +61,9 @@ public class HighlightManager : MonoBehaviour {
                     rotationHighlight.SetActive(false);
                     selectionHighlight.transform.position = player.GetRoundedPosition().ToVector2();
                     // Highlight each square individually based on whether it's a valid center of rotation
-                    foreach (SpriteRenderer square in selectionSquares)
+                    for (int i = 0; i < selectionSquares.Length; i++)
                     {
+                        SpriteRenderer square = selectionSquares[i];
                         Int2 squarePos = new Int2(square.transform.position.x, square.transform.position.y);
                         if (!gameManager.isValidCenter(squarePos))
                         {
@@ -71,7 +71,14 @@ public class HighlightManager : MonoBehaviour {
                         }
                         else
                         {
-                            square.color = highlightColor;
+                            if (gameManager.GetMousePosition().Equals(squarePos))
+                            {
+                                PulseHighlightColor(ref square);
+                            }
+                            else
+                            {
+                                square.color = highlightColor;
+                            }
                         }
                     }
                     break;
@@ -111,9 +118,9 @@ public class HighlightManager : MonoBehaviour {
         
     }
 
-    private void PulseHighlightColor()
+    private void PulseHighlightColor(ref SpriteRenderer squareRenderer)
     {
-        float currentAlphaValue = highlightColor.a;
+        float currentAlphaValue = squareRenderer.color.a;
         if (currentAlphaValue > highlightPulseMax)
         {
             highlightMultiplier = -1f;
@@ -123,6 +130,10 @@ public class HighlightManager : MonoBehaviour {
             highlightMultiplier = 1f;
         }
         float newAlphaValue = currentAlphaValue + (highlightPulseStep * highlightMultiplier);
-        this.highlightColor = new Color(highlightColor.r, highlightColor.g, highlightColor.b, newAlphaValue);
+        squareRenderer.color = new Color(
+            squareRenderer.color.r,
+            squareRenderer.color.g,
+            squareRenderer.color.b,
+            newAlphaValue);
     }
 }

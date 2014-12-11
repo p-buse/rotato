@@ -225,10 +225,7 @@ public class GameManager : MonoBehaviour
             case GameMode.playing:
                 {
                     CheckOutsideWorld();
-                    Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                    int x = Mathf.RoundToInt(worldPos.x);
-                    int y = Mathf.RoundToInt(worldPos.y);
-                    this.currentRotationCenter = new Int2(x, y);
+                    this.currentRotationCenter = GetMousePosition();
 					
 
                     if (Input.GetMouseButtonDown(0))
@@ -362,6 +359,14 @@ public class GameManager : MonoBehaviour
                     break;
                 }
         }
+    }
+
+    public Int2 GetMousePosition()
+    {
+        Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        int x = Mathf.RoundToInt(worldPos.x);
+        int y = Mathf.RoundToInt(worldPos.y);
+        return new Int2(x, y);
     }
 
     private void CheckOutsideWorld()
