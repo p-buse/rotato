@@ -65158,6 +65158,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1145636915
 Prefab:
   m_ObjectHideFlags: 0
@@ -70874,6 +70875,10 @@ Prefab:
     - target: {fileID: 400002, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
       propertyPath: m_LocalPosition.y
       value: -15.5660458
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400018, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: theme
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
@@ -87703,6 +87708,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!61 &1563079142
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -108341,6 +108347,7 @@ GameObject:
   - 4: {fileID: 1935647937}
   - 114: {fileID: 1935647939}
   - 114: {fileID: 1935647936}
+  - 114: {fileID: 1935647941}
   - 114: {fileID: 1935647935}
   - 114: {fileID: 1935647934}
   - 114: {fileID: 1935647933}
@@ -108369,7 +108376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointTexture: {fileID: 2800000, guid: 34efe248d57dbcf4997df623eeb8f46f, type: 3}
   selectTexture: {fileID: 2800000, guid: 263b63edcf629424fad62f9f8b7d446d, type: 3}
-  handTexture: {fileID: 0}
+  handTexture: {fileID: 2800000, guid: 9d89a577f9fc3a24092df64501bc2dbd, type: 3}
   selectionHighlightPrefab: {fileID: 100002, guid: dacd3e7d37dfe4b79860a23f78af1bb0,
     type: 2}
   brushes:
@@ -108570,8 +108577,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 1, b: 1, a: .156862751}
-  highlightPulseStep: .00999999978
-  highlightPulseMax: .180000007
+  highlightPulseStep: .0500000007
+  highlightPulseMax: .5
   highlightPulseMin: .150000006
   selectionHighlightPrefab: {fileID: 100032, guid: be358ba3253a94349a34bbb1307c47fd,
     type: 2}
@@ -108614,7 +108621,6 @@ MonoBehaviour:
   topLeft: {fileID: 0}
   bottomRight: {fileID: 0}
   noFrictionMaterial: {fileID: 6200000, guid: b965fec59e1e6464293761f6313d7319, type: 2}
-  theme: 0
 --- !u!4 &1935647937
 Transform:
   m_ObjectHideFlags: 0
@@ -108641,7 +108647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4fcca795ad2fa42a72a77e6902900c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path: C:/Users/David/Documents/rotato-gameplay-prototype/Assets/GameData.xml
+  path: C:/Users/paul/Documents/Coding/Unity Projects/Rotato_GameplayPrototype/Assets/GameData.xml
 --- !u!114 &1935647939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108668,6 +108674,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1cc8433eeb188641bf98ed0b88876d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1935647941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400018, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 1247742528}
+  m_GameObject: {fileID: 1935647930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b43eac89b6fe9f4597dad57f1828556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theme: 1
 --- !u!1001 &1936831964
 Prefab:
   m_ObjectHideFlags: 0
