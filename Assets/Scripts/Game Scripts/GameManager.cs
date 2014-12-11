@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour
 {
     // References to other stuff
+    MusicManager musicManager;
     BlockManager blockManager;
     NoRotationManager noRotationManager;
     SoundManager soundManager;
@@ -96,18 +97,16 @@ public class GameManager : MonoBehaviour
     public delegate void BoundsChangedHandler(GameManager gm, Transform topLeft, Transform bottomRight);
     public event BoundsChangedHandler BoundsChanged;
 
-	//Level Theme
-	public enum LevelTheme {farm, city, lab, space, escape};
-	public LevelTheme theme;
+	
 
-	//Music
-	private AudioSource music;
-
-    // Volume sliders
-    private float fxVolume = .75f;
 
     void Awake()
     {
+        if (FindObjectOfType<MusicManager>() == null)
+        {
+            GameObject musicObject = new GameObject("Music Manager", typeof(MusicManager));
+            this.musicManager = musicObject.GetComponent<MusicManager>();
+        }
         this.inputManager = GetComponent<InputManager>();
         this.soundManager = GetComponent<SoundManager>();
         this.blockManager = GetComponent<BlockManager>();
@@ -124,21 +123,6 @@ public class GameManager : MonoBehaviour
 		if (!canEdit) {
 			GameData.instance.AddLevel(Application.loadedLevel, totalVeggies);
 		}
-
-		//MUSIC:
-		music = (AudioSource)gameObject.AddComponent("AudioSource");
-		AudioClip song = new AudioClip();
-		switch (theme) {
-			case LevelTheme.farm: song = (AudioClip)Resources.Load("farm"); break;
-			case LevelTheme.city: song = (AudioClip)Resources.Load("city2"); break;
-			case LevelTheme.lab: song = (AudioClip)Resources.Load("lab"); break;
-			case LevelTheme.space: song = (AudioClip)Resources.Load("space"); break;
-			case LevelTheme.escape: song = (AudioClip)Resources.Load("escape"); break;
-		}
-		music.clip = song;
-		music.loop = true;
-		music.Play ();
-
     }
 
     private void SetupEdgeCollidersOnWorldBounds()
@@ -162,7 +146,7 @@ public class GameManager : MonoBehaviour
 
     public void PlaySound(string soundName, float volume = 1f)
     {
-        volume *= this.fxVolume;
+        volume *= MusicManager.fxVolume;
         soundManager.PlayClip(soundName, volume);
     }
 
@@ -568,11 +552,11 @@ public class GameManager : MonoBehaviour
 					}
                     GUILayout.BeginHorizontal();
                     GUILayout.Label("Music Volume ");
-                    music.volume = GUILayout.HorizontalSlider(music.volume, 0f, 1f);
+                    MusicManager.musicVolume = GUILayout.HorizontalSlider(MusicManager.musicVolume, 0f, 1f);
                     GUILayout.EndHorizontal();
                     GUILayout.BeginHorizontal();
                     GUILayout.Label("Game Volume ");
-                    this.fxVolume = GUILayout.HorizontalSlider(fxVolume, 0f, 1f);
+                    MusicManager.fxVolume= GUILayout.HorizontalSlider(MusicManager.fxVolume, 0f, 1f);
                     GUILayout.EndHorizontal();
                     //currentScroll = GUILayout.BeginScrollView(currentScroll);
                     //foreach(string campaignName in campaignManager.GetCampaigns())
