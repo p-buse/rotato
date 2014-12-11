@@ -52,7 +52,6 @@ public class GameManager : MonoBehaviour
 
     // Gamemode stuff
     public enum GameMode { playing, frozen, rotating, won, lost, editing, paused };
-    [HideInInspector]
     public GameMode gameState = GameMode.playing;
     // Used for returning from pause menu
     GameMode lastState = GameMode.playing;
@@ -103,6 +102,9 @@ public class GameManager : MonoBehaviour
 
 	//Music
 	private AudioSource music;
+
+    // Volume sliders
+    private float fxVolume = .75f;
 
     void Awake()
     {
@@ -158,6 +160,7 @@ public class GameManager : MonoBehaviour
 
     public void PlaySound(string soundName, float volume = 1f)
     {
+        volume *= this.fxVolume;
         soundManager.PlayClip(soundName, volume);
     }
 
@@ -559,6 +562,14 @@ public class GameManager : MonoBehaviour
 					{
 						GoToNextLevel();
 					}
+                    GUILayout.BeginHorizontal();
+                    GUILayout.Label("Music Volume ");
+                    music.volume = GUILayout.HorizontalSlider(music.volume, 0f, 1f);
+                    GUILayout.EndHorizontal();
+                    GUILayout.BeginHorizontal();
+                    GUILayout.Label("Game Volume ");
+                    this.fxVolume = GUILayout.HorizontalSlider(fxVolume, 0f, 1f);
+                    GUILayout.EndHorizontal();
                     //currentScroll = GUILayout.BeginScrollView(currentScroll);
                     //foreach(string campaignName in campaignManager.GetCampaigns())
                     //{

@@ -3,59 +3,64 @@ using System.Collections;
 
 public class CursorScript : MonoBehaviour
 {
-
+    public Sprite cursorNeutral;
+    public Sprite cursorNo;
+    public Sprite cursorRotatable;
     enum CursorState { NEUTRAL = 0, ROTATABLE = 1, NO = 2, HIDDEN = 3 };
     CursorState cursorState;
     GameManager gameManager;
-    Animator animator;
+    SpriteRenderer cursorSprite;
 
     void Awake()
     {
         this.gameManager = FindObjectOfType<GameManager>();
-        this.animator = GetComponentInChildren<Animator>();
+        this.cursorSprite = GetComponentInChildren<SpriteRenderer>();
         this.cursorState = 0;
     }
     void Update()
     {
-        if (gameManager.gameState == GameManager.GameMode.editing)
+        this.transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (gameManager.gameState == GameManager.GameMode.editing || gameManager.gameState == GameManager.GameMode.paused)
         {
             Screen.showCursor = true;
+            this.ChangeCursorState(CursorState.HIDDEN);
         }
-        else
+        else if (gameManager.gameState == GameManager.GameMode.playing)
         {
             Screen.showCursor = false;
-        }
-        this.transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (!gameManager.gameFrozen)
-        {
             if (gameManager.MouseIsInRotatableArea())
             {
-                this.ChangeCursorState(1);
+                this.ChangeCursorState(CursorState.ROTATABLE);
             }
             else if (gameManager.MouseIsInNoRoZone())
             {
-                this.ChangeCursorState(2);
+                this.ChangeCursorState(CursorState.NO);
             }
             else
             {
-                this.ChangeCursorState(0);
+                this.ChangeCursorState(CursorState.NEUTRAL);
             }
         }
         else
         {
-            this.ChangeCursorState(3);
+            this.ChangeCursorState(CursorState.HIDDEN);
         }
     }
 
-    void ChangeCursorState(int newCursorState)
+    void ChangeCursorState(CursorState newCursorState)
     {
-        this.cursorState = (CursorState)newCursorState;
-        this.animator.SetInteger("cursorState", (int)this.cursorState);
+        this.cursorState = newCursorState;
+        switch (this.cursorState)
+        {
+            case CursorState.NEUTRAL: cursorSprite.sprite = cursorNeutral; break;
+            case CursorState.ROTATABLE: cursorSprite.sprite = cursorRotatable; break;
+            case CursorState.NO: cursorSprite.sprite = cursorNo; break;
+            case CursorState.HIDDEN: cursorSprite.sprite = null; break;
+        }
     }
 
     void OnDestroy()
     {
         Screen.showCursor = true;
     }
-
 }
