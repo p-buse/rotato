@@ -6,6 +6,7 @@ public class BackgroundObjectMovement : MonoBehaviour {
 	public float moveRatioX;
 	public float moveRatioY;
 	private Vector3 lastCameraPos;
+	public Vector3 baseMovement;
 
 	void Awake()
 	{
@@ -22,5 +23,8 @@ public class BackgroundObjectMovement : MonoBehaviour {
 
 		transform.Translate (myMove);
 		lastCameraPos = camera.transform.position;
+
+		if (baseMovement != Vector3.zero)
+			transform.Translate (baseMovement * Time.deltaTime);
 	}
 }
