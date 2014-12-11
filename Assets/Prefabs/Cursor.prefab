@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  - 95: {fileID: 9500000}
   m_Layer: 0
   m_Name: CursorSprite
   m_TagString: Untagged
@@ -58,21 +57,6 @@ Transform:
   - {fileID: 400000}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!95 &9500000
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c6db693e22defd24a887ef7b5be8b90c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -84,6 +68,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a585c2107b2f244abbbcb501bc24592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursorNeutral: {fileID: 21300000, guid: 79159855bb5d9314483de13e1d3be6e1, type: 3}
+  cursorNo: {fileID: 21300000, guid: 2233fc5ec98eb2443a242a9b3999e434, type: 3}
+  cursorRotatable: {fileID: 21300000, guid: 774210f13265f7c4f879fd742bd4d49e, type: 3}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
