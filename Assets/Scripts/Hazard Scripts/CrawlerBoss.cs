@@ -39,21 +39,23 @@ public class CrawlerBoss : MonoBehaviour {
 	
 	void OnCollisionEnter2D(Collision2D coll) 
 	{
-		if (coll.gameObject.tag == "Player") 
+		if(!gameManager.gameFrozen)
 		{
-			//kill player
-			gameManager.LoseLevel("Nom nom nom... you were a tasty snack for the UberWorm");
-			
-		}
-		if (coll.gameObject.tag == "Block") 
-		{
-			blockManager.RemoveBlock(new Int2(coll.gameObject.transform.position.x, coll.gameObject.transform.position.y));
-		}
+			if (coll.gameObject.tag == "Player") 
+			{
+				//kill player
+				gameManager.LoseLevel("Nom nom nom... you were a tasty snack for the UberWorm");
+				
+			}
+			if (coll.gameObject.tag == "Block") 
+			{
+				blockManager.RemoveBlock(new Int2(coll.gameObject.transform.position.x, coll.gameObject.transform.position.y));
+			}
 
-		Destroy (coll.gameObject);
-		AbstractBlock mirrorsAndLasers = coll.gameObject.GetComponentInParent<AbstractBlock> ();
-		Destroy (mirrorsAndLasers.gameObject);
-		
+			Destroy (coll.gameObject);
+			AbstractBlock mirrorsAndLasers = coll.gameObject.GetComponentInParent<AbstractBlock> ();
+			Destroy (mirrorsAndLasers.gameObject);
+		}
 		
 	}
 	
