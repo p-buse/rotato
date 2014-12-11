@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-public class CameraMovement : MonoBehaviour {
+public class CameraMovement : MonoBehaviour
+{
     GameManager gameManager;
     LevelEditor levelEditor;
     public bool fixedMovement;
     public Vector2 cameraMovement;
-	public float followSpeed = 2f;
+    public float followSpeed = 2f;
     Player player;
 
     private float rightBound;
@@ -14,23 +16,26 @@ public class CameraMovement : MonoBehaviour {
     private float topBound;
     private float bottomBound;
 
-	void Awake()
-	{
-		this.gameManager = FindObjectOfType<GameManager>();
+    Transform topLeft;
+    Transform bottomRight;
+
+    void Awake()
+    {
+        this.gameManager = FindObjectOfType<GameManager>();
         this.levelEditor = FindObjectOfType<LevelEditor>();
         player = FindObjectOfType<Player>();
         gameManager.PlayerCreated += this.PlayerCreated;
         gameManager.BoundsChanged += this.BoundsChanged;
-	}
+    }
 
     void Start()
     {
-        SetBounds(gameManager.topLeft, gameManager.bottomRight);
+        BoundsChanged(gameManager, gameManager.topLeft, gameManager.bottomRight);
     }
 
-    private void SetBounds(Transform topLeft, Transform bottomRight)
+    private void SetBounds()
     {
-        float vertExtent = Camera.main.camera.orthographicSize;
+        float vertExtent = Camera.main.orthographicSize;
         float horzExtent = (vertExtent * Screen.width / Screen.height);
         leftBound = (float)(topLeft.position.x + horzExtent);
         rightBound = (float)(bottomRight.position.x - horzExtent);
@@ -40,7 +45,9 @@ public class CameraMovement : MonoBehaviour {
 
     public void BoundsChanged(GameManager gm, Transform topLeft, Transform bottomRight)
     {
-        this.SetBounds(topLeft, bottomRight);
+        this.topLeft = topLeft;
+        this.bottomRight = bottomRight;
+        this.SetBounds();
     }
 
     void PlayerCreated(GameManager gm, Player p, PlayerMovement pm)
@@ -61,12 +68,36 @@ public class CameraMovement : MonoBehaviour {
         {
             transform.Translate(cameraMovement * Time.deltaTime);
         }
-        if (levelEditor.editorState != LevelEditor.EditorState.NewLevel)
+        if (gameManager.gameState != GameManager.GameMode.editing || levelEditor.editorState != LevelEditor.EditorState.NewLevel)
         {
-            Vector3 pos = new Vector3(transform.position.x, transform.position.y, -10f);
-            pos.x = Mathf.Clamp(pos.x, leftBound, rightBound);
-            pos.y = Mathf.Clamp(pos.y, bottomBound, topBound);
-            transform.position = pos;
+            ClampPosition();
+        }
+    }
+
+    private void ClampPosition()
+    {
+        Vector3 pos = new Vector3(transform.position.x, transform.position.y, -10f);
+        pos.x = Mathf.Clamp(pos.x, leftBound, rightBound);
+        pos.y = Mathf.Clamp(pos.y, bottomBound, topBound);
+        transform.position = pos;
+    }
+
+    public void PanCamera(Vector2 panVector)
+    {
+        transform.position += new Vector3(panVector.x, panVector.y, 0f);
+        ClampPosition();
+    }
+
+    public void ZoomCamera(float zoomDelta)
+    {
+        // Hypothetical new extents
+        float vertExtent = Camera.main.orthographicSize + zoomDelta;
+        float horzExtent = (vertExtent * Screen.width / Screen.height);
+        if (vertExtent*2 < topLeft.position.y - bottomRight.position.y && vertExtent >= 1f &&
+            horzExtent*2 < bottomRight.position.x - topLeft.position.x && horzExtent >= 1f)
+        {
+            Camera.main.orthographicSize += zoomDelta;
+            SetBounds();
         }
     }
 }

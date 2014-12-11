@@ -9,12 +9,13 @@ public class LevelEditor : MonoBehaviour
 {
     public Texture pointTexture;
     public Texture selectTexture;
+    public Texture handTexture;
     public GameObject selectionHighlightPrefab;
     public Brush[] brushes;
 
     GameObject selectionHighlight;
 
-	enum ToolMode { point = 0, select = 1 };
+	enum ToolMode { point = 0, select = 1, pan = 2 };
     ToolMode toolMode = ToolMode.point;
     
     string currentLevelName;
@@ -23,6 +24,7 @@ public class LevelEditor : MonoBehaviour
     GameManager gameManager;
     BlockManager blockManager;
     NoRotationManager noRoMan;
+    CameraMovement cameraMovement;
     Player player;
 	AbstractBlock selectedBlock;
 	bool selectedPlayer;
@@ -99,9 +101,10 @@ public class LevelEditor : MonoBehaviour
 
     void Awake()
     {
+        this.cameraMovement = FindObjectOfType<CameraMovement>();
         this.currentLevelName = "Untitled";
         this.gameManager = GetComponent<GameManager>();
-        this.toolImages = new Texture[] { this.pointTexture, this.selectTexture};
+        this.toolImages = new Texture[] { this.pointTexture, this.selectTexture, this.handTexture};
         this.player = FindObjectOfType<Player>();
         this.blockManager = FindObjectOfType<BlockManager>();
         this.noRoMan = FindObjectOfType<NoRotationManager>();
@@ -176,20 +179,21 @@ public class LevelEditor : MonoBehaviour
         DrawGhostlyBlock(mouseWorldPos);
         if (gameManager.gameState == GameManager.GameMode.editing && editorState == EditorState.Editing)
         {
-            if (gameManager.currentInput.rightPressed)
-            {
-                currentOrientation -= 1;
-            }
-            else if (gameManager.currentInput.leftPressed)
-            {
-                currentOrientation += 1;
-            }
             if (!MouseInGUI())
             {
                 switch (toolMode)
                 {
                     case ToolMode.point:
                         {
+                            if (gameManager.currentInput.rightPressed)
+                            {
+                                currentOrientation -= 1;
+                            }
+                            else if (gameManager.currentInput.leftPressed)
+                            {
+                                currentOrientation += 1;
+                            }
+
                             selectionHighlight.SetActive(false);
                             if (currentBrush.isPlayer)
                             {
@@ -319,6 +323,20 @@ public class LevelEditor : MonoBehaviour
                             break;
 
                         }
+                    case ToolMode.pan:
+                        {
+                            if (Input.GetMouseButton(0))
+                            {
+                                // We subtract the mouse delta from the camera's position because we want to scroll in the opposite direction
+                                cameraMovement.PanCamera(new Vector3(-1f * Input.GetAxis("Mouse X"), -1f * Input.GetAxis("Mouse Y")));
+                            }
+                            if (Input.GetMouseButton(1))
+                            {
+                                float zoomDelta = Input.GetAxis("Mouse X") + Input.GetAxis("Mouse Y");
+                                cameraMovement.ZoomCamera(-zoomDelta);
+                            }
+                            break;
+                        }
                 }
             }
         }
@@ -341,8 +359,8 @@ public class LevelEditor : MonoBehaviour
             // Destroy everything except an object's sprites
             foreach (Component comp in components)
             {
-                SpriteRenderer spriteComponent = comp as SpriteRenderer;
-                if (spriteComponent == null && !comp.Equals(comp.transform))
+                Renderer visualComponent = comp as Renderer;
+                if (visualComponent == null && !comp.Equals(comp.transform))
                 {
                     Destroy(comp);
                 }
