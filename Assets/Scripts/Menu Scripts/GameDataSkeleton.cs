@@ -12,6 +12,6 @@ public class GameDataSkeleton {
     }
 
     public List<LevelDataSkeleton> levelData;
-    public int unlockedLevel;
+    public int unlockedLevel = 3;
 	
 }

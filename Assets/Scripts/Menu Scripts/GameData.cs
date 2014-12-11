@@ -121,7 +121,7 @@ public class GameData: ScriptableObject {
     public void ChangeUnlockedLevel(int unlockedLevelIndex)
     {
         GameDataSkeleton skelly = ReadXML(path);
-        skelly.unlockedLevel = Math.Max(skelly.unlockedLevel, unlockedLevelIndex);
+        skelly.unlockedLevel = Math.Max(skelly.unlockedLevel, unlockedLevelIndex + 1);
         WriteXML(skelly, path);
     }
 

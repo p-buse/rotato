@@ -170,6 +170,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &7395476
 BoxCollider2D:
@@ -279,6 +280,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &15101867
 BoxCollider2D:
@@ -324,6 +326,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &20548652
 BoxCollider2D:
@@ -781,7 +784,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &44434748
 Transform:
@@ -827,6 +830,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &56377850
 BoxCollider2D:
@@ -1038,6 +1042,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &68351509
 BoxCollider2D:
@@ -1083,6 +1088,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &74735828
 BoxCollider2D:
@@ -1324,6 +1330,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &94434764
 BoxCollider2D:
@@ -1446,6 +1453,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &98923303
 BoxCollider2D:
@@ -1688,6 +1696,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &112093646
 BoxCollider2D:
@@ -1861,6 +1870,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &132227563
 BoxCollider2D:
@@ -2040,6 +2050,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &141346547
 BoxCollider2D:
@@ -2149,6 +2160,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &150371056
 BoxCollider2D:
@@ -2302,6 +2314,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &157096454
 BoxCollider2D:
@@ -2449,6 +2462,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &173090202
 BoxCollider2D:
@@ -2558,6 +2572,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &177545134
 BoxCollider2D:
@@ -2616,6 +2631,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &178025709
 BoxCollider2D:
@@ -2769,6 +2785,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &179240420
 BoxCollider2D:
@@ -2922,6 +2939,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &210406995
 BoxCollider2D:
@@ -3037,6 +3055,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &214405243
 BoxCollider2D:
@@ -3150,7 +3169,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &223460474
 GameObject:
@@ -3336,6 +3355,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &231910501
 BoxCollider2D:
@@ -3432,6 +3452,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &242111990
 BoxCollider2D:
@@ -3668,6 +3689,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &248675849
 BoxCollider2D:
@@ -3713,6 +3735,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &270123674
 BoxCollider2D:
@@ -3784,6 +3807,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &275163281
 BoxCollider2D:
@@ -3834,7 +3858,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &275449883
 Transform:
@@ -4012,6 +4036,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &300916003
 BoxCollider2D:
@@ -4070,6 +4095,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &301256861
 BoxCollider2D:
@@ -4185,6 +4211,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &306877629
 BoxCollider2D:
@@ -4243,6 +4270,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &307730248
 BoxCollider2D:
@@ -4345,6 +4373,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &321135721
 BoxCollider2D:
@@ -4390,6 +4419,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &326598267
 BoxCollider2D:
@@ -5043,6 +5073,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &362851709
 BoxCollider2D:
@@ -5101,6 +5132,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &367266135
 BoxCollider2D:
@@ -5309,7 +5341,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &403859529
 GameObject:
@@ -5547,6 +5579,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &422473743
 BoxCollider2D:
@@ -5838,6 +5871,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &440006063
 BoxCollider2D:
@@ -5896,6 +5930,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &447624805
 BoxCollider2D:
@@ -5990,7 +6025,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &448999084
 Transform:
@@ -6080,6 +6115,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &457115567
 BoxCollider2D:
@@ -6334,6 +6370,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &485905353
 BoxCollider2D:
@@ -6392,6 +6429,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &491832583
 BoxCollider2D:
@@ -6620,6 +6658,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &524156695
 BoxCollider2D:
@@ -7268,6 +7307,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &612438402
 BoxCollider2D:
@@ -7357,6 +7397,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &632848353
 BoxCollider2D:
@@ -7497,6 +7538,33 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1892370056}
+  m_RootOrder: 1
+--- !u!1 &659934855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+  m_PrefabInternal: {fileID: 916479591}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 659934856}
+  m_Layer: 0
+  m_Name: bottomRight
+  m_TagString: Untagged
+  m_Icon: {fileID: -1203168336, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &659934856
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+  m_PrefabInternal: {fileID: 916479591}
+  m_GameObject: {fileID: 659934855}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 57, y: -3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 834888400}
   m_RootOrder: 1
 --- !u!1001 &664607241
 Prefab:
@@ -7662,6 +7730,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &672674297
 BoxCollider2D:
@@ -7733,6 +7802,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &679372576
 BoxCollider2D:
@@ -7822,6 +7892,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &687810265
 BoxCollider2D:
@@ -8070,6 +8141,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &700044620
 BoxCollider2D:
@@ -8141,6 +8213,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &707659382
 BoxCollider2D:
@@ -8186,6 +8259,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &707984976
 BoxCollider2D:
@@ -8517,6 +8591,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &731350738
 BoxCollider2D:
@@ -8619,6 +8694,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &741221640
 BoxCollider2D:
@@ -8677,6 +8753,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &742396441
 BoxCollider2D:
@@ -8722,6 +8799,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &746744753
 BoxCollider2D:
@@ -8970,6 +9048,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &775940214
 BoxCollider2D:
@@ -9079,6 +9158,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &776839124
 BoxCollider2D:
@@ -9245,6 +9325,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &783356778
 BoxCollider2D:
@@ -9303,6 +9384,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &791627604
 BoxCollider2D:
@@ -9538,6 +9620,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &799353175
 BoxCollider2D:
@@ -9609,6 +9692,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &800677567
 BoxCollider2D:
@@ -9718,6 +9802,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &802373688
 BoxCollider2D:
@@ -9812,7 +9897,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &814083099
 Transform:
@@ -9902,6 +9987,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &817364547
 BoxCollider2D:
@@ -9973,6 +10059,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &821500928
 BoxCollider2D:
@@ -10075,6 +10162,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &829809418
 BoxCollider2D:
@@ -10147,13 +10235,15 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 834888400}
+  - 114: {fileID: 834888403}
   - 114: {fileID: 834888399}
   - 114: {fileID: 834888398}
   - 114: {fileID: 834888397}
   - 114: {fileID: 834888396}
   - 114: {fileID: 834888395}
-  - 114: {fileID: 834888401}
   - 114: {fileID: 834888394}
+  - 114: {fileID: 834888402}
+  - 114: {fileID: 834888401}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -10175,6 +10265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointTexture: {fileID: 2800000, guid: 34efe248d57dbcf4997df623eeb8f46f, type: 3}
   selectTexture: {fileID: 2800000, guid: 263b63edcf629424fad62f9f8b7d446d, type: 3}
+  handTexture: {fileID: 0}
   selectionHighlightPrefab: {fileID: 100002, guid: dacd3e7d37dfe4b79860a23f78af1bb0,
     type: 2}
   brushes:
@@ -10260,7 +10351,7 @@ MonoBehaviour:
     isSpikez: 0
   - name: Crawler
     image: {fileID: 2800000, guid: bb8e531d9a1b5ac4c8d903845052a428, type: 3}
-    prefab: {fileID: 100004, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
+    prefab: {fileID: 0}
     isPlayer: 0
     isButter: 0
     isNoRotationZone: 0
@@ -10282,6 +10373,7 @@ MonoBehaviour:
     isNoRotationZone: 0
     isCrawler: 0
     isSpikez: 0
+  editorState: 2
 --- !u!114 &834888395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10340,9 +10432,15 @@ MonoBehaviour:
   - name: Lasered
     clips:
     - {fileID: 8300000, guid: 8dd65767d6e4c5046944ee5780fe1dcd, type: 3}
+  - name: Error
+    clips:
+    - {fileID: 8300000, guid: a9b1ef64e875bc54f953d7a9afddca09, type: 3}
   - name: Burnt
     clips:
     - {fileID: 8300000, guid: d32ecd85be19a114b9c866fd08e6154b, type: 3}
+  - name: CrawlerDeath
+    clips:
+    - {fileID: 8300000, guid: d1518d76267ffbd4380978bfd420227a, type: 3}
 --- !u!114 &834888396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10368,10 +10466,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 1, b: 1, a: .156862751}
+  highlightPulseStep: .00999999978
+  highlightPulseMax: .180000007
+  highlightPulseMin: .150000006
   selectionHighlightPrefab: {fileID: 100032, guid: be358ba3253a94349a34bbb1307c47fd,
     type: 2}
   rotationHighlightPrefab: {fileID: 100016, guid: ce8c766236b9691489df64677f5b2353,
     type: 2}
+  rotationHighlight: {fileID: 0}
 --- !u!114 &834888398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10397,14 +10499,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb59244c22def94a9636439086a5b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseKey: 27
   playerMovement: {fileID: 0}
   player: {fileID: 0}
+  veggiesFreed: 0
   winOrLoseCountdownTime: 2
   secondsToRotate: .300000012
   gameState: 0
-  lastState: 0
   canEdit: 0
+  cursorPrefab: {fileID: 100002, guid: b81ddec0e6b48bf4b80f35275715704a, type: 2}
+  topLeft: {fileID: 0}
+  bottomRight: {fileID: 0}
+  noFrictionMaterial: {fileID: 6200000, guid: b965fec59e1e6464293761f6313d7319, type: 2}
+  theme: 0
 --- !u!4 &834888400
 Transform:
   m_ObjectHideFlags: 0
@@ -10412,9 +10518,11 @@ Transform:
   m_PrefabInternal: {fileID: 916479591}
   m_GameObject: {fileID: 834888393}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.71380723, y: 3.21464896, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1739539321}
+  - {fileID: 659934856}
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!114 &834888401
@@ -10426,9 +10534,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 834888393}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12aab2acbe199e3478b806a42c7df768, type: 3}
+  m_Script: {fileID: 11500000, guid: bd4fcca795ad2fa42a72a77e6902900c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  path: /Users/Damien/Unity/rotato-gameplay-prototype/Assets/GameData.xml
+--- !u!114 &834888402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400016, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 916479591}
+  m_GameObject: {fileID: 834888393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cc8433eeb188641bf98ed0b88876d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &834888403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400014, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 916479591}
+  m_GameObject: {fileID: 834888393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b88df71ead32b5e45903469939483814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: {fileID: 0}
+  loadLevel: 0
 --- !u!1 &835271037
 GameObject:
   m_ObjectHideFlags: 0
@@ -10613,6 +10748,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &847105822
 BoxCollider2D:
@@ -10702,6 +10838,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &858974019
 BoxCollider2D:
@@ -10760,6 +10897,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &860552134
 BoxCollider2D:
@@ -11045,6 +11183,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &880884542
 BoxCollider2D:
@@ -11451,6 +11590,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &911938140
 BoxCollider2D:
@@ -11509,6 +11649,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &915141218
 BoxCollider2D:
@@ -11544,11 +11685,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.71380723
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.21464896
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
       propertyPath: m_LocalPosition.z
@@ -11577,6 +11718,22 @@ Prefab:
     - target: {fileID: 11400002, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
       propertyPath: canEdit
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 57
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
@@ -11876,11 +12033,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4090bcaa0218e474c9cdf76b2064d549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomEnabled: 0
-  followPlayer: 1
-  closeZoom: 7
-  farZoom: 7
-  zoomSpeed: 1
+  fixedMovement: 0
+  cameraMovement: {x: 0, y: 0}
+  followSpeed: 2
 --- !u!1 &930741100
 GameObject:
   m_ObjectHideFlags: 0
@@ -11913,6 +12068,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &930741102
 BoxCollider2D:
@@ -11984,6 +12140,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &943727099
 BoxCollider2D:
@@ -12042,6 +12199,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &947810978
 BoxCollider2D:
@@ -12138,6 +12296,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &957042058
 BoxCollider2D:
@@ -12260,6 +12419,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &963751617
 BoxCollider2D:
@@ -12362,6 +12522,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &971182904
 BoxCollider2D:
@@ -12407,6 +12568,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &971966955
 BoxCollider2D:
@@ -12522,6 +12684,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &977447512
 BoxCollider2D:
@@ -12978,7 +13141,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f8ccefd7a3fd40a4dbd18ea480026e55, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 74e26c494d449b74391dc80637b173cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1005450197
 GameObject:
@@ -13025,6 +13188,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1005450200
 BoxCollider2D:
@@ -13185,6 +13349,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1034781145
 BoxCollider2D:
@@ -13243,6 +13408,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1037181172
 BoxCollider2D:
@@ -13352,6 +13518,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1042331161
 BoxCollider2D:
@@ -13537,6 +13704,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1055204007
 BoxCollider2D:
@@ -13696,6 +13864,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1065945638
 BoxCollider2D:
@@ -13805,6 +13974,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1069730144
 BoxCollider2D:
@@ -14160,6 +14330,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1101627261
 BoxCollider2D:
@@ -14205,6 +14376,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1103854370
 BoxCollider2D:
@@ -14276,6 +14448,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1104059255
 BoxCollider2D:
@@ -14416,6 +14589,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1116112938
 BoxCollider2D:
@@ -14678,6 +14852,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1143169644
 BoxCollider2D:
@@ -14741,7 +14916,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1146866806
 Transform:
@@ -14800,6 +14975,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1146932238
 BoxCollider2D:
@@ -15306,6 +15482,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1172899136
 BoxCollider2D:
@@ -15364,6 +15541,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1177513168
 BoxCollider2D:
@@ -15460,6 +15638,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1181789364
 BoxCollider2D:
@@ -15562,6 +15741,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1186387898
 BoxCollider2D:
@@ -16064,6 +16244,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1228479703
 BoxCollider2D:
@@ -16122,6 +16303,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1237651545
 BoxCollider2D:
@@ -16180,6 +16362,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1238386764
 BoxCollider2D:
@@ -16225,6 +16408,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1238412522
 BoxCollider2D:
@@ -16550,6 +16734,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1259908032
 BoxCollider2D:
@@ -16937,6 +17122,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1295097871
 BoxCollider2D:
@@ -16995,6 +17181,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1299372915
 BoxCollider2D:
@@ -17066,6 +17253,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1318330219
 BoxCollider2D:
@@ -17124,6 +17312,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1318908421
 BoxCollider2D:
@@ -17460,6 +17649,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1341774037
 BoxCollider2D:
@@ -17613,6 +17803,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1351003389
 BoxCollider2D:
@@ -17753,6 +17944,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1357660896
 BoxCollider2D:
@@ -17875,6 +18067,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1367625091
 BoxCollider2D:
@@ -17920,6 +18113,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1369448232
 BoxCollider2D:
@@ -18073,6 +18267,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1376772987
 BoxCollider2D:
@@ -18131,6 +18326,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1386613114
 BoxCollider2D:
@@ -18367,6 +18563,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1405313802
 BoxCollider2D:
@@ -18456,6 +18653,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1412761411
 BoxCollider2D:
@@ -18761,6 +18959,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1423670449
 BoxCollider2D:
@@ -18945,6 +19144,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1441014969
 BoxCollider2D:
@@ -19003,6 +19203,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1451792073
 BoxCollider2D:
@@ -19125,6 +19326,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1458914561
 BoxCollider2D:
@@ -19214,6 +19416,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1460992974
 BoxCollider2D:
@@ -19424,6 +19627,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1481055699
 BoxCollider2D:
@@ -19736,6 +19940,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1498294183
 BoxCollider2D:
@@ -19807,6 +20012,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1499334956
 BoxCollider2D:
@@ -19865,6 +20071,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1502040537
 BoxCollider2D:
@@ -19923,6 +20130,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1505796598
 BoxCollider2D:
@@ -20076,6 +20284,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1512099986
 BoxCollider2D:
@@ -20299,6 +20508,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1534858947
 BoxCollider2D:
@@ -20344,6 +20554,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1541970577
 BoxCollider2D:
@@ -20446,6 +20657,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1559389888
 BoxCollider2D:
@@ -20548,6 +20760,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1576192676
 BoxCollider2D:
@@ -20714,6 +20927,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1590451620
 BoxCollider2D:
@@ -20816,6 +21030,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1592874233
 BoxCollider2D:
@@ -20922,7 +21137,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1595195117
 GameObject:
@@ -20969,6 +21184,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1595195120
 BoxCollider2D:
@@ -21078,6 +21294,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1599219844
 BoxCollider2D:
@@ -21648,6 +21865,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1673010100
 BoxCollider2D:
@@ -21838,6 +22056,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1693033124
 BoxCollider2D:
@@ -21947,6 +22166,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1702902175
 BoxCollider2D:
@@ -22094,6 +22314,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1721750136
 BoxCollider2D:
@@ -22279,6 +22500,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1736618971
 BoxCollider2D:
@@ -22292,6 +22514,33 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 1, y: 1}
   m_Center: {x: 0, y: 0}
+--- !u!1 &1739539320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100004, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+  m_PrefabInternal: {fileID: 916479591}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1739539321}
+  m_Layer: 0
+  m_Name: topLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: -1203168336, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1739539321
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400004, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+  m_PrefabInternal: {fileID: 916479591}
+  m_GameObject: {fileID: 1739539320}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9, y: 24, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 834888400}
+  m_RootOrder: 0
 --- !u!1001 &1740119212
 Prefab:
   m_ObjectHideFlags: 0
@@ -22419,6 +22668,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1753852835
 BoxCollider2D:
@@ -22585,6 +22835,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1777906291
 BoxCollider2D:
@@ -22643,6 +22894,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1779752215
 BoxCollider2D:
@@ -22929,6 +23181,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1791937071
 BoxCollider2D:
@@ -23000,6 +23253,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1797034951
 BoxCollider2D:
@@ -23089,6 +23343,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1805895688
 BoxCollider2D:
@@ -23464,6 +23719,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1835564870
 BoxCollider2D:
@@ -23509,6 +23765,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1854862115
 BoxCollider2D:
@@ -23562,7 +23819,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .899999976, y: .899999976}
+  m_Size: {x: 1, y: 1}
   m_Center: {x: 0, y: 0}
 --- !u!114 &1860402910
 MonoBehaviour:
@@ -23579,6 +23836,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!4 &1860402911
 Transform:
@@ -23975,11 +24233,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 1892370056}
   - 58: {fileID: 1892370062}
-  - 58: {fileID: 1892370061}
   - 50: {fileID: 1892370060}
   - 114: {fileID: 1892370059}
   - 114: {fileID: 1892370058}
   - 81: {fileID: 1892370057}
+  - 61: {fileID: 1892370061}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -24022,8 +24280,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85593a50be7d84c8386c87ceff9130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4.75
-  jumpForce: 630
+  groundMoveSpeed: 5
+  airMoveSpeed: 1.29999995
+  jumpAcceleration: 7
+  groundFriction: 25
+  airFriction: 10
+  maxHorizontalSpeed: 5
+  gravityScale: .899999976
+  jumpCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  maxJumpTicks: 18
   grounded: 0
 --- !u!114 &1892370059
 MonoBehaviour:
@@ -24053,17 +24322,17 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!58 &1892370061
-CircleCollider2D:
+--- !u!61 &1892370061
+BoxCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5800002, guid: b3d363273a7a33c4e8e759299619d45e,
+  m_PrefabParentObject: {fileID: 6100000, guid: b3d363273a7a33c4e8e759299619d45e,
     type: 2}
   m_PrefabInternal: {fileID: 479807390}
   m_GameObject: {fileID: 1892370055}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b965fec59e1e6464293761f6313d7319, type: 2}
   m_IsTrigger: 0
-  m_Radius: .25
+  m_Size: {x: .439999998, y: .5}
   m_Center: {x: 0, y: .209999993}
 --- !u!58 &1892370062
 CircleCollider2D:
@@ -24073,7 +24342,7 @@ CircleCollider2D:
   m_PrefabInternal: {fileID: 479807390}
   m_GameObject: {fileID: 1892370055}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b965fec59e1e6464293761f6313d7319, type: 2}
   m_IsTrigger: 0
   m_Radius: .354833126
   m_Center: {x: 0, y: -.140000001}
@@ -24381,6 +24650,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1916892341
 BoxCollider2D:
@@ -24439,6 +24709,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1928286934
 BoxCollider2D:
@@ -24554,6 +24825,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1944190794
 BoxCollider2D:
@@ -24796,6 +25068,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1959398219
 BoxCollider2D:
@@ -24918,6 +25191,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1964935451
 BoxCollider2D:
@@ -25122,6 +25396,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1978954352
 BoxCollider2D:
@@ -25333,6 +25608,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1993700793
 BoxCollider2D:
@@ -25391,6 +25667,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &1997103044
 BoxCollider2D:
@@ -25728,6 +26005,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2023036771
 BoxCollider2D:
@@ -25830,6 +26108,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2026869587
 BoxCollider2D:
@@ -25952,6 +26231,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2031000747
 BoxCollider2D:
@@ -26010,6 +26290,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2042884941
 BoxCollider2D:
@@ -26111,7 +26392,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2047626744
 Transform:
@@ -26272,6 +26553,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2061326986
 BoxCollider2D:
@@ -26593,7 +26875,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2106617601
 Transform:
@@ -26639,6 +26921,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2109514842
 BoxCollider2D:
@@ -26748,6 +27031,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2117440960
 BoxCollider2D:
@@ -26806,6 +27090,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2120322853
 BoxCollider2D:
@@ -26877,6 +27162,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2124786076
 BoxCollider2D:
@@ -26922,6 +27208,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2125031419
 BoxCollider2D:
@@ -27126,6 +27413,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2143628390
 BoxCollider2D:
@@ -27184,6 +27472,7 @@ MonoBehaviour:
   blockSprite: {fileID: 0}
   crawlers: []
   heat: 0
+  heated: 0
   spikiness: 
 --- !u!61 &2143746433
 BoxCollider2D:

@@ -121,7 +121,9 @@ public class GameManager : MonoBehaviour
         this.topLeft = transform.FindChild("topLeft");
         this.bottomRight = transform.FindChild("bottomRight");
         SetupEdgeCollidersOnWorldBounds();
-		GameData.instance.AddLevel(Application.loadedLevel, totalVeggies);
+		if (!canEdit) {
+			GameData.instance.AddLevel(Application.loadedLevel, totalVeggies);
+		}
 
 		//MUSIC:
 		music = (AudioSource)gameObject.AddComponent("AudioSource");
@@ -524,9 +526,11 @@ public class GameManager : MonoBehaviour
         {
             case GameMode.playing:
                 {
-                    GUILayout.BeginArea(new Rect(0, 0, boxWidth*2, boxHeight));
-                    GUILayout.Label("Veggies freed: " + veggiesFreed + "/" + totalVeggies + "\tRotations used: " + rotations);
-                    GUILayout.EndArea();
+					if (!canEdit) {
+                    	GUILayout.BeginArea(new Rect(0, 0, boxWidth*2, boxHeight));
+                    	GUILayout.Label("Veggies freed: " + veggiesFreed + "/" + totalVeggies + "\tRotations used: " + rotations);
+                    	GUILayout.EndArea();
+					}
                     break;
                 }
             case GameMode.lost:
