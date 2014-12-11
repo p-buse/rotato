@@ -97,6 +97,13 @@ public class GameManager : MonoBehaviour
     public delegate void BoundsChangedHandler(GameManager gm, Transform topLeft, Transform bottomRight);
     public event BoundsChangedHandler BoundsChanged;
 
+	//Level Theme
+	public enum LevelTheme {farm, city, lab, space};
+	public LevelTheme theme;
+
+	//Music
+	private AudioSource music;
+
     void Awake()
     {
         this.inputManager = GetComponent<InputManager>();
@@ -113,6 +120,20 @@ public class GameManager : MonoBehaviour
         this.bottomRight = transform.FindChild("bottomRight");
         SetupEdgeCollidersOnWorldBounds();
 		GameData.instance.AddLevel(Application.loadedLevel, totalVeggies);
+
+		//MUSIC:
+		music = (AudioSource)gameObject.AddComponent("AudioSource");
+		AudioClip song = new AudioClip();
+		switch (theme) {
+			case LevelTheme.farm: song = (AudioClip)Resources.Load("farm"); break;
+			case LevelTheme.city: song = (AudioClip)Resources.Load("city2"); break;
+			case LevelTheme.lab: song = (AudioClip)Resources.Load("lab"); break;
+			case LevelTheme.space: song = (AudioClip)Resources.Load("space"); break;
+		}
+		music.clip = song;
+		music.loop = true;
+		music.Play ();
+
     }
 
     private void SetupEdgeCollidersOnWorldBounds()
