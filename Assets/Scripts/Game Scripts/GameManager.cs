@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
     public event BoundsChangedHandler BoundsChanged;
 
 	//Level Theme
-	public enum LevelTheme {farm, city, lab, space};
+	public enum LevelTheme {farm, city, lab, space, escape};
 	public LevelTheme theme;
 
 	//Music
@@ -129,6 +129,7 @@ public class GameManager : MonoBehaviour
 			case LevelTheme.city: song = (AudioClip)Resources.Load("city2"); break;
 			case LevelTheme.lab: song = (AudioClip)Resources.Load("lab"); break;
 			case LevelTheme.space: song = (AudioClip)Resources.Load("space"); break;
+			case LevelTheme.escape: song = (AudioClip)Resources.Load("escape"); break;
 		}
 		music.clip = song;
 		music.loop = true;
