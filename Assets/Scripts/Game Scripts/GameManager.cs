@@ -435,11 +435,14 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
-    public void WinLevel()
+    public void WinLevel(float winTime = -1f)
     {
         if (gameState == GameMode.playing)
         {
-            resetClock = winOrLoseCountdownTime;
+            if (winTime < 0f)
+                resetClock = winOrLoseCountdownTime;
+            else
+                resetClock = winTime;
             gameState = GameMode.won;
 			if (!canEdit) {
 				GameData.instance.ChangeUnlockedLevel(Application.loadedLevel);

@@ -2,6 +2,18 @@
 using System.Collections;
 
 public class ButterBlock : AbstractBlock {
+    Animator cageAnim;
+    Animator rotaterTotAnim;
+
+    void Start()
+    {
+        this.cageAnim = GetComponent<Animator>();
+        if (cageAnim == null)
+            Debug.LogWarning("couldn't find cage animation");
+        this.rotaterTotAnim = transform.FindChild("rotater-tot").GetComponent<Animator>();
+        if (rotaterTotAnim == null)
+            Debug.LogWarning("couldn't find rotater tot animation");
+    }
 
 	public override string myType ()
 	{
@@ -27,12 +39,14 @@ public class ButterBlock : AbstractBlock {
         
     }
 
-    void OnCollisionEnter2D(Collision2D coll)
+    void OnTriggerEnter2D(Collider2D coll)
     {
 		if (coll.gameObject.tag == "Player" && gameManager.gameState == GameManager.GameMode.playing && heated == 0)
         {
+            cageAnim.SetTrigger("openCage");
+            rotaterTotAnim.SetTrigger("setFree");
             gameManager.PlaySound("Win");
-            gameManager.WinLevel();
+            gameManager.WinLevel(2f);
         }
     }
 }
