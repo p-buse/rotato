@@ -12785,6 +12785,9 @@ MonoBehaviour:
   - name: VeggieDeath
     clips:
     - {fileID: 8300000, guid: 75df5c01ea15b0347bece18ab91e5529, type: 3}
+  - name: Crunch
+    clips:
+    - {fileID: 8300000, guid: dc94862c4aac55542a5acffc77ffe5ff, type: 3}
 --- !u!114 &400353339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12843,7 +12846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b43eac89b6fe9f4597dad57f1828556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theme: 0
+  theme: 3
   restartOnLoad: 0
 --- !u!114 &400353343
 MonoBehaviour:
@@ -24466,7 +24469,7 @@ Transform:
   m_Children:
   - {fileID: 960923879}
   m_Father: {fileID: 0}
-  m_RootOrder: 495
+  m_RootOrder: 494
 --- !u!114 &738321621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33195,7 +33198,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 2028186543
   m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: 72a4168a840c3a44dbd6cddc36639bc5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -41641,7 +41644,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 2028186543
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: da437cf36b444b24588d0dcc56477ce2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -50870,6 +50873,10 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -34.7402115
       objectReference: {fileID: 0}
+    - target: {fileID: 11400018, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: theme
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
   m_RootGameObject: {fileID: 400353332}
@@ -54497,7 +54504,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 2028186543
   m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: bfcfacba8c83d1544881bc38fadfdb93, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -65330,7 +65337,7 @@ Transform:
   m_LocalScale: {x: 1.52828181, y: 1.52828312, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 494
+  m_RootOrder: 495
 --- !u!114 &2002590147
 MonoBehaviour:
   m_ObjectHideFlags: 0
