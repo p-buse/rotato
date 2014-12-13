@@ -34,7 +34,7 @@ public class Player : MonoBehaviour {
 	void OnCollisionStay2D(Collision2D coll) {
 		if (coll.collider.gameObject.tag == "Sprite" && coll.collider.gameObject.transform.parent.gameObject.GetComponent<AbstractBlock>().heated > 0 && gameManager.gameState == GameManager.GameMode.playing) {
 			gameManager.PlaySound("Burnt");
-			gameManager.LoseLevel("Burnt by a hot block");
+			gameManager.LoseLevel("Burnt by a hot block!");
 		}
 		else if (coll.collider.gameObject.tag == "Block" && coll.collider.gameObject.GetComponent<FallingBlock>() != null && !gameManager.gameFrozen) {
 			FallingBlock crusher = coll.collider.gameObject.GetComponent<FallingBlock>();
@@ -42,7 +42,7 @@ public class Player : MonoBehaviour {
 			above.y++;
 			if (crusher.GetCurrentPosition().Equals(above) && gameObject.GetComponent<PlayerMovement>().isGrounded()) {
 				gameManager.PlaySound("Burnt"); // yes i know it doesn't match
-				gameManager.LoseLevel("Crushed by falling blocks");
+				gameManager.LoseLevel("Crushed by falling blocks!");
 			}
 		}
 	}
