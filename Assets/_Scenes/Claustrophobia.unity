@@ -310,7 +310,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &9165643
 Transform:
@@ -348,10 +348,10 @@ Transform:
   m_GameObject: {fileID: 10792402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .708432794, y: .903417528, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1637209520}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!212 &10792404
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -372,8 +372,8 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0dd4265b7aa207e41a764259d8fe6add, type: 3}
+  m_SortingOrder: -5
+  m_Sprite: {fileID: 21300000, guid: 72a4168a840c3a44dbd6cddc36639bc5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &15738042
 GameObject:
@@ -447,11 +447,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!58 &15738047
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -481,11 +482,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &15738049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -653,11 +655,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &35784576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -770,7 +773,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &45182475
 GameObject:
@@ -1133,11 +1136,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!4 &61148361
 Transform:
   m_ObjectHideFlags: 0
@@ -1180,11 +1184,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &61148364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1266,11 +1271,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &78285905
 GameObject:
   m_ObjectHideFlags: 0
@@ -1529,6 +1535,7 @@ MonoBehaviour:
   spikiness: 
   startPoint: {x: 0, y: 0}
   direction: {x: 0, y: 0}
+  orient: 0
 --- !u!1 &82058683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,11 +1605,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &84218314
 GameObject:
   m_ObjectHideFlags: 0
@@ -1714,11 +1722,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &88308452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2181,11 +2190,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &134997240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2999,11 +3009,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &201051195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3076,11 +3087,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &203941509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3153,11 +3165,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &209355574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3428,11 +3441,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &224277398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3517,11 +3531,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!58 &225236793
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3551,11 +3566,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &225236795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3637,11 +3653,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1001 &225572513
 Prefab:
   m_ObjectHideFlags: 0
@@ -3786,7 +3803,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &234598190
 GameObject:
@@ -4189,11 +4206,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &252420542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4386,6 +4404,26 @@ Prefab:
     - target: {fileID: 400000, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
       propertyPath: m_RootOrder
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 17.1892014
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -17.6471004
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -4.81079865
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -6.64710045
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400018, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: theme
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
@@ -4683,11 +4721,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &267071562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4879,11 +4918,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &272958041
 GameObject:
   m_ObjectHideFlags: 0
@@ -5675,11 +5715,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!58 &300732263
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5709,11 +5750,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &300732265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6161,11 +6203,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &332340579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6286,11 +6329,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!4 &335138311
 Transform:
   m_ObjectHideFlags: 0
@@ -6830,11 +6874,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &354088606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7742,11 +7787,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!4 &410410295
 Transform:
   m_ObjectHideFlags: 0
@@ -7809,6 +7855,57 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: dd4e59e38cf31a044a425cb3ecce3f43, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &414852353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100006, guid: eabca84ee14edeb44a884612b4ed39b8, type: 2}
+  m_PrefabInternal: {fileID: 829464585}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 414852354}
+  - 212: {fileID: 414852355}
+  m_Layer: 0
+  m_Name: cage_front
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &414852354
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400006, guid: eabca84ee14edeb44a884612b4ed39b8, type: 2}
+  m_PrefabInternal: {fileID: 829464585}
+  m_GameObject: {fileID: 414852353}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1637209520}
+  m_RootOrder: 0
+--- !u!212 &414852355
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21200004, guid: eabca84ee14edeb44a884612b4ed39b8,
+    type: 2}
+  m_PrefabInternal: {fileID: 829464585}
+  m_GameObject: {fileID: 414852353}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: da437cf36b444b24588d0dcc56477ce2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &415587445
 GameObject:
@@ -8227,11 +8324,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &442092301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8431,11 +8529,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &454211804
 GameObject:
   m_ObjectHideFlags: 0
@@ -8818,11 +8917,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &470508400
 GameObject:
   m_ObjectHideFlags: 0
@@ -8895,11 +8995,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!58 &470508405
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8929,11 +9030,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &470508407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9284,7 +9386,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &496103100
 Prefab:
@@ -9559,11 +9661,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &504292956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9681,7 +9784,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 83eccf1aede81426d8a14af93bf80267, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 961de466f4da74639aef2704a7a0f109, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &508104235
 Transform:
@@ -9857,11 +9960,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &518640891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9994,11 +10098,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &524935333
 GameObject:
   m_ObjectHideFlags: 0
@@ -10213,11 +10318,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &528483609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10497,11 +10603,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!58 &536493204
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10531,11 +10638,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &536493206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10923,7 +11031,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &555837952
 GameObject:
@@ -11335,11 +11443,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &566057673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11856,11 +11965,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &582638779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12068,11 +12178,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!58 &587752142
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12102,11 +12213,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &587752144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12591,11 +12703,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &614430389
 GameObject:
   m_ObjectHideFlags: 0
@@ -13084,11 +13197,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &636737965
 GameObject:
   m_ObjectHideFlags: 0
@@ -13158,11 +13272,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &647947248
 GameObject:
   m_ObjectHideFlags: 0
@@ -13974,11 +14089,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1001 &677404496
 Prefab:
   m_ObjectHideFlags: 0
@@ -14092,11 +14208,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &680070302
 GameObject:
   m_ObjectHideFlags: 0
@@ -14157,11 +14274,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &680070306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14404,11 +14522,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &691954043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15208,11 +15327,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!58 &723041345
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -15242,11 +15362,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &723041347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15660,11 +15781,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &731485022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15951,11 +16073,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!4 &747658793
 Transform:
   m_ObjectHideFlags: 0
@@ -15998,11 +16121,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &747658796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16349,11 +16473,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &758686936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17003,11 +17128,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &790796555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17673,11 +17799,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &821422675
 GameObject:
   m_ObjectHideFlags: 0
@@ -17750,11 +17877,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!58 &821422680
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17784,11 +17912,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &821422682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17929,11 +18058,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1001 &828024873
 Prefab:
   m_ObjectHideFlags: 0
@@ -18145,11 +18275,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &837473093
 GameObject:
   m_ObjectHideFlags: 0
@@ -18312,11 +18443,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &842664772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18392,7 +18524,6 @@ GameObject:
   - 92: {fileID: 850376043}
   - 124: {fileID: 850376042}
   - 81: {fileID: 850376041}
-  - 114: {fileID: 850376040}
   - 114: {fileID: 850376046}
   m_Layer: 0
   m_Name: Main Camera
@@ -18401,19 +18532,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &850376040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 850376039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96e2d16d6c87d5d409ffcf22fdb0242a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraMovement: {x: 0, y: 0}
-  enableMovement: 0
 --- !u!81 &850376041
 AudioListener:
   m_ObjectHideFlags: 0
@@ -18455,7 +18573,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9.26941681
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -18490,11 +18608,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4090bcaa0218e474c9cdf76b2064d549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomEnabled: 0
-  followPlayer: 1
-  closeZoom: 2
-  farZoom: 7
-  zoomSpeed: 1
+  fixedMovement: 0
+  cameraMovement: {x: 0, y: 0}
+  followSpeed: 2
 --- !u!212 &851110534
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18622,11 +18738,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &854257165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18699,11 +18816,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &858814816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18852,6 +18970,74 @@ Prefab:
   m_RootGameObject: {fileID: 941087404}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &862760008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100004, guid: eabca84ee14edeb44a884612b4ed39b8, type: 2}
+  m_PrefabInternal: {fileID: 829464585}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 862760009}
+  - 212: {fileID: 862760011}
+  - 95: {fileID: 862760010}
+  m_Layer: 0
+  m_Name: rotater-tot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &862760009
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400004, guid: eabca84ee14edeb44a884612b4ed39b8, type: 2}
+  m_PrefabInternal: {fileID: 829464585}
+  m_GameObject: {fileID: 862760008}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .270077348, y: -.196624666, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1637209520}
+  m_RootOrder: 2
+--- !u!95 &862760010
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 9500000, guid: eabca84ee14edeb44a884612b4ed39b8,
+    type: 2}
+  m_PrefabInternal: {fileID: 829464585}
+  m_GameObject: {fileID: 862760008}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d2cfb3f7c5b0a0e4aaeac6d7b76917ec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!212 &862760011
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21200002, guid: eabca84ee14edeb44a884612b4ed39b8,
+    type: 2}
+  m_PrefabInternal: {fileID: 829464585}
+  m_GameObject: {fileID: 862760008}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: -3
+  m_Sprite: {fileID: 21300000, guid: bfcfacba8c83d1544881bc38fadfdb93, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &863714089
 GameObject:
   m_ObjectHideFlags: 0
@@ -19076,11 +19262,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &871466717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19510,11 +19697,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &882793521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19599,11 +19787,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!58 &883594502
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -19633,11 +19822,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &883594504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20461,11 +20651,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &912180999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20579,11 +20770,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &918520010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20656,11 +20848,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &918962937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20792,7 +20985,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &926792696
 Transform:
@@ -20816,12 +21009,15 @@ GameObject:
   - 4: {fileID: 928423554}
   - 114: {fileID: 928423555}
   - 114: {fileID: 928423553}
+  - 114: {fileID: 928423558}
   - 114: {fileID: 928423552}
   - 114: {fileID: 928423551}
   - 114: {fileID: 928423550}
   - 114: {fileID: 928423549}
-  - 114: {fileID: 928423548}
   - 114: {fileID: 928423547}
+  - 114: {fileID: 928423557}
+  - 114: {fileID: 928423548}
+  - 114: {fileID: 928423556}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -20843,6 +21039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointTexture: {fileID: 2800000, guid: 34efe248d57dbcf4997df623eeb8f46f, type: 3}
   selectTexture: {fileID: 2800000, guid: 263b63edcf629424fad62f9f8b7d446d, type: 3}
+  handTexture: {fileID: 2800000, guid: 9d89a577f9fc3a24092df64501bc2dbd, type: 3}
   selectionHighlightPrefab: {fileID: 100002, guid: dacd3e7d37dfe4b79860a23f78af1bb0,
     type: 2}
   brushes:
@@ -20928,7 +21125,7 @@ MonoBehaviour:
     isSpikez: 0
   - name: Crawler
     image: {fileID: 2800000, guid: bb8e531d9a1b5ac4c8d903845052a428, type: 3}
-    prefab: {fileID: 100004, guid: a0ed543e35b70ff4fa05a48d445d7755, type: 2}
+    prefab: {fileID: 0}
     isPlayer: 0
     isButter: 0
     isNoRotationZone: 0
@@ -20950,6 +21147,7 @@ MonoBehaviour:
     isNoRotationZone: 0
     isCrawler: 0
     isSpikez: 0
+  editorState: 2
 --- !u!114 &928423548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20959,9 +21157,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 928423546}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12aab2acbe199e3478b806a42c7df768, type: 3}
+  m_Script: {fileID: 11500000, guid: bd4fcca795ad2fa42a72a77e6902900c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  path: C:/Users/paul/Documents/Coding/Unity Projects/Rotato_GameplayPrototype/Assets/GameData.xml
 --- !u!114 &928423549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21020,9 +21219,18 @@ MonoBehaviour:
   - name: Lasered
     clips:
     - {fileID: 8300000, guid: 8dd65767d6e4c5046944ee5780fe1dcd, type: 3}
+  - name: Error
+    clips:
+    - {fileID: 8300000, guid: a9b1ef64e875bc54f953d7a9afddca09, type: 3}
   - name: Burnt
     clips:
     - {fileID: 8300000, guid: d32ecd85be19a114b9c866fd08e6154b, type: 3}
+  - name: CrawlerDeath
+    clips:
+    - {fileID: 8300000, guid: d1518d76267ffbd4380978bfd420227a, type: 3}
+  - name: VeggieDeath
+    clips:
+    - {fileID: 8300000, guid: 75df5c01ea15b0347bece18ab91e5529, type: 3}
 --- !u!114 &928423550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21047,14 +21255,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa4c52eb1b4847459daa04a6a9140cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightColor: {r: 1, g: 1, b: 1, a: .156862751}
-  highlightPulseStep: .00999999978
-  highlightPulseMax: .180000007
+  highlightColor: {r: 1, g: 1, b: 1, a: .384313732}
+  highlightPulseStep: .0500000007
+  highlightPulseMax: .5
   highlightPulseMin: .150000006
   selectionHighlightPrefab: {fileID: 100032, guid: be358ba3253a94349a34bbb1307c47fd,
     type: 2}
   rotationHighlightPrefab: {fileID: 100016, guid: ce8c766236b9691489df64677f5b2353,
     type: 2}
+  rotationHighlight: {fileID: 0}
 --- !u!114 &928423552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21080,15 +21289,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb59244c22def94a9636439086a5b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseKey: 27
   playerMovement: {fileID: 0}
   player: {fileID: 0}
+  veggiesFreed: 0
   winOrLoseCountdownTime: 2
   secondsToRotate: .300000012
   gameState: 0
-  lastState: 0
   canEdit: 0
   cursorPrefab: {fileID: 100002, guid: b81ddec0e6b48bf4b80f35275715704a, type: 2}
+  topLeft: {fileID: 0}
+  bottomRight: {fileID: 0}
+  noFrictionMaterial: {fileID: 6200000, guid: b965fec59e1e6464293761f6313d7319, type: 2}
 --- !u!4 &928423554
 Transform:
   m_ObjectHideFlags: 0
@@ -21098,7 +21309,11 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .310798705, y: 10.1471004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1342838267}
+  - {fileID: 1138844472}
+  - {fileID: 964602384}
+  - {fileID: 1889862157}
   m_Father: {fileID: 0}
   m_RootOrder: 13
 --- !u!114 &928423555
@@ -21115,6 +21330,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: {fileID: 0}
   loadLevel: 0
+--- !u!114 &928423556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400022, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 258513953}
+  m_GameObject: {fileID: 928423546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eda6a82a85f45f4f95695f3aadd9ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &928423557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400016, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 258513953}
+  m_GameObject: {fileID: 928423546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cc8433eeb188641bf98ed0b88876d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &928423558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400018, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 258513953}
+  m_GameObject: {fileID: 928423546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b43eac89b6fe9f4597dad57f1828556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theme: 2
+  restartOnLoad: 0
 --- !u!1 &931475649
 GameObject:
   m_ObjectHideFlags: 0
@@ -21645,7 +21898,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &949191989
 Transform:
@@ -21905,6 +22158,95 @@ SpriteRenderer:
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: dd4e59e38cf31a044a425cb3ecce3f43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &964602383
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+  m_PrefabInternal: {fileID: 258513953}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 964602384}
+  - 23: {fileID: 964602387}
+  - 33: {fileID: 964602386}
+  - 114: {fileID: 964602385}
+  m_Layer: 0
+  m_Name: levelComplete
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &964602384
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400008, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+  m_PrefabInternal: {fileID: 258513953}
+  m_GameObject: {fileID: 964602383}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.102911, y: -.710200667, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 928423554}
+  m_RootOrder: 2
+--- !u!114 &964602385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400024, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 258513953}
+  m_GameObject: {fileID: 964602383}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8e88b798241f94fa7265f167d0478b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Font: {fileID: 11400000, guid: 93706ec3ebdc36b4ea9c9bc93a68910d, type: 2}
+  Text: Level Complete!
+  Size: 13
+  Leading: 0
+  Tracking: 0
+  ParagraphSpacing: 0
+  WordWrap: 0
+  Alignment: 1
+  FillMode: 1
+  ColorTopLeft: {r: 1, g: 1, b: 1, a: 1}
+  ColorTopRight: {r: 1, g: 1, b: 1, a: 1}
+  ColorBottomLeft: {r: .25, g: .25, b: .25, a: 1}
+  ColorBottomRight: {r: 1, g: 1, b: 1, a: 1}
+  GenerateNormals: 1
+  Stationary: 1
+  EnableClickSupport: 1
+  DrawGlyphBoundsGizmos: 0
+  AutoRebuild: 1
+--- !u!33 &964602386
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300002, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 258513953}
+  m_GameObject: {fileID: 964602383}
+  m_Mesh: {fileID: 0}
+--- !u!23 &964602387
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300002, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 258513953}
+  m_GameObject: {fileID: 964602383}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 286897c958bf8e1449ca36498103ceb7, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 2028186543
+  m_SortingOrder: 0
 --- !u!1 &966730742
 GameObject:
   m_ObjectHideFlags: 0
@@ -21965,11 +22307,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &966730746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22230,6 +22573,7 @@ MonoBehaviour:
   spikiness: 
   startPoint: {x: 0, y: 0}
   direction: {x: 0, y: 0}
+  orient: 0
 --- !u!1 &982670728
 GameObject:
   m_ObjectHideFlags: 0
@@ -22267,7 +22611,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f8ccefd7a3fd40a4dbd18ea480026e55, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 74e26c494d449b74391dc80637b173cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &982670730
 Transform:
@@ -22510,11 +22854,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &987636370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22638,11 +22983,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &990636175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23006,11 +23352,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1007564604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23747,11 +24094,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1035995142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23979,11 +24327,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1001 &1050942393
 Prefab:
   m_ObjectHideFlags: 0
@@ -24185,11 +24534,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &1059382113
 GameObject:
   m_ObjectHideFlags: 0
@@ -25065,11 +25415,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &1095773301
 GameObject:
   m_ObjectHideFlags: 0
@@ -25181,11 +25532,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1098701068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25565,11 +25917,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1113619843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25651,11 +26004,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &1115690090
 GameObject:
   m_ObjectHideFlags: 0
@@ -25728,11 +26082,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!58 &1115690095
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -25762,11 +26117,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1115690097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25836,11 +26192,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!4 &1122874791
 Transform:
   m_ObjectHideFlags: 0
@@ -25969,6 +26326,33 @@ Prefab:
   m_RootGameObject: {fileID: 47013647}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1138844471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+  m_PrefabInternal: {fileID: 258513953}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1138844472}
+  m_Layer: 0
+  m_Name: bottomRight
+  m_TagString: Untagged
+  m_Icon: {fileID: -1203168336, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1138844472
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+  m_PrefabInternal: {fileID: 258513953}
+  m_GameObject: {fileID: 1138844471}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.1892014, y: -17.6471004, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 928423554}
+  m_RootOrder: 1
 --- !u!1 &1142698951
 GameObject:
   m_ObjectHideFlags: 0
@@ -26433,11 +26817,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1166213672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26664,11 +27049,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1171711714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26901,11 +27287,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &1174860433
 GameObject:
   m_ObjectHideFlags: 0
@@ -26966,11 +27353,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1174860437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27043,11 +27431,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1175235706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27526,11 +27915,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1186758916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27590,11 +27980,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1190410587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27689,11 +28080,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1001 &1194818734
 Prefab:
   m_ObjectHideFlags: 0
@@ -28057,11 +28449,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1210297245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28470,11 +28863,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!4 &1222712869
 Transform:
   m_ObjectHideFlags: 0
@@ -28517,11 +28911,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1222712872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28815,11 +29210,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1241156733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29283,11 +29679,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &1276291250
 GameObject:
   m_ObjectHideFlags: 0
@@ -29562,11 +29959,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!58 &1293952698
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -29596,11 +29994,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1293952700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29919,11 +30318,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!58 &1318348860
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -29953,11 +30353,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1318348862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30448,11 +30849,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &1332028479
 GameObject:
   m_ObjectHideFlags: 0
@@ -30513,11 +30915,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1332028483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30662,6 +31065,33 @@ Transform:
   m_Children:
   - {fileID: 1966892218}
   m_Father: {fileID: 1931437847}
+  m_RootOrder: 0
+--- !u!1 &1342838266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100004, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+  m_PrefabInternal: {fileID: 258513953}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1342838267}
+  m_Layer: 0
+  m_Name: topLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: -1203168336, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1342838267
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400004, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+  m_PrefabInternal: {fileID: 258513953}
+  m_GameObject: {fileID: 1342838266}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.81079865, y: -6.64710045, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 928423554}
   m_RootOrder: 0
 --- !u!1 &1343312082
 GameObject:
@@ -31267,11 +31697,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &1364998805
 GameObject:
   m_ObjectHideFlags: 0
@@ -31451,11 +31882,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1001 &1368468154
 Prefab:
   m_ObjectHideFlags: 0
@@ -31619,11 +32051,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1378618285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32490,7 +32923,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1418002585
 Transform:
@@ -32769,7 +33202,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1425867327
 Transform:
@@ -32855,11 +33288,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!58 &1430922180
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -32889,11 +33323,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1430922182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33240,11 +33675,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1451273838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33692,11 +34128,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1465489763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33746,7 +34183,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1466291372
 Transform:
@@ -34025,11 +34462,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1473455140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34108,7 +34546,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 83eccf1aede81426d8a14af93bf80267, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 961de466f4da74639aef2704a7a0f109, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1477110916
 GameObject:
@@ -34302,11 +34740,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &1485088759
 GameObject:
   m_ObjectHideFlags: 0
@@ -34367,11 +34806,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1485088763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34822,11 +35262,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1500610832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35013,11 +35454,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!58 &1511441956
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -35047,11 +35489,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1511441958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35064,6 +35507,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a994116b0da88e4998ecdb7bf367843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1511825917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1511825920}
+  - 212: {fileID: 1511825919}
+  - 114: {fileID: 1511825918}
+  m_Layer: 0
+  m_Name: spiralTube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1511825918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1511825917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c10d7aa5a095a7348b7f8ceae7290ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveRatioX: .300000012
+  moveRatioY: 0
+  baseMovement: {x: 0, y: 0, z: 0}
+--- !u!212 &1511825919
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1511825917}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 1291189945
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: b8d6e20730a9d574a866160d85a596ed, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &1511825920
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1511825917}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.53162837, y: -4.44012022, z: 0}
+  m_LocalScale: {x: .1781452, y: .178145662, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 205
 --- !u!1 &1516393212
 GameObject:
   m_ObjectHideFlags: 0
@@ -35118,7 +35626,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 83eccf1aede81426d8a14af93bf80267, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 961de466f4da74639aef2704a7a0f109, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1516393215
 Transform:
@@ -35260,11 +35768,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1001 &1521963255
 Prefab:
   m_ObjectHideFlags: 0
@@ -35917,6 +36426,71 @@ Transform:
   - {fileID: 1541728233}
   m_Father: {fileID: 0}
   m_RootOrder: 15
+--- !u!1 &1547711823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1547711826}
+  - 212: {fileID: 1547711825}
+  - 114: {fileID: 1547711824}
+  m_Layer: 0
+  m_Name: blueTestTube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1547711824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1547711823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c10d7aa5a095a7348b7f8ceae7290ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveRatioX: .400000006
+  moveRatioY: 0
+  baseMovement: {x: 0, y: 0, z: 0}
+--- !u!212 &1547711825
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1547711823}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 1291189945
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: c0b398a2617ba994e98ac6fee13a4777, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &1547711826
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1547711823}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.62449813, y: -5.58811998, z: 0}
+  m_LocalScale: {x: .501232326, y: .501232326, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 207
 --- !u!1 &1550342035
 GameObject:
   m_ObjectHideFlags: 0
@@ -36148,11 +36722,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1557224380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36653,11 +37228,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1584650850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36859,11 +37435,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 1590794597}
   - 58: {fileID: 1590794603}
-  - 58: {fileID: 1590794602}
   - 50: {fileID: 1590794601}
   - 114: {fileID: 1590794600}
   - 114: {fileID: 1590794599}
   - 81: {fileID: 1590794598}
+  - 61: {fileID: 1590794602}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -36906,8 +37482,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85593a50be7d84c8386c87ceff9130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4.75
-  jumpForce: 630
+  groundMoveSpeed: 5
+  airMoveSpeed: 1.29999995
+  jumpAcceleration: 7
+  groundFriction: 25
+  airFriction: 10
+  maxHorizontalSpeed: 5
+  gravityScale: .899999976
+  jumpCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  maxJumpTicks: 18
   grounded: 0
 --- !u!114 &1590794600
 MonoBehaviour:
@@ -36937,17 +37524,17 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!58 &1590794602
-CircleCollider2D:
+--- !u!61 &1590794602
+BoxCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5800002, guid: b3d363273a7a33c4e8e759299619d45e,
+  m_PrefabParentObject: {fileID: 6100000, guid: b3d363273a7a33c4e8e759299619d45e,
     type: 2}
   m_PrefabInternal: {fileID: 1129035236}
   m_GameObject: {fileID: 1590794596}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b965fec59e1e6464293761f6313d7319, type: 2}
   m_IsTrigger: 0
-  m_Radius: .25
+  m_Size: {x: .439999998, y: .5}
   m_Center: {x: 0, y: .209999993}
 --- !u!58 &1590794603
 CircleCollider2D:
@@ -36957,7 +37544,7 @@ CircleCollider2D:
   m_PrefabInternal: {fileID: 1129035236}
   m_GameObject: {fileID: 1590794596}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b965fec59e1e6464293761f6313d7319, type: 2}
   m_IsTrigger: 0
   m_Radius: .354833126
   m_Center: {x: 0, y: -.140000001}
@@ -37268,11 +37855,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &1596691549
 GameObject:
   m_ObjectHideFlags: 0
@@ -37345,11 +37933,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!58 &1596691554
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -37379,11 +37968,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1596691556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37633,11 +38223,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1608117946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38086,11 +38677,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &1619669586
 GameObject:
   m_ObjectHideFlags: 0
@@ -38485,11 +39077,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &1632497488
 GameObject:
   m_ObjectHideFlags: 0
@@ -38641,11 +39234,12 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1637209520}
+  - 95: {fileID: 1637209521}
   - 114: {fileID: 1637209519}
   - 61: {fileID: 1637209518}
   m_Layer: 0
   m_Name: Butter
-  m_TagString: Block
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38659,8 +39253,8 @@ BoxCollider2D:
   m_GameObject: {fileID: 1637209517}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: .899999976, y: .899999976}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
   m_Center: {x: 0, y: 0}
 --- !u!114 &1637209519
 MonoBehaviour:
@@ -38689,9 +39283,27 @@ Transform:
   m_LocalPosition: {x: -3, y: -6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 414852354}
   - {fileID: 10792403}
+  - {fileID: 862760009}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!95 &1637209521
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 9500002, guid: eabca84ee14edeb44a884612b4ed39b8,
+    type: 2}
+  m_PrefabInternal: {fileID: 829464585}
+  m_GameObject: {fileID: 1637209517}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e02b0d53759918c49adc381a8f154dd5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1637778502
 Prefab:
   m_ObjectHideFlags: 0
@@ -38840,11 +39452,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1646510463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39027,11 +39640,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!58 &1653888767
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -39061,11 +39675,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1653888769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39201,11 +39816,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!58 &1659280307
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -39235,11 +39851,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1659280309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39312,11 +39929,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1662910660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39814,11 +40432,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1681492712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39891,11 +40510,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1684127008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40172,11 +40792,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &1697009708
 GameObject:
   m_ObjectHideFlags: 0
@@ -40246,11 +40867,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &1697642582
 GameObject:
   m_ObjectHideFlags: 0
@@ -40607,7 +41229,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1725771096
 Transform:
@@ -40882,11 +41504,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1739093349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41003,11 +41626,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1747408991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41124,11 +41748,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1754703596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41517,11 +42142,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1773442214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41668,11 +42294,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &1794972304
 GameObject:
   m_ObjectHideFlags: 0
@@ -41861,11 +42488,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1800756415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42104,11 +42732,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!58 &1804913361
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -42138,11 +42767,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1804913363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42895,11 +43525,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &1842784570
 GameObject:
   m_ObjectHideFlags: 0
@@ -43153,11 +43784,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &1852169216
 GameObject:
   m_ObjectHideFlags: 0
@@ -43551,11 +44183,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!58 &1861746632
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -43585,11 +44218,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1861746634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43646,6 +44280,71 @@ Prefab:
   m_RootGameObject: {fileID: 337853825}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1864783183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1864783186}
+  - 212: {fileID: 1864783185}
+  - 114: {fileID: 1864783184}
+  m_Layer: 0
+  m_Name: spiralTube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1864783184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1864783183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c10d7aa5a095a7348b7f8ceae7290ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveRatioX: .300000012
+  moveRatioY: 0
+  baseMovement: {x: 0, y: 0, z: 0}
+--- !u!212 &1864783185
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1864783183}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 1291189945
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: b8d6e20730a9d574a866160d85a596ed, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &1864783186
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1864783183}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.38854122, y: -4.4401207, z: 0}
+  m_LocalScale: {x: .1781452, y: .178145662, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 206
 --- !u!1 &1867144213
 GameObject:
   m_ObjectHideFlags: 0
@@ -43734,11 +44433,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!4 &1868767918
 Transform:
   m_ObjectHideFlags: 0
@@ -44063,11 +44763,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1874306735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44322,11 +45023,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1886349151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44390,6 +45092,95 @@ SpriteRenderer:
   m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: dd4e59e38cf31a044a425cb3ecce3f43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1889862156
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100006, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+  m_PrefabInternal: {fileID: 258513953}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1889862157}
+  - 23: {fileID: 1889862160}
+  - 33: {fileID: 1889862159}
+  - 114: {fileID: 1889862158}
+  m_Layer: 0
+  m_Name: loseMessage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1889862157
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400006, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+  m_PrefabInternal: {fileID: 258513953}
+  m_GameObject: {fileID: 1889862156}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.10291052, y: -.710200429, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 928423554}
+  m_RootOrder: 3
+--- !u!114 &1889862158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400020, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 258513953}
+  m_GameObject: {fileID: 1889862156}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8e88b798241f94fa7265f167d0478b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Font: {fileID: 11400000, guid: 93706ec3ebdc36b4ea9c9bc93a68910d, type: 2}
+  Text: 
+  Size: 13
+  Leading: 0
+  Tracking: 0
+  ParagraphSpacing: 0
+  WordWrap: 0
+  Alignment: 1
+  FillMode: 1
+  ColorTopLeft: {r: 1, g: 1, b: 1, a: 1}
+  ColorTopRight: {r: 1, g: 1, b: 1, a: 1}
+  ColorBottomLeft: {r: .25, g: .25, b: .25, a: 1}
+  ColorBottomRight: {r: 1, g: 1, b: 1, a: 1}
+  GenerateNormals: 1
+  Stationary: 1
+  EnableClickSupport: 1
+  DrawGlyphBoundsGizmos: 0
+  AutoRebuild: 1
+--- !u!33 &1889862159
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 258513953}
+  m_GameObject: {fileID: 1889862156}
+  m_Mesh: {fileID: 0}
+--- !u!23 &1889862160
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: d52734dc542d98241b43ea189dcb1612,
+    type: 2}
+  m_PrefabInternal: {fileID: 258513953}
+  m_GameObject: {fileID: 1889862156}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 286897c958bf8e1449ca36498103ceb7, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 2028186543
+  m_SortingOrder: 0
 --- !u!1 &1897604638
 GameObject:
   m_ObjectHideFlags: 0
@@ -44555,11 +45346,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1898701348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44626,6 +45418,71 @@ SpriteRenderer:
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: dd4e59e38cf31a044a425cb3ecce3f43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1902854870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1902854873}
+  - 212: {fileID: 1902854872}
+  - 114: {fileID: 1902854871}
+  m_Layer: 0
+  m_Name: cages
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1902854871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1902854870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c10d7aa5a095a7348b7f8ceae7290ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveRatioX: .200000003
+  moveRatioY: 0
+  baseMovement: {x: 0, y: 0, z: 0}
+--- !u!212 &1902854872
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1902854870}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 1291189945
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: cd4d371e10d53b3469f2cf2835cf4a01, type: 3}
+  m_Color: {r: .433823526, g: .433823526, b: .433823526, a: 1}
+--- !u!4 &1902854873
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1902854870}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.95683765, y: -1.13716388, z: 100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 204
 --- !u!1 &1903855870
 GameObject:
   m_ObjectHideFlags: 0
@@ -44796,11 +45653,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1907798758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45185,11 +46043,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!58 &1920088052
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -45219,11 +46078,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1920088054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45544,7 +46404,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1933060169
 Transform:
@@ -45857,7 +46717,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1940590271
 Transform:
@@ -46034,11 +46894,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &1946154014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46223,11 +47084,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &1957557032
 GameObject:
   m_ObjectHideFlags: 0
@@ -46484,11 +47346,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &1967833054
 GameObject:
   m_ObjectHideFlags: 0
@@ -46558,11 +47421,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &1968463081
 GameObject:
   m_ObjectHideFlags: 0
@@ -47226,11 +48090,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &1998752570
 GameObject:
   m_ObjectHideFlags: 0
@@ -47401,11 +48266,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &2002900204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47541,11 +48407,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!58 &2003701522
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -47575,11 +48442,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &2003701524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47898,11 +48766,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &2019105184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48138,11 +49007,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1001 &2033124475
 Prefab:
   m_ObjectHideFlags: 0
@@ -48882,11 +49752,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &2064830080
 GameObject:
   m_ObjectHideFlags: 0
@@ -49249,11 +50120,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &2084224470
 GameObject:
   m_ObjectHideFlags: 0
@@ -49291,7 +50163,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2084224472
 Transform:
@@ -49386,7 +50258,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8588c30e2b88ccd43b5cd042856965cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2094124158
 Transform:
@@ -49653,11 +50525,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!114 &2113439279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49778,11 +50651,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!4 &2116600522
 Transform:
   m_ObjectHideFlags: 0
@@ -49846,6 +50720,71 @@ SpriteRenderer:
   m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: dd4e59e38cf31a044a425cb3ecce3f43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &2117375323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2117375326}
+  - 212: {fileID: 2117375325}
+  - 114: {fileID: 2117375324}
+  m_Layer: 0
+  m_Name: apparatus2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2117375324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2117375323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c10d7aa5a095a7348b7f8ceae7290ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveRatioX: .300000012
+  moveRatioY: 0
+  baseMovement: {x: 0, y: 0, z: 0}
+--- !u!212 &2117375325
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2117375323}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 1291189945
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: f40fe4df5291030468c85804e6783f28, type: 3}
+  m_Color: {r: .514705896, g: .514705896, b: .514705896, a: 1}
+--- !u!4 &2117375326
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2117375323}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.6049681, y: -2.3632288, z: 0}
+  m_LocalScale: {x: .166694269, y: .166694075, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 208
 --- !u!1 &2117454921
 GameObject:
   m_ObjectHideFlags: 0
@@ -50010,11 +50949,12 @@ MonoBehaviour:
   blockManager: {fileID: 0}
   falling: 1
   hasBelow: 0
-  moving: 1
   clinging: 0
+  moving: 1
   fallSpeed: 1
   myBlock: {fileID: 0}
   crawlerSprite: {fileID: 0}
+  moveTimer: 0
 --- !u!1 &2128522426
 GameObject:
   m_ObjectHideFlags: 0
