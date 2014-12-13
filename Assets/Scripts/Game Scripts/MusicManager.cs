@@ -50,6 +50,12 @@ public class MusicManager : MonoBehaviour {
                     currentTheme = musicTheme.theme;
                     StartSongImmediate(musicTheme.theme);
                 }
+                else if (musicIsPlaying && musicTheme.restartOnLoad)
+                {
+                    musicIsPlaying = true;
+                    currentTheme = musicTheme.theme;
+                    StartSongImmediate(musicTheme.theme);
+                }
                 else if (musicIsPlaying && musicTheme.theme != currentTheme)
                 {
                     musicIsPlaying = true;
