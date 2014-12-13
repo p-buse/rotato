@@ -95,9 +95,9 @@ public class LevelEditor : MonoBehaviour
         }
     }
 
-    float smallLevelSize = 15;
-    float mediumLevelSize = 30;
-    float largeLevelSize = 60;
+    float smallLevelSize = 20;
+    float mediumLevelSize = 40;
+    float largeLevelSize = 80;
 
     void Awake()
     {
