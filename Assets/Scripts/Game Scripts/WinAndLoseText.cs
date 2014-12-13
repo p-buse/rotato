@@ -25,7 +25,7 @@ public class WinAndLoseText : MonoBehaviour {
 
     public void WinLevel()
     {
-        levelComplete.transform.position = Camera.main.transform.position + new Vector3(0f, 0f, 1f);
+        levelComplete.transform.position = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.75f, 1f));
         levelComplete.enabled = true;
         StartCoroutine(EaseText(levelComplete, 1f));
     }
@@ -44,7 +44,7 @@ public class WinAndLoseText : MonoBehaviour {
     public void LoseLevel(string loseText)
     {
         loseMessage.Text = loseText;
-        loseMessage.transform.position = Camera.main.transform.position + new Vector3(0f, 0f, 1f);
+        loseMessage.transform.position = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.75f, 1f));
         loseMessage.enabled = true;
         StartCoroutine(EaseText(loseMessage, 1f));
     }
