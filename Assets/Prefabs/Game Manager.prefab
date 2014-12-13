@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa4c52eb1b4847459daa04a6a9140cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightColor: {r: 1, g: 1, b: 1, a: .156862751}
+  highlightColor: {r: 1, g: 1, b: 1, a: .384313732}
   highlightPulseStep: .0500000007
   highlightPulseMax: .5
   highlightPulseMin: .150000006
@@ -341,6 +341,9 @@ MonoBehaviour:
   - name: CrawlerDeath
     clips:
     - {fileID: 8300000, guid: d1518d76267ffbd4380978bfd420227a, type: 3}
+  - name: VeggieDeath
+    clips:
+    - {fileID: 8300000, guid: 75df5c01ea15b0347bece18ab91e5529, type: 3}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -511,6 +514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theme: 0
+  restartOnLoad: 0
 --- !u!114 &11400020
 MonoBehaviour:
   m_ObjectHideFlags: 1
