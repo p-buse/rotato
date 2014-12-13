@@ -110,6 +110,7 @@ public class MusicManager : MonoBehaviour {
             case MusicTheme.LevelTheme.lab: song = (AudioClip)Resources.Load("lab"); break;
             case MusicTheme.LevelTheme.space: song = (AudioClip)Resources.Load("space"); break;
             case MusicTheme.LevelTheme.escape: song = (AudioClip)Resources.Load("escape"); break;
+			case MusicTheme.LevelTheme.menu: song = (AudioClip)Resources.Load("menu"); break;
         }
         return song;
     }
