@@ -6149,7 +6149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundMoveSpeed: 5
   airMoveSpeed: 1.29999995
-  jumpAcceleration: 7
+  jumpAcceleration: 7.5
   groundFriction: 25
   airFriction: 10
   maxHorizontalSpeed: 5
@@ -10144,7 +10144,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 2028186543
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: da437cf36b444b24588d0dcc56477ce2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -13890,6 +13890,10 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400018, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: theme
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
   m_RootGameObject: {fileID: 1865143063}
@@ -15232,8 +15236,8 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 2028186543
+  m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: 72a4168a840c3a44dbd6cddc36639bc5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &764780933
@@ -21518,7 +21522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Font: {fileID: 11400000, guid: 93706ec3ebdc36b4ea9c9bc93a68910d, type: 2}
   Text: Level Complete!
-  Size: 16
+  Size: 13
   Leading: 0
   Tracking: 0
   ParagraphSpacing: 0
@@ -21561,7 +21565,7 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 2028186543
   m_SortingOrder: 0
 --- !u!1001 &1080432650
 Prefab:
@@ -29169,8 +29173,8 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 2028186543
+  m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: bfcfacba8c83d1544881bc38fadfdb93, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1443989091
@@ -33056,7 +33060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Font: {fileID: 11400000, guid: 93706ec3ebdc36b4ea9c9bc93a68910d, type: 2}
   Text: 
-  Size: 16
+  Size: 13
   Leading: 0
   Tracking: 0
   ParagraphSpacing: 0
@@ -33099,7 +33103,7 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 2028186543
   m_SortingOrder: 0
 --- !u!1 &1674406528
 GameObject:
@@ -36729,6 +36733,9 @@ MonoBehaviour:
   - name: VeggieDeath
     clips:
     - {fileID: 8300000, guid: 75df5c01ea15b0347bece18ab91e5529, type: 3}
+  - name: Crunch
+    clips:
+    - {fileID: 8300000, guid: dc94862c4aac55542a5acffc77ffe5ff, type: 3}
 --- !u!114 &1865143069
 MonoBehaviour:
   m_ObjectHideFlags: 0
