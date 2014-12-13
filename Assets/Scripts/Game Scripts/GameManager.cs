@@ -588,7 +588,7 @@ public class GameManager : MonoBehaviour
 
     public void ReturnToMainMenu()
     {
-        Application.LoadLevel(0);
+        Application.LoadLevel(1);
     }
 
 }
