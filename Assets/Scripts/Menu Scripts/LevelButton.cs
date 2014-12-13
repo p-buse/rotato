@@ -33,6 +33,7 @@ public class LevelButton : MonoBehaviour {
 					rotations = bestRotations + "";
 				}
 				levelText.Text = "Level " + levelIndexInGame + "\nVeggies: " + bestVeggies + "/" + maxVeggies + "\nRotations: " + rotations;
+				FindObjectOfType<TotalVeggies>().addVeggieCounts(bestVeggies, maxVeggies);
 			}
 			else {
 				bestVeggies = 0;
