@@ -344,6 +344,9 @@ MonoBehaviour:
   - name: VeggieDeath
     clips:
     - {fileID: 8300000, guid: 75df5c01ea15b0347bece18ab91e5529, type: 3}
+  - name: Crunch
+    clips:
+    - {fileID: 8300000, guid: dc94862c4aac55542a5acffc77ffe5ff, type: 3}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -513,7 +516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b43eac89b6fe9f4597dad57f1828556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theme: 0
+  theme: 2
   restartOnLoad: 0
 --- !u!114 &11400020
 MonoBehaviour:

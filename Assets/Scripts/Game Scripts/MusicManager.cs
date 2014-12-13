@@ -12,7 +12,7 @@ public class MusicManager : MonoBehaviour {
     private static float fadeTime = 0.5f;
     private static float fader = 0f;
     public static float musicVolume = 1f;
-    public static float fxVolume = .5f;
+    public static float fxVolume = .75f;
     
 
     void Awake()

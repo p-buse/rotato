@@ -45,7 +45,7 @@ public class CrawlerBoss : MonoBehaviour {
 			{
 				//kill player
 				gameManager.LoseLevel("Eaten by the UberWorm!");
-				
+                gameManager.PlaySound("Crunch");
 			}
             if (coll.gameObject.tag == "Block")
             {
