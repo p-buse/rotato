@@ -42,6 +42,7 @@ public class CrawlerSegment : MonoBehaviour {
 	{
 		if (coll.gameObject.tag == "Player") 
 		{
+            gameManager.PlaySound("Crunch", 1.2f);
 			//kill player
 			gameManager.LoseLevel("Eaten by a Crawler!");
 			
