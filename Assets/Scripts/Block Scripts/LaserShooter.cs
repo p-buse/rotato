@@ -39,7 +39,7 @@ public class LaserShooter : AbstractBlock {
 				laser.SetPosition(1, new Vector2(Mathf.Abs(direction.x)*(hit.point.x-startPoint.x+direction.x*0.5f), Mathf.Abs(direction.y)*(hit.point.y-startPoint.y+direction.y*0.5f)));
 				if (hit.collider.gameObject.tag == "Player" && gameManager.gameState == GameManager.GameMode.playing) {
                     gameManager.PlaySound("Lasered");
-                    gameManager.LoseLevel("Evaporated by a laser");
+                    gameManager.LoseLevel("Evaporated by a laser!");
 				}
 				else if (hit.collider.gameObject.GetComponent<CrawlerSegment>() != null) {
 					hit.collider.gameObject.GetComponent<CrawlerSegment>().dieSafely();

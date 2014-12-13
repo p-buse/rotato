@@ -42,7 +42,7 @@ public class MirrorBlock : AbstractBlock {
 					laser.SetPosition(1, new Vector2(Mathf.Abs(direction.x)*(hit.point.x-transform.position.x), Mathf.Abs(direction.y)*(hit.point.y-transform.position.y)));
 					if (hit.collider.gameObject.tag == "Player" && gameManager.gameState == GameManager.GameMode.playing) {
 						gameManager.PlaySound("Lasered");
-						gameManager.LoseLevel("Evaporated by a laser");
+						gameManager.LoseLevel("Evaporated by a laser!");
 					}
 					else if (hit.collider.gameObject.GetComponent<CrawlerSegment>() != null) {
 						hit.collider.gameObject.GetComponent<CrawlerSegment>().dieSafely();

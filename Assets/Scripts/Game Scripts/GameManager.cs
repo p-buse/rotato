@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour
 {
     // References to other stuff
+    WinAndLoseText winAndLoseText;
     MusicManager musicManager;
     BlockManager blockManager;
     NoRotationManager noRotationManager;
@@ -107,6 +108,7 @@ public class GameManager : MonoBehaviour
             GameObject musicObject = new GameObject("Music Manager", typeof(MusicManager));
             this.musicManager = musicObject.GetComponent<MusicManager>();
         }
+        this.winAndLoseText = GetComponent<WinAndLoseText>();
         this.inputManager = GetComponent<InputManager>();
         this.soundManager = GetComponent<SoundManager>();
         this.blockManager = GetComponent<BlockManager>();
@@ -444,6 +446,7 @@ public class GameManager : MonoBehaviour
             else
                 resetClock = winTime;
             gameState = GameMode.won;
+            winAndLoseText.WinLevel();
 			if (!canEdit) {
 				GameData.instance.ChangeUnlockedLevel(Application.loadedLevel);
 				GameData.instance.ChangeBestVeggies(Application.loadedLevel, veggiesFreed);
@@ -460,6 +463,7 @@ public class GameManager : MonoBehaviour
             resetClock = winOrLoseCountdownTime;
             gameState = GameMode.lost;
             player.FrenchFryify();
+            winAndLoseText.LoseLevel(reasonForLosing);
         }
     }
 
@@ -511,7 +515,7 @@ public class GameManager : MonoBehaviour
         int boxHeight = Screen.height / 8;
         switch (gameState)
         {
-            case GameMode.playing:
+            default:
                 {
 					if (!canEdit) {
                     	GUILayout.BeginArea(new Rect(0, 0, boxWidth*2, boxHeight));
@@ -522,13 +526,10 @@ public class GameManager : MonoBehaviour
                 }
             case GameMode.lost:
                 {
-                    GUI.Label(new Rect(0, 0, boxWidth, boxHeight), "<size=" + boxHeight + ">YOU LOSE!!!</size>", style);
-                    GUI.Label(new Rect(0,boxHeight, boxWidth, boxHeight * 2), "<size=" + boxHeight + ">" + reasonForLosing + "</size>", style);
                     break;
                 }
             case GameMode.won:
                 {
-                    GUI.Label(new Rect(0, 0, boxWidth, boxHeight), "<size=" + boxHeight + ">YOU WIN!!!</size>", style);
                     break;
                 }
             case GameMode.paused:
@@ -575,6 +576,10 @@ public class GameManager : MonoBehaviour
                     //}
                     //GUILayout.EndScrollView();
                     GUILayout.EndArea();
+                    break;
+                }
+            case GameMode.editing:
+                {
                     break;
                 }
         }
