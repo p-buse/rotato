@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Scenes/SplashScreen.unity
+  - enabled: 1
+    path: Assets/_Scenes/MainMenu.unity
+  - enabled: 1
+    path: Assets/_Scenes/LevelMenu.unity
+  - enabled: 1
+    path: Assets/_Scenes/Challenge Menu.unity
+  - enabled: 1
+    path: Assets/_Scenes/credits.unity
+  - enabled: 1
+    path: Assets/_Scenes/LevelEditor.unity
+  - enabled: 1
     path: Assets/_Scenes/Basic Rotation Puzzle.unity
   - enabled: 1
     path: Assets/_Scenes/Reuse Block.unity
@@ -17,8 +29,6 @@ EditorBuildSettings:
     path: Assets/_Scenes/TutorialScenes/CrackedBlocks.unity
   - enabled: 1
     path: Assets/_Scenes/TutorialScenes/NoRotationZones.unity
-  - enabled: 1
-    path: Assets/_Scenes/NoRoZone2.unity
   - enabled: 1
     path: Assets/_Scenes/Cage.unity
   - enabled: 1
@@ -39,6 +49,8 @@ EditorBuildSettings:
     path: Assets/_Scenes/Well.unity
   - enabled: 1
     path: Assets/_Scenes/undergroundCarrotTutorial.unity
+  - enabled: 1
+    path: Assets/_Scenes/driving.unity
   - enabled: 1
     path: Assets/_Scenes/ReturnToMenu.unity
   - enabled: 1
@@ -83,5 +95,7 @@ EditorBuildSettings:
     path: Assets/_Scenes/spacebad.unity
   - enabled: 1
     path: Assets/_Scenes/SpaceCannon.unity
+  - enabled: 1
+    path: Assets/_Scenes/credits.unity
   - enabled: 1
     path: Assets/_Scenes/ReturnToMenu.unity

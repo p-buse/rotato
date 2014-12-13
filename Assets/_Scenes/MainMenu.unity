@@ -696,8 +696,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1105750324}
-  - 114: {fileID: 1105750326}
   - 61: {fileID: 1105750325}
+  - 114: {fileID: 1105750326}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
@@ -738,10 +738,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1105750323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 861582a8f1ecc50478f03feaa55223ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 7893f19be5f04444badfea0d35b2424e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: 5
   zoomSpeed: .400000006
   zoomFactor: 1.20000005
 --- !u!1 &1150571386
