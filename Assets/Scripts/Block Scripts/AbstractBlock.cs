@@ -259,7 +259,7 @@ public abstract class AbstractBlock : MonoBehaviour
 	void OnCollisionStay2D(Collision2D coll) {
 		if (coll.collider.gameObject.tag == "Player" && heated > 0 && gameManager.gameState == GameManager.GameMode.playing) {
             gameManager.PlaySound("Burnt");
-            gameManager.LoseLevel("Burnt by a hot block");
+            gameManager.LoseLevel("Burnt by a hot block!");
 		}
 	}
 
