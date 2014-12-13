@@ -39,6 +39,7 @@ public class CrawlerMovement : MonoBehaviour
 		this.crawlerSprite = transform.Find ("crawlerSprite");
 
 		//moveTimer = 0f;
+
 		
 	}
 	
