@@ -38,9 +38,9 @@ public class MusicManager : MonoBehaviour {
         MusicTheme musicTheme = FindObjectOfType<MusicTheme>();
             if (musicTheme == null)
             {
-                musicIsPlaying = false;
-                currentTheme = MusicTheme.LevelTheme.none;
-                FadeOut();
+                //musicIsPlaying = false;
+                //currentTheme = MusicTheme.LevelTheme.none;
+                //FadeOut();
             }
             else
             {
