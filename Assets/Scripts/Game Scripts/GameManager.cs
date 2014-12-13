@@ -396,6 +396,7 @@ public class GameManager : MonoBehaviour
 	        current.field.text = "" + current.rotationsBeforeRemove;
 	        if (current.rotationsBeforeRemove == 0)
 	        {
+                PlaySound("VeggieDeath");
 	            blockManager.grid.Remove(current.GetCurrentPosition());
 	            Destroy(current.gameObject);
 	        }
