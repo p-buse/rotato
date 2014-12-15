@@ -52,7 +52,6 @@ public class CrawlerMovement : MonoBehaviour
 			crawlerSprite.transform.eulerAngles = new Vector3(0,0,90f*clinging);
 			//Quaternion.FromToRotation(Vector2.up, floatToV2(clinging));
 			if(isGrounded())
-
 			{
 				falling = false;
 			}
@@ -101,6 +100,10 @@ public class CrawlerMovement : MonoBehaviour
 				crawlerSprite.transform.localPosition = 0.05f*amt*floatToV3(moving);
 				transform.Translate(0.7f*floatToV3(moving)*Time.deltaTime);
 
+				FallingBlock fall = myBlock as FallingBlock;
+				if(fall !=null && fall.fallClock>0) 
+					transform.Translate(new Vector3(0,-3f*Time.deltaTime,0));
+					                  
 
 				//when the crawler bumps a block, cling to it and move up it
 				if(bumpedBlockForward())
