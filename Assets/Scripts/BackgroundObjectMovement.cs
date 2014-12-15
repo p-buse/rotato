@@ -7,6 +7,7 @@ public class BackgroundObjectMovement : MonoBehaviour {
 	public float moveRatioY;
 	private Vector3 lastCameraPos;
 	public Vector3 baseMovement;
+	public float baseRotation;
 
 	void Awake()
 	{
@@ -16,6 +17,7 @@ public class BackgroundObjectMovement : MonoBehaviour {
 
 
 	void Update () {
+
 		Vector3 CameraMoved = camera.transform.position-lastCameraPos;
 
 		//right now this is settable for different ratios in x and y directions.  is that necessary?
@@ -26,5 +28,7 @@ public class BackgroundObjectMovement : MonoBehaviour {
 
 		if (baseMovement != Vector3.zero)
 			transform.Translate (baseMovement * Time.deltaTime);
+
+		transform.eulerAngles += new Vector3 (0, 0, baseRotation * Time.deltaTime*180f);
 	}
 }
