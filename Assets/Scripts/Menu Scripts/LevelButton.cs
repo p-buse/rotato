@@ -41,14 +41,15 @@ public class LevelButton : MonoBehaviour {
 				bestRotations = -1;
 				levelText.Text = "Level " + levelIndexInGame;
 			}
-			if (levelIndexInBuildOrder > GameData.instance.GetUnlockedLevel()) {
-				square.color = new Color(square.color.r * 0.5f, square.color.g * 0.5f, square.color.b * 0.5f);
-			}
 		}
 		else {
 			levelText.Text = "Tutorial";
 		}
+		if (levelIndexInBuildOrder > GameData.instance.GetUnlockedLevel()) {
+			square.color = new Color(square.color.r * 0.5f, square.color.g * 0.5f, square.color.b * 0.5f);
+		}
 	}
+
 	void Update() {
 		Vector2 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		if (collider2D.bounds.Contains(mouse))
