@@ -44,12 +44,13 @@ public class HighlightManager : MonoBehaviour {
 
     void Update()
     {
-        if (player == null || playerMovement == null)
-            return;
+
         switch (gameManager.gameState)
         {
             case GameManager.GameMode.playing:
                 {
+                    if (player == null || playerMovement == null)
+                        return;
                     if (gameManager.playerInNoRoZone() || playerMovement.beingShot || !playerMovement.isGrounded())
                     {
                         selectionHighlight.SetActive(false);

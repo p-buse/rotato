@@ -475,6 +475,7 @@ public class GameManager : MonoBehaviour
             levelEditor.ResetLevel();
 			this.gameState = GameMode.editing;
 			levelEditor.UpdateGhostlyBlock();
+            winAndLoseText.ResetText();
 		}
 		else
 		{
@@ -497,6 +498,7 @@ public class GameManager : MonoBehaviour
             levelEditor.ResetLevel();
 			this.gameState = GameMode.editing;
 			levelEditor.UpdateGhostlyBlock();
+            winAndLoseText.ResetText();
 		}
 		else
 		{
