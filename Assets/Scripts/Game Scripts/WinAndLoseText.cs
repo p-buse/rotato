@@ -6,6 +6,11 @@ public class WinAndLoseText : MonoBehaviour {
     TypogenicText levelComplete;
     TypogenicText loseMessage;
 
+    public void ResetText()
+    {
+        this.Start();
+    }
+
     void Start()
     {
         levelComplete = transform.Find("levelComplete").GetComponent<TypogenicText>();
