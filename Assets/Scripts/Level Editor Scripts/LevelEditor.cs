@@ -524,7 +524,7 @@ public class LevelEditor : MonoBehaviour
         float boxHeight = Screen.height / 10;
         Rect brushRect = new Rect(0, Screen.height - boxHeight, Screen.width, boxHeight);
         Rect toolRect = new Rect(0, 0, boxWidth, boxHeight);
-        Rect playEditRect = new Rect(Screen.width - boxWidth, 0, boxWidth, boxHeight);
+        Rect playEditRect = new Rect(Screen.width - boxWidth, 0, boxWidth, boxHeight * 1.5f);
         Rect saveLoadRect = new Rect(Screen.width - boxWidth, boxHeight * 2, boxWidth, boxHeight * 2);
         Rect loadRect = new Rect(Screen.width / 4, Screen.height / 4, Screen.width / 2, Screen.height / 2);
         Rect confirmationRect = new Rect(Screen.width * 0.375f, Screen.height * 0.375f, Screen.width / 4, Screen.height / 4);
@@ -682,6 +682,11 @@ public class LevelEditor : MonoBehaviour
             selectionHighlight.SetActive(false);
             gameManager.gameState = GameManager.GameMode.playing;
         }
+        if (GUILayout.Button("Main Menu"))
+        {
+            SaveLevel(currentLevelName, true);
+            Application.LoadLevel(1);
+        }
         GUILayout.EndArea();
     }
 
@@ -733,15 +738,8 @@ public class LevelEditor : MonoBehaviour
         string levelPath = PathToLevel(levelName);
         if (!File.Exists(levelPath) || overwrite)
         {
-            if (this.player != null)
-            {
-                LevelSkeleton currentLevel = this.ConvertCurrentLevelToSkeleton();
-                LevelEditor.WriteXML(currentLevel, levelPath);
-            }
-            else
-            {
-                Debug.LogWarning("Can't save level if no player placed!");
-            }
+            LevelSkeleton currentLevel = this.ConvertCurrentLevelToSkeleton();
+            LevelEditor.WriteXML(currentLevel, levelPath);
         }
         else
         {
@@ -810,7 +808,8 @@ public class LevelEditor : MonoBehaviour
         // Add player
         if (player != null)
             Destroy(player.gameObject);
-        Instantiate(specialPrefabs.playerPrefab, skeleton.playerPosition.ToVector2(), Quaternion.identity);
+        if (skeleton.playerPosition != null)
+            Instantiate(specialPrefabs.playerPrefab, skeleton.playerPosition.ToVector2(), Quaternion.identity);
 
         // Add crawlers
         GameObject[] crawlers = GameObject.FindGameObjectsWithTag("Crawler");

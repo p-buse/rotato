@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
 {
     // References to other stuff
     WinAndLoseText winAndLoseText;
-    MusicManager musicManager;
     BlockManager blockManager;
     NoRotationManager noRotationManager;
     SoundManager soundManager;
@@ -25,7 +24,6 @@ public class GameManager : MonoBehaviour
     // Winning and losing
     public float winOrLoseCountdownTime = 2f;
     float resetClock = 0f;
-    string reasonForLosing = "";
 
     // Rotation stuff
     public float secondsToRotate = 1f;
@@ -105,8 +103,7 @@ public class GameManager : MonoBehaviour
     {
         if (FindObjectOfType<MusicManager>() == null)
         {
-            GameObject musicObject = new GameObject("Music Manager", typeof(MusicManager));
-            this.musicManager = musicObject.GetComponent<MusicManager>();
+            new GameObject("Music Manager", typeof(MusicManager));
         }
         this.winAndLoseText = GetComponent<WinAndLoseText>();
         this.inputManager = GetComponent<InputManager>();
@@ -148,7 +145,7 @@ public class GameManager : MonoBehaviour
 
     public void PlaySound(string soundName, float volume = 1f)
     {
-        volume *= MusicManager.fxVolume;
+        volume *= MusicManager.instance.fxVolume;
         soundManager.PlayClip(soundName, volume);
     }
 
@@ -460,7 +457,6 @@ public class GameManager : MonoBehaviour
     {
         if (gameState == GameMode.playing)
         {
-            this.reasonForLosing = reasonForLosing;
             resetClock = winOrLoseCountdownTime;
             gameState = GameMode.lost;
             player.FrenchFryify();
@@ -559,11 +555,11 @@ public class GameManager : MonoBehaviour
 					}
                     GUILayout.BeginHorizontal();
                     GUILayout.Label("Music Volume ");
-                    MusicManager.musicVolume = GUILayout.HorizontalSlider(MusicManager.musicVolume, 0f, 1f);
+                    MusicManager.instance.musicVolume = GUILayout.HorizontalSlider(MusicManager.instance.musicVolume, 0f, 1f);
                     GUILayout.EndHorizontal();
                     GUILayout.BeginHorizontal();
                     GUILayout.Label("Game Volume ");
-                    MusicManager.fxVolume= GUILayout.HorizontalSlider(MusicManager.fxVolume, 0f, 1f);
+                    MusicManager.instance.fxVolume= GUILayout.HorizontalSlider(MusicManager.instance.fxVolume, 0f, 1f);
                     GUILayout.EndHorizontal();
                     //currentScroll = GUILayout.BeginScrollView(currentScroll);
                     //foreach(string campaignName in campaignManager.GetCampaigns())

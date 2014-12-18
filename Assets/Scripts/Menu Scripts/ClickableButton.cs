@@ -6,6 +6,8 @@ public class ClickableButton : MonoBehaviour {
     public float zoomSpeed = 0.4f;
     public float zoomFactor = 1.2f;
     float originalZoom;
+    public bool activateOnKeyPress = false;
+    public KeyCode keyToPress = KeyCode.Escape;
 
     void Start()
     {
@@ -19,6 +21,10 @@ public class ClickableButton : MonoBehaviour {
 
     void Update()
     {
+        if (this.activateOnKeyPress && Input.GetKeyUp(keyToPress))
+        {
+            OnMouseUpAsButton();
+        }
         Vector2 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (collider2D.bounds.Contains(mouse))
         {

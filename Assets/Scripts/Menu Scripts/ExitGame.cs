@@ -5,6 +5,8 @@ public class ExitGame : MonoBehaviour
 {
     public float zoomSpeed = 0.4f;
     public float zoomFactor = 1.2f;
+    public bool activateOnKeyPress = false;
+    public KeyCode keyToPress = KeyCode.Escape;
     float originalZoom;
 
     void Start()
@@ -19,6 +21,10 @@ public class ExitGame : MonoBehaviour
 
     void Update()
     {
+        if (this.activateOnKeyPress && Input.GetKeyUp(keyToPress))
+        {
+            OnMouseUpAsButton();
+        }
         Vector2 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (collider2D.bounds.Contains(mouse))
         {

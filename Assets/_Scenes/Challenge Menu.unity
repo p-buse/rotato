@@ -2014,6 +2014,8 @@ MonoBehaviour:
   levelToLoad: 1
   zoomSpeed: .400000006
   zoomFactor: 1.20000005
+  activateOnKeyPress: 1
+  keyToPress: 27
 --- !u!1 &1222439059
 GameObject:
   m_ObjectHideFlags: 0

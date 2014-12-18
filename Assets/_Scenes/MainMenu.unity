@@ -169,6 +169,8 @@ MonoBehaviour:
   levelToLoad: 2
   zoomSpeed: .400000006
   zoomFactor: 1.20000005
+  activateOnKeyPress: 0
+  keyToPress: 27
 --- !u!61 &53109491
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -472,6 +474,8 @@ MonoBehaviour:
   levelToLoad: 5
   zoomSpeed: .400000006
   zoomFactor: 1.20000005
+  activateOnKeyPress: 0
+  keyToPress: 27
 --- !u!1 &714197848
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,6 +582,8 @@ MonoBehaviour:
   levelToLoad: 3
   zoomSpeed: .400000006
   zoomFactor: 1.20000005
+  activateOnKeyPress: 0
+  keyToPress: 27
 --- !u!1 &832080879
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,6 +764,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoomSpeed: .400000006
   zoomFactor: 1.20000005
+  activateOnKeyPress: 1
+  keyToPress: 27
 --- !u!1 &1150571386
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,6 +822,8 @@ MonoBehaviour:
   levelToLoad: 4
   zoomSpeed: .400000006
   zoomFactor: 1.20000005
+  activateOnKeyPress: 0
+  keyToPress: 27
 --- !u!1 &1175104987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,6 +1209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d197be579a810440a4054a17902dba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicVolume: 1
 --- !u!4 &2090944568
 Transform:
   m_ObjectHideFlags: 0

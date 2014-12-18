@@ -11,9 +11,21 @@ public class MusicManager : MonoBehaviour {
     private static Deck deck = Deck.A;
     private static float fadeTime = 0.5f;
     private static float fader = 0f;
-    public static float musicVolume = 1f;
-    public static float fxVolume = .75f;
-    
+    public float musicVolume = 1f;
+    private static float _fxVolume = .75f;
+    public float fxVolume
+    {
+        get
+        {
+            return _fxVolume;
+        }
+        set
+        {
+            if (value != _fxVolume)
+                this.UpdateSceneAudio(value);
+            _fxVolume = value;
+        }
+    }
 
     void Awake()
     {
@@ -33,8 +45,23 @@ public class MusicManager : MonoBehaviour {
         }
     }
 
+    void UpdateSceneAudio(float newVolume)
+    {
+        // Set the volume of each thing in the scene to the current volume.
+        // At time of writing, this is only Lasers
+        AudioSource[] sceneAudio = FindObjectsOfType<AudioSource>();
+        foreach (AudioSource audioSource in sceneAudio)
+        {
+            if (audioSource.GetInstanceID() != this.GetInstanceID())
+            {
+                audioSource.volume = newVolume;
+            }
+        }
+    }
+
     void OnLevelWasLoaded()
     {
+        
         MusicTheme musicTheme = FindObjectOfType<MusicTheme>();
             if (musicTheme == null)
             {
