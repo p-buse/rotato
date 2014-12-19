@@ -7,7 +7,7 @@ public class ReturnToMenu : MonoBehaviour {
 
     void Start()
     {
-        GameData.instance.ChangeUnlockedLevel(Application.loadedLevel + 1);
+        GameData.instance.ChangeUnlockedLevel(Application.loadedLevel);
         Application.LoadLevel(sceneToLoad);
     }
 }
