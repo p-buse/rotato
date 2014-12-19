@@ -48,5 +48,9 @@ public class ButterBlock : AbstractBlock {
             gameManager.PlaySound("Win");
             gameManager.WinLevel(2f);
         }
-    }
+		else if (coll.gameObject.tag == "Player" && heated > 0 && gameManager.gameState == GameManager.GameMode.playing) {
+			gameManager.PlaySound("Burnt");
+			gameManager.LoseLevel("Burnt by a hot block!");
+		}
+	}
 }
