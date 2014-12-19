@@ -8108,11 +8108,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: b3d363273a7a33c4e8e759299619d45e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 31
+      value: -6.14308691
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b3d363273a7a33c4e8e759299619d45e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 19
+      value: -.159202874
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b3d363273a7a33c4e8e759299619d45e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -13526,7 +13526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4fcca795ad2fa42a72a77e6902900c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path: C:/Users/David/Documents/rotato-gameplay-prototype/Assets/GameData.xml
+  path: C:/Users/paul/Documents/Coding/Unity Projects/Rotato_GameplayPrototype/Assets/GameData.xml
 --- !u!114 &834888402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15623,7 +15623,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 928877286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30, y: 20, z: -10}
+  m_LocalPosition: {x: -5.98040009, y: -.0971603394, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -20126,6 +20126,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!212 &1201251090
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30127,6 +30128,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1860749798
 GameObject:
   m_ObjectHideFlags: 0
@@ -30639,7 +30641,7 @@ Transform:
   m_PrefabInternal: {fileID: 479807390}
   m_GameObject: {fileID: 1892370055}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31, y: 19, z: 0}
+  m_LocalPosition: {x: -6.14308691, y: -.159202874, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1001798521}
