@@ -445,7 +445,14 @@ public class LevelEditor : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(currentBrush.prefab, mouseWorldPos.ToVector2(), Quaternion.identity);
+            if (currentBrush.prefab != null)
+            {
+                Instantiate(currentBrush.prefab, mouseWorldPos.ToVector2(), Quaternion.identity);
+            }
+            else
+            {
+                print("no crawler prefab found!");
+            }
         }
     }
 

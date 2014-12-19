@@ -49,6 +49,15 @@ public class CrawlerSegment : MonoBehaviour {
 		}
 		
 	}
+
+    void OnMouseOver()
+    {
+        if (gameManager.gameState == GameManager.GameMode.editing && Input.GetMouseButton(1))
+        {
+            move.updateMyBlock(null);
+            Destroy(transform.root.gameObject);
+        }
+    }
 	
 	/// <summary>
 	/// Dies safely.
