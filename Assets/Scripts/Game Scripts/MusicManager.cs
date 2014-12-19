@@ -64,6 +64,7 @@ public class MusicManager : MonoBehaviour {
         // Reset the timescale to 1, in case we got here through a pause menu
         Time.timeScale = 1f;
         MusicTheme musicTheme = FindObjectOfType<MusicTheme>();
+		UpdateSceneAudio(fxVolume);
             if (musicTheme == null)
             {
                 //musicIsPlaying = false;
