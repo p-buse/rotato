@@ -302,6 +302,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &8163822
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -367,6 +368,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &10550595
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -586,6 +588,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &16413110
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -856,6 +859,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &36149994
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -980,6 +984,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &38345847
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1432,6 +1437,9 @@ MonoBehaviour:
   - name: VeggieDeath
     clips:
     - {fileID: 8300000, guid: 75df5c01ea15b0347bece18ab91e5529, type: 3}
+  - name: Crunch
+    clips:
+    - {fileID: 8300000, guid: dc94862c4aac55542a5acffc77ffe5ff, type: 3}
 --- !u!114 &51416294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1601,6 +1609,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &51823995
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1717,6 +1726,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &56246887
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1833,6 +1843,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &60232217
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2045,6 +2056,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &68831324
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2154,6 +2166,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &70578019
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2492,6 +2505,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &95635949
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2601,6 +2615,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &96976584
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2717,6 +2732,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &102608363
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2782,6 +2798,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &103848282
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2847,6 +2864,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &104696468
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3089,6 +3107,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &123136963
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3529,6 +3548,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &147638251
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3638,6 +3658,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &150533827
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3806,6 +3827,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &155389435
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4025,6 +4047,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &161997141
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4090,6 +4113,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &162487665
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4386,6 +4410,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: -.5, y: -.25, z: 0}
+  baseRotation: 0
 --- !u!1 &173242834
 GameObject:
   m_ObjectHideFlags: 0
@@ -4537,6 +4562,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &181153084
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4728,6 +4754,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &196008760
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5277,6 +5304,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &226289858
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5430,6 +5458,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &229249028
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5546,6 +5575,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &241313004
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5662,6 +5692,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &244727998
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5829,6 +5860,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &259201613
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5894,6 +5926,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &263432092
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6018,6 +6051,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &267209641
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6127,6 +6161,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &282210780
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6554,6 +6589,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &301024004
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6749,6 +6785,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &312814401
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6814,6 +6851,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &313017983
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6879,6 +6917,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &313643525
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6944,6 +6983,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &315859034
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7185,6 +7225,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &321037058
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7421,6 +7462,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &328665692
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7703,6 +7745,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &339691056
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7768,6 +7811,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &342776671
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8493,6 +8537,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &370033472
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8652,6 +8697,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &376044302
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8717,6 +8763,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &377769214
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8884,6 +8931,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &385696326
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9127,6 +9175,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &397089500
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9192,6 +9241,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &398451170
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9257,6 +9307,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &405056559
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10858,6 +10909,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &472914982
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10923,6 +10975,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &474021922
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11127,6 +11180,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &486660337
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11286,6 +11340,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &496115967
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11537,6 +11592,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &514091180
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11602,6 +11658,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &515021277
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11667,6 +11724,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &521823743
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12044,6 +12102,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &551228266
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12312,6 +12371,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &558761100
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12662,6 +12722,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &570132355
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12803,6 +12864,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &575948312
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12868,6 +12930,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &576398727
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13137,6 +13200,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &598276940
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13306,6 +13370,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &602059890
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13472,6 +13537,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &611552279
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13647,6 +13713,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &616697931
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14064,6 +14131,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &638530758
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14239,6 +14307,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &647605566
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14304,6 +14373,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &648237715
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14369,6 +14439,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &651082745
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14795,6 +14866,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &662122576
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15176,6 +15248,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &673117703
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15420,6 +15493,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &686436693
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15913,6 +15987,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &700807831
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15978,6 +16053,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &702037307
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16420,6 +16496,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &718937420
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16485,6 +16562,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &724138829
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16816,6 +16894,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &742394975
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16976,6 +17055,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &746584681
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17041,6 +17121,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &756410255
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17150,6 +17231,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &756748913
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17316,6 +17398,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &762086875
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17586,6 +17669,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &780240002
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17746,6 +17830,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &786434543
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17950,6 +18035,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &791821518
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18015,6 +18101,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &794668863
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18080,6 +18167,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &800938482
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18621,6 +18709,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &826068885
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18848,6 +18937,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &844387457
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19154,6 +19244,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &865703639
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19278,6 +19369,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &871412001
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19403,6 +19495,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &877767983
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20072,6 +20165,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &907929245
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20308,6 +20402,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &919433811
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20423,6 +20518,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &922317498
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20488,6 +20584,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &922361255
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20553,6 +20650,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &922514945
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20694,6 +20792,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &929286352
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20847,6 +20946,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &945009658
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20912,6 +21012,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &948431962
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21288,6 +21389,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &965277666
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22057,6 +22159,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1015615188
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22342,6 +22445,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1038151134
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22518,6 +22622,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1052194853
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23113,6 +23218,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1084037842
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23178,6 +23284,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1085524508
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23243,6 +23350,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1086063883
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23536,6 +23644,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1109583734
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23652,6 +23761,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1117294042
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23879,6 +23989,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1129039838
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24284,6 +24395,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1150121356
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24400,6 +24512,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1158237668
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24509,6 +24622,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1160288522
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24848,6 +24962,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1182216296
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25191,6 +25306,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1192120596
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25315,6 +25431,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1192696178
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25515,6 +25632,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1198277696
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25624,6 +25742,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1207028432
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25836,6 +25955,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1217023085
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25952,6 +26072,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1227202489
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26112,6 +26233,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1230593685
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26374,6 +26496,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1240962888
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26593,6 +26716,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1258240404
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26702,6 +26826,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1261474934
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27263,6 +27388,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1281742740
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27328,6 +27454,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1282537757
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27452,6 +27579,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1283527790
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27561,6 +27689,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1286896198
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27626,6 +27755,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1292171217
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27750,6 +27880,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1292837613
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27866,6 +27997,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1298576926
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28070,6 +28202,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1304043247
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28186,6 +28319,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1310010675
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28251,6 +28385,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1313662186
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28418,6 +28553,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1319796717
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28669,6 +28805,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1324337858
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28734,6 +28871,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1327586668
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28953,6 +29091,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1338542538
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29328,6 +29467,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1360728761
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29444,6 +29584,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1361816177
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29560,6 +29701,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1368587444
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29760,6 +29902,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1373443429
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29971,6 +30114,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1388092887
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30181,6 +30325,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1393267196
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30425,6 +30570,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1401970524
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30534,6 +30680,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1404592993
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30658,6 +30805,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1422026719
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30723,6 +30871,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1422271704
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31309,6 +31458,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1448484771
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31374,6 +31524,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1449016451
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31483,6 +31634,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1450878791
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31756,6 +31908,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1469021780
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31821,6 +31974,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1469419894
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31988,6 +32142,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1484424005
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -32112,6 +32267,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1491863383
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -32316,6 +32472,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1501487878
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -32380,13 +32537,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Font: {fileID: 11400000, guid: 93706ec3ebdc36b4ea9c9bc93a68910d, type: 2}
-  Text: Careful, jump lightly!
+  Text: "Careful:\njump lightly, or you'll \nbe stuck in orbit!"
   Size: 5
   Leading: 0
   Tracking: 0
   ParagraphSpacing: 0
   WordWrap: 0
-  Alignment: 0
+  Alignment: 1
   FillMode: 0
   ColorTopLeft: {r: 1, g: 1, b: 1, a: 1}
   ColorTopRight: {r: 1, g: 1, b: 1, a: 1}
@@ -32431,7 +32588,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1503048457}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.35808134, y: 30.2597218, z: 2.45214844}
+  m_LocalPosition: {x: 10.3457804, y: 30.6735401, z: 2.45214844}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -32526,6 +32683,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1507338151
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -32591,6 +32749,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1507673388
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -32707,6 +32866,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1508923515
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33108,6 +33268,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1526273374
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33406,6 +33567,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1538499132
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33617,6 +33779,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1548454818
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33988,6 +34151,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1563618689
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34213,6 +34377,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1572936565
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34322,6 +34487,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1580034062
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34703,6 +34869,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1591108742
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35107,6 +35274,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1612448891
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35370,6 +35538,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1622029834
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35881,6 +36050,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1646336187
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -36152,6 +36322,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1661047119
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -36488,6 +36659,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1674617335
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37127,6 +37299,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1693065928
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37236,6 +37409,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1697129959
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37351,6 +37525,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1700174130
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37558,6 +37733,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1708774930
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37818,6 +37994,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1736562440
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -38061,6 +38238,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1750734479
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -38126,6 +38304,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1752167166
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -38250,6 +38429,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1754059310
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -38409,6 +38589,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1758098150
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -38474,6 +38655,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1758657151
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -38633,6 +38815,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1765124665
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -38801,6 +38984,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1774974235
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -39020,6 +39204,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1782255856
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -39141,6 +39326,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1786663789
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -39591,6 +39777,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1821492453
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -40015,6 +40202,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1835757244
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -40226,6 +40414,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1850357596
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -40571,6 +40760,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1870246887
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -40680,6 +40870,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1875853919
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -41325,6 +41516,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1914318246
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -41434,6 +41626,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1923721014
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -41762,6 +41955,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1939619266
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -42328,6 +42522,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1977241846
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -42444,6 +42639,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1982338600
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -42612,6 +42808,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1991123279
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -42903,6 +43100,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &2003930573
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -43056,6 +43254,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &2013836324
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -43172,6 +43371,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &2017487903
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -43237,6 +43437,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &2018990593
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -43532,6 +43733,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!1 &2037543756
 GameObject:
   m_ObjectHideFlags: 0
@@ -43563,6 +43765,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &2037543758
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -44134,6 +44337,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &2062555172
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -44308,6 +44512,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &2067240458
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -44691,6 +44896,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &2079651165
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -45045,6 +45251,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &2094518319
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -45263,6 +45470,7 @@ MonoBehaviour:
   moveRatioX: .100000001
   moveRatioY: .100000001
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &2100828909
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -45611,6 +45819,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &2119383112
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -45676,6 +45885,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &2120226217
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -45894,6 +46104,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &2132601096
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -46127,6 +46338,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &2143417149
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -46251,6 +46463,7 @@ MonoBehaviour:
   moveRatioX: .0500000007
   moveRatioY: .0500000007
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &2146943921
 SpriteRenderer:
   m_ObjectHideFlags: 0

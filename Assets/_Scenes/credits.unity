@@ -246,7 +246,7 @@ MonoBehaviour:
 
     by P3D:
 
-    Paul Buser, Damien Kirk, Daniel Miller-Medzon, a & David Miller
+    Paul Buser, Damien Kirk, Daniel Miller-Medzon, & David Miller
 
 
     Thanks for playing!'
@@ -538,6 +538,8 @@ MonoBehaviour:
   levelToLoad: 1
   zoomSpeed: .400000006
   zoomFactor: 1.20000005
+  activateOnKeyPress: 0
+  keyToPress: 27
 --- !u!61 &1502146960
 BoxCollider2D:
   m_ObjectHideFlags: 0

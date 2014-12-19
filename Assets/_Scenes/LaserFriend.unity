@@ -4273,6 +4273,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: 0
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &405212418
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6413,6 +6414,7 @@ MonoBehaviour:
   moveRatioX: 0
   moveRatioY: .200000003
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!4 &537140119
 Transform:
   m_ObjectHideFlags: 0
@@ -7097,6 +7099,92 @@ Prefab:
   m_RootGameObject: {fileID: 2032040247}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &595156449
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 595156453}
+  - 23: {fileID: 595156452}
+  - 33: {fileID: 595156451}
+  - 114: {fileID: 595156450}
+  m_Layer: 0
+  m_Name: New Typogenic Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &595156450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 595156449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8e88b798241f94fa7265f167d0478b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Font: {fileID: 11400000, guid: 93706ec3ebdc36b4ea9c9bc93a68910d, type: 2}
+  Text: "Use lasers to \nyour benefit!"
+  Size: 4
+  Leading: 0
+  Tracking: 0
+  ParagraphSpacing: 0
+  WordWrap: 0
+  Alignment: 0
+  FillMode: 0
+  ColorTopLeft: {r: 1, g: 1, b: 1, a: 1}
+  ColorTopRight: {r: 1, g: 1, b: 1, a: 1}
+  ColorBottomLeft: {r: 1, g: 1, b: 1, a: 1}
+  ColorBottomRight: {r: 1, g: 1, b: 1, a: 1}
+  GenerateNormals: 1
+  Stationary: 1
+  EnableClickSupport: 1
+  DrawGlyphBoundsGizmos: 0
+  AutoRebuild: 1
+--- !u!33 &595156451
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 595156449}
+  m_Mesh: {fileID: 0}
+--- !u!23 &595156452
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 595156449}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 286897c958bf8e1449ca36498103ceb7, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!4 &595156453
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 595156449}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.14786434, y: 9.31907368, z: -.275390625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 124
 --- !u!1 &597945294
 GameObject:
   m_ObjectHideFlags: 0
@@ -8613,6 +8701,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: 0
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &744700250
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8780,6 +8869,7 @@ MonoBehaviour:
   moveRatioX: 0
   moveRatioY: 0
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &753591370
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21816,6 +21906,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: 0
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1802878778
 SpriteRenderer:
   m_ObjectHideFlags: 0
