@@ -1911,7 +1911,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
   m_PrefabInternal: {fileID: 610135434}
   m_GameObject: {fileID: 296017524}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: -4.37113883e-08}
   m_LocalPosition: {x: 11, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1922,7 +1922,7 @@ Transform:
   - {fileID: 1818060884}
   - {fileID: 1031505432}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
 --- !u!114 &296017526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3691,15 +3691,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
-      propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -4.37113883e-08
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a83ee0f7db27074aa98c486a36f2c42, type: 2}
@@ -4028,7 +4028,7 @@ Transform:
   m_Children:
   - {fileID: 1171357621}
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 32
 --- !u!1 &719692379
 GameObject:
   m_ObjectHideFlags: 0
@@ -4348,7 +4348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4fcca795ad2fa42a72a77e6902900c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path: C:/Users/paul/Documents/Coding/Unity Projects/Rotato_GameplayPrototype/Assets/GameData.xml
+  path: C:/Users/David/Documents/rotato-gameplay-prototype/Assets/GameData.xml
 --- !u!114 &719692388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4890,7 +4890,7 @@ Transform:
   m_Children:
   - {fileID: 117158900}
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 34
 --- !u!1 &824942705
 GameObject:
   m_ObjectHideFlags: 0
@@ -5674,7 +5674,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!212 &957998011
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5888,7 +5887,7 @@ Transform:
   m_PrefabInternal: {fileID: 474673707}
   m_GameObject: {fileID: 1016790330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: .109999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1225330014}
@@ -6263,7 +6262,7 @@ Transform:
   m_Children:
   - {fileID: 633922292}
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 35
 --- !u!114 &1039780976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7485,7 +7484,7 @@ Transform:
   m_Children:
   - {fileID: 1016790332}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!58 &1225330015
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8552,7 +8551,7 @@ Transform:
   - {fileID: 1758830479}
   - {fileID: 957998009}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!95 &1353654635
 Animator:
   serializedVersion: 3
@@ -8568,7 +8567,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1353952012
 GameObject:
   m_ObjectHideFlags: 0
@@ -10920,7 +10918,7 @@ Transform:
   m_Children:
   - {fileID: 1770111711}
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 31
 --- !u!1 &1754517998
 GameObject:
   m_ObjectHideFlags: 0
@@ -11259,6 +11257,7 @@ MonoBehaviour:
   moveRatioX: .200000003
   moveRatioY: 0
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1792354404
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11292,7 +11291,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: 30
 --- !u!1 &1810989553
 GameObject:
   m_ObjectHideFlags: 0
@@ -11646,7 +11645,7 @@ Transform:
   m_Children:
   - {fileID: 2931564}
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 33
 --- !u!1 &1879577821
 GameObject:
   m_ObjectHideFlags: 0
@@ -11855,6 +11854,7 @@ MonoBehaviour:
   moveRatioX: .300000012
   moveRatioY: 0
   baseMovement: {x: 0, y: 0, z: 0}
+  baseRotation: 0
 --- !u!212 &1890528239
 SpriteRenderer:
   m_ObjectHideFlags: 0
