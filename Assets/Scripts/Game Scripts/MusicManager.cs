@@ -108,6 +108,7 @@ public class MusicManager : MonoBehaviour {
         deckA.clip = LoadSong(levelTheme);
         deckA.Play();
         deck = Deck.A;
+        deckB.Stop();
     }
 
     private void StartSong(MusicTheme.LevelTheme levelTheme)
@@ -119,6 +120,7 @@ public class MusicManager : MonoBehaviour {
             deckB.clip = song;
             deckB.Play();
             deck = Deck.B;
+            deckA.Stop();
         }
         else
         {
@@ -126,6 +128,7 @@ public class MusicManager : MonoBehaviour {
             deckA.clip = song;
             deckA.Play();
             deck = Deck.A;
+            deckB.Stop();
         }
     }
 
