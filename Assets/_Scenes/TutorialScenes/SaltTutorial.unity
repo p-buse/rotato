@@ -1844,6 +1844,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!212 &232950632
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2742,7 +2743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4fcca795ad2fa42a72a77e6902900c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path: /Users/Damien/Unity/rotato-gameplay-prototype/Assets/GameData.xml
+  path: C:/Users/paul/Documents/Coding/Unity Projects/Rotato_GameplayPrototype/Assets/GameData.xml
 --- !u!114 &328991287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2781,7 +2782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b43eac89b6fe9f4597dad57f1828556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theme: 2
+  theme: 0
   restartOnLoad: 0
 --- !u!114 &328991290
 MonoBehaviour:
@@ -3621,7 +3622,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 99
+  m_RootOrder: 95
 --- !u!1001 &427421235
 Prefab:
   m_ObjectHideFlags: 0
@@ -4471,6 +4472,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &562401927
 GameObject:
   m_ObjectHideFlags: 0
@@ -6293,7 +6295,7 @@ Transform:
   m_Children:
   - {fileID: 967257232}
   m_Father: {fileID: 0}
-  m_RootOrder: 93
+  m_RootOrder: 94
 --- !u!114 &772756920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7023,7 +7025,7 @@ Transform:
   m_Children:
   - {fileID: 2097224951}
   m_Father: {fileID: 0}
-  m_RootOrder: 94
+  m_RootOrder: 96
 --- !u!114 &916222081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7764,7 +7766,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 98
+  m_RootOrder: 93
 --- !u!1001 &1006203324
 Prefab:
   m_ObjectHideFlags: 0
@@ -8800,7 +8802,7 @@ Transform:
   m_Children:
   - {fileID: 1844527576}
   m_Father: {fileID: 0}
-  m_RootOrder: 97
+  m_RootOrder: 100
 --- !u!58 &1155190260
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9243,7 +9245,7 @@ Transform:
   m_LocalScale: {x: .300000012, y: .300000012, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 100
+  m_RootOrder: 97
 --- !u!1 &1223190352
 GameObject:
   m_ObjectHideFlags: 0
@@ -9653,6 +9655,10 @@ Prefab:
     - target: {fileID: 400002, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
       propertyPath: m_LocalPosition.y
       value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400018, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
+      propertyPath: theme
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d52734dc542d98241b43ea189dcb1612, type: 2}
@@ -11131,7 +11137,7 @@ Transform:
   m_Children:
   - {fileID: 2064009004}
   m_Father: {fileID: 0}
-  m_RootOrder: 95
+  m_RootOrder: 98
 --- !u!114 &1488506893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15878,7 +15884,7 @@ Transform:
   m_Children:
   - {fileID: 1547619087}
   m_Father: {fileID: 0}
-  m_RootOrder: 96
+  m_RootOrder: 99
 --- !u!58 &2076563333
 CircleCollider2D:
   m_ObjectHideFlags: 0

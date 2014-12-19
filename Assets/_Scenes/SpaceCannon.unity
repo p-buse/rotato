@@ -5424,7 +5424,7 @@ Transform:
   m_PrefabInternal: {fileID: 1317442331}
   m_GameObject: {fileID: 171503706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.3949871, y: 36.6803017, z: 0}
+  m_LocalPosition: {x: -22, y: 36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1573670874}
@@ -5440,8 +5440,8 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Radius: .829999983
-  m_Center: {x: 0, y: -.310000002}
+  m_Radius: .5
+  m_Center: {x: 0, y: 0}
 --- !u!102 &171503709
 TextMesh:
   serializedVersion: 3
@@ -12733,7 +12733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4fcca795ad2fa42a72a77e6902900c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path: C:/Users/David/Documents/rotato-gameplay-prototype/Assets/GameData.xml
+  path: C:/Users/paul/Documents/Coding/Unity Projects/Rotato_GameplayPrototype/Assets/GameData.xml
 --- !u!114 &400353336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38159,6 +38159,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1155684985
 GameObject:
   m_ObjectHideFlags: 0
@@ -42750,11 +42751,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 2d94b31fef7e6469bbcc363482c02e54, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -22.3949871
+      value: -22
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2d94b31fef7e6469bbcc363482c02e54, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 36.6803017
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2d94b31fef7e6469bbcc363482c02e54, type: 2}
       propertyPath: m_LocalPosition.z
@@ -42778,11 +42779,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2d94b31fef7e6469bbcc363482c02e54, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 2d94b31fef7e6469bbcc363482c02e54, type: 2}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2d94b31fef7e6469bbcc363482c02e54, type: 2}
       propertyPath: rotationsBeforeRemove
@@ -42790,11 +42791,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5800000, guid: 2d94b31fef7e6469bbcc363482c02e54, type: 2}
       propertyPath: m_Radius
-      value: .829999983
+      value: .5
       objectReference: {fileID: 0}
     - target: {fileID: 5800000, guid: 2d94b31fef7e6469bbcc363482c02e54, type: 2}
       propertyPath: m_Center.y
-      value: -.310000002
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d94b31fef7e6469bbcc363482c02e54, type: 2}
@@ -52085,7 +52086,7 @@ Transform:
   m_GameObject: {fileID: 1573670872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 171503707}
   m_RootOrder: 0
@@ -55172,6 +55173,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!212 &1643846295
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -66155,7 +66157,7 @@ Transform:
   m_LocalScale: {x: 1.52828181, y: 1.52828312, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 498
+  m_RootOrder: 499
 --- !u!114 &2002590147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68054,7 +68056,7 @@ Transform:
   m_Children:
   - {fileID: 478981054}
   m_Father: {fileID: 0}
-  m_RootOrder: 499
+  m_RootOrder: 498
 --- !u!114 &2067867460
 MonoBehaviour:
   m_ObjectHideFlags: 0
