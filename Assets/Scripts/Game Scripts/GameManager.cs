@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public Player player;
     HighlightManager highlightManager;
-    LevelEditor levelEditor;
 
     // Salt stuff
     [HideInInspector]
@@ -113,7 +112,6 @@ public class GameManager : MonoBehaviour
         this.highlightManager = GetComponent<HighlightManager>();
         this.playerMovement = FindObjectOfType<PlayerMovement>();
         this.player = FindObjectOfType<Player>();
-        this.levelEditor = GetComponent<LevelEditor>();
 		this.totalVeggies = FindObjectsOfType<Salt>().Length;
         Instantiate(cursorPrefab);
         this.topLeft = transform.FindChild("topLeft");
@@ -334,11 +332,6 @@ public class GameManager : MonoBehaviour
                     break;
                 }
 
-            case GameMode.editing:
-                {
-                    // The LevelEditor script will detect this and knows what to do
-                    break;
-                }
             case GameMode.paused:
                 {
                     Time.timeScale = 0f;
@@ -466,40 +459,21 @@ public class GameManager : MonoBehaviour
 
     public void GoToNextLevel()
     {
-        if (canEdit)
+        int loadedLevel = Application.loadedLevel;
+        
+        if (loadedLevel < Application.levelCount - 1)
         {
-            levelEditor.ResetLevel();
-			this.gameState = GameMode.editing;
-			levelEditor.UpdateGhostlyBlock();
-            winAndLoseText.ResetText();
-		}
-		else
-		{
-            int loadedLevel = Application.loadedLevel;
-            if (loadedLevel < Application.levelCount - 1)
-            {
-                Application.LoadLevel(loadedLevel + 1);
-            }
-            else
-            {
-                Application.LoadLevel(0);
-            }
+            Application.LoadLevel(loadedLevel + 1);
+        }
+        else
+        {
+            Application.LoadLevel(0);
         }
     }
 
     public void ResetLevel()
     {
-        if (canEdit)
-        {
-            levelEditor.ResetLevel();
-			this.gameState = GameMode.editing;
-			levelEditor.UpdateGhostlyBlock();
-            winAndLoseText.ResetText();
-		}
-		else
-		{
-            Application.LoadLevel(Application.loadedLevel);
-        }
+        Application.LoadLevel(Application.loadedLevel);
     }
 
 	public void addSalt() {
@@ -551,6 +525,7 @@ public class GameManager : MonoBehaviour
                     }
 					if (GUILayout.Button ("Skip Level"))
 					{
+                        GameData.instance.ChangeUnlockedLevel(Application.loadedLevel);
 						GoToNextLevel();
 					}
                     GUILayout.BeginHorizontal();

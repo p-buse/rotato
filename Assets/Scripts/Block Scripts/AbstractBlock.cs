@@ -274,10 +274,6 @@ public abstract class AbstractBlock : MonoBehaviour
         return rotationAngle / 90;
     }
 
-	public virtual BlockSkeleton getSkeleton(){
-        return new BlockSkeleton(this.myType(), this.GetCurrentPosition(), this.orientation, this.spikiness);
-	}
-
 	//non-square blocks override this to use their sprite's collider instead
 	/// <summary>
 	/// Checks whether (x,y) is inside this block's collider

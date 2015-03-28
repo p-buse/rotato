@@ -6,6 +6,9 @@ using System;
 
 public class GameData: ScriptableObject {
 
+    public static int UNLOCKED_LEVELS_DEFAULT = 45;
+
+    // Making a singleton
     private static GameData _instance;
     public static GameData instance
     {
@@ -19,42 +22,77 @@ public class GameData: ScriptableObject {
         }
     }
 
-    public static string fileName = "GameData.xml";
-    public string path;
+    private static string path = "DUMMY";
+
+    private static string VeggieStr(int levelIndex)
+    {
+        return "Level" + levelIndex + "VeggieCount";
+    }
+
+    private static string BestVeggieStr(int levelIndex)
+    {
+        return "Level" + levelIndex + "BestVeggies";
+    }
+
+    private static string FewestRotationStr(int levelIndex)
+    {
+        return "Level" + levelIndex + "FewestRotations";
+    }
+
+    private static string UnlockedLevelStr = "UnlockedLevel";
 
     void Awake()
     {
-        this.path = Application.dataPath + "/" + fileName;
-        if (!File.Exists(path))
+        if (!PlayerPrefs.HasKey(UnlockedLevelStr))
         {
-            WriteXML(new GameDataSkeleton(), path);
+            PlayerPrefs.SetInt(UnlockedLevelStr, UNLOCKED_LEVELS_DEFAULT);
         }
     }
 
-    public static void WriteXML(GameDataSkeleton gameDataSkeleton, string path)
+    public static  void WritePrefs(GameDataSkeleton gameDataSkeleton, string dummy)
     {
-        XmlSerializer writer = new XmlSerializer(typeof(GameDataSkeleton));
-        System.IO.StreamWriter file = new System.IO.StreamWriter(path);
-        writer.Serialize(file, gameDataSkeleton);
-        file.Close();
-        Debug.Log("Wrote game data to " + path);
+        /*
+         * 1. set the unlocked level
+         * FOR EACH LEVEL
+         * 1. get the level index
+         * 2. get the other string values
+         * 3. write each string value to the database
+         */
+
+        PlayerPrefs.SetInt(UnlockedLevelStr, gameDataSkeleton.unlockedLevel);
+        foreach (GameDataSkeleton.LevelDataSkeleton level in gameDataSkeleton.levelData)
+        {
+            PlayerPrefs.SetInt(VeggieStr(level.levelIndex), level.veggieCount);
+            PlayerPrefs.SetInt(BestVeggieStr(level.levelIndex), level.yourBestVeggies);
+            PlayerPrefs.SetInt(FewestRotationStr(level.levelIndex), level.fewestRotations);
+        }
     }
 
-    public static GameDataSkeleton ReadXML(string path)
+    public static GameDataSkeleton ReadXML(string dummy)
     {
-        XmlSerializer deserializer = new XmlSerializer(typeof(GameDataSkeleton));
-        try
+        GameDataSkeleton gameData = new GameDataSkeleton();
+        if (!PlayerPrefs.HasKey(UnlockedLevelStr))
         {
-            TextReader textReader = new StreamReader(path);
-            GameDataSkeleton loadedLevel;
-            loadedLevel = (GameDataSkeleton)deserializer.Deserialize(textReader);
-            textReader.Close();
-            return loadedLevel;
+            return gameData;
         }
-        catch (FileNotFoundException)
+        else
         {
-            Debug.LogWarning("Couldn't read file from " + path);
-            return null;
+            int unlockedLevel = PlayerPrefs.GetInt(UnlockedLevelStr);
+            gameData.unlockedLevel = unlockedLevel;
+            for (int i = 1; i <= unlockedLevel; i++)
+            {
+                GameDataSkeleton.LevelDataSkeleton levelSkelly = new GameDataSkeleton.LevelDataSkeleton();
+                levelSkelly.levelIndex = i;
+                levelSkelly.veggieCount = PlayerPrefs.GetInt(VeggieStr(i), -1);
+                levelSkelly.yourBestVeggies = PlayerPrefs.GetInt(BestVeggieStr(i), -1);
+                levelSkelly.fewestRotations = PlayerPrefs.GetInt(FewestRotationStr(i), -1);
+                if (-1 == levelSkelly.veggieCount ||
+                    -1 == levelSkelly.yourBestVeggies ||
+                    -1 == levelSkelly.fewestRotations)
+                    continue;
+                gameData.levelData.Add(levelSkelly);
+            }
+            return gameData;
         }
     }
 
@@ -94,7 +132,7 @@ public class GameData: ScriptableObject {
         {
             levelSkelly.yourBestVeggies = Math.Max(veggieAmount, levelSkelly.yourBestVeggies);
 			setLevel(skelly, levelIndex, levelSkelly);
-            WriteXML(skelly, path);
+            WritePrefs(skelly, path);
         }
         else
         {
@@ -110,7 +148,7 @@ public class GameData: ScriptableObject {
         {
             levelSkelly.fewestRotations = Math.Min(rotationsUsed, levelSkelly.fewestRotations);
 			setLevel(skelly, levelIndex, levelSkelly);
-            WriteXML(skelly, path);
+            WritePrefs(skelly, path);
         }
         else
         {
@@ -122,7 +160,7 @@ public class GameData: ScriptableObject {
     {
         GameDataSkeleton skelly = ReadXML(path);
         skelly.unlockedLevel = Math.Max(skelly.unlockedLevel, unlockedLevelIndex + 1);
-        WriteXML(skelly, path);
+        WritePrefs(skelly, path);
     }
 
     public void AddLevel(int levelIndex, int veggieCount)
@@ -137,7 +175,7 @@ public class GameData: ScriptableObject {
             blankLevel.yourBestVeggies = 0;
             blankLevel.fewestRotations = int.MaxValue;
             skelly.levelData.Add(blankLevel);
-            WriteXML(skelly, path);
+            WritePrefs(skelly, path);
         }
     }
 

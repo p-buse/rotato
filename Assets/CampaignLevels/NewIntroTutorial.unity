@@ -13245,117 +13245,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4462e6d5c73bb54cab52f1fc825b1c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointTexture: {fileID: 2800000, guid: 34efe248d57dbcf4997df623eeb8f46f, type: 3}
-  selectTexture: {fileID: 2800000, guid: 263b63edcf629424fad62f9f8b7d446d, type: 3}
-  handTexture: {fileID: 2800000, guid: 9d89a577f9fc3a24092df64501bc2dbd, type: 3}
-  selectionHighlightPrefab: {fileID: 100002, guid: dacd3e7d37dfe4b79860a23f78af1bb0,
-    type: 2}
-  brushes:
-  - name: Fixed Block
-    image: {fileID: 2800000, guid: 3aecab304fba108418799cb5363cb596, type: 3}
-    prefab: {fileID: 100000, guid: d6e0ece4da26741478ebdfe9e9cf3329, type: 2}
-    isPlayer: 0
-    isButter: 0
-    isNoRotationZone: 0
-    isCrawler: 0
-    isSpikez: 0
-  - name: Block
-    image: {fileID: 2800000, guid: 4d03a678260474ccca8cff2042c3abf8, type: 3}
-    prefab: {fileID: 100000, guid: d03f54b890c63954594fe3c50eeb5033, type: 2}
-    isPlayer: 0
-    isButter: 0
-    isNoRotationZone: 0
-    isCrawler: 0
-    isSpikez: 0
-  - name: Falling Block
-    image: {fileID: 2800000, guid: da7e0a98304234c0b9feb1638c884ca5, type: 3}
-    prefab: {fileID: 100000, guid: 2d934f2537ce78a4a8068a4284c51632, type: 2}
-    isPlayer: 0
-    isButter: 0
-    isNoRotationZone: 0
-    isCrawler: 0
-    isSpikez: 0
-  - name: PLAYUH
-    image: {fileID: 2800000, guid: 5936bfaf9fe74054dad8eac04ebc6210, type: 3}
-    prefab: {fileID: 100000, guid: b3d363273a7a33c4e8e759299619d45e, type: 2}
-    isPlayer: 1
-    isButter: 0
-    isNoRotationZone: 0
-    isCrawler: 0
-    isSpikez: 0
-  - name: Butter
-    image: {fileID: 2800000, guid: 0dd4265b7aa207e41a764259d8fe6add, type: 3}
-    prefab: {fileID: 100000, guid: eabca84ee14edeb44a884612b4ed39b8, type: 2}
-    isPlayer: 0
-    isButter: 1
-    isNoRotationZone: 0
-    isCrawler: 0
-    isSpikez: 0
-  - name: NoRoZo
-    image: {fileID: 2800000, guid: e8b6df4c05066734d93d32782381d2e4, type: 3}
-    prefab: {fileID: 100000, guid: 4f425c5217c9c2a4092c137129221de8, type: 2}
-    isPlayer: 0
-    isButter: 0
-    isNoRotationZone: 1
-    isCrawler: 0
-    isSpikez: 0
-  - name: Laser
-    image: {fileID: 2800000, guid: 130fec74a330f4b15a010cefcf749149, type: 3}
-    prefab: {fileID: 100002, guid: 4cef1404cae914aaab5334b18f33e010, type: 2}
-    isPlayer: 0
-    isButter: 0
-    isNoRotationZone: 0
-    isCrawler: 0
-    isSpikez: 0
-  - name: Mirror
-    image: {fileID: 2800000, guid: 83eccf1aede81426d8a14af93bf80267, type: 3}
-    prefab: {fileID: 100002, guid: 9b0413b8f85da4dd4972219ad329b526, type: 2}
-    isPlayer: 0
-    isButter: 0
-    isNoRotationZone: 0
-    isCrawler: 0
-    isSpikez: 0
-  - name: Salt
-    image: {fileID: 2800000, guid: e7e739659693b4f2aa059b11e1bbd615, type: 3}
-    prefab: {fileID: 100002, guid: 2f278f28a80e9443f88ae5daeb6a29d8, type: 2}
-    isPlayer: 0
-    isButter: 0
-    isNoRotationZone: 0
-    isCrawler: 0
-    isSpikez: 0
-  - name: Cracked Block
-    image: {fileID: 2800000, guid: 4374976620bcc5848a4283bf8468bd55, type: 3}
-    prefab: {fileID: 100002, guid: 4408f8c41ceb1da40b3e07924073956b, type: 2}
-    isPlayer: 0
-    isButter: 0
-    isNoRotationZone: 0
-    isCrawler: 0
-    isSpikez: 0
-  - name: Crawler
-    image: {fileID: 2800000, guid: bb8e531d9a1b5ac4c8d903845052a428, type: 3}
-    prefab: {fileID: 0}
-    isPlayer: 0
-    isButter: 0
-    isNoRotationZone: 0
-    isCrawler: 1
-    isSpikez: 0
-  - name: Spikes
-    image: {fileID: 2800000, guid: 9a0a26656907b54479e6820b54934f33, type: 3}
-    prefab: {fileID: 100000, guid: 2154c8c31402e7042b3fab4077971733, type: 2}
-    isPlayer: 0
-    isButter: 0
-    isNoRotationZone: 0
-    isCrawler: 0
-    isSpikez: 1
-  - name: Cannon
-    image: {fileID: 2800000, guid: 2589278f8c71f524899cb7fa6c58ca26, type: 3}
-    prefab: {fileID: 100000, guid: 22ee062d8d8329d468a26e9a80d88367, type: 2}
-    isPlayer: 0
-    isButter: 0
-    isNoRotationZone: 0
-    isCrawler: 0
-    isSpikez: 0
-  editorState: 2
 --- !u!114 &834888395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13526,7 +13415,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4fcca795ad2fa42a72a77e6902900c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path: C:/Users/David/Documents/rotato-gameplay-prototype/Assets/GameData.xml
 --- !u!114 &834888402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13539,8 +13427,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b88df71ead32b5e45903469939483814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: {fileID: 0}
-  loadLevel: 0
 --- !u!114 &834888403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20212,6 +20098,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!212 &1201251090
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30149,7 +30036,7 @@ GameObject:
   - 61: {fileID: 1860402909}
   m_Layer: 0
   m_Name: Butter
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30213,6 +30100,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1860749798
 GameObject:
   m_ObjectHideFlags: 0

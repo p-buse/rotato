@@ -5,7 +5,6 @@ using System;
 public class CameraMovement : MonoBehaviour
 {
     GameManager gameManager;
-    LevelEditor levelEditor;
     public bool fixedMovement;
     public Vector2 cameraMovement;
     public float followSpeed = 2f;
@@ -22,7 +21,6 @@ public class CameraMovement : MonoBehaviour
     void Awake()
     {
         this.gameManager = FindObjectOfType<GameManager>();
-        this.levelEditor = FindObjectOfType<LevelEditor>();
         player = FindObjectOfType<Player>();
         gameManager.PlayerCreated += this.PlayerCreated;
         gameManager.BoundsChanged += this.BoundsChanged;
@@ -68,10 +66,7 @@ public class CameraMovement : MonoBehaviour
         {
             transform.Translate(cameraMovement * Time.deltaTime);
         }
-        if (gameManager.gameState != GameManager.GameMode.editing || levelEditor.editorState != LevelEditor.EditorState.NewLevel)
-        {
-            ClampPosition();
-        }
+        ClampPosition();
     }
 
     private void ClampPosition()
