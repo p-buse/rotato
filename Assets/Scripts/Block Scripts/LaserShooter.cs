@@ -61,13 +61,13 @@ public class LaserShooter : AbstractBlock {
 
 	public override bool isPointInside(float x, float y)
 	{
-		return blockSprite.collider2D.OverlapPoint(new Vector2 (x, y));
+		return blockSprite.GetComponent<Collider2D>().OverlapPoint(new Vector2 (x, y));
 	}
 
 	public override void finishRotation(Int2 center, int dir) {
 		base.finishRotation(center, dir);
 		setFireDirection();
-		blockSprite.collider2D.enabled = true;
+		blockSprite.GetComponent<Collider2D>().enabled = true;
 	}
 
 	public void setFireDirection() {
@@ -128,7 +128,7 @@ public class LaserShooter : AbstractBlock {
 		base.AnimateFrameOfRotation (center, direction, time);
 		laser.SetPosition (0, ((Vector2)transform.position)-startPoint);
 		laser.SetPosition (1, ((Vector2)transform.position)-startPoint);
-		blockSprite.collider2D.enabled = false;
+		blockSprite.GetComponent<Collider2D>().enabled = false;
 	}
 
 	private Vector2 floatToV2(float direction)

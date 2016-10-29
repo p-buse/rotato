@@ -283,7 +283,7 @@ public abstract class AbstractBlock : MonoBehaviour
 	/// <param name="y">The y coordinate.</param>
 	public virtual bool isPointInside(float x, float y)
 	{
-		return collider2D.bounds.Contains(new Vector2(x, y));
+		return GetComponent<Collider2D>().bounds.Contains(new Vector2(x, y));
 	}
 
 	/// <summary>

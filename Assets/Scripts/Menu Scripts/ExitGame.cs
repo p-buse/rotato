@@ -26,7 +26,7 @@ public class ExitGame : MonoBehaviour
             OnMouseUpAsButton();
         }
         Vector2 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (collider2D.bounds.Contains(mouse))
+        if (GetComponent<Collider2D>().bounds.Contains(mouse))
         {
             transform.localScale = Vector3.Lerp(transform.lossyScale, new Vector3(zoomFactor, zoomFactor, zoomFactor), zoomSpeed);
         }

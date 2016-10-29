@@ -62,7 +62,7 @@ public class CannonBlock : AbstractBlock
         {
             // Hold the player in the cannon *a little in front of* where they should be so they don't get snagged on the floor
             playerMovement.transform.position = this.transform.position + ((Vector3)orientationToShootVectors[orientation] / 10f);
-            playerMovement.rigidbody2D.velocity = Vector2.zero;
+            playerMovement.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
         if (shootPlayer)
         {
@@ -75,7 +75,7 @@ public class CannonBlock : AbstractBlock
     public void ShootPlayer()
     {
         Vector2 shotVector = orientationToShootVectors[this.orientation] * shootForce;
-        playerMovement.rigidbody2D.AddForce(shotVector);
+        playerMovement.GetComponent<Rigidbody2D>().AddForce(shotVector);
         shootCoolDown = shootCooldownTime;
     }
 

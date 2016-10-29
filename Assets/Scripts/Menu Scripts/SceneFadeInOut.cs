@@ -12,13 +12,13 @@ public class SceneFadeInOut : MonoBehaviour
         if (fadingIn)
         {
             FadeToClear();
-            if (guiTexture.color.a <= 0.01f)
+            if (GetComponent<GUITexture>().color.a <= 0.01f)
                 fadingIn = false;
         }
         else
         {
             FadeToBlack();
-            if (guiTexture.color.a >= 0.9f)
+            if (GetComponent<GUITexture>().color.a >= 0.9f)
             {
                 Application.LoadLevel(Application.loadedLevel + 1);
             }
@@ -29,13 +29,13 @@ public class SceneFadeInOut : MonoBehaviour
     void FadeToClear()
     {
         // Lerp the colour of the texture between itself and transparent.
-        guiTexture.color = Color.Lerp(guiTexture.color, Color.clear, fadeSpeed * Time.deltaTime);
+        GetComponent<GUITexture>().color = Color.Lerp(GetComponent<GUITexture>().color, Color.clear, fadeSpeed * Time.deltaTime);
     }
 
     void FadeToBlack()
     {
         // Lerp the colour of the texture between itself and black.
-        guiTexture.color = Color.Lerp(guiTexture.color, Color.black, fadeSpeed * Time.deltaTime);
+        GetComponent<GUITexture>().color = Color.Lerp(GetComponent<GUITexture>().color, Color.black, fadeSpeed * Time.deltaTime);
     }
 
 }

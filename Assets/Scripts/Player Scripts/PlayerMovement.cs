@@ -81,10 +81,10 @@ public class PlayerMovement : MonoBehaviour
         this.grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Solid"));
         if (!gameManager.gameFrozen)
         {
-            rigidbody2D.gravityScale = this.gravityScale;
+            GetComponent<Rigidbody2D>().gravityScale = this.gravityScale;
             if (!conservedMovement.Equals(Vector2.zero))
             {
-                rigidbody2D.velocity = conservedMovement;
+                GetComponent<Rigidbody2D>().velocity = conservedMovement;
                 conservedMovement = Vector2.zero;
             }
             if (!beingShot)
@@ -94,12 +94,12 @@ public class PlayerMovement : MonoBehaviour
                     if (grounded)
                     {
                         //rigidbody2D.velocity.AddForce(-groundMoveSpeed, 0f);
-                        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x - groundMoveSpeed, rigidbody2D.velocity.y);
+                        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x - groundMoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
                     }
                     else
                     {
                         //rigidbody2D.AddForce(new Vector2(-airMoveSpeed, 0f)); 
-                        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x - airMoveSpeed, rigidbody2D.velocity.y);
+                        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x - airMoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
                     }
                 }
                 if (currentInput.right)
@@ -107,23 +107,23 @@ public class PlayerMovement : MonoBehaviour
                     if (grounded)
                     {
                         //rigidbody2D.AddForce(new Vector2(groundMoveSpeed, 0f));
-                        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x + groundMoveSpeed, rigidbody2D.velocity.y);
+                        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x + groundMoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
                     }
                     else
                     {
                         //rigidbody2D.AddForce(new Vector2(-airMoveSpeed, 0f)); 
-                        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x + airMoveSpeed, rigidbody2D.velocity.y);
+                        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x + airMoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
                     }
                 }
                 if (grounded)
                 {
-                    rigidbody2D.velocity = new Vector2(Mathf.Lerp(rigidbody2D.velocity.x, 0f, Time.deltaTime * groundFriction), rigidbody2D.velocity.y);
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Lerp(GetComponent<Rigidbody2D>().velocity.x, 0f, Time.deltaTime * groundFriction), GetComponent<Rigidbody2D>().velocity.y);
                 }
                 else
                 {
-                    rigidbody2D.velocity = new Vector2(Mathf.Lerp(rigidbody2D.velocity.x, 0f, Time.deltaTime * airFriction), rigidbody2D.velocity.y);
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Lerp(GetComponent<Rigidbody2D>().velocity.x, 0f, Time.deltaTime * airFriction), GetComponent<Rigidbody2D>().velocity.y);
                 }
-                rigidbody2D.velocity = new Vector2(Mathf.Clamp(rigidbody2D.velocity.x, -maxHorizontalSpeed, maxHorizontalSpeed), rigidbody2D.velocity.y);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Clamp(GetComponent<Rigidbody2D>().velocity.x, -maxHorizontalSpeed, maxHorizontalSpeed), GetComponent<Rigidbody2D>().velocity.y);
                 if (jumping == true)
                 {
                     currentJumpTicks += 1;
@@ -135,7 +135,7 @@ public class PlayerMovement : MonoBehaviour
                     {
                         //rigidbody2D.AddForce(new Vector2(0f, jumpAcceleration * (maxJumpTicks - currentJumpTicks))); // "Scaled" jump
                         //rigidbody2D.AddForce(new Vector2(0f, jumpAcceleration)); // "Accelerate" jump
-                        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpAcceleration); //"Linear" jump
+                        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpAcceleration); //"Linear" jump
                     }
                 }
             }
@@ -144,10 +144,10 @@ public class PlayerMovement : MonoBehaviour
         {
             if (conservedMovement.Equals(Vector2.zero))
             {
-                conservedMovement = rigidbody2D.velocity;
+                conservedMovement = GetComponent<Rigidbody2D>().velocity;
             }
-            rigidbody2D.velocity = Vector2.zero;
-            rigidbody2D.gravityScale = 0f;
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            GetComponent<Rigidbody2D>().gravityScale = 0f;
         }
     }
 

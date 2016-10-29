@@ -22,12 +22,12 @@ public class CursorScript : MonoBehaviour
         this.transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (gameManager.gameState == GameManager.GameMode.editing || gameManager.gameState == GameManager.GameMode.paused)
         {
-            Screen.showCursor = true;
+            Cursor.visible = true;
             this.ChangeCursorState(CursorState.HIDDEN);
         }
         else if (gameManager.gameState == GameManager.GameMode.playing)
         {
-            Screen.showCursor = false;
+            Cursor.visible = false;
             if (gameManager.MouseIsInRotatableArea())
             {
                 this.ChangeCursorState(CursorState.ROTATABLE);
@@ -61,6 +61,6 @@ public class CursorScript : MonoBehaviour
 
     void OnDestroy()
     {
-        Screen.showCursor = true;
+        Cursor.visible = true;
     }
 }
